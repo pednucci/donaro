@@ -1,0 +1,149 @@
+@import "global.css";
+
+/* Configuração geral das Seções  */
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    background-color: aqua;
+}
+
+.acoes,
+.doadores,
+.depoimentos {
+    flex-direction: column;
+}
+
+.titulo{
+    font-size: 5em;
+}
+
+/*---------------------------------------------*/
+
+
+/* Primeira Seção */
+.section-arrecade {
+    height: 80vh;
+    background-color: var(--white);
+}
+
+.wrapper-cta {
+    background-color: var(--red-logo);
+    height: 100%;
+    width: 50%;
+    display: flex;
+
+}
+
+.wrapper-svg {
+    background-color: var(--black-logo);
+    height: 100%;
+    width: 50%;
+    display: flex;
+}
+
+/*---------------------------------------------*/
+
+
+/* Segunda Seção */
+.section-pratique {
+    height: 80vh;
+    background-color: var(--gray-background);
+}
+
+.wrapper-image {
+    background-color: var(--black-logo);
+    height: 100%;
+    width: 50%;
+    display: flex;
+}
+
+.wrapper-text {
+    background-color: var(--white);
+    height: 100%;
+    width: 50%;
+    display: flex;
+}
+
+/*---------------------------------------------*/
+
+
+/* Terceira Seção */
+.section-acoes {
+    flex-direction: column;
+    height: 80vh;
+    background-color: var(--red-logo);
+    color: white;
+}
+
+.wrapper-processos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.svg-processo {
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    color: var (--white);
+}
+
+
+
+/*---------------------------------------------*/
+
+
+/* Quarta Seção */
+.section-doadores {
+    flex-direction: column;
+    height: 80vh;
+    background-color: var(--blue-logo);
+    color: white;
+}
+
+/*---------------------------------------------*/
+
+
+/* Quinta Seção */
+.section-depoimentos {
+    flex-direction: column;
+    height: 80vh;
+    background-color: var (--gray-background);
+}
+
+.wrapper-depoimento {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.depoimento {
+    width: 70%;
+    margin-right: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    column-gap: 20px;
+}
+
+.img-depoimento {
+    grid-area: 1 / 1 / 2 / 2;
+    height: 70px;
+    background-color: green;
+}
+
+.texto-depoimento {
+    grid-area: 1 / 2 / 3 / 3;
+}
+
+/*---------------------------------------------*/
