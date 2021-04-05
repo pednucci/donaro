@@ -1,2 +1,2 @@
 # Donaro
-A charity platform for social actions.
+A charity platform for social actions
