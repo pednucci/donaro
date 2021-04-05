@@ -50,27 +50,9 @@ body {
 /*---------------------------------------------*/
 
 
-/* Bootstrap */
-
-.container-fluid {
-    padding: 0;
-    margin: 0;
-}
-
-/*---------------------------------------------*/
-
 
 /* Header */
 
-.navbar {
-    background-color: var(--green-accept);
-    height: 80px;
-    padding: 20px 40px;
-    background-color: aqua !important;
-}
 
-.donaro-logo {
-    height: 40px;
-}
 
 /*---------------------------------------------*/
