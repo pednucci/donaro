@@ -1,4 +1,4 @@
-@import "global.css";
+@import "global.css"; 
 
 /* Configuração geral das Seções  */
 
@@ -14,7 +14,6 @@ section {
     align-items: center;
     width: 80%;
     height: 80%;
-    background-color: aqua;
 }
 
 .acoes,
@@ -45,10 +44,16 @@ section {
 }
 
 .wrapper-svg {
-    background-color: var(--black-logo);
     height: 100%;
     width: 50%;
     display: flex;
+}
+
+.btn-red{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--red-logo);
 }
 
 /*---------------------------------------------*/
