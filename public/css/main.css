@@ -1,4 +1,4 @@
-@import "global.css"; 
+@import "global.css";
 
 /* Configuração geral das Seções  */
 
@@ -22,9 +22,6 @@ section {
     flex-direction: column;
 }
 
-.titulo{
-    font-size: 5em;
-}
 
 /*---------------------------------------------*/
 
@@ -36,24 +33,18 @@ section {
 }
 
 .wrapper-cta {
-    background-color: var(--red-logo);
     height: 100%;
     width: 50%;
     display: flex;
-
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .wrapper-svg {
     height: 100%;
     width: 50%;
     display: flex;
-}
-
-.btn-red{
-    width: 200px;
-    height: 50px;
-    border-radius: 10px;
-    background-color: var(--red-logo);
 }
 
 /*---------------------------------------------*/
@@ -66,17 +57,22 @@ section {
 }
 
 .wrapper-image {
-    background-color: var(--black-logo);
     height: 100%;
     width: 50%;
     display: flex;
 }
 
 .wrapper-text {
-    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 50%;
     display: flex;
+}
+
+.img-criancas {
+    width: 100%;
+    
 }
 
 /*---------------------------------------------*/
@@ -101,7 +97,6 @@ section {
     margin: 20px;
     color: var (--white);
 }
-
 
 
 /*---------------------------------------------*/

@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- CSS Donaro -->
     <link rel="stylesheet" href="/public/css/global.css">
     <link rel="stylesheet" href="/public/css/main.css">
-    <!-- Fontes -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700&display=swap" rel="stylesheet">
 
     <title>Página inicial</title>
 </head>
@@ -18,13 +16,8 @@
 <body>
     <header>
         <nav class="nav-bar">
-            <div class="test">
-                <h1>
-                    testando
-                </h1>
-            </div> 
             <div class="nav-logo">
-                <img src="../public/assets/img/donaro_logo.svg" class="logo" alt="Logo Donaro">
+                <img src="/public/assets/img/donaro_logo.svg" class="logo" alt="Logo Donaro">
             </div>
             <div class="nav-menu">
                 <ul class="nav-list">
@@ -32,8 +25,8 @@
                     <li><a href="" class="nav-link">Criar</a></li>
                     <li><a href="" class="nav-link">Painel</a></li>
                 </ul>
-                <img src="../public/assets/img/nav-person.svg" class="nav-profile" alt="Foto de perfil">
-                <img src="../public/assets/img/arrow-down.svg">
+                <img src="/public/assets/img/nav-person.svg" class="nav-profile" alt="Foto de perfil">
+                <img src="/public/assets/img/arrow-down.svg">
             </div>
         </nav>
     </header>
@@ -41,28 +34,39 @@
         <section class="section-arrecade">
             <div class="wrapper arrecade">
                 <div class="wrapper-cta">
-                    <h1>
+                    <h1 class="titulo">
                         Arrecade alimentos para sua ação social
                     </h1>
-                    <h2>
+                    <h2 class="subtitulo">
                         Pratique a caridade e incentive ações sociais.
                     </h2>
-                    <button class="btn-red">
-                        Iniciar pedido
-                    </button>
-                    <button class="btn-blue">
-                        Iniciar doação
-                    </button>
+                    <div class="buttons">
+                        <button class="btn btn-red">
+                            Iniciar pedido
+                        </button>
+                        <button class="btn btn-blue">
+                            Iniciar doação
+                        </button>
+                    </div>
                 </div>
                 <div class="wrapper-svg">
-                    <img src="../public/assets/img/illustrate-person.svg" alt="">
+                    <img src="/public/assets/img/illustrate-person.svg" alt="">
                 </div>
             </div>
         </section>
         <section class="section-pratique">
             <div class="wrapper pratique">
-                <div class="wrapper-image"></div>
-                <div class="wrapper-text"></div>
+                <div class="wrapper-image">
+                    <img class="img img-criancas" src="/public/assets/img/criancas.jpg" alt="Crianças sorrindo">
+                </div>
+                <div class="wrapper-text">
+                    <h1 class="titulo">
+                        Pratique a caridade
+                    </h1>
+                    <h2 class="subtitulo">
+                        Encontre ações sociais de combate à fome perto de você
+                    </h2>
+                </div>
             </div>
         </section>
         <section class="section-acoes">
@@ -85,7 +89,8 @@
                     <img class="svg-processo" src="/public/assets/img/icone_lupa_pin.svg" alt="icone de lupa">
                     <img class="svg-processo" src="/public/assets/img/icone_loading.svg" alt="Icone de carregando">
                     <img class="svg-processo" src="/public/assets/img/icone_chat.svg" alt="Icone de chat">
-                    <img class="svg-processo" src="/public/assets/img/icone_caixa_coracoes.svg" alt="Icone de uma caixa com corações">
+                    <img class="svg-processo" src="/public/assets/img/icone_caixa_coracoes.svg"
+                        alt="Icone de uma caixa com corações">
                 </div>
             </div>
         </section>
