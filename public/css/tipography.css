@@ -6,11 +6,24 @@
 .titulo {
     font-size: 7em;
     font-weight: bold;
+    
+    line-height: 101.8%;
+    margin-bottom: 20px;
 }
 
 /* Subtítulos */
 
 .subtitulo {
     font-size: 3em;
-    font-weight: medium;
+    font-weight: 500;
+    
+    color: var(--black-logo);
+}
+
+.titulo-black{
+    color: var(--black-logo)
+}
+
+.titulo-white {
+    color: var(--white);
 }

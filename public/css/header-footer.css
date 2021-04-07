@@ -17,7 +17,6 @@ a {
 
 .nav-bar{
     max-width: 1440px;
-    
     margin: 0 auto;
     padding: 0px 40px;
     display: flex;
@@ -64,8 +63,28 @@ a {
 
 /*---------------------------------------------*/
 
+
 /* Footer */
 
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: var (--black-logo);
+}
 
+.logo-footer{
+    width:100px;
+}
+
+.menu-footer{
+    margin: 20px;
+    width: 10px;
+    height: 20px;
+    background-color:aqua;
+}
 
 /*---------------------------------------------*/

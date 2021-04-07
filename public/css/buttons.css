@@ -1,7 +1,29 @@
 /* Configuração geral */
+@import "tipography.css";
+
 .btn{
     width: 200px;
     height: 50px;
     border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: .5s ease;
 }
 
+.btn-red {
+    background-color: var(--red-logo);
+    color: var(--white);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.btn-blue {
+    background-color: var(--blue-logo);
+    color: var(--white);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-right: 20px;
+}
