@@ -1,6 +1,7 @@
 /* Header */
 
-img, svg {
+header img,
+svg {
     display: block;
     width: 100%;
 }
@@ -15,7 +16,7 @@ a {
     color: var(--black-logo);
 }
 
-.nav-bar{
+.nav-bar {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0px 40px;
@@ -53,11 +54,13 @@ a {
     position: relative;
 }
 
-.nav-logo, .logo svg {
+.nav-logo,
+.logo svg {
     width: 250px;
 }
 
-.nav-menu, svg {
+.nav-menu,
+svg {
     cursor: pointer;
 }
 
@@ -66,25 +69,44 @@ a {
 
 /* Footer */
 
-footer{
+footer {
+    width: 100%;
+    height: auto;
+    padding: 20px 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    background-color: var (--black-logo);
+    align-items: flex-start;
+    background-color: var(--black-logo);
+    color: var(--white);
 }
 
-.logo-footer{
-    width:100px;
+.logo-footer {
+    width: 200px;
+    margin: 20px 0;
 }
 
-.menu-footer{
+.menu-footer {
     margin: 20px;
-    width: 10px;
-    height: 20px;
-    background-color:aqua;
+    height: auto;
+    font-size: 0.8rem;
+}
+
+.list-item {
+    color: var(--white);
+    font-size: 2em;
+    margin: 5px 0;
+}
+
+.rede-sociais {
+    display: flex;
+    flex-direction: row;
+}
+
+.icone-midias {
+    width: 30px;
+    height: 30px;
+    margin: 20px 20px 0 0;
 }
 
 /*---------------------------------------------*/
