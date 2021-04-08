@@ -10,7 +10,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 70%;
     height: 80%;
 }
 
@@ -26,7 +26,7 @@ section {
 
 /* Primeira Seção */
 .section-arrecade {
-    height: 80vh;
+    height: 95vh;
     background-color: var(--white);
 }
 
@@ -66,10 +66,10 @@ section {
     height: 100%;
     width: 50%;
     display: flex;
+    justify-content: center;
 }
 
 .img-criancas {
-    width: 100%;
     border-radius: 20px;
 }
 
@@ -81,7 +81,6 @@ section {
     flex-direction: column;
     height: 80vh;
     background-color: var(--red-logo);
-    color: white;
 }
 
 .wrapper-processos {
@@ -90,10 +89,15 @@ section {
 }
 
 .svg-processo {
-    width: 50px;
-    height: 50px;
-    margin: 20px;
-    color: var (--white);
+    width: 80px;
+    height: 70px;
+    margin: 30px;
+}
+
+.wrapper-descricao {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 
@@ -114,12 +118,12 @@ section {
 /* Quinta Seção */
 .section-depoimentos {
     flex-direction: column;
-    height: 80vh;
+    height: 60vh;
     background-color: var (--gray-background);
 }
 
 .wrapper-depoimento {
-    width: 500px;
+    width: 933px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -130,14 +134,14 @@ section {
     margin-right: 20px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 2fr 2fr;
     column-gap: 20px;
 }
 
 .img-depoimento {
     grid-area: 1 / 1 / 2 / 2;
-    height: 70px;
-    background-color: green;
+    height: 150px;
+    width: 150px;
+    border-radius: 40px;
 }
 
 .texto-depoimento {

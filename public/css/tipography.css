@@ -27,3 +27,53 @@
 .titulo-white {
     color: var(--white);
 }
+
+.titulo-processo {
+    font-size: 6em;
+    font-weight: bold;
+    
+    line-height: 101.8%;
+    margin-bottom: 50px;
+}
+
+.titulo-descricao {
+    font-size: 1.6em;
+    font-weight: 500;
+
+    color: var(--white);
+
+    margin-top: 20px;
+    text-align: center;
+    
+    padding: 0 40px 0 40px;
+}
+
+.titulo-depoimento {
+    font-size: 4em;
+    font-weight: bold;
+    
+    line-height: 101.8%;
+    margin-bottom: 70px;
+}
+
+.texto-depoimento {
+    font-size: 1.8em;
+    font-weight: 400;
+
+    line-height: 150%;
+}
+
+.nome-depoimento {
+    color: var(--black-logo);
+    margin-bottom: 10px;    
+}
+
+.desc-depoimento {
+    color: var(--gray-minor-font);
+    line-height: 165%;
+}
+
+.subtitulo-footer {
+    font-size: 2.5em;
+    font-weight: 600;
+}
