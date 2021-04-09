@@ -1,0 +1,172 @@
+/* #region - Topo */
+
+.background {
+    width: 100%;
+    height: 60vh;
+    padding: 100px 0;
+    background-color: var(--blue-logo)
+}
+
+.filtro-pedidos {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.input-form {
+    height: 50px;
+    border: none;
+    padding: 15px;
+    background-color: var(--gray-background);
+    border: var(--border-form);
+}
+
+.input-form[name=estado] {
+    border-radius: 10px 0 0 10px;
+}
+
+.btn-red {
+    margin: 0;
+    border-radius: 0 10px 10px 0;
+}
+
+/* #endregion */
+
+/* #region - Pedidos */
+
+.pedidos {
+    width: 80%;
+    margin: auto;
+    position: relative;
+    top: -170px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.pedido {
+    width: 250px;
+    height: 350px;
+    margin: 20px 20px;
+    border-radius: 10px;
+    box-shadow: var(--border-shadow);
+    overflow: hidden;
+}
+
+.imagem-pedido {
+    width: 100%;
+    height: 150px;
+    background-image: url("/public/assets/img/pedido_almoco-creche.png");
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+.informacoes-pedido {
+    height: 200px;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.descricao-pedido {
+    height: 50px;
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.descricao-pedido p {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.progresso-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progresso-container p {
+    font-size: 1.2em;
+}
+
+.meta {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.porcentagem {
+    width: 100%;
+    margin-top: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progresso-barra,
+.progresso-barra * {
+    width: 200px;
+    height: 10px;
+    background-color: var(--blue-logo-transparent);
+    border-radius: 20px;
+}
+
+.progresso-atual {
+    width: 50px;
+    background-color: var(--blue-logo)
+}
+
+.subtitulo-pedido div {
+    display: flex;
+    color: var(--gray-minor-font);
+}
+
+.svg-pedido {
+    margin-right: 5px;
+}
+
+/* #endregion */
+
+/* #region - Numeração das páginas */
+.numeracao-paginas {
+    width: max-content;
+    margin: auto;
+    display: flex;
+}
+
+.paginas {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.cont-pagina {
+    min-width: 45px;
+    height: 50px;
+    text-align: center;
+    margin: 3px;
+    padding: 10px;
+    font-size: 2rem;
+    background-color: var(--gray-background);
+    border: var(--border-form);
+    border-radius: 5px;
+    box-shadow: var(--border-shadow);
+}
+
+.cont-pagina:hover {
+    border: var(--border-red);
+    background-color: var(--red-logo-transparent)
+}
+
+/* #endregion */

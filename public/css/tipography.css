@@ -6,7 +6,7 @@
 .titulo {
     font-size: 7em;
     font-weight: bold;
-    
+
     line-height: 101.8%;
     margin-bottom: 20px;
 }
@@ -16,11 +16,11 @@
 .subtitulo {
     font-size: 3em;
     font-weight: 500;
-    
+
     color: var(--black-logo);
 }
 
-.titulo-black{
+.titulo-black {
     color: var(--black-logo)
 }
 
@@ -31,7 +31,7 @@
 .titulo-processo {
     font-size: 6em;
     font-weight: bold;
-    
+
     line-height: 101.8%;
     margin-bottom: 50px;
 }
@@ -44,14 +44,14 @@
 
     margin-top: 20px;
     text-align: center;
-    
+
     padding: 0 40px 0 40px;
 }
 
 .titulo-depoimento {
     font-size: 4em;
     font-weight: bold;
-    
+
     line-height: 101.8%;
     margin-bottom: 70px;
 }
@@ -65,7 +65,7 @@
 
 .nome-depoimento {
     color: var(--black-logo);
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
 }
 
 .desc-depoimento {

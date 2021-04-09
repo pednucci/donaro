@@ -1,9 +1,12 @@
 /* Declaração de variáveis */
-:root { 
+:root {
+    /* Cores */
     --white: #FFFFFF;
     --blue-logo: #064789;
+    --blue-logo-transparent: rgba(6, 71, 137, 0.2);
     --blue-link: #029692;
     --red-logo: #F32B38;
+    --red-logo-transparent: rgba(243, 43, 56, 0.1);
     --red-denounce: #CC1408;
     --black-logo: #191929;
     --black-footer: #171717;
@@ -12,7 +15,9 @@
     --gray-border: #CDCDCD;
     --green-accept: #37CC12;
     --yellow-pending: #E1CB05;
-   
+
+    /* Bordas */
+    --border-form: 0.5px solid var(--gray-border);
+    --border-red: 2px solid var(--red-logo);
+    --border-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
 }
-
-

@@ -9,12 +9,12 @@
     cursor: pointer;
     margin-top: 20px;
     transition: .5s ease;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 .btn-red {
     background-color: var(--red-logo);
     color: var(--white);
-    font-family: 'Red Hat Display', sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
 }
@@ -22,7 +22,6 @@
 .btn-blue {
     background-color: var(--blue-logo);
     color: var(--white);
-    font-family: 'Red Hat Display', sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
     margin-right: 20px;
