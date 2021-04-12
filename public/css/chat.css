@@ -1,0 +1,128 @@
+/* #region Barra de conversas */
+
+.chat-container {
+    height: 80vh;
+    display: flex;
+}
+
+.conversas-container {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barra de pesquisa */
+.pesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: var(--gray-background);
+}
+
+img[alt="Icone lupa"] {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    left: 30px;
+}
+
+.pesquisa .input-form {
+    width: 100%;
+    padding: 0 40px;
+}
+
+
+/* Conversas */
+.conversas {
+    width: 100%;
+    height: 1000px;
+    overflow-y: scroll;
+}
+
+.conversa {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    border-radius: 10px;
+    border: var(--border-form);
+    box-shadow: var(--border-shadow);
+}
+
+/* Imagem */
+.imagem-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.conversa-img {
+    width: 20%;
+}
+
+.imagem-wrapper img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Informações */
+
+.conversa-info {
+    width: 70%;
+    margin-left: 20px;
+}
+
+.row1 {
+    margin-bottom: 5px;
+}
+
+.nome-conversa {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.qnt-msg {
+    width: 15px;
+    height: 15px;
+    padding: 1px;
+    border-radius: 100%;
+    text-align: center;
+    background-color: var(--blue-light)
+}
+
+/* #endregion */
+
+/* #region Chat */
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    height: 100%;
+    background-color: red;
+}
+
+
+.chat-header {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+
+.chat-content {
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+}
+
+.chat-footer {
+    width: 100%;
+    background-color: purple;
+}
+
+/* #endregion */

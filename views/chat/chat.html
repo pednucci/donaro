@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Donaro -->
+    <link rel="stylesheet" href="/public/css/global.css">
+    <link rel="stylesheet" href="/public/css/chat.css">
+
+    <title>Chat</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="nav-logo">
+                <img src="/public/assets/img/donaro_logo.svg" class="logo" alt="Logo Donaro">
+            </div>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="" class="nav-link">Descobrir</a></li>
+                    <li><a href="" class="nav-link">Criar</a></li>
+                    <li><a href="" class="nav-link">Painel</a></li>
+                </ul>
+                <img src="/public/assets/img/nav-person.svg" class="nav-profile" alt="Foto de perfil">
+                <img src="/public/assets/img/arrow-down.svg">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="chat-container">
+            <div class="conversas-container">
+                <div class="pesquisa">
+                    <img src="/public/assets/img/icone_lupa.svg" alt="Icone lupa">
+                    <input class="input-form" type="text" name="txtPesquisa" placeholder="Procurar mensagens">
+                </div>
+                <div class="conversas">
+                    <div class=" row conversa">
+                        <div class="conversa-img">
+                            <div class="imagem-wrapper">
+                                <img src="/public/assets/img/user_gabriela.png" alt="Imagem usuário">
+                            </div>
+                        </div>
+                        <div class="conversa-info">
+                            <div class="row row1">
+                                <p class="titulo-black nome-conversa">Gabriela Arantes</p>
+                                <p class="titulo-gray horario">18:25</p>
+                            </div>
+                            <div class="row row2">
+                                <p class="titulo-gray ultimas-msg">Oi, boa tarde</p>
+                                <p class="titulo-white qnt-msg">5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat">
+                <header class="chat-header">
+
+                </header>
+                <main class="chat-content"></main>
+                <footer class="chat-footer">
+                    <form class="envio-mensagem" action="">
+                        <input class="input-form" type="text" name="mensagem" id="txt-mensagem"
+                            placeholder="Digite sua mensagem">
+                        <input class="btn btn-red" type="button" value="Enviar">
+                    </form>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

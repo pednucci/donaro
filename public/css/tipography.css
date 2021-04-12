@@ -28,6 +28,10 @@
     color: var(--white);
 }
 
+.titulo-gray {
+    color: var(--gray-minor-font);
+}
+
 .titulo-processo {
     font-size: 6em;
     font-weight: bold;

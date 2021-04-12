@@ -15,14 +15,6 @@
 
 }
 
-.input-form {
-    height: 50px;
-    border: none;
-    padding: 15px;
-    background-color: var(--gray-background);
-    border: var(--border-form);
-}
-
 .input-form[name=estado] {
     border-radius: 10px 0 0 10px;
 }
