@@ -1,69 +1,51 @@
-/* Header */
-
-header img,
-svg {
-    display: block;
-    width: 100%;
-}
-
-a {
-    text-decoration: none;
-    color: var(--black-logo);
-}
+/* #region Header */
 
 .nav-bar {
     width: 100%;
     max-width: 1440px;
+    height: 80px;
     margin: 0 auto;
-    padding: 20px 40px;
+    padding: 20px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: flex-start;
     align-items: center;
 }
 
-.nav-list {
-    list-style: none;
+/* Logo */
+.nav-logo {
+    width: 150px;
+}
+
+/* Menu */
+.nav-menu {
     display: flex;
+    align-items: center;
 }
 
-.nav-list li {
-    margin-left: 24px;
-}
 
-.nav-profile {
-    max-width: 40px;
-    max-height: 40px;
-    border-radius: 20px;
-}
 
 .nav-link {
     display: inline-block;
-    font-size: 24px;
+    font-size: 2em;
     font-weight: 500;
-    margin-right: 20px;
-    position: relative;
+    margin-right: 30px;
 }
 
-.nav-logo,
-.logo svg {
-    width: 80px;
-}
-
-.nav-menu,
-svg {
+/* Perfil */
+.nav-profile {
     cursor: pointer;
 }
 
-/*---------------------------------------------*/
+.nav-profile .img-wrapper {
+    width: 35px;
+    height: 35px;
+}
 
 
-/* Footer */
+/*#endregion*/
+
+
+/* #region Footer */
 
 .footer-bar {
     width: 100%;
@@ -105,4 +87,4 @@ svg {
     margin: 20px 20px 0 0;
 }
 
-/*---------------------------------------------*/
+/*#endregion*/

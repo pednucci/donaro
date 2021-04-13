@@ -1,13 +1,19 @@
 /* #region Imports */
-@import "buttons.css";
+
+/* CSS Custom*/
 @import "colors.css";
 @import "header-footer.css";
-@import "main.css";
+@import "buttons.css";
 @import "tipography.css";
+
+/* CSS Pages */
+@import "main.css";
 @import "descobrir.css";
+@import "chat.css";
+
 /* #endregion  */
 
-/* Configurações globais */
+/* #region Configurações globais */
 *,
 *:after,
 *:before {
@@ -16,6 +22,8 @@
     outline: 0;
     list-style: none;
     font-style: none;
+    text-decoration: none;
+    color: var(--black-logo);
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -31,13 +39,25 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/*---------------------------------------------*/
+/*#endregion*/
+
+
+.img-wrapper {
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+}
 
 .input-form {
     height: 50px;
     padding: 15px;
     background-color: var(--gray-background);
     border: var(--border-form);
+    
 }
 
 .row {
@@ -47,9 +67,10 @@ body {
     align-items: center;
 }
 
+
 .column {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: space-between;
 }

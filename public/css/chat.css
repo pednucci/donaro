@@ -55,28 +55,21 @@ img[alt="Icone lupa"] {
 .conversa {
     width: 95%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 2px 0;
     justify-content: center;
     border-radius: 10px;
     border: var(--border-form);
-    box-shadow: var(--border-shadow);
+    /* box-shadow: var(--border-shadow); */
 }
 
 /* Imagem */
-.imagem-wrapper {
+.conversas .img-wrapper {
     width: 50px;
     height: 50px;
-    border-radius: 100%;
-    overflow: hidden;
 }
 
 .conversa-img {
     width: 20%;
-}
-
-.imagem-wrapper img {
-    width: 50px;
-    height: 50px;
 }
 
 /* Informações */
@@ -114,27 +107,120 @@ img[alt="Icone lupa"] {
     justify-content: space-between;
     width: 75%;
     height: 100%;
-    background-color: red;
 }
 
-/* Header do chat */
+/* #region Header do chat */
 .chat-header {
     width: 100%;
-    height: 100px;
-    background-color: black;
+    height: 80px;
+    padding: 20px;
+    justify-content: flex-start;
+    background-color: var(--white);
+    border-radius: 10px;
+    border: var(--border-form);
+    box-shadow: var(--border-shadow);
 }
 
-/* Conteúdo do chat */
+.chat .img-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.chat .nome-conversa {
+    font-size: 2em;
+}
+
+/* #endregion */
+
+/* #region Conteúdo do chat */
 .chat-content {
     width: 100%;
     height: 100%;
-    background-color: bisque;
+    overflow-y: scroll;
 }
 
-/* Footer do chat */
+.message-row {
+    width: 90%;
+    min-height: 40px;
+    margin: 20px auto;
+
+}
+
+.enviada {
+    justify-content: flex-end;
+}
+
+.recebida {
+    justify-content: flex-start;
+}
+
+.mensagem {
+    max-width: 60%;
+    height: 50px;
+    /* height: auto; */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.enviada .mensagem {
+    background-color: var(--gray-message);
+}
+
+.recebida .mensagem {
+    background-color: var(--blue-logo);
+}
+
+.recebida span {
+    color: var(--white);
+
+}
+
+.message-txt {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.message-info {
+    /* width: 40px; */
+    height: 100%;
+    /* justify-content: center; */
+    align-items: flex-end;
+
+}
+
+.message-info {
+    margin-left: 30px;
+}
+/* #endregion */
+
+/* #region Footer do chat */
 .chat-footer {
     width: 100%;
-    background-color: purple;
+    height: 80px;
+    padding: 10px;
+    background-color: var(--white);
+    border: var(--border-form);
 }
+
+.send-message {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat .input-form {
+    width: 90%;
+    margin-right: 10px;
+    border-radius: 20px;
+    background-color: var(--gray-background);
+}
+
+.chat .btn {
+    width: 200px;
+    border-radius: 10px;
+}
+
+/* #endregion */
 
 /* #endregion */
