@@ -10,6 +10,8 @@
 @import "main.css";
 @import "descobrir.css";
 @import "chat.css";
+@import "login.css";
+@import "cadastro.css";
 
 /* #endregion  */
 
@@ -53,10 +55,11 @@ body {
 }
 
 .input-form {
-    height: 50px;
-    padding: 15px;
+    height: 40px;
+    padding-left: 15px;
     background-color: var(--gray-background);
     border: var(--border-form);
+    border-radius: 10px;
     
 }
 

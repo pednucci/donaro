@@ -1,9 +1,11 @@
 /* Configuração geral */
 @import "tipography.css";
 
-.btn{
-    width: 200px;
-    height: 50px;
+.btn {
+    width: max-content;
+    min-width: 100px;
+    height: max-content;
+    padding: 5px 20px;
     border-radius: 10px;
     border: none;
     cursor: pointer;

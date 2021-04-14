@@ -116,9 +116,9 @@ img[alt="Icone lupa"] {
     padding: 20px;
     justify-content: flex-start;
     background-color: var(--white);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     border: var(--border-form);
-    box-shadow: var(--border-shadow);
+    /* box-shadow: var(--border-shadow); */
 }
 
 .chat .img-wrapper {
@@ -130,6 +130,8 @@ img[alt="Icone lupa"] {
 .chat .nome-conversa {
     font-size: 2em;
 }
+
+
 
 /* #endregion */
 
