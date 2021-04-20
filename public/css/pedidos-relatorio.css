@@ -1,0 +1,50 @@
+.container-painel {
+    height: 355px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.background-painel {
+    height: 250px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-painel {
+    height: 105px;
+    background-color: var(--blue-logo);
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+
+.menu-painel-buttons {
+    height: 105px;
+    width: 955px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.painel-text {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--white);
+    
+    margin-right: 30px;
+}
+
+.painel-titulo {
+    font-size: 5rem;
+    font-weight: bold;
+
+    position: absolute;
+
+    color: var(--white);
+}
