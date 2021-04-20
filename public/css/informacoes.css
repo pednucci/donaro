@@ -1,0 +1,50 @@
+main {
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-info {
+    width: 960px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+.form-titulo {
+    font-size: 5rem;
+}
+
+.titulo-form {
+    font-size: 2rem;
+}
+
+.subtitulo-form {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.foto-dados {
+    width: 330px;
+    height: 340px;
+}
+
+.box-style {
+    height: 60px;
+    border-radius: 10px;
+    padding: 20px;
+    
+    font-size: 2rem;
+
+    border: 0.5px solid var(--gray-border);
+}
+
+.btn {
+    height: 80px;
+    width: 480px;
+
+    font-size: 2rem;
+}
