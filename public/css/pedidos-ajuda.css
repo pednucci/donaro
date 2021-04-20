@@ -1,0 +1,160 @@
+.container-painel {
+    height: 355px;
+    
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 30px;
+}
+
+.background-painel {
+    height: 250px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-painel {
+    height: 105px;
+    background-color: var(--blue-logo);
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+
+.menu-painel-buttons {
+    height: 105px;
+    width: 955px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.painel-text {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--white);
+    
+    margin-right: 30px;
+}
+
+.painel-titulo {
+    font-size: 5rem;
+    font-weight: bold;
+
+    position: absolute;
+
+    color: var(--white);
+}
+
+.cards {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: top;
+    align-items: center;
+}
+
+.card-container {
+    margin-top: 20px;
+
+    border-radius: 8px;
+
+    align-items: center;
+    
+    height: 150px;
+    width: 960px;
+
+    border: 0.5px solid var(--gray-border);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "card-image card-nome card-nome card-btn"
+        "card-image card-qtd card-pesagem card-btn"
+        "card-image card-confirm card-situacao card-btn";
+}
+
+.card-image { 
+    grid-area: card-image; 
+}
+.image-card {
+    height: 150px;
+    border-radius: 8px;
+}
+
+.card-nome { grid-area: card-nome; }
+.nome-card {
+    font-size: 3.5rem;
+}
+.card-qtd { grid-area: card-qtd; }
+.desc-card {
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.card-pesagem { grid-area: card-pesagem; }
+.peso-card {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.card-confirm { grid-area: card-confirm; }
+.card-situacao { grid-area: card-situacao; }
+.situacao-card {
+    font-size: 1.7rem;
+    color: yellow;
+}
+
+.card-btn { grid-area: card-btn; }
+.card-blue {
+    font-size: 1.7rem;
+    font-weight: bold;
+    
+    height: 50px;
+    width: 180px;
+
+    background-color: var(--blue-logo);
+    color: var(--white);
+    border-radius: 10px;
+    border-style: none;
+}
+
+.numeracao-paginas {
+    width: max-content;
+    margin: auto;
+    display: flex;
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.paginas {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.cont-pagina {
+    min-width: 45px;
+    height: 50px;
+    text-align: center;
+    margin: 3px;
+    padding: 10px;
+    font-size: 2rem;
+    background-color: var(--gray-background);
+    border: var(--border-form);
+    border-radius: 5px;
+    box-shadow: var(--border-shadow);
+}
+
+.cont-pagina:hover {
+    border: var(--border-red);
+    background-color: var(--red-logo-transparent)
+}
