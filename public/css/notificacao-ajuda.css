@@ -1,5 +1,5 @@
 .container-painel {
-    height: 355px;
+    height: 100px;
     
     display: flex;
     flex-direction: column;
@@ -17,7 +17,6 @@
 
 .menu-painel {
     height: 105px;
-    background-color: var(--blue-logo);
 
     display: flex;
     flex-direction: row;
@@ -31,15 +30,18 @@
 
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .painel-text {
     font-size: 3rem;
     font-weight: 500;
-    color: var(--white);
+    color: var(--black-logo);
     
     margin-right: 30px;
+
+    transition: .5s ease;
+    position: relative;
 }
 
 .painel-titulo {
@@ -49,6 +51,24 @@
     position: absolute;
 
     color: var(--white);
+}
+
+.painel-text:after {
+    top: 40px;
+    
+    content: "";
+    display: block;
+
+    height: 4px;
+    position: absolute;
+    background: #DB351D;
+    transition: width 1s ease;
+    width: 0;
+}
+
+.painel-text:hover:after { 
+    width: 100%;
+    left: 0;
 }
 
 .cards {
@@ -74,13 +94,13 @@
     border: 0.5px solid var(--gray-border);
 
     display: grid;
-    grid-template-columns: 0.65fr 1fr 1fr 1fr;
+    grid-template-columns: 0.65fr 0.5fr 1.5fr 0.80fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
         "card-image card-nome card-nome card-btn"
         "card-image card-qtd card-pesagem card-btn"
-        "card-image card-confirm card-situacao card-btn";
+        "card-image card-confirm card-situacao card-details";
 }
 
 .card-image { 
@@ -110,7 +130,7 @@
 .card-situacao { grid-area: card-situacao; }
 .situacao-card {
     font-size: 1.7rem;
-    color: yellow;
+    font-weight: bolder;
 }
 
 .card-btn { grid-area: card-btn; }
@@ -125,6 +145,22 @@
     color: var(--white);
     border-radius: 10px;
     border-style: none;
+
+    cursor: pointer;
+
+    transition: 0.5s ease;
+}
+
+.card-blue:hover{
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.25));
+
+    transition: 0.5s ease;
+}
+
+.card-detaisl { grid-area: card-details;}
+.datails-card {
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .numeracao-paginas {
@@ -152,9 +188,13 @@
     border: var(--border-form);
     border-radius: 5px;
     box-shadow: var(--border-shadow);
+
+    transition: 0.5s ease;
 }
 
 .cont-pagina:hover {
     border: var(--border-red);
-    background-color: var(--red-logo-transparent)
+    background-color: var(--red-logo-transparent);
+
+    transition: 0.5s ease;
 }
