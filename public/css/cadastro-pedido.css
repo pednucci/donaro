@@ -1,5 +1,6 @@
 .form-container {
-    width: 960px;
+    width: 100%;
+    max-width: 800px;
     height: auto;
     margin: 10vh auto;
     padding: 20px;
@@ -9,16 +10,15 @@
 .titulo {
     font-size: 5rem;
     font-weight: 500;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .form-container .subtitulo {
     font-size: 2.5rem;
     align-self: flex-start;
-    margin-bottom: 20px;
+    margin: 40px 0 20px 0;
     font-weight: bold;
 }
-
 
 .form-login label {
     font-weight: bold;
@@ -28,7 +28,7 @@
     margin: 10px 0;
 }
 
-.form-login>.titulo-link,
+.form-login > .titulo-link,
 .exibir {
     align-self: flex-end;
     width: max-content;
@@ -37,7 +37,7 @@
     align-self: flex-start;
     width: max-content;
 }
-.form-login>.titulo-link,
+.form-login > .titulo-link,
 .exibir {
     align-self: flex-end;
     width: max-content;
@@ -46,5 +46,6 @@
 .form-login .btn {
     margin-top: 40px;
     align-self: center;
+    border-radius: 10px;
+    /* margin: ; */
 }
-
