@@ -4,7 +4,7 @@
     width: 100%;
     height: 60vh;
     padding: 100px 0;
-    background-color: var(--blue-logo)
+    background-color: var(--blue-logo);
 }
 
 .filtro-pedidos {
@@ -37,6 +37,8 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+
+    margin-bottom: -120px;
 
 }
 
@@ -136,11 +138,12 @@
     width: max-content;
     margin: auto;
     display: flex;
+
+    margin-bottom: 50px;
 }
 
 .paginas {
     display: flex;
-    margin-bottom: 50px;
 }
 
 .cont-pagina {
