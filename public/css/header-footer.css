@@ -3,9 +3,9 @@
 .nav-bar {
     width: 100%;
     max-width: 1440px;
-    height: 80px;
+    height: 100px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,7 +13,8 @@
 
 /* Logo */
 .nav-logo {
-    width: 150px;
+    width: 200px;
+    height: 40px;
 }
 
 /* Menu */
@@ -26,9 +27,9 @@
 
 .nav-link {
     display: inline-block;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: 500;
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
 /* Perfil */
@@ -49,7 +50,7 @@
 
 .footer-bar {
     width: 100%;
-    height: auto;
+    height: 200px;
     padding: 20px 40px;
     display: flex;
     flex-direction: row;

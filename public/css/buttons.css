@@ -10,9 +10,11 @@
     border: none;
     cursor: pointer;
     margin-top: 20px;
-    transition: .5s ease;
+    transition: 5s ease;
     font-family: 'Red Hat Display', sans-serif;
 }
+
+
 
 .btn-red {
     background-color: var(--red-logo);
@@ -27,4 +29,8 @@
     font-size: 1.8rem;
     font-weight: 500;
     margin-right: 20px;
+}
+
+.btn:hover {
+    filter: brightness(0.9);
 }
