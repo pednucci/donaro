@@ -11,6 +11,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-image: url(/public/assets/img/background-painel.svg);
 }
 
 .menu-painel {
@@ -44,7 +46,21 @@
     font-size: 5rem;
     font-weight: bold;
 
-    position: absolute;
-
     color: var(--white);
+}
+
+.container-relatorio {
+    width: 100%;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-depoimento {
+    margin-bottom: 20px;
+    margin-top: 40px;
 }

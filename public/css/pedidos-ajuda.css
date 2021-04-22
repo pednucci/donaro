@@ -74,7 +74,7 @@
     border: 0.5px solid var(--gray-border);
 
     display: grid;
-    grid-template-columns: 0.65fr 1fr 1fr 1fr;
+    grid-template-columns: 0.65fr 0.85fr 1fr 0.7fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
@@ -108,9 +108,19 @@
 
 .card-confirm { grid-area: card-confirm; }
 .card-situacao { grid-area: card-situacao; }
-.situacao-card {
+.situacao-card-pendente {
     font-size: 1.7rem;
-    color: yellow;
+    color: #E1CB05;
+}
+
+.situacao-card-entregue {
+    font-size: 1.7rem;
+    color: #43D200;
+}
+
+.situacao-card-na {
+    font-size: 1.7rem;
+    color: #CC1408;
 }
 
 .card-btn { grid-area: card-btn; }
@@ -125,6 +135,8 @@
     color: var(--white);
     border-radius: 10px;
     border-style: none;
+
+    cursor: pointer;
 }
 
 .numeracao-paginas {
@@ -138,7 +150,6 @@
 
 .paginas {
     display: flex;
-    margin-bottom: 50px;
 }
 
 .cont-pagina {

@@ -136,11 +136,12 @@
     width: max-content;
     margin: auto;
     display: flex;
+
+    margin-bottom: 50px;
 }
 
 .paginas {
     display: flex;
-    margin-bottom: 50px;
 }
 
 .cont-pagina {
