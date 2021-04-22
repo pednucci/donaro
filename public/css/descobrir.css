@@ -17,11 +17,12 @@
 .input-form[name="estado"] {
     border-radius: 10px 0 0 10px;
 }
+
 .input-form[name="cidade"] {
     border-radius: 0;
 }
 
-.btn-red {
+.background.btn-red {
     margin: 0;
     border-radius: 0 10px 10px 0;
     height: 40px;

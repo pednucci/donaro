@@ -3,34 +3,35 @@
 
 .btn {
     width: max-content;
-    min-width: 100px;
     height: max-content;
+    min-width: 200px;
+    min-height: 50px;
+
+    margin-top: 20px;
     padding: 5px 20px;
+
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
-    transition: 5s ease;
+
+    transition: filter 0.5s;
+
     font-family: 'Red Hat Display', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
+.btn:hover {
+    filter: brightness(0.9);
+}
 
 
 .btn-red {
     background-color: var(--red-logo);
     color: var(--white);
-    font-size: 1.8rem;
-    font-weight: 500;
 }
 
 .btn-blue {
     background-color: var(--blue-logo);
     color: var(--white);
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-right: 20px;
-}
-
-.btn:hover {
-    filter: brightness(0.9);
 }
