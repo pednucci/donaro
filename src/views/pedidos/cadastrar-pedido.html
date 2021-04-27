@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Donaro -->
+        <link rel="stylesheet" href="/public/css/global.css" />
+        <link rel="stylesheet" href="/public/css/cadastro-pedido.css" />
+
+        <title>Cadastrar pedido</title>
+    </head>
+
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <div class="nav-logo">
+                    <img
+                        src="/public/assets/img/donaro_logo.svg"
+                        class="logo"
+                        alt="Logo Donaro"
+                    />
+                </div>
+                <div class="nav-menu">
+                    <ul class="row nav-list">
+                        <a href="" class="nav-link">
+                            <li>Descobrir</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Criar</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Painel</li>
+                        </a>
+                    </ul>
+                    <div class="row nav-profile">
+                        <div class="img-wrapper">
+                            <img
+                                src="/public/assets/img/nav-person.svg"
+                                class="img-profile"
+                                alt="Foto de perfil"
+                            />
+                        </div>
+                        <img
+                            src="/public/assets/img/arrow-down.svg"
+                            alt="Icone de seta"
+                        />
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="form-container column">
+                <h1 class="titulo">Cadastrar pedido</h1>
+                <p class="subtitulo">Dados iniciais</p>
+                <form class="form-login column" action="" method="">
+                    <label for="">Título</label>
+                    <input class="input-form" type="text" name="" id="" />
+
+                    <label for="">Data de encerramento</label>
+                    <input class="input-form" type="date" name="" id="" />
+
+                    <label for="">Meta</label>
+                    <select class="input-form" name="" id="">
+                        <option value="aberta">Aberta</option>
+                        <option value="fechada">Fechada</option>
+                    </select>
+
+                    <p class="subtitulo">Local de entrega do alimento</p>
+
+                    <label for="">Estado</label>
+                    <select class="input-form" name="" id=""></select>
+
+                    <label for="">Cidade</label>
+                    <input class="input-form" type="text" name="" id="" />
+
+                    <p class="subtitulo">Alimentos (Máx: 4)</p>
+
+                    <label for="">Tipo de alimento</label>
+                    <select class="input-form" name="" id="">
+                        <option value="solido">Sólido</option>
+                    </select>
+
+                    <div class="alimentos">
+                        <label for="">Alimento</label>
+                        <select class="input-form" name="" id="">
+                            <option value="arroz">Arroz</option>
+                        </select>
+
+                        <label for="">Quantidade</label>
+                        <input
+                            class="input-form"
+                            type="number"
+                            name=""
+                            id=""
+                            min="1"
+                        />
+
+                        <label for="">Medida</label>
+                        <select class="input-form" name="" id="">
+                            <option value="kg">KG</option>
+                        </select>
+
+                        <button class="btn btn-red">
+                            <img
+                                src="/public/assets/img/trash.svg"
+                                alt="Icone lixo"
+                            />
+                        </button>
+                    </div>
+                    <input
+                        class="btn btn-blue"
+                        value="+ Adicionar mais um alimento"
+                    />
+
+                    <p class="subtitulo">Dados finais</p>
+
+                    <label for="">Adicionar descrição da sua ação social</label>
+                    <textarea
+                        class="input-form"
+                        name=""
+                        id=""
+                        cols="30"
+                        rows="10"
+                    ></textarea>
+
+                    <label for=""
+                        >Adicionar imagem de capa (Máximo: 5 imagens)</label
+                    >
+                    <input class="input-form" type="file" name="" id="" />
+
+                    <input
+                        class="btn btn-blue"
+                        type="submit"
+                        value="Cadatrar pedido"
+                    />
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
