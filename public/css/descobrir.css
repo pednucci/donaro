@@ -2,16 +2,24 @@
 
 .background {
     width: 100%;
-    height: 60vh;
-    padding: 100px 0;
+    height: 300px;
     background-color: var(--blue-logo);
 }
 
 .filtro-pedidos {
     width: 60%;
+    height: 100%;
     margin: auto;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+}
+
+.filtro-pedidos .titulo {
+    font-size: 3.5rem;
+}
+
+.filtro-pedidos .sub.titulo {
+    font-size: 2rem;
 }
 
 .input-form[name="estado"] {
@@ -22,21 +30,35 @@
     border-radius: 0;
 }
 
-.background.btn-red {
+.filtro-pedidos .btn-red {
     margin: 0;
     border-radius: 0 10px 10px 0;
-    height: 40px;
+    min-height: 40px;
+}
+
+.filtro-pedidos .row {
+    justify-content: flex-start;
 }
 
 /* #endregion */
 
 /* #region - Pedidos */
 
-.pedidos {
-    width: 80%;
+
+.pedidos-container {
+    width: 70%;
     margin: auto;
-    position: relative;
-    top: -170px;
+
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; */
+}
+
+.pedidos {
+    /* width: 80%;
+    margin: auto; */
+
     display: flex;
     flex-direction: row;
     justify-content: center;
