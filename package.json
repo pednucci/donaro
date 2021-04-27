@@ -1,0 +1,22 @@
+{
+  "name": "donaro",
+  "version": "1.0.0",
+  "description": "A charity platform for social actions",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pednucci/donaro.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pednucci/donaro/issues"
+  },
+  "homepage": "https://github.com/pednucci/donaro#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
