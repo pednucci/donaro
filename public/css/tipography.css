@@ -9,14 +9,14 @@
     margin-bottom: 20px;
 }
 
-.subtitulo {
+.sub.titulo {
     font-size: 2.5rem;
     font-weight: 500;
 
     color: var(--black-logo);
 }
 
-.titulo-black {
+.titulo.black {
     color: var(--black-logo)
 }
 
@@ -57,9 +57,4 @@
 .desc-depoimento {
     color: var(--gray-minor-font);
     line-height: 165%;
-}
-
-.subtitulo-footer {
-    font-size: 2.5rem;
-    font-weight: 600;
 }

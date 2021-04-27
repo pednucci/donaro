@@ -1,6 +1,6 @@
 .form-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 720px;
     height: auto;
     margin: 10vh auto;
     padding: 20px;
@@ -13,7 +13,7 @@
     margin-bottom: 10px;
 }
 
-.form-container .subtitulo {
+.form-container .sub.titulo {
     font-size: 2.5rem;
     align-self: flex-start;
     margin: 40px 0 20px 0;
@@ -24,28 +24,66 @@
     font-weight: bold;
 }
 
-.form-login .input-form {
-    margin: 10px 0;
+.fas {
+    color: white;
 }
 
-.form-login > .titulo-link,
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-content: center;
+    column-gap: 60px;
+}
+
+.form-grid div {
+    width: 100%;
+    height: 100%;
+
+    justify-self: center;
+    align-self: center;
+}
+
+.form-grid .input-form {
+    width: 150%;
+}
+
+.alimentos .btn-red {
+    min-height: 40px;
+    min-width: 30px;
+    margin: 0 0 10px 0;
+
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.btn.adicionar {
+    min-height: 40px;
+    width: 100%;
+    margin: 0;
+}
+
+
+.form-login>.titulo-link,
 .exibir {
     align-self: flex-end;
     width: max-content;
 }
+
 .form-login .continuar {
     align-self: flex-start;
     width: max-content;
 }
-.form-login > .titulo-link,
+
+.form-login>.titulo-link,
 .exibir {
     align-self: flex-end;
     width: max-content;
 }
 
-.form-login .btn {
+/* .form-login .btn {
     margin-top: 40px;
     align-self: center;
     border-radius: 10px;
-    /* margin: ; */
-}
+    margin: ;
+} */
