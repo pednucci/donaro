@@ -7,7 +7,7 @@
 }
 
 .filtro-pedidos {
-    width: 60%;
+    width: 70%;
     height: 100%;
     margin: auto;
     display: flex;
@@ -45,13 +45,8 @@
 /* #region - Pedidos */
 
 .pedidos-container {
-    width: 60%;
+    width: 70%;
     margin: auto;
-
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap; */
 }
 
 .pedidos-container .titulo {
@@ -64,65 +59,66 @@
 }
 
 .pedido {
-    width: 250px;
-    height: 350px;
-    margin: 20px 20px;
+    width: 400px;
+    height: max-content;
+
+    margin: 20px;
+    margin-left: 0;
+
     border-radius: 10px;
     box-shadow: var(--border-shadow);
+
     overflow: hidden;
 }
 
 .imagem-pedido {
     width: 100%;
-    height: 150px;
+    height: 180px;
+
     background-image: url("/public/assets/img/pedido_almoco-creche.png");
     background-size: cover;
     background-position: center;
+
 }
 
 .informacoes-pedido {
-    height: 200px;
-    display: flex;
-    padding: 10px;
-    flex-direction: column;
+    height: max-content;
+    padding: 20px;
+
     justify-content: space-between;
+    gap: 20px;
 }
+
 
 .descricao-pedido {
     height: 50px;
-    display: flex;
+
     margin-bottom: 20px;
+
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.descricao-pedido p {
-    font-size: 1.3em;
-    font-weight: bold;
+.descricao-pedido .titulo {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+}
+
+.descricao-pedido .sub.titulo,
+.arrecadado {
+    font-size: 2rem;
 }
 
 .progresso-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.progresso-container p {
-    font-size: 1.2em;
-}
-
-.meta {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    margin-bottom: 10px;
 }
 
 .porcentagem {
     width: 100%;
-    margin-top: 3px;
+
+    margin-bottom: 5px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -130,19 +126,37 @@
 
 .progresso-barra,
 .progresso-barra * {
-    width: 200px;
-    height: 10px;
+    width: 100%;
+    height: 15px;
+
     background-color: var(--blue-logo-transparent);
     border-radius: 20px;
 }
 
 .progresso-atual {
-    width: 50px;
+    width: 54%;
+
     background-color: var(--blue-logo);
 }
 
-.subtitulo-pedido div {
+.arrecadado * {
+    color: var(--blue-logo);
+    font-weight: 500;
+}
+
+.rodape-pedido::before {
+    content: "";
+    display: block;
+
+    width: 100%;
+    margin-bottom: 10px;
+
+    border-top: 1px solid var(--gray-border);
+}
+
+.rodape-pedido div {
     display: flex;
+
     color: var(--gray-minor-font);
 }
 
@@ -155,6 +169,7 @@
 /* #region - Numeração das páginas */
 .numeracao-paginas {
     width: max-content;
+
     margin: auto;
     display: flex;
 
@@ -168,11 +183,15 @@
 .cont-pagina {
     min-width: 45px;
     height: 50px;
-    text-align: center;
+
     margin: 3px;
     padding: 10px;
+
+    text-align: center;
     font-size: 2rem;
+
     background-color: var(--gray-background);
+
     border: var(--border-form);
     border-radius: 5px;
     box-shadow: var(--border-shadow);
