@@ -1,7 +1,7 @@
 .form-container {
     width: 500px;
     height: auto;
-    margin: 10vh auto;
+    margin: auto;
     padding: 20px;
     border-radius: 20px;
     border: var(--border-form);
@@ -22,15 +22,17 @@
     margin: 5px 0;
 }
 
-.form-login>.titulo-link,
+.form-login .titulo-link,
 .exibir {
     align-self: flex-end;
     width: max-content;
 }
+
 .form-login .continuar {
     align-self: flex-start;
     width: max-content;
 }
+
 .form-login>.titulo-link,
 .exibir {
     align-self: flex-end;
@@ -41,4 +43,3 @@
     margin-top: 40px;
     align-self: center;
 }
-

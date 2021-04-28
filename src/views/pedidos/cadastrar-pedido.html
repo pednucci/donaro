@@ -62,18 +62,23 @@
         <main>
             <div class="form-container column">
                 <h1 class="titulo">Cadastrar pedido</h1>
-                <p class="sub titulo">Dados iniciais</p>
+                <h2 class="sub titulo">Dados iniciais</h2>
                 <form class="form-login column" action="" method="">
                     <label for="">Título</label>
                     <input class="input-form" type="text" name="" id="" />
 
                     <div class="row">
-                        <div class="column">
+                        <div>
                             <label for="">Data de encerramento</label>
-                            <input class="input-form" type="date" name="" id="" />
+                            <input
+                                class="input-form"
+                                type="date"
+                                name=""
+                                id=""
+                            />
                         </div>
 
-                        <div class="column">
+                        <div>
                             <label for=""
                                 >Meta <i class="fas fa-info-circle"></i
                             ></label>
@@ -84,83 +89,97 @@
                         </div>
                     </div>
 
-                    <p class="sub titulo">Local de entrega do alimento</p>
+                    <h2 class="sub titulo">Local de entrega do alimento</h2>
 
-                    <div>
-                        <label for="">Estado</label>
-                        <select class="input-form" name="" id=""></select>
+                    <div class="row">
+                        <div>
+                            <label for="">Estado</label>
+                            <select class="input-form" name="" id=""></select>
+                        </div>
 
-                        <label for="">Cidade</label>
-                        <input class="input-form" type="text" name="" id="" />
+                        <div>
+                            <label for="">Cidade</label>
+                            <input
+                                class="input-form"
+                                type="text"
+                                name=""
+                                id=""
+                            />
+                        </div>
                     </div>
 
-                    <p class="sub titulo">Alimentos (Máximo: 4)</p>
+                    <h2 class="sub titulo">Alimentos (Máximo: 4)</h2>
 
-                    <div class="alimentos ">
-                        <div class="form-grid alimento">
-                            <div>
-                                <label for="">Tipo de alimento</label>
-                                <select class="input-form" name="" id="">
-                                    <option value="solido">Sólido</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="">Alimento</label>
-                                <select class="input-form" name="" id="">
-                                    <option value="arroz">Arroz</option>
-                                </select>
-                            </div>
-                            
-                            <div>
-                                <label for="">Quantidade</label>
-                                <input
-                                    class="input-form"
-                                    type="number"
-                                    name=""
-                                    id=""
-                                    min="1"
-                                />
-                            </div>
-                            
-                            <div>
-                                <label for="">Medida</label>
-                                <select class="input-form" name="" id="">
-                                    <option value="kg">KG</option>
-                                </select>
-                            </div>
-                            
-                            <button class="btn btn-red" type="button">
-                                <img
-                                    src="/public/assets/img/trash.svg"
-                                    alt="Icone lixo"
-                                />
-                            </button>
+                    <div class="alimentos row">
+                        <div>
+                            <label for="">Tipo de alimento</label>
+                            <select class="input-form" name="" id="">
+                                <option value="solido">Sólido</option>
+                            </select>
                         </div>
-                    <button class="btn btn-blue adicionar">
+                        <div>
+                            <label for="">Alimento</label>
+                            <select class="input-form" name="" id="">
+                                <option value="arroz">Arroz</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="">Quantidade</label>
+                            <input
+                                class="input-form"
+                                type="number"
+                                name=""
+                                id=""
+                                min="1"
+                            />
+                        </div>
+
+                        <div>
+                            <label for="">Medida</label>
+                            <select class="input-form" name="" id="">
+                                <option value="kg">KG</option>
+                            </select>
+                        </div>
+
+                        <button class="btn red" type="button">
+                            <img
+                                src="/public/assets/img/trash.svg"
+                                alt="Icone lixo"
+                            />
+                        </button>
+                    </div>
+
+                    <button class="btn blue adicionar" type="button">
                         + Adicionar mais um alimento
                     </button>
 
-                    <p class="sub titulo">Dados finais</p>
+                    <h2 class="sub titulo">Dados finais</h2>
 
-                    <div class="column">
-                        <label for="">Adicionar descrição da sua ação social</label>
-                        <textarea
-                            class="input-form"
-                            name=""
-                            id=""
-                            cols="30"
-                            rows="10"
-                        ></textarea>
-                    </div>
+                    <div class="texts column">
+                        <div class="column">
+                            <label for=""
+                                >Adicionar descrição da sua ação social</label
+                            >
+                            <textarea
+                                class="input-form"
+                                name=""
+                                id=""
+                                cols="30"
+                                rows="10"
+                                placeholder="Insira a relevância por trás do seu pedido, descrevendo a ação social."
+                            ></textarea>
+                        </div>
 
-                    <div class="column">
                         <label for=""
                             >Adicionar imagem de capa (Máximo: 5 imagens)</label
                         >
                         <input class="input-form" type="file" name="" id="" />
-                        
+
+                        in
+
                         <input
-                            class="btn btn-blue"
+                            class="btn blue"
                             type="submit"
                             value="Cadastrar pedido"
                         />

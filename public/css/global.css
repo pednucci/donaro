@@ -79,3 +79,17 @@ body {
     justify-content: center;
     align-items: space-between;
 }
+
+textarea.input-form {
+    min-height: 200px;
+    max-height: 200px;
+
+    min-width: 100%;
+    max-width: 100%;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

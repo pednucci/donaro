@@ -26,12 +26,12 @@
 }
 
 
-.btn-red {
+.btn.red {
     background-color: var(--red-logo);
     color: var(--white);
 }
 
-.btn-blue {
+.btn.blue {
     background-color: var(--blue-logo);
     color: var(--white);
 }

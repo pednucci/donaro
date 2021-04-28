@@ -30,7 +30,7 @@
     border-radius: 0;
 }
 
-.filtro-pedidos .btn-red {
+.filtro-pedidos .btn.red {
     margin: 0;
     border-radius: 0 10px 10px 0;
     min-height: 40px;
@@ -44,9 +44,8 @@
 
 /* #region - Pedidos */
 
-
 .pedidos-container {
-    width: 70%;
+    width: 60%;
     margin: auto;
 
     /* display: flex;
@@ -55,12 +54,11 @@
     flex-wrap: wrap; */
 }
 
-.pedidos {
-    /* width: 80%;
-    margin: auto; */
+.pedidos-container .titulo {
+    margin: 20px 0;
+}
 
-    display: flex;
-    flex-direction: row;
+.pedidos {
     justify-content: center;
     flex-wrap: wrap;
 }
