@@ -1,0 +1,214 @@
+/* #region  Configuração Geral*/
+.container-pedido {
+  width: 960px;
+  height: auto;
+  /* max-width: 960px; */
+
+  margin: auto;
+  margin-bottom: 20vh;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.subcontainer-pedido {
+  margin-top: 30px;
+
+  justify-content: center;
+  align-items: flex-start;
+
+
+  gap: 60px;
+}
+
+
+/* #endregion */
+
+/* #region Descrição*/
+.container-descricao {
+  width: 550px;
+  height: auto;
+
+  border-radius: 10px;
+  border: var(--border-form);
+  box-shadow: var(--border-shadow);
+
+  overflow: hidden;
+}
+
+.container-descricao img {
+  width: 550px;
+}
+
+.descricao {
+  padding: 25px;
+}
+
+.descricao p {
+  font-size: 2rem;
+
+  text-align: justify;
+}
+
+.descricao .btn {
+  margin-top: 60px;
+}
+
+/* #endregion */
+
+/* #region Alimentos*/
+
+.container-alimentos {
+  width: 350px;
+  height: auto;
+
+  padding: 15px;
+
+  border-radius: 10px;
+  border: var(--border-form);
+  box-shadow: var(--border-shadow);
+
+  gap: 20px;
+}
+
+/* Header */
+
+.usuario .img-wrapper {
+  height: 50px;
+  width: 50px;
+
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+
+.header-pedido div {
+  display: flex;
+
+  justify-content: flex-end;
+
+  color: var(--gray-minor-font);
+}
+
+.header-pedido p {
+  font-size: 1.5rem;
+
+  color: var(--gray-minor-font);
+}
+
+.header-pedido div img {
+  width: 15px;
+  margin-right: 3px;
+}
+
+
+/* Main */
+
+.main-alimentos {
+  gap: 20px;
+}
+
+.main-alimentos::before {
+  content: "";
+  display: block;
+
+  width: 100%;
+
+  border: var(--border-form);
+}
+
+.main-alimentos .titulo {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.arrecadado {
+  margin-right: 15px;
+}
+
+.arrecadado * {
+  color: var(--blue-link);
+  font-weight: 500;
+}
+
+.alimento::after {
+  content: "";
+  display: block;
+
+  margin-top: 10px;
+  width: 100%;
+
+  border: var(--border-form);
+  border-color: var(--gray-message);
+}
+
+.alimento.concluido {
+  opacity: 0.4;
+}
+
+.alimento.concluido p {
+  color: var(--blue-logo);
+}
+
+.alimento .sub.titulo {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.alimento .porcentagem {
+  width: 100%;
+
+  margin: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta p {
+  font-weight: 500;
+}
+
+.main-alimentos .btn {
+  width: 100%;
+}
+
+.main-alimentos :nth-child(4) .progresso-atual {
+  width: 38%;
+}
+
+.main-alimentos :nth-child(5) .progresso-atual {
+  width: 30%;
+}
+
+
+/* Footer */
+
+.footer-alimentos {
+  height: 100px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-alimentos::before {
+  content: "";
+  display: block;
+
+  width: 100%;
+  margin-bottom: 20px;
+
+  border: var(--border-form);
+}
+
+.footer-alimentos .sub {
+  font-size: 2rem;
+}
+
+.redes-sociais {
+  gap: 30px;
+}
+
+
+
+/* #endregion */

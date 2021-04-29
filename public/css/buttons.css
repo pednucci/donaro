@@ -31,6 +31,12 @@
     color: var(--white);
 }
 
+.btn.ghost-red {
+    background-color: var(--white);
+    color: var(--red-denounce);
+    border: var(--border-red);
+}
+
 .btn.blue {
     background-color: var(--blue-logo);
     color: var(--white);
