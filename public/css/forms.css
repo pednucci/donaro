@@ -1,18 +1,19 @@
 .form-container {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   height: auto;
   margin: auto;
-  padding: 20px;
+  padding: 40px;
   border-radius: 20px;
   border: var(--border-form);
 }
 
 .form-container .sub.titulo {
-  font-size: 2.5rem;
+  font-size: 3rem;
   align-self: center;
+
   margin-bottom: 20px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .form-login .row:not(.chkbx-container) {
