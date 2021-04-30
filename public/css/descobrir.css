@@ -50,7 +50,7 @@
 }
 
 .pedidos-container .titulo {
-    margin: 20px 0;
+    margin: 50px 0;
 }
 
 .pedidos {
@@ -62,7 +62,7 @@
     width: 400px;
     height: max-content;
 
-    margin: 20px;
+    margin: 20px 40px;
     margin-left: 0;
 
     border-radius: 10px;
@@ -203,10 +203,9 @@
 .numeracao-paginas {
     width: max-content;
 
-    margin: auto;
+    margin: 50px auto;
     display: flex;
 
-    margin-bottom: 50px;
 }
 
 .paginas {

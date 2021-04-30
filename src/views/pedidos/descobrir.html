@@ -1,223 +1,554 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS Donaro -->
+        <link rel="stylesheet" href="/public/css/global.css" />
+        <link rel="stylesheet" href="/public/css/descobrir.css" />
 
-    <!-- CSS Donaro -->
-    <link rel="stylesheet" href="/public/css/global.css">
-    <link rel="stylesheet" href="/public/css/descobrir.css">
+        <title>Descobrir</title>
+    </head>
 
-    <title>Descobrir</title>
-</head>
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <div class="nav-logo">
+                    <img
+                        src="/public/assets/img/donaro_logo.svg"
+                        class="logo"
+                        alt="Logo Donaro"
+                    />
+                </div>
+                <div class="nav-menu">
+                    <ul class="row nav-list">
+                        <a href="" class="nav-link">
+                            <li>Descobrir</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Criar</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Painel</li>
+                        </a>
+                    </ul>
+                    <div class="row nav-profile">
+                        <div class="img-wrapper">
+                            <img
+                                src="/public/assets/img/nav-person.svg"
+                                class="img-profile"
+                                alt="Foto de perfil"
+                            />
+                        </div>
+                        <img
+                            src="/public/assets/img/arrow-down.svg"
+                            alt="Icone de seta"
+                        />
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-<body>
-    <header>
-        <nav class="nav-bar">
-            <div class="nav-logo">
-                <img src="/public/assets/img/donaro_logo.svg" class="logo" alt="Logo Donaro">
+        <main>
+            <div class="background">
+                <form class="filtro-pedidos column" action="" method="">
+                    <h1 class="titulo white">Insira o estado e a cidade</h1>
+                    <h2 class="sub titulo white">
+                        Encontre eventos de combate à fome perto de você
+                    </h2>
+                    <div class="row">
+                        <input
+                            type="text"
+                            name="estado"
+                            class="input-form"
+                            id="txt-estado"
+                            placeholder="Estado"
+                        />
+                        <input
+                            type="text"
+                            name="cidade"
+                            class="input-form"
+                            id="txt-cidade"
+                            placeholder="Cidade"
+                        />
+                        <button class="btn red" type="submit">Procurar</button>
+                    </div>
+                </form>
             </div>
-            <div class="nav-menu">
-                <ul class="row nav-list">
-                    <a href="" class="nav-link">
-                        <li>Descobrir</li>
+            <div class="pedidos-container column">
+                <h1 class="titulo black">Pedidos mais recentes</h1>
+                <div class="pedidos row">
+                    <div class="pedido falta-pouco">
+                        <div class="imagem-pedido"></div>
+                        <div class="informacoes-pedido column">
+                            <div class="descricao-pedido">
+                                <h1 class="titulo">
+                                    Almoço na creche Arco-Íris
+                                </h1>
+
+                                <h2 class="sub titulo">
+                                    Alimentos:
+                                    <span class="titulo-link">Arroz</span>,
+                                    <span class="titulo-link">Feijão</span>,
+                                    <span class="titulo-link">Óleo</span>,
+                                    <span class="titulo-link">Azeite</span>
+                                </h2>
+                            </div>
+                            <div class="progresso-container column">
+                                <div class="porcentagem">
+                                    <div class="progresso-barra">
+                                        <div class="progresso-atual"></div>
+                                    </div>
+                                </div>
+                                <div class="arrecadado">
+                                    <p><span>54</span>% arrecadado</p>
+                                </div>
+                            </div>
+                            <div class="rodape-pedido">
+                                <div class="row">
+                                    <div class="usuario row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_andre.png"
+                                                alt="Foto do usuário"
+                                            />
+                                        </div>
+                                        <div class="column">
+                                            <h2 class="">André Paiva</h2>
+                                            <p class="titulo-gray">
+                                                Santos, SP
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_relogio.svg"
+                                                alt="Icone relógio"
+                                            />
+                                            <p>Expira em: 10 dias</p>
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_pin.svg"
+                                                alt="Icone pin"
+                                            />
+                                            <p>Santos, SP</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="imagem-pedido"></div>
+                        <div class="informacoes-pedido column">
+                            <div class="descricao-pedido">
+                                <h1 class="titulo">
+                                    Almoço na creche Arco-Íris
+                                </h1>
+
+                                <h2 class="sub titulo">
+                                    Alimentos:
+                                    <span class="titulo-link">Arroz</span>,
+                                    <span class="titulo-link">Feijão</span>,
+                                    <span class="titulo-link">Óleo</span>,
+                                    <span class="titulo-link">Azeite</span>
+                                </h2>
+                            </div>
+                            <div class="progresso-container column">
+                                <div class="porcentagem">
+                                    <div class="progresso-barra">
+                                        <div class="progresso-atual"></div>
+                                    </div>
+                                </div>
+                                <div class="arrecadado">
+                                    <p><span>54</span>% arrecadado</p>
+                                </div>
+                            </div>
+                            <div class="rodape-pedido">
+                                <div class="row">
+                                    <div class="usuario row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_andre.png"
+                                                alt="Foto do usuário"
+                                            />
+                                        </div>
+                                        <div class="column">
+                                            <h2 class="">André Paiva</h2>
+                                            <p class="titulo-gray">
+                                                Santos, SP
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_relogio.svg"
+                                                alt="Icone relógio"
+                                            />
+                                            <p>Expira em: 10 dias</p>
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_pin.svg"
+                                                alt="Icone pin"
+                                            />
+                                            <p>Santos, SP</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="imagem-pedido"></div>
+                        <div class="informacoes-pedido column">
+                            <div class="descricao-pedido">
+                                <h1 class="titulo">
+                                    Almoço na creche Arco-Íris
+                                </h1>
+
+                                <h2 class="sub titulo">
+                                    Alimentos:
+                                    <span class="titulo-link">Arroz</span>,
+                                    <span class="titulo-link">Feijão</span>,
+                                    <span class="titulo-link">Óleo</span>,
+                                    <span class="titulo-link">Azeite</span>
+                                </h2>
+                            </div>
+                            <div class="progresso-container column">
+                                <div class="porcentagem">
+                                    <div class="progresso-barra">
+                                        <div class="progresso-atual"></div>
+                                    </div>
+                                </div>
+                                <div class="arrecadado">
+                                    <p><span>54</span>% arrecadado</p>
+                                </div>
+                            </div>
+                            <div class="rodape-pedido">
+                                <div class="row">
+                                    <div class="usuario row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_andre.png"
+                                                alt="Foto do usuário"
+                                            />
+                                        </div>
+                                        <div class="column">
+                                            <h2 class="">André Paiva</h2>
+                                            <p class="titulo-gray">
+                                                Santos, SP
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_relogio.svg"
+                                                alt="Icone relógio"
+                                            />
+                                            <p>Expira em: 10 dias</p>
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_pin.svg"
+                                                alt="Icone pin"
+                                            />
+                                            <p>Santos, SP</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pedido falta-pouco">
+                        <div class="imagem-pedido"></div>
+                        <div class="informacoes-pedido column">
+                            <div class="descricao-pedido">
+                                <h1 class="titulo">
+                                    Almoço na creche Arco-Íris
+                                </h1>
+
+                                <h2 class="sub titulo">
+                                    Alimentos:
+                                    <span class="titulo-link">Arroz</span>,
+                                    <span class="titulo-link">Feijão</span>,
+                                    <span class="titulo-link">Óleo</span>,
+                                    <span class="titulo-link">Azeite</span>
+                                </h2>
+                            </div>
+                            <div class="progresso-container column">
+                                <div class="porcentagem">
+                                    <div class="progresso-barra">
+                                        <div class="progresso-atual"></div>
+                                    </div>
+                                </div>
+                                <div class="arrecadado">
+                                    <p><span>54</span>% arrecadado</p>
+                                </div>
+                            </div>
+                            <div class="rodape-pedido">
+                                <div class="row">
+                                    <div class="usuario row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_andre.png"
+                                                alt="Foto do usuário"
+                                            />
+                                        </div>
+                                        <div class="column">
+                                            <h2 class="">André Paiva</h2>
+                                            <p class="titulo-gray">
+                                                Santos, SP
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_relogio.svg"
+                                                alt="Icone relógio"
+                                            />
+                                            <p>Expira em: 10 dias</p>
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_pin.svg"
+                                                alt="Icone pin"
+                                            />
+                                            <p>Santos, SP</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pedido falta-pouco">
+                        <div class="imagem-pedido"></div>
+                        <div class="informacoes-pedido column">
+                            <div class="descricao-pedido">
+                                <h1 class="titulo">
+                                    Almoço na creche Arco-Íris
+                                </h1>
+
+                                <h2 class="sub titulo">
+                                    Alimentos:
+                                    <span class="titulo-link">Arroz</span>,
+                                    <span class="titulo-link">Feijão</span>,
+                                    <span class="titulo-link">Óleo</span>,
+                                    <span class="titulo-link">Azeite</span>
+                                </h2>
+                            </div>
+                            <div class="progresso-container column">
+                                <div class="porcentagem">
+                                    <div class="progresso-barra">
+                                        <div class="progresso-atual"></div>
+                                    </div>
+                                </div>
+                                <div class="arrecadado">
+                                    <p><span>54</span>% arrecadado</p>
+                                </div>
+                            </div>
+                            <div class="rodape-pedido">
+                                <div class="row">
+                                    <div class="usuario row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_andre.png"
+                                                alt="Foto do usuário"
+                                            />
+                                        </div>
+                                        <div class="column">
+                                            <h2 class="">André Paiva</h2>
+                                            <p class="titulo-gray">
+                                                Santos, SP
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_relogio.svg"
+                                                alt="Icone relógio"
+                                            />
+                                            <p>Expira em: 10 dias</p>
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_pin.svg"
+                                                alt="Icone pin"
+                                            />
+                                            <p>Santos, SP</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pedido">
+                        <div class="imagem-pedido"></div>
+                        <div class="informacoes-pedido column">
+                            <div class="descricao-pedido">
+                                <h1 class="titulo">
+                                    Almoço na creche Arco-Íris
+                                </h1>
+
+                                <h2 class="sub titulo">
+                                    Alimentos:
+                                    <span class="titulo-link">Arroz</span>,
+                                    <span class="titulo-link">Feijão</span>,
+                                    <span class="titulo-link">Óleo</span>,
+                                    <span class="titulo-link">Azeite</span>
+                                </h2>
+                            </div>
+                            <div class="progresso-container column">
+                                <div class="porcentagem">
+                                    <div class="progresso-barra">
+                                        <div class="progresso-atual"></div>
+                                    </div>
+                                </div>
+                                <div class="arrecadado">
+                                    <p><span>54</span>% arrecadado</p>
+                                </div>
+                            </div>
+                            <div class="rodape-pedido">
+                                <div class="row">
+                                    <div class="usuario row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_andre.png"
+                                                alt="Foto do usuário"
+                                            />
+                                        </div>
+                                        <div class="column">
+                                            <h2 class="">André Paiva</h2>
+                                            <p class="titulo-gray">
+                                                Santos, SP
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_relogio.svg"
+                                                alt="Icone relógio"
+                                            />
+                                            <p>Expira em: 10 dias</p>
+                                        </div>
+                                        <div>
+                                            <img
+                                                class="svg-pedido"
+                                                src="/public/assets/img/icone_pin.svg"
+                                                alt="Icone pin"
+                                            />
+                                            <p>Santos, SP</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="numeracao-paginas">
+                <ul class="paginas">
+                    <a href="">
+                        <li class="num cont-pagina">1</li>
                     </a>
-                    <a href="" class="nav-link">
-                        <li>Criar</li>
+                    <a href="">
+                        <li class="num cont-pagina">2</li>
                     </a>
-                    <a href="" class="nav-link">
-                        <li>Painel</li>
+                    <a href="">
+                        <li class="num cont-pagina">3</li>
+                    </a>
+                    <a href="">
+                        <li class="num cont-pagina">4</li>
+                    </a>
+                    <a href="">
+                        <li class="num cont-pagina">5</li>
+                    </a>
+                    <a href="">
+                        <li class="num cont-pagina">6</li>
                     </a>
                 </ul>
-                <div class="row nav-profile">
-                    <div class="img-wrapper">
-                        <img src="/public/assets/img/nav-person.svg" class="img-profile" alt="Foto de perfil">
-                    </div>
-                    <img src="/public/assets/img/arrow-down.svg" alt="Icone de seta">
-                </div>
+                <a href="">
+                    <div class="cont-pagina">Seguinte &#62;</div>
+                </a>
             </div>
-        </nav>
-    </header>
+        </main>
 
-    <main>
-        <div class="background">
-            <form class="filtro-pedidos column" action="" method="">
-                <h1 class="titulo white">Insira o estado e a cidade</h1>
-                <h2 class="sub titulo white">Encontre eventos de combate à fome perto de você</h2>
-                <div class="row">
-                    <input type="text" name="estado" class="input-form" id="txt-estado" placeholder="Estado">
-                    <input type="text" name="cidade" class="input-form" id="txt-cidade" placeholder="Cidade">
-                    <input class="btn red" type="submit" value="Procurar"></input>
-                </div>
-            </form>
-        </div>
-        <div class="pedidos-container column">
-            <h1 class="titulo black">Pedidos mais recentes</h1>
-            <div class="pedidos row">
-                <div class="pedido falta-pouco">
-                    <div class="imagem-pedido"></div>
-                    <div class="informacoes-pedido column">
-                        <div class="descricao-pedido">
-                            <h1 class="titulo">Almoço na creche Arco-Íris</h1>
-
-                            <h2 class="sub titulo">Alimentos: 
-                                <span class="titulo-link">Arroz</span>, 
-                                <span class="titulo-link">Feijão</span>, 
-                                <span class="titulo-link">Óleo</span>, 
-                                <span class="titulo-link">Azeite</span>
-                            </h2>
-                        </div>
-                        <div class="progresso-container column">
-                            <div class="porcentagem">
-                                <div class="progresso-barra">
-                                    <div class="progresso-atual"></div>
-                                </div>
-                            </div>
-                            <div class="arrecadado">
-                                <p><span>54</span>% arrecadado</p>
-                            </div>
-                        </div>
-                        <div class="rodape-pedido">
-                            
-                            <div>
-                                <img class="svg-pedido" src="/public/assets/img/icone_relogio.svg" alt="Icone relógio">
-                                <p>Expira em: 10 dias</p>
-                            </div>
-                            <div>
-                                <img class="svg-pedido" src="/public/assets/img/icone_pin.svg" alt="Icone pin">
-                                <p>Santos, SP</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                </div>
-                <div class="pedido">
-                    <div class="imagem-pedido"></div>
-                    <div class="informacoes-pedido column">
-                        <div class="descricao-pedido">
-                            <h1 class="titulo">Almoço na creche Arco-Íris</h1>
-
-                            <h2 class="sub titulo">Alimentos: 
-                                <span class="titulo-link">Arroz</span>, 
-                                <span class="titulo-link">Feijão</span>, 
-                                <span class="titulo-link">Óleo</span>, 
-                                <span class="titulo-link">Azeite</span>
-                            </h2>
-                        </div>
-                        <div class="progresso-container column">
-                            <div class="porcentagem">
-                                <div class="progresso-barra">
-                                    <div class="progresso-atual"></div>
-                                </div>
-                            </div>
-                            <div class="arrecadado">
-                                <p><span>54</span>% arrecadado</p>
-                            </div>
-                        </div>
-                        <div class="rodape-pedido">
-                            
-                            <div>
-                                <img class="svg-pedido" src="/public/assets/img/icone_relogio.svg" alt="Icone relógio">
-                                <p>Expira em: 10 dias</p>
-                            </div>
-                            <div>
-                                <img class="svg-pedido" src="/public/assets/img/icone_pin.svg" alt="Icone pin">
-                                <p>Santos, SP</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                </div>
-
-            </div>
-        </div>
-        <div class="numeracao-paginas">
-            <ul class="paginas">
-                <a href="">
-                <li class="num cont-pagina">1</li>
+        <footer class="footer-bar">
+            <img
+                class="logo-footer"
+                src="/public/assets/img/Donaro_Logo_White.svg"
+                alt="Logo Donaro"
+            />
+            <ul class="menu-footer">
+                <h2 class="sub titulo white">Ações sociais</h2>
+                <a href="#">
+                    <li class="list-item">Criar</li>
                 </a>
-                <a href="">
-                <li class="num cont-pagina">2</li>
+                <a href="#">
+                    <li class="list-item">Fazer doação</li>
                 </a>
-                <a href="">
-                <li class="num cont-pagina">3</li>
-                </a>
-                <a href="">
-                <li class="num cont-pagina">4</li>
-                </a>
-                <a href="">
-                <li class="num cont-pagina">5</li>
-                </a>
-                <a href="">
-                <li class="num cont-pagina">6</li>
+                <a href="#">
+                    <li class="list-item">Descobrir</li>
                 </a>
             </ul>
-            <a href="">
-            <div class="cont-pagina">Seguinte &#62;</div>
-        </a>
-        </div>
-    </main>
-
-    <footer class="footer-bar">
-        <img
-            class="logo-footer"
-            src="/public/assets/img/Donaro_Logo_White.svg"
-            alt="Logo Donaro"
-        />
-        <ul class="menu-footer">
-            <h2 class="sub titulo white">Ações sociais</h2>
-            <a href="#">
-                <li class="list-item">Criar</li>
-            </a>
-            <a href="#">
-                <li class="list-item">Fazer doação</li>
-            </a>
-            <a href="#">
-                <li class="list-item">Descobrir</li>
-            </a>
-        </ul>
-        <ul class="menu-footer">
-            <h2 class="sub titulo white">Ajuda</h2>
-            <a href="#">
-                <li class="list-item">Fale conosco</li>
-            </a>
-            <a href="#">
-                <li class="list-item">Dúvidas frequentes</li>
-            </a>
-            <a href="#">
-                <li class="list-item">Atualizações</li>
-            </a>
-        </ul>
-        <ul class="menu-footer">
-            <h2 class="sub titulo white">Acompanhe nossas redes sociais</h2>
-            <div class="redes-sociais">
+            <ul class="menu-footer">
+                <h2 class="sub titulo white">Ajuda</h2>
                 <a href="#">
-                    <img
-                        class="icone-midias"
-                        src="/public/assets/img/logo-facebook.svg"
-                        alt="icone Facebook"
-                    />
+                    <li class="list-item">Fale conosco</li>
                 </a>
                 <a href="#">
-                    <img
-                        class="icone-midias"
-                        src="/public/assets/img/logo-instagram.svg"
-                        alt="icone Instagram"
-                    />
+                    <li class="list-item">Dúvidas frequentes</li>
                 </a>
                 <a href="#">
-                    <img
-                        class="icone-midias"
-                        src="/public/assets/img/logo-twitter.svg"
-                        alt="icone Twitter"
-                    />
+                    <li class="list-item">Atualizações</li>
                 </a>
-            </div>
-        </ul>
-    </footer>
-
-</body>
-
+            </ul>
+            <ul class="menu-footer">
+                <h2 class="sub titulo white">Acompanhe nossas redes sociais</h2>
+                <div class="redes-sociais">
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-facebook.svg"
+                            alt="icone Facebook"
+                        />
+                    </a>
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-instagram.svg"
+                            alt="icone Instagram"
+                        />
+                    </a>
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-twitter.svg"
+                            alt="icone Twitter"
+                        />
+                    </a>
+                </div>
+            </ul>
+        </footer>
+    </body>
 </html>
