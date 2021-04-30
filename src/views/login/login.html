@@ -7,7 +7,7 @@
 
         <!-- CSS Donaro -->
         <link rel="stylesheet" href="/public/css/global.css" />
-        <link rel="stylesheet" href="/public/css/login.css" />
+        <link rel="stylesheet" href="/public/css/forms.css" />
 
         <title>Login</title>
     </head>
@@ -23,37 +23,19 @@
                     />
                 </div>
                 <div class="nav-menu">
-                    <ul class="row nav-list">
-                        <a href="" class="nav-link">
-                            <li>Descobrir</li>
+                    <p class="nav-link">
+                        Não tem conta?
+                        <a href="./cadastro.html" class="nav-link titulo-link">
+                            Cadastrar-se
                         </a>
-                        <a href="" class="nav-link">
-                            <li>Criar</li>
-                        </a>
-                        <a href="" class="nav-link">
-                            <li>Painel</li>
-                        </a>
-                    </ul>
-                    <div class="row nav-profile">
-                        <div class="img-wrapper">
-                            <img
-                                src="/public/assets/img/nav-person.svg"
-                                class="img-profile"
-                                alt="Foto de perfil"
-                            />
-                        </div>
-                        <img
-                            src="/public/assets/img/arrow-down.svg"
-                            alt="Icone de seta"
-                        />
-                    </div>
+                    </p>
                 </div>
             </nav>
         </header>
 
         <main>
             <div class="form-container column">
-                <p class="subtitulo">Login</p>
+                <p class="sub titulo">Login</p>
                 <form class="form-login column" action="" method="">
                     <label for="">Email</label>
                     <input
@@ -62,14 +44,14 @@
                         name="txtEmail"
                         id=""
                     />
-                    <div class="chkbx-container exibir row">
+                    <div class="chkbx-container exibir row" id="">
                         <input
                             class="checkbox-form"
                             type="checkbox"
-                            name="ckbExibirSenha"
-                            id=""
+                            name=""
+                            id="ckbExibir"
                         />
-                        <label class="" for="">Exibir senha</label>
+                        <label class="" for="ckbExibir">Exibir senha</label>
                     </div>
                     <label for="">Senha</label>
                     <input
@@ -78,15 +60,15 @@
                         name="txtSenha"
                         id=""
                     />
-                    <a class="titulo-link" href="">Esqueci minha senha</a>
+                    <a class="titulo-link" href="#">Esqueci minha senha</a>
                     <div class="chkbx-container continuar row">
                         <input
                             class="checkbox-form"
                             type="checkbox"
-                            name="ckbContinuarConectado"
-                            id=""
+                            name=""
+                            id="ckbContinuar"
                         />
-                        <label for="">Continuar conectado</label>
+                        <label for="ckbContinuar">Continuar conectado</label>
                     </div>
                     <input class="btn btn blue" type="submit" value="Entrar" />
                 </form>

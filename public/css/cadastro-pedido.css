@@ -1,10 +1,8 @@
+@import './forms.css';
+
 .form-container {
-    width: 100%;
     max-width: 720px;
-    height: auto;
-    margin: auto;
-    padding: 20px;
-    border-color: white;
+    border: none;
 }
 
 .form-container .titulo {
@@ -14,28 +12,12 @@
 }
 
 .form-container .sub.titulo {
-    font-size: 2.5rem;
     align-self: flex-start;
     margin: 40px 0 20px 0;
-    font-weight: bold;
-}
-
-.form-login label {
-    font-weight: bold;
 }
 
 .fas {
     color: var(--blue-logo);
-}
-
-.form-login .row {
-    justify-content: flex-start;
-    gap: 20px;
-}
-
-.form-login .row div {
-    display: flex;
-    flex-direction: column;
 }
 
 .alimentos.row {

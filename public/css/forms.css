@@ -1,0 +1,62 @@
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  border: var(--border-form);
+}
+
+.form-container .sub.titulo {
+  font-size: 2.5rem;
+  align-self: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.form-login .row:not(.chkbx-container) {
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.form-login label {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.form-login .row div {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-login .input-form {
+  margin: 10px 0;
+}
+
+.form-login input[type=checkbox] {
+  margin-right: 5px;
+}
+
+.form-login .titulo-link,
+.exibir {
+  align-self: flex-end;
+  width: max-content;
+}
+
+.form-login .continuar {
+  align-self: flex-start;
+  width: max-content;
+}
+
+.form-login .titulo-link,
+.exibir {
+  align-self: flex-end;
+  width: max-content;
+}
+
+.form-login .btn {
+  margin-top: 40px;
+  align-self: center;
+}

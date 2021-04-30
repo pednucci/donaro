@@ -5,13 +5,12 @@
 @import "header-footer.css";
 @import "buttons.css";
 @import "tipography.css";
+@import "forms.css";
 
 /* CSS Pages */
 @import "main.css";
 @import "descobrir.css";
 @import "chat.css";
-@import "login.css";
-@import "cadastro.css";
 @import "pedido.css";
 
 /* #endregion  */

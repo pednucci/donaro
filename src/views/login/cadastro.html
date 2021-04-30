@@ -7,7 +7,7 @@
 
         <!-- CSS Donaro -->
         <link rel="stylesheet" href="/public/css/global.css" />
-        <link rel="stylesheet" href="/public/css/cadastro.css" />
+        <link rel="stylesheet" href="/public/css/forms.css" />
 
         <title>Cadastrar-se</title>
     </head>
@@ -23,37 +23,19 @@
                     />
                 </div>
                 <div class="nav-menu">
-                    <ul class="row nav-list">
-                        <a href="" class="nav-link">
-                            <li>Descobrir</li>
+                    <p class="nav-link">
+                        Já tem conta?
+                        <a href="./login.html" class="nav-link titulo-link">
+                            Entrar
                         </a>
-                        <a href="" class="nav-link">
-                            <li>Criar</li>
-                        </a>
-                        <a href="" class="nav-link">
-                            <li>Painel</li>
-                        </a>
-                    </ul>
-                    <div class="row nav-profile">
-                        <div class="img-wrapper">
-                            <img
-                                src="/public/assets/img/nav-person.svg"
-                                class="img-profile"
-                                alt="Foto de perfil"
-                            />
-                        </div>
-                        <img
-                            src="/public/assets/img/arrow-down.svg"
-                            alt="Icone de seta"
-                        />
-                    </div>
+                    </p>
                 </div>
             </nav>
         </header>
 
         <main>
             <div class="form-container column">
-                <p class="subtitulo">Cadastrar-se</p>
+                <p class="sub titulo">Cadastrar-se</p>
                 <form class="form-login column" action="" method="">
                     <label for="">Nome completo</label>
                     <input class="input-form" type="text" name="" id="" />
@@ -96,12 +78,22 @@
                         id=""
                     />
 
-                    <label for="">Cidade</label>
-                    <select class="input-form" name="" id=""></select>
-                    <label for="">UF</label>
-                    <select class="input-form" name="" id=""></select>
+                    <div class="row">
+                        <div class="column">
+                            <label for="">Cidade</label>
+                            <select class="input-form" name="" id=""></select>
+                        </div>
+                        <div class="column">
+                            <label for="">UF</label>
+                            <select class="input-form" name="" id=""></select>
+                        </div>
+                    </div>
 
-                    <input class="btn btn blue" type="submit" value="Entrar" />
+                    <input
+                        class="btn btn blue"
+                        type="submit"
+                        value="Cadastrar"
+                    />
                 </form>
             </div>
         </main>
