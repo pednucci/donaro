@@ -40,13 +40,12 @@
   margin-right: 5px;
 }
 
-.form-login .titulo-link,
-.exibir {
+.form-login .exibir {
   align-self: flex-end;
   width: max-content;
 }
 
-.form-login .continuar {
+.form-login .titulo-link {
   align-self: flex-start;
   width: max-content;
 }

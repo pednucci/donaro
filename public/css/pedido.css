@@ -129,6 +129,21 @@ h4 {
   margin: 0;
 }
 
+.filtro {
+  margin-bottom: 20px;
+}
+
+.filtro .titulo {
+  font-size: 2rem;
+}
+
+.filtro select {
+  border: none;
+  padding: 5px;
+
+  font-size: 2rem;
+}
+
 .arrecadado {
   margin-right: 15px;
 }
