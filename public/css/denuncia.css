@@ -1,0 +1,74 @@
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: auto;
+  padding: 40px;
+  border-radius: 20px;
+  border: var(--border-form);
+
+  margin-top: 26px;
+  margin-bottom: 100px;
+
+  box-shadow: var(--border-shadow);
+}
+
+.form-container .sub.titulo {
+  font-size: 3rem;
+  align-self: center;
+
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.input-form {
+  height: 70px;
+}
+
+.form-login label {
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: start;
+
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* #region Select */
+
+.form-login select {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.form-login option {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+/* #endregion */
+
+.form-login .btn {
+  margin-top: 30px;
+  align-self: center;
+}
+
+/* #region Textarea */
+
+textarea {
+  border: 1px solid var(--gray-border);
+  border-radius: 10px;
+  padding: 20px;
+
+  background-color: var(--gray-background);
+  color: var(--black-logo);
+  
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+
+  resize: vertical;
+}
+
+/* #endregion */
