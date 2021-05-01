@@ -20,6 +20,6 @@
 
     /* Bordas */
     --border-form: 0.5px solid var(--gray-border);
-    --border-red: 2px solid var(--red-logo);
+    --border-red: 1.5px solid var(--red-logo);
     --border-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
 }
