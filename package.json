@@ -4,7 +4,8 @@
   "description": "A charity platform for social actions",
   "main": "server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,13 @@
   },
   "homepage": "https://github.com/pednucci/donaro#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.0",
+    "express-session": "^1.17.1",
     "knex": "^0.95.4",
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
