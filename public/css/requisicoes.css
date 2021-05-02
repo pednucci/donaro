@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.img-wrapper {
+.container-painel .img-wrapper {
   border-radius: 0;
   height: 250px;
   width: 100%;
