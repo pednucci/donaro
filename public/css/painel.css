@@ -82,6 +82,46 @@
 
 /* #endregion */
 
+/* #region Numeração das páginas */
+
+.numeracao-paginas {
+  width: max-content;
+  margin: auto;
+  display: flex;
+
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.paginas {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.cont-pagina {
+  min-width: 45px;
+  height: 50px;
+  text-align: center;
+  margin: 3px;
+  padding: 10px;
+  font-size: 2rem;
+  background-color: var(--gray-background);
+  border: var(--border-form);
+  border-radius: 5px;
+  box-shadow: var(--border-shadow);
+
+  transition: 0.5s ease;
+}
+
+.cont-pagina:hover {
+  border: var(--border-red);
+  background-color: var(--red-logo-transparent);
+
+  transition: 0.5s ease;
+}
+
+/* #endregion */
+
 /* #region Botões */
 
 .botoes {
