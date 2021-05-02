@@ -28,37 +28,45 @@
 
 <main>
     <div class="form-container column">
+        {{#each erros}}
+            <div class="error">
+                <h2 class="sub titulo">{{text}}</h2>
+            </div>
+        {{/each}}
         <p class="sub titulo">Cadastrar-se</p>
         <form class="form-login column" action="/cadastro" method="POST">
             <label for="">Nome completo</label>
-            <input class="input-form" type="text" name="" id="" />
+            <input class="input-form" type="text" name="username" id="" />
 
             <label for="">Email</label>
-            <input class="input-form" type="email" name="txtEmail" id="" />
+            <input class="input-form" type="email" name="email" id="" />
 
             <label for="">CPF</label>
-            <input class="input-form" type="text" name="" id="" />
+            <input class="input-form" type="text" name="cpf" id="" />
+
+            <label for="">Celular</label>
+            <input class="input-form" type="tel" name="cel" id="" />
 
             <label for="">Data de nascimento</label>
-            <input class="input-form" type="date" name="" id="" />
+            <input class="input-form" type="date" name="dtuser" id="" />
 
             <div class="chkbx-container exibir row">
                 <input class="checkbox-form" type="checkbox" name="ckbExibirSenha" id="" />
                 <label class="" for="">Exibir senha</label>
             </div>
             <label for="">Senha</label>
-            <input class="input-form" type="password" name="txtSenha" id="" />
+            <input class="input-form" type="password" name="pass" id="" />
             <label for="">Confirme sua senha</label>
-            <input class="input-form" type="password" name="senhaConf" id="" />
+            <input class="input-form" type="password" name="passConf" id="" />
 
             <div class="row">
                 <div class="column">
                     <label for="">Cidade</label>
-                    <select class="input-form" name="" id=""></select>
+                    <input type="text" class="input-form" name="cidade" id=""></select>
                 </div>
                 <div class="column">
                     <label for="">UF</label>
-                    <select class="input-form" name="" id=""></select>
+                    <input type="text" class="input-form" name="estado" id=""></select>
                 </div>
             </div>
 
