@@ -1,0 +1,244 @@
+/* #region Painel */
+
+.container-painel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* #region Image profile */
+
+.nav-profile .img-wrapper-profile {
+  width: 35px;
+  height: 35px;
+}
+
+.img-profile {
+  width: 100%;
+  height: 100%;
+}
+
+.img-wrapper-profile {
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+/* #endregion */
+
+.background-painel {
+  width: 100%;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-wrapper {
+  border-radius: 0;
+  
+  height: 250px;
+  width: 100%;
+}
+
+.menu-painel {
+  height: 100px;
+  background-color: var(--red-logo);
+
+  display: flex;
+  justify-content: center;
+}
+
+.menu-painel-buttons {
+  height: 100%;
+  width: 955px;
+
+  justify-content: flex-start;
+}
+
+.menu-painel a {
+  height: 100px;
+  width: max-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.painel-text {
+  font-size: 3rem;
+  color: var(--white);
+
+  margin-right: 30px;
+}
+
+.painel-titulo {
+  font-size: 5rem;
+  font-weight: bold;
+
+  position: absolute;
+
+  color: var(--white);
+}
+
+/* #endregion */
+
+.users {
+  width: 960px;
+
+  margin-top: 120px;
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.titulo-categoria {
+  margin-right: 85px;
+  padding-bottom: 10px;
+}
+
+.underline{
+  border-bottom: 4px solid var(--gray-dark);
+}
+
+.underline-white {
+  position:relative;
+  display:inline-block;
+}
+
+.underline-white:after {
+  content:"";
+  position: absolute;
+  top: 165%;
+  width: 145px;
+  border-bottom:white solid 5px;
+}
+
+/* #region Cards */
+
+.cards {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: top;
+  align-items: center;
+
+  margin-bottom: 100px;
+}
+
+.card-container {
+  margin-top: 20px;
+
+  border-radius: 8px;
+
+  align-items: center;
+
+  height: 150px;
+  width: 960px;
+
+  border: 0.5px solid var(--gray-border);
+
+  display: grid;
+  grid-template-columns: 0.65fr 0.85fr 1fr 0.7fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "card-image card-nome card-nome card-btn"
+    "card-image card-qtd card-pesagem card-btn"
+    "card-image card-confirm card-situacao card-btn";
+
+  box-shadow: var(--border-shadow);
+}
+
+/* #region Items grid */
+
+.card-image {
+  grid-area: card-image;
+}
+
+.image-card {
+  height: 150px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card-nome {
+  grid-area: card-nome;
+}
+
+.nome-card {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.card-qtd {
+  grid-area: card-qtd;
+}
+
+.desc-card {
+  font-size: 2.2rem;
+  font-weight: 500;
+
+  color: var(--gray-dark);
+}
+
+.card-pesagem {
+  grid-area: card-pesagem;
+}
+
+.peso-card {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.card-confirm {
+  grid-area: card-confirm;
+}
+
+.card-situacao {
+  grid-area: card-situacao;
+}
+
+.card-btn {
+  grid-area: card-btn;
+  margin-right: 50px;
+}
+
+/* #endregion */
+
+/* #endregion */
+
+/* #region Entregue/pendente/não-entregue */
+
+.situacao-card-entregue {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--green-accept);
+}
+
+.situacao-card-pendente {
+  font-size: 1.7rem;
+  font-weight: bold;
+    
+  color: var(--yellow-pending);
+}
+
+.situacao-card-na {
+  font-size: 1.7rem;
+  font-weight: bold;
+
+  color: var(--red-denounce);
+}
+
+/* #endregion */

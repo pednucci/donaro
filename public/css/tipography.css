@@ -45,6 +45,11 @@
     margin-bottom: 70px;
 }
 
+.titulo-categoria {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
 .texto-depoimento {
     font-size: 1.8rem;
     font-weight: 400;
