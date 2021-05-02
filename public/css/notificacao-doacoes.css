@@ -2,7 +2,7 @@
 
 .container-painel {
     height: 100px;
-    
+
     display: flex;
     flex-direction: column;
 
@@ -11,7 +11,7 @@
 
 .background-painel {
     height: 250px;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@
     font-size: 3rem;
     font-weight: 500;
     color: var(--black-logo);
-    
+
     margin-right: 30px;
 
     transition: .5s ease;
@@ -57,7 +57,7 @@
 
 .painel-text:after {
     top: 40px;
-    
+
     content: "";
     display: block;
 
@@ -68,7 +68,7 @@
     width: 0;
 }
 
-.painel-text:hover:after { 
+.painel-text:hover:after {
     width: 100%;
     left: 0;
 }
@@ -93,7 +93,7 @@
     border-radius: 8px;
 
     align-items: center;
-    
+
     height: 150px;
     width: 960px;
 
@@ -109,40 +109,63 @@
         "card-image card-confirm card-situacao card-btn";
 }
 
-.card-image { 
-    grid-area: card-image; 
+.card-image {
+    grid-area: card-image;
 }
+
 .image-card {
     height: 150px;
     border-radius: 8px;
 }
 
-.card-nome { grid-area: card-nome; }
+.card-nome {
+    grid-area: card-nome;
+}
+
 .nome-card {
     font-size: 3.5rem;
     font-weight: 500;
 }
-.card-qtd { grid-area: card-qtd; }
+
+.card-qtd {
+    grid-area: card-qtd;
+}
+
 .desc-card {
     font-size: 1.8rem;
     font-weight: 500;
 }
-.card-pesagem { grid-area: card-pesagem; }
+
+.card-pesagem {
+    grid-area: card-pesagem;
+}
+
 .peso-card {
     font-size: 2rem;
     font-weight: bolder;
 }
 
-.card-confirm { grid-area: card-confirm; }
-.card-situacao { grid-area: card-situacao; }
+.card-confirm {
+    grid-area: card-confirm;
+}
+
+.card-situacao {
+    grid-area: card-situacao;
+}
+
 .situacao-card {
     font-size: 2rem;
     font-weight: bolder;
 }
 
-.card-btn { grid-area: card-btn; }
+.card-btn {
+    grid-area: card-btn;
+}
 
-.card-detaisl { grid-area: card-details;}
+.card-detaisl {
+    grid-area: card-details;
+}
+
 .datails-card {
     font-size: 1.5rem;
     font-weight: 500;

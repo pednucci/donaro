@@ -139,82 +139,94 @@
                         <div class="main-alimentos column">
                             <div class="filtro row">
                                 <h2 class="titulo">Ordenar por:</h2>
-                                <select name="sort-by" id="">
-                                    <option value="concluido">
-                                        Concluídos
-                                    </option>
-                                    <option value="nao-concluido">
-                                        Não Concluídos
-                                    </option>
-                                </select>
+                                <form action="" method="" id="form-sort">
+                                    <select id="select-sort" name="sort-by">
+                                        <option id="c" value="1">
+                                            Concluídos
+                                        </option>
+                                        <option id="nc" value="2">
+                                            Não Concluídos
+                                        </option>
+                                    </select>
+                                </form>
                             </div>
                             <h2 class="titulo black">Alimentos:</h2>
-                            <div class="alimento concluido">
-                                <h2 class="sub titulo">Arroz</h2>
-                                <div class="progresso-container row">
-                                    <div class="arrecadado">
-                                        <p><span>54</span>%</p>
-                                    </div>
-                                    <div class="porcentagem">
-                                        <div class="progresso-barra">
-                                            <div class="progresso-atual"></div>
+                            <div id="alimento-container" class="column">
+                                <div class="alimento concluido">
+                                    <h2 class="sub titulo">Arroz</h2>
+                                    <div class="progresso-container row">
+                                        <div class="arrecadado">
+                                            <p><span>54</span>%</p>
+                                        </div>
+                                        <div class="porcentagem">
+                                            <div class="progresso-barra">
+                                                <div
+                                                    class="progresso-atual"
+                                                ></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="meta row">
-                                    <p>Arrecadado: 5kg</p>
-                                    <p>Meta concluída</p>
-                                </div>
-                            </div>
-                            <div class="alimento">
-                                <h2 class="sub titulo">Feijão</h2>
-                                <div class="progresso-container row">
-                                    <div class="arrecadado">
-                                        <p><span>50</span>%</p>
+                                    <div class="meta row">
+                                        <p>Arrecadado: 5kg</p>
+                                        <p>Meta concluída</p>
                                     </div>
-                                    <div class="porcentagem">
-                                        <div class="progresso-barra">
-                                            <div class="progresso-atual"></div>
+                                </div>
+                                <div class="alimento">
+                                    <h2 class="sub titulo">Feijão</h2>
+                                    <div class="progresso-container row">
+                                        <div class="arrecadado">
+                                            <p><span>50</span>%</p>
+                                        </div>
+                                        <div class="porcentagem">
+                                            <div class="progresso-barra">
+                                                <div
+                                                    class="progresso-atual"
+                                                ></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="meta row">
-                                    <p>Arrecadado: 5kg</p>
-                                    <p>Meta: 10Kg</p>
-                                </div>
-                            </div>
-                            <div class="alimento">
-                                <h2 class="sub titulo">Óleo</h2>
-                                <div class="progresso-container row">
-                                    <div class="arrecadado">
-                                        <p><span>38</span>%</p>
+                                    <div class="meta row">
+                                        <p>Arrecadado: 5kg</p>
+                                        <p>Meta: 10Kg</p>
                                     </div>
-                                    <div class="porcentagem">
-                                        <div class="progresso-barra">
-                                            <div class="progresso-atual"></div>
+                                </div>
+                                <div class="alimento">
+                                    <h2 class="sub titulo">Óleo</h2>
+                                    <div class="progresso-container row">
+                                        <div class="arrecadado">
+                                            <p><span>38</span>%</p>
+                                        </div>
+                                        <div class="porcentagem">
+                                            <div class="progresso-barra">
+                                                <div
+                                                    class="progresso-atual"
+                                                ></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="meta row">
-                                    <p>Arrecadado: 3L</p>
-                                    <p>Meta: 8L</p>
-                                </div>
-                            </div>
-                            <div class="alimento">
-                                <h2 class="sub titulo">Azeite</h2>
-                                <div class="progresso-container row">
-                                    <div class="arrecadado">
-                                        <p><span>30</span>%</p>
+                                    <div class="meta row">
+                                        <p>Arrecadado: 3L</p>
+                                        <p>Meta: 8L</p>
                                     </div>
-                                    <div class="porcentagem">
-                                        <div class="progresso-barra">
-                                            <div class="progresso-atual"></div>
+                                </div>
+                                <div class="alimento">
+                                    <h2 class="sub titulo">Azeite</h2>
+                                    <div class="progresso-container row">
+                                        <div class="arrecadado">
+                                            <p><span>30</span>%</p>
+                                        </div>
+                                        <div class="porcentagem">
+                                            <div class="progresso-barra">
+                                                <div
+                                                    class="progresso-atual"
+                                                ></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="meta row">
-                                    <p>Arrecadado: 1,5L</p>
-                                    <p>Meta: 5L</p>
+                                    <div class="meta row">
+                                        <p>Arrecadado: 1,5L</p>
+                                        <p>Meta: 5L</p>
+                                    </div>
                                 </div>
                             </div>
                             <button class="btn blue">Ajudar</button>
@@ -301,4 +313,41 @@
             </ul>
         </footer>
     </body>
+
+    <script>
+        let selectSort = document.getElementById("select-sort");
+        let alimentos = document.getElementById("alimento-container");
+
+        selectSort.addEventListener("click", () => {
+            if (selectSort.options.selectedIndex == 0) {
+                alimentos.style.flexDirection = "column";
+            } else {
+                alimentos.style.flexDirection = "column-reverse";
+            }
+        });
+
+        // if (selectSort.options.namedItem == "c") {
+        //     console.log("aqui");
+        // }
+
+        // let form = document.getElementById("select-sort");
+
+        // // if (select.options == )
+
+        // document
+        //     .getElementById("form-sort")
+        //     .addEventListener("submit", (event) => {
+        //         event.preventDefault();
+        //     });
+
+        // document
+        //     .getElementById("select-sort")
+        //     .addEventListener("change", (event) => {
+        //         console.log("Chegou");
+        //         // this.form.submit();
+        //         document.getElementById("form-sort").submit();
+        //         console.log(select.selectedIndex);
+        //         select.options[2];
+        //     });
+    </script>
 </html>
