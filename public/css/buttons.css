@@ -37,6 +37,12 @@
     border: var(--border-red);
 }
 
+.btn.ghost-gray {
+    background-color: var(--white);
+    color: var(--black-logo);
+    border: var(--border-black);
+}
+
 .btn.green {
     background-color: var(--green-accept);
     color: var(--white);
