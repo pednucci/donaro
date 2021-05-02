@@ -7,7 +7,6 @@ exports.up = function(knex) {
       table.integer('cd_usuario_pedido').unsigned();
       table.foreign('cd_usuario_pedido').references('cd_usuario').inTable('usuario').onDelete('SET NULL');
       table.string('nm_titulo_pedido', 45).notNullable();
-      table.string('nm_alimento_pedido', 45).notNullable();
       table.string('nm_meta_pedido', 15).notNullable();
       table.timestamp('dt_encerramento_pedido').notNullable();
       table.timestamp('dt_createdAt_pedido').defaultTo(knex.fn.now());
