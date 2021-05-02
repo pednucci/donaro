@@ -82,6 +82,17 @@
 
 /* #endregion */
 
+/* #region Botões */
+
+.botoes {
+  gap: 50px;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* #endregion */
+
 /* #region Numeração das páginas */
 
 .numeracao-paginas {
@@ -120,14 +131,5 @@
   transition: 0.5s ease;
 }
 
-/* #endregion */
-
-/* #region Botões */
-
-.botoes {
-  justify-content: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
 
 /* #endregion */
