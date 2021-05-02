@@ -37,6 +37,14 @@
     border: var(--border-red);
 }
 
+.btn.green {
+    background-color: var(--green-accept);
+    color: var(--white);
+
+    font-weight: bold;
+    margin-right: 25px;
+}
+
 .btn.blue {
     background-color: var(--blue-logo);
     color: var(--white);
