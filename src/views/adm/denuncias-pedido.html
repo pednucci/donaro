@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="/public/css/painel.css" />
         <link rel="stylesheet" href="/public/css/usuario-pedido.css" />
 
-        <title>Requisição</title>
+        <title>Denúncias (Pedido)</title>
     </head>
     <body>
         <header>
@@ -66,10 +66,10 @@
                 <div class="menu-painel">
                     <ul class="menu-painel-buttons row">
                         <a href="#">
-                            <li class="painel-text active">Requisições</li>
+                            <li class="painel-text">Requisições</li>
                         </a>
                         <a href="#">
-                            <li class="painel-text">Denúncias</li>
+                            <li class="painel-text active">Denúncias</li>
                         </a>
                         <a href="#">
                             <li class="painel-text">Pedidos não entregues</li>
@@ -84,25 +84,25 @@
                     <div class="user-wrapper row">
                         <div class="imagePerfil column">
                             <img
-                                src="/public/assets/img/pedido_sopao-moradores.png"
+                                src="/public/assets/img/pedido_painel-solar.png"
                                 alt="Foto de perfil"
                             />
                         </div>
                         <div class="informacoes column">
                             <div>
                                 <h1 class="sub titulo-user">Título</h1>
-                                <p>Sopão para moradores de rua</p>
+                                <p>Construção de painéis solares</p>
                             </div>
 
                             <div class="row">
                                 <div>
                                     <h1 class="sub titulo-user">Alimento</h1>
-                                    <p>Batata</p>
+                                    <p>Feijão</p>
                                 </div>
 
                                 <div>
                                     <h1 class="sub titulo-user">Quantidade</h1>
-                                    <p>10Kg</p>
+                                    <p>10000</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -146,24 +146,24 @@
 
             <div class="profile-container columm">
                 <div class="user-container column">
-                    <h1 class="titulo-user">Usuário</h1>
+                    <h1 class="titulo-user">Dono do pedido</h1>
                     <div class="user-wrapper row">
                         <div class="imagePerfil column">
                             <img
-                                src="/public/assets/img/user_fabio.png"
+                                src="/public/assets/img/user_julio.png"
                                 alt="Foto de perfil"
                             />
                         </div>
                         <div class="informacoes column">
                             <div>
                                 <h1 class="sub titulo-user">Nome</h1>
-                                <p>Fábio Ricardo Oliver Gomes</p>
+                                <p>Julio Vieira de Andrade</p>
                             </div>
 
                             <div>
                                 <div>
                                     <h1 class="sub titulo-user">Email</h1>
-                                    <p>fabioricardo87@gmail.com</p>
+                                    <p>juliovand@gmail.com</p>
                                 </div>
                             </div>
                             <div>
@@ -178,8 +178,13 @@
             </div>
 
             <div class="botoes row">
-                <button class="btn green" type="submit">Aceitar</button>
-                <button class="btn ghost-red" type="submit">Recusar</button>
+                <button type="submit" class="btn blue">Ignorar</button>
+                <button type="submit" class="btn ghost-red">
+                    Excluir pedido
+                </button>
+                <button type="submit" class="btn ghost-red">
+                    Punir usuário
+                </button>
             </div>
         </main>
     </body>

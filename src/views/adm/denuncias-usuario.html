@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="/public/css/painel.css" />
         <link rel="stylesheet" href="/public/css/usuario-pedido.css" />
 
-        <title>Requisição</title>
+        <title>Denúncias (Usuário)</title>
     </head>
     <body>
         <header>
@@ -66,10 +66,10 @@
                 <div class="menu-painel">
                     <ul class="menu-painel-buttons row">
                         <a href="#">
-                            <li class="painel-text active">Requisições</li>
+                            <li class="painel-text">Requisições</li>
                         </a>
                         <a href="#">
-                            <li class="painel-text">Denúncias</li>
+                            <li class="painel-text active">Denúncias</li>
                         </a>
                         <a href="#">
                             <li class="painel-text">Pedidos não entregues</li>
@@ -80,49 +80,37 @@
 
             <div class="profile-container columm">
                 <div class="user-container column">
-                    <h1 class="titulo-user">Pedido</h1>
+                    <h1 class="titulo-user">Usuário denunciado</h1>
                     <div class="user-wrapper row">
                         <div class="imagePerfil column">
                             <img
-                                src="/public/assets/img/pedido_sopao-moradores.png"
+                                src="/public/assets/img/user_julio.png"
                                 alt="Foto de perfil"
                             />
                         </div>
                         <div class="informacoes column">
                             <div>
-                                <h1 class="sub titulo-user">Título</h1>
-                                <p>Sopão para moradores de rua</p>
+                                <h1 class="sub titulo-user">Nome</h1>
+                                <p>Julio Vieira de Andrade</p>
                             </div>
 
-                            <div class="row">
+                            <div>
                                 <div>
-                                    <h1 class="sub titulo-user">Alimento</h1>
-                                    <p>Batata</p>
-                                </div>
-
-                                <div>
-                                    <h1 class="sub titulo-user">Quantidade</h1>
-                                    <p>10Kg</p>
+                                    <h1 class="sub titulo-user">Email</h1>
+                                    <p>juliovand@gmail.com</p>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div>
                                 <div>
-                                    <h1 class="sub titulo-user">Meta</h1>
-                                    <p>Aberta</p>
-                                </div>
-
-                                <div>
-                                    <h1 class="sub titulo-user">
-                                        Data de encerramento
-                                    </h1>
-                                    <p>30/04/2021</p>
+                                    <h1 class="sub titulo-user">ID</h1>
+                                    <p>1238391</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="comentario-container column">
-                    <h1 class="sub titulo-user">Descrição</h1>
+                    <h1 class="sub titulo-user">Detalhes da denúncia</h1>
                     <div class="comentario">
                         <p>
                             Mussum Ipsum, cacilds vidis litro abertis. Mais vale
@@ -146,24 +134,24 @@
 
             <div class="profile-container columm">
                 <div class="user-container column">
-                    <h1 class="titulo-user">Usuário</h1>
+                    <h1 class="titulo-user">Dono da denúncia</h1>
                     <div class="user-wrapper row">
                         <div class="imagePerfil column">
                             <img
-                                src="/public/assets/img/user_fabio.png"
+                                src="/public/assets/img/user_andre.png"
                                 alt="Foto de perfil"
                             />
                         </div>
                         <div class="informacoes column">
                             <div>
                                 <h1 class="sub titulo-user">Nome</h1>
-                                <p>Fábio Ricardo Oliver Gomes</p>
+                                <p>André de Oliveira Paiva</p>
                             </div>
 
                             <div>
                                 <div>
                                     <h1 class="sub titulo-user">Email</h1>
-                                    <p>fabioricardo87@gmail.com</p>
+                                    <p>andreopv@gmail.com</p>
                                 </div>
                             </div>
                             <div>
@@ -178,8 +166,10 @@
             </div>
 
             <div class="botoes row">
-                <button class="btn green" type="submit">Aceitar</button>
-                <button class="btn ghost-red" type="submit">Recusar</button>
+                <button type="submit" class="btn blue">Ignorar</button>
+                <button type="submit" class="btn ghost-red">
+                    Punir usuário
+                </button>
             </div>
         </main>
     </body>
