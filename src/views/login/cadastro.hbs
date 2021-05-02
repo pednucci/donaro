@@ -1,0 +1,68 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Donaro -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/forms.css" />
+
+    <title>Cadastrar-se</title>
+</head>
+
+<header>
+    <nav class="nav-bar">
+        <div class="nav-logo">
+            <img src="/assets/img/donaro_logo.svg" class="logo" alt="Logo Donaro" />
+        </div>
+        <div class="nav-menu">
+            <p class="nav-link">
+                Já tem conta?
+                <a href="/login" class="nav-link titulo-link">
+                    Entrar
+                </a>
+            </p>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="form-container column">
+        <p class="sub titulo">Cadastrar-se</p>
+        <form class="form-login column" action="/cadastro" method="POST">
+            <label for="">Nome completo</label>
+            <input class="input-form" type="text" name="" id="" />
+
+            <label for="">Email</label>
+            <input class="input-form" type="email" name="txtEmail" id="" />
+
+            <label for="">CPF</label>
+            <input class="input-form" type="text" name="" id="" />
+
+            <label for="">Data de nascimento</label>
+            <input class="input-form" type="date" name="" id="" />
+
+            <div class="chkbx-container exibir row">
+                <input class="checkbox-form" type="checkbox" name="ckbExibirSenha" id="" />
+                <label class="" for="">Exibir senha</label>
+            </div>
+            <label for="">Senha</label>
+            <input class="input-form" type="password" name="txtSenha" id="" />
+            <label for="">Confirme sua senha</label>
+            <input class="input-form" type="password" name="senhaConf" id="" />
+
+            <div class="row">
+                <div class="column">
+                    <label for="">Cidade</label>
+                    <select class="input-form" name="" id=""></select>
+                </div>
+                <div class="column">
+                    <label for="">UF</label>
+                    <select class="input-form" name="" id=""></select>
+                </div>
+            </div>
+
+            <input class="btn btn blue" type="submit" value="Cadastrar" />
+        </form>
+    </div>
+</main>
