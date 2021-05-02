@@ -59,13 +59,16 @@
   margin-bottom: 20px;
 
   align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
+  justify-content: space-between;
 
   border: 0.5px solid var(--gray-border);
   border-radius: 8px;
 
   box-shadow: var(--border-shadow);
+}
+
+.card-user {
+  gap: 20px;
 }
 
 .card div {
@@ -109,9 +112,10 @@
 
 /* btn */
 
-.card-btn {
+.card-btn.row {
   justify-content: center;
-  margin-left: 40px;
+
+  margin-right: 40px;
 }
 
 /* Pedido nao entregue */

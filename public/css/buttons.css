@@ -31,6 +31,10 @@
     color: var(--white);
 }
 
+.btn.red.denounce {
+    background-color: var(--red-denounce);
+}
+
 .btn.ghost-red {
     background-color: var(--white);
     color: var(--red-denounce);

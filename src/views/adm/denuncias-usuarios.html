@@ -7,9 +7,10 @@
 
         <!-- CSS Donaro -->
         <link rel="stylesheet" href="/public/css/global.css" />
-        <link rel="stylesheet" href="/public/css/denuncias-usuarios.css" />
+        <link rel="stylesheet" href="/public/css/painel.css" />
+        <link rel="stylesheet" href="/public/css/notificacoes.css" />
 
-        <title>Denúncias (Usuários)</title>
+        <title>Denúncias (Pedidos)</title>
     </head>
     <body>
         <header>
@@ -34,7 +35,7 @@
                         </a>
                     </ul>
                     <div class="row nav-profile">
-                        <div class="img-wrapper-profile">
+                        <div class="img-wrapper">
                             <img
                                 src="/public/assets/img/user_nathan.png"
                                 class="img-profile"
@@ -61,15 +62,14 @@
                         />
                     </div>
                 </div>
+
                 <div class="menu-painel">
                     <ul class="menu-painel-buttons row">
                         <a href="#">
                             <li class="painel-text">Requisições</li>
                         </a>
                         <a href="#">
-                          <div class="underline-white">
-                            <li class="painel-text">Denúncias</li>
-                          </div>
+                            <li class="painel-text active">Denúncias</li>
                         </a>
                         <a href="#">
                             <li class="painel-text">Pedidos não entregues</li>
@@ -78,158 +78,64 @@
                 </div>
             </div>
 
-            <div class="cards">
-              <div class="users">
-                <a href="#">
-                  <h1 class="titulo-categoria">Pedidos</h1>
-                </a>
-                <a href="">
-                  <h1 class="titulo-categoria underline">Usuários</h1>
-                </a>
-              </div>
-                <div class="card-container">
-                    <div class="card-image">
-                        <img
-                            class="image-card"
-                            src="/public/assets/img/user_julio.png"
-                            alt=""
-                        />
+            <div class="cards-container">
+                <ul class="users row">
+                    <a href="#">
+                        <li class="titulo-categoria">Pedidos</li>
+                    </a>
+                    <a href="">
+                        <li class="titulo-categoria underline">Usuários</li>
+                    </a>
+                </ul>
+                <div class="card row">
+                    <div class="card-user row">
+                        <div class="card-image">
+                            <img
+                                class="image-card"
+                                src="/public/assets/img/user_julio.png"
+                                alt=""
+                            />
+                        </div>
+                        <div class="card-info column">
+                            <h1 class="nome-card">Julio Vieira</h1>
+                            <h2 class="desc-card">ID da denúncia: 634</h2>
+                            <h2 class="desc-card">29/03/2021 - 18:38</h2>
+                        </div>
                     </div>
-                    <div class="card-nome">
-                        <h1 class="nome-card">Julio Vieira</h1>
-                    </div>
-                    <div class="card-qtd">
-                        <h2 class="desc-card">ID da denúncia: 634</h2>
-                    </div>
-                    <div class="card-confirm">
-                        <h2 class="desc-card">29/03/2021 - 18:38</h2>
-                    </div>
-                    <div class="card-btn">
+                    <div class="card-btn row">
                         <a href="#">
-                            <button class="btn btn red">Ver denúncia</button>
+                            <button class="btn red denounce">
+                                Ver denúncia
+                            </button>
                         </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="card-container">
-                  <div class="card-image">
-                      <img
-                          class="image-card"
-                          src="/public/assets/img/user_julio.png"
-                          alt=""
-                      />
-                  </div>
-                  <div class="card-nome">
-                      <h1 class="nome-card">Julio Vieira</h1>
-                  </div>
-                  <div class="card-qtd">
-                      <h2 class="desc-card">ID da denúncia: 634</h2>
-                  </div>
-                  <div class="card-confirm">
-                      <h2 class="desc-card">29/03/2021 - 18:38</h2>
-                  </div>
-                  <div class="card-btn">
-                      <a href="#">
-                          <button class="btn btn red">Ver denúncia</button>
-                      </a>
-                  </div>
-                </div>
-
-                <div class="card-container">
-                  <div class="card-image">
-                      <img
-                          class="image-card"
-                          src="/public/assets/img/user_julio.png"
-                          alt=""
-                      />
-                  </div>
-                  <div class="card-nome">
-                      <h1 class="nome-card">Julio Vieira</h1>
-                  </div>
-                  <div class="card-qtd">
-                      <h2 class="desc-card">ID da denúncia: 634</h2>
-                  </div>
-                  <div class="card-confirm">
-                      <h2 class="desc-card">29/03/2021 - 18:38</h2>
-                  </div>
-                  <div class="card-btn">
-                      <a href="#">
-                          <button class="btn btn red">Ver denúncia</button>
-                      </a>
-                  </div>
-                </div>
-
-                <div class="card-container">
-                <div class="card-image">
-                    <img
-                        class="image-card"
-                        src="/public/assets/img/user_julio.png"
-                        alt=""
-                    />
-                </div>
-                <div class="card-nome">
-                    <h1 class="nome-card">Julio Vieira</h1>
-                </div>
-                <div class="card-qtd">
-                    <h2 class="desc-card">ID da denúncia: 634</h2>
-                </div>
-                <div class="card-confirm">
-                    <h2 class="desc-card">29/03/2021 - 18:38</h2>
-                </div>
-                <div class="card-btn">
-                    <a href="#">
-                        <button class="btn btn red">Ver denúncia</button>
+            <div class="numeracao-paginas">
+                <ul class="paginas">
+                    <a href="">
+                        <li class="num cont-pagina">1</li>
                     </a>
-                </div>
-                </div>
-
-                <div class="card-container">
-                  <div class="card-image">
-                      <img
-                          class="image-card"
-                          src="/public/assets/img/user_julio.png"
-                          alt=""
-                      />
-                  </div>
-                  <div class="card-nome">
-                      <h1 class="nome-card">Julio Vieira</h1>
-                  </div>
-                  <div class="card-qtd">
-                      <h2 class="desc-card">ID da denúncia: 634</h2>
-                  </div>
-                  <div class="card-confirm">
-                      <h2 class="desc-card">29/03/2021 - 18:38</h2>
-                  </div>
-                  <div class="card-btn">
-                      <a href="#">
-                          <button class="btn btn red">Ver denúncia</button>
-                      </a>
-                  </div>
-                </div>
-
-                <div class="card-container">
-                <div class="card-image">
-                    <img
-                        class="image-card"
-                        src="/public/assets/img/user_julio.png"
-                        alt=""
-                    />
-                </div>
-                <div class="card-nome">
-                    <h1 class="nome-card">Julio Vieira</h1>
-                </div>
-                <div class="card-qtd">
-                    <h2 class="desc-card">ID da denúncia: 634</h2>
-                </div>
-                <div class="card-confirm">
-                    <h2 class="desc-card">29/03/2021 - 18:38</h2>
-                </div>
-                <div class="card-btn">
-                    <a href="#">
-                        <button class="btn btn red">Ver denúncia</button>
+                    <a href="">
+                        <li class="num cont-pagina">2</li>
                     </a>
-                </div>
-                </div>
+                    <a href="">
+                        <li class="num cont-pagina">3</li>
+                    </a>
+                    <a href="">
+                        <li class="num cont-pagina">4</li>
+                    </a>
+                    <a href="">
+                        <li class="num cont-pagina">5</li>
+                    </a>
+                    <a href="">
+                        <li class="num cont-pagina">6</li>
+                    </a>
+                </ul>
+                <a href="">
+                    <div class="cont-pagina">Seguinte &#62;</div>
+                </a>
             </div>
         </main>
     </body>
