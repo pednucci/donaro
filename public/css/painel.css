@@ -1,0 +1,93 @@
+/* #region Painel Topo */
+
+.container-painel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 100px;
+}
+
+.background-painel {
+  width: 100%;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagem */
+
+.container-painel .img-wrapper {
+  border-radius: 0;
+  height: 250px;
+  width: 100%;
+}
+
+.painel-titulo {
+  font-size: 5rem;
+  font-weight: bold;
+
+  position: absolute;
+
+  color: var(--white);
+}
+
+/* Painel */
+.menu-painel {
+  height: 100px;
+  background-color: var(--red-logo);
+
+  display: flex;
+  justify-content: center;
+}
+
+.menu-painel-buttons {
+  height: 100%;
+  width: 955px;
+
+  justify-content: flex-start;
+}
+
+.menu-painel a {
+  height: 100px;
+  width: max-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.painel-text {
+  line-height: 95px;
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--white);
+
+  margin-right: 30px;
+
+  border-bottom: 5px solid transparent;
+}
+
+.menu-painel .active {
+  border-bottom: 5px solid var(--white);
+}
+
+.menu-painel li:hover {
+  border-bottom: 5px solid var(--white);
+}
+
+
+
+/* #endregion */
+
+/* #region Botões */
+
+.botoes {
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* #endregion */
