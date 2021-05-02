@@ -1,0 +1,122 @@
+/* #region Painel */
+
+.container-painel {
+    height: 355px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.background-painel {
+    height: 250px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(/public/assets/img/background-painel.svg);
+}
+
+.menu-painel {
+    height: 105px;
+    background-color: var(--blue-logo);
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+
+.menu-painel-buttons {
+    height: 105px;
+    width: 955px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.painel-text {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--white);
+    
+    margin-right: 30px;
+}
+
+.painel-titulo {
+    font-size: 5rem;
+    font-weight: bold;
+
+    color: var(--white);
+}
+
+/* #endregion */
+
+.descricao-pedido {
+  height: 70px;
+}
+
+.pedido {
+  width: 285px;
+
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.pedidos {
+  margin-top: 45px;
+}
+
+.row {
+  justify-content: space-evenly;
+}
+
+.btn.btn.blue {
+  width: 285px;
+  height: 60px;
+  border-radius: 0;
+
+  font-size: 2.3rem;
+}
+
+.sub.titulo-sub {
+  margin-top: 15px;
+  margin-bottom: 0px;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+/* #region Aceito/Pendente/Recusado */
+
+.link-accept {
+  color: var(--green-accept);
+  text-transform: uppercase;
+
+  font-weight: bold;
+}
+
+.link-pending {
+  color: var(--yellow-pending);
+  text-transform: uppercase;
+
+  font-weight: bold;
+}
+
+.link-reject {
+  color: var(--red-denounce);
+  text-transform: uppercase;
+
+  font-weight: bold;
+}
+
+
+
+.titulo-pedido {
+  font-size: 1.7rem;
+}
+
+.footer-bar {
+  margin-top: 100px;
+}

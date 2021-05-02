@@ -1,54 +1,68 @@
 .container-painel {
-    height: 355px;
-    
-    display: flex;
-    flex-direction: column;
-
-    margin-bottom: 30px;
+  height: 355px;
+  
+  display: flex;
+  flex-direction: column;
 }
 
 .background-painel {
-    height: 250px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 250px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(/public/assets/img/background-painel.svg);
 }
 
 .menu-painel {
-    height: 105px;
-    background-color: var(--blue-logo);
+  height: 105px;
+  background-color: var(--blue-logo);
 
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    justify-content: center;
+  justify-content: center;
 }
 
 .menu-painel-buttons {
-    height: 105px;
-    width: 955px;
+  height: 105px;
+  width: 955px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .painel-text {
-    font-size: 3rem;
-    font-weight: 500;
-    color: var(--white);
-    
-    margin-right: 30px;
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--white);
+  
+  margin-right: 30px;
 }
 
 .painel-titulo {
-    font-size: 5rem;
-    font-weight: bold;
+  font-size: 5rem;
+  font-weight: bold;
 
-    position: absolute;
+  color: var(--white);
+}
 
-    color: var(--white);
+.container-relatorio {
+  width: 100%;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo-depoimento {
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 .cards {
@@ -74,7 +88,7 @@
     border: 0.5px solid var(--gray-border);
 
     display: grid;
-    grid-template-columns: 0.65fr 0.85fr 1fr 0.7fr;
+    grid-template-columns: 0.65fr 0.85fr 1fr 0.9fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
