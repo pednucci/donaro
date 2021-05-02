@@ -153,6 +153,11 @@ h4 {
   font-weight: 500;
 }
 
+#alimento-container {
+  flex-direction: column;
+  gap: 20px;
+}
+
 .alimento::after {
   content: "";
   display: block;
@@ -195,11 +200,15 @@ h4 {
   width: 100%;
 }
 
-.main-alimentos :nth-child(4) .progresso-atual {
+.main-alimentos :nth-child(2) .progresso-atual {
+  width: 100%;
+}
+
+.main-alimentos :nth-child(3) .progresso-atual {
   width: 38%;
 }
 
-.main-alimentos :nth-child(5) .progresso-atual {
+.main-alimentos :nth-child(4) .progresso-atual {
   width: 30%;
 }
 

@@ -1,325 +1,372 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- CSS Donaro -->
-    <link rel="stylesheet" href="/public/css/global.css">
-    <link rel="stylesheet" href="/public/css/pedidos-ajuda.css">
-    
-    <title>Meus pedidos (Relatório)</title>
-</head>
-<body>
-    <header>
-        <nav class="nav-bar">
-            <div class="nav-logo">
-                <img src="/public/assets/img/donaro_logo.svg" class="logo" alt="Logo Donaro">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Donaro -->
+        <link rel="stylesheet" href="/public/css/global.css" />
+        <link rel="stylesheet" href="/public/css/pedidos-ajuda.css" />
+
+        <title>Meus pedidos (Relatório)</title>
+    </head>
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <div class="nav-logo">
+                    <img
+                        src="/public/assets/img/donaro_logo.svg"
+                        class="logo"
+                        alt="Logo Donaro"
+                    />
+                </div>
+                <div class="nav-menu">
+                    <ul class="row nav-list">
+                        <a href="" class="nav-link">
+                            <li>Descobrir</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Criar</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Painel</li>
+                        </a>
+                    </ul>
+                    <div class="row nav-profile">
+                        <div class="img-wrapper">
+                            <img
+                                src="/public/assets/img/nav-person.svg"
+                                class="img-profile"
+                                alt="Foto de perfil"
+                            />
+                        </div>
+                        <img
+                            src="/public/assets/img/arrow-down.svg"
+                            alt="Icone de seta"
+                        />
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container-painel">
+                <div class="background-painel">
+                    <h1 class="painel-titulo">Almoço na creche Arco-Íris</h1>
+                    <img
+                        src="/public/assets/img/background-painel.svg"
+                        alt=""
+                    />
+                </div>
+
+                <div class="menu-painel">
+                    <div class="menu-painel-buttons">
+                        <a href="#"><h2 class="painel-text">Relatório</h2></a>
+                        <a href="#"
+                            ><h2 class="painel-text">Ajudas recebidas</h2></a
+                        >
+                    </div>
+                </div>
             </div>
-            <div class="nav-menu">
-                <ul class="row nav-list">
-                    <a href="" class="nav-link">
-                        <li>Descobrir</li>
+
+            <div class="cards">
+                <div class="card-container">
+                    <div class="card-image">
+                        <img
+                            class="image-card"
+                            src="/public/assets/img/nav-person.svg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="card-nome">
+                        <h1 class="nome-card">João Oliveira</h1>
+                    </div>
+                    <div class="card-qtd">
+                        <h2 class="desc-card">Quantidade ofertada:</h2>
+                    </div>
+                    <div class="card-pesagem">
+                        <h3 class="peso-card">5KG</h3>
+                    </div>
+                    <div class="card-confirm">
+                        <h2 class="desc-card">Confirmação de recebimento:</h2>
+                    </div>
+                    <div class="card-situacao">
+                        <h3 class="situacao-card-pendente">PENDENTE</h3>
+                    </div>
+                    <div class="card-btn">
+                        <a href="#">
+                            <button class="card-blue">Ver detalhes</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card-image">
+                        <img
+                            class="image-card"
+                            src="/public/assets/img/user_ana.png"
+                            alt=""
+                        />
+                    </div>
+                    <div class="card-nome">
+                        <h1 class="nome-card">Ana</h1>
+                    </div>
+                    <div class="card-qtd">
+                        <h2 class="desc-card">Quantidade ofertada</h2>
+                    </div>
+                    <div class="card-pesagem">
+                        <h3 class="peso-card">10KG</h3>
+                    </div>
+                    <div class="card-confirm">
+                        <h2 class="desc-card">Confirmação de recebimento</h2>
+                    </div>
+                    <div class="card-situacao">
+                        <h3 class="situacao-card-entregue">ENTREGUE</h3>
+                    </div>
+                    <div class="card-btn">
+                        <a href="#">
+                            <button class="card-blue">Ver detalhes</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card-image">
+                        <img
+                            class="image-card"
+                            src="/public/assets/img/user_andre.png"
+                            alt=""
+                        />
+                    </div>
+                    <div class="card-nome">
+                        <h1 class="nome-card">André</h1>
+                    </div>
+                    <div class="card-qtd">
+                        <h2 class="desc-card">Quantidade ofertada</h2>
+                    </div>
+                    <div class="card-pesagem">
+                        <h3 class="peso-card">5KG</h3>
+                    </div>
+                    <div class="card-confirm">
+                        <h2 class="desc-card">Confirmação de recebimento</h2>
+                    </div>
+                    <div class="card-situacao">
+                        <h3 class="situacao-card-na">NÃO ENTREGUE</h3>
+                    </div>
+                    <div class="card-btn">
+                        <a href="#">
+                            <button class="card-blue">Ver detalhes</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card-image">
+                        <img
+                            class="image-card"
+                            src="/public/assets/img/nav-person.svg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="card-nome">
+                        <h1 class="nome-card">João Oliveira</h1>
+                    </div>
+                    <div class="card-qtd">
+                        <h2 class="desc-card">Quantidade ofertada</h2>
+                    </div>
+                    <div class="card-pesagem">
+                        <h3 class="peso-card">5KG</h3>
+                    </div>
+                    <div class="card-confirm">
+                        <h2 class="desc-card">Confirmação de recebimento</h2>
+                    </div>
+                    <div class="card-situacao">
+                        <h3 class="situacao-card-pendente">PENDENTE</h3>
+                    </div>
+                    <div class="card-btn">
+                        <a href="#">
+                            <button class="card-blue">Ver detalhes</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card-image">
+                        <img
+                            class="image-card"
+                            src="/public/assets/img/nav-person.svg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="card-nome">
+                        <h1 class="nome-card">João Oliveira</h1>
+                    </div>
+                    <div class="card-qtd">
+                        <h2 class="desc-card">Quantidade ofertada</h2>
+                    </div>
+                    <div class="card-pesagem">
+                        <h3 class="peso-card">5KG</h3>
+                    </div>
+                    <div class="card-confirm">
+                        <h2 class="desc-card">Confirmação de recebimento</h2>
+                    </div>
+                    <div class="card-situacao">
+                        <h3 class="situacao-card-pendente">PENDENTE</h3>
+                    </div>
+                    <div class="card-btn">
+                        <a href="#">
+                            <button class="card-blue">Ver detalhes</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card-image">
+                        <img
+                            class="image-card"
+                            src="/public/assets/img/nav-person.svg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="card-nome">
+                        <h1 class="nome-card">João Oliveira</h1>
+                    </div>
+                    <div class="card-qtd">
+                        <h2 class="desc-card">Quantidade ofertada</h2>
+                    </div>
+                    <div class="card-pesagem">
+                        <h3 class="peso-card">5KG</h3>
+                    </div>
+                    <div class="card-confirm">
+                        <h2 class="desc-card">Confirmação de recebimento</h2>
+                    </div>
+                    <div class="card-situacao">
+                        <h3 class="situacao-card-pendente">PENDENTE</h3>
+                    </div>
+                    <div class="card-btn">
+                        <a href="#">
+                            <button class="card-blue">Ver detalhes</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card-image">
+                        <img
+                            class="image-card"
+                            src="/public/assets/img/nav-person.svg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="card-nome">
+                        <h1 class="nome-card">João Oliveira</h1>
+                    </div>
+                    <div class="card-qtd">
+                        <h2 class="desc-card">Quantidade ofertada</h2>
+                    </div>
+                    <div class="card-pesagem">
+                        <h3 class="peso-card">5KG</h3>
+                    </div>
+                    <div class="card-confirm">
+                        <h2 class="desc-card">Confirmação de recebimento</h2>
+                    </div>
+                    <div class="card-situacao">
+                        <h3 class="situacao-card-pendente">PENDENTE</h3>
+                    </div>
+                    <div class="card-btn">
+                        <a href="#">
+                            <button class="card-blue">Ver detalhes</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="numeracao-paginas">
+                <ul class="paginas">
+                    <a href="">
+                        <li class="num cont-pagina">1</li>
                     </a>
-                    <a href="" class="nav-link">
-                        <li>Criar</li>
+                    <a href="">
+                        <li class="num cont-pagina">2</li>
                     </a>
-                    <a href="" class="nav-link">
-                        <li>Painel</li>
+                    <a href="">
+                        <li class="num cont-pagina">3</li>
+                    </a>
+                    <a href="">
+                        <li class="num cont-pagina">4</li>
+                    </a>
+                    <a href="">
+                        <li class="num cont-pagina">5</li>
+                    </a>
+                    <a href="">
+                        <li class="num cont-pagina">6</li>
                     </a>
                 </ul>
-                <div class="row nav-profile">
-                    <div class="img-wrapper">
-                        <img src="/public/assets/img/nav-person.svg" class="img-profile" alt="Foto de perfil">
-                    </div>
-                    <img src="/public/assets/img/arrow-down.svg" alt="Icone de seta">
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <div class="container-painel">
-            <div class="background-painel">
-                <h1 class="painel-titulo">Almoço na creche Arco-Íris</h1>
-                <img src="/public/assets/img/background-painel.svg" alt="">
-            </div>
-
-            <div class="menu-painel">
-                <div class="menu-painel-buttons">
-                    <a href="#"><h2 class="painel-text"> Relatório </h2></a>
-                    <a href="#"><h2 class="painel-text"> Ajudas recebidas </h2></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="cards">
-            <div class="card-container">
-                <div class="card-image">
-                    <img class="image-card" src="/public/assets/img/nav-person.svg" alt="">
-                </div>
-                <div class="card-nome">
-                    <h1 class="nome-card">João Oliveira</h1>
-                </div>
-                <div class="card-qtd">
-                    <h2 class="desc-card">Quantidade ofertada:</h2> 
-                </div>
-                <div class="card-pesagem">
-                    <h3 class="peso-card">5KG</h3>
-                </div>
-                <div class="card-confirm">
-                    <h2 class="desc-card">Confirmação de recebimento:</h2> 
-                </div>
-                <div class="card-situacao">
-                    <h3 class="situacao-card-pendente">PENDENTE</h3>
-                </div>
-                <div class="card-btn">
-                    <a href="#">
-                        <button class="card-blue">
-                            Ver detalhes
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-image">
-                    <img class="image-card" src="/public/assets/img/user_ana.png" alt="">
-                </div>
-                <div class="card-nome">
-                    <h1 class="nome-card">Ana</h1>
-                </div>
-                <div class="card-qtd">
-                    <h2 class="desc-card">Quantidade ofertada</h2> 
-                </div>
-                <div class="card-pesagem">
-                    <h3 class="peso-card">10KG</h3>
-                </div>
-                <div class="card-confirm">
-                    <h2 class="desc-card">Confirmação de recebimento</h2> 
-                </div>
-                <div class="card-situacao">
-                    <h3 class="situacao-card-entregue">ENTREGUE</h3>
-                </div>
-                <div class="card-btn">
-                    <a href="#">
-                        <button class="card-blue">
-                            Ver detalhes
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-image">
-                    <img class="image-card" src="/public/assets/img/user_andre.png" alt="">
-                </div>
-                <div class="card-nome">
-                    <h1 class="nome-card">André</h1>
-                </div>
-                <div class="card-qtd">
-                    <h2 class="desc-card">Quantidade ofertada</h2> 
-                </div>
-                <div class="card-pesagem">
-                    <h3 class="peso-card">5KG</h3>
-                </div>
-                <div class="card-confirm">
-                    <h2 class="desc-card">Confirmação de recebimento</h2> 
-                </div>
-                <div class="card-situacao">
-                    <h3 class="situacao-card-na">NÃO ENTREGUE</h3>
-                </div>
-                <div class="card-btn">
-                    <a href="#">
-                        <button class="card-blue">
-                            Ver detalhes
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-image">
-                    <img class="image-card" src="/public/assets/img/nav-person.svg" alt="">
-                </div>
-                <div class="card-nome">
-                    <h1 class="nome-card">João Oliveira</h1>
-                </div>
-                <div class="card-qtd">
-                    <h2 class="desc-card">Quantidade ofertada</h2> 
-                </div>
-                <div class="card-pesagem">
-                    <h3 class="peso-card">5KG</h3>
-                </div>
-                <div class="card-confirm">
-                    <h2 class="desc-card">Confirmação de recebimento</h2> 
-                </div>
-                <div class="card-situacao">
-                    <h3 class="situacao-card-pendente">PENDENTE</h3>
-                </div>
-                <div class="card-btn">
-                    <a href="#">
-                        <button class="card-blue">
-                            Ver detalhes
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-image">
-                    <img class="image-card" src="/public/assets/img/nav-person.svg" alt="">
-                </div>
-                <div class="card-nome">
-                    <h1 class="nome-card">João Oliveira</h1>
-                </div>
-                <div class="card-qtd">
-                    <h2 class="desc-card">Quantidade ofertada</h2> 
-                </div>
-                <div class="card-pesagem">
-                    <h3 class="peso-card">5KG</h3>
-                </div>
-                <div class="card-confirm">
-                    <h2 class="desc-card">Confirmação de recebimento</h2> 
-                </div>
-                <div class="card-situacao">
-                    <h3 class="situacao-card-pendente">PENDENTE</h3>
-                </div>
-                <div class="card-btn">
-                    <a href="#">
-                        <button class="card-blue">
-                            Ver detalhes
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-image">
-                    <img class="image-card" src="/public/assets/img/nav-person.svg" alt="">
-                </div>
-                <div class="card-nome">
-                    <h1 class="nome-card">João Oliveira</h1>
-                </div>
-                <div class="card-qtd">
-                    <h2 class="desc-card">Quantidade ofertada</h2> 
-                </div>
-                <div class="card-pesagem">
-                    <h3 class="peso-card">5KG</h3>
-                </div>
-                <div class="card-confirm">
-                    <h2 class="desc-card">Confirmação de recebimento</h2> 
-                </div>
-                <div class="card-situacao">
-                    <h3 class="situacao-card-pendente">PENDENTE</h3>
-                </div>
-                <div class="card-btn">
-                    <a href="#">
-                        <button class="card-blue">
-                            Ver detalhes
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-image">
-                    <img class="image-card" src="/public/assets/img/nav-person.svg" alt="">
-                </div>
-                <div class="card-nome">
-                    <h1 class="nome-card">João Oliveira</h1>
-                </div>
-                <div class="card-qtd">
-                    <h2 class="desc-card">Quantidade ofertada</h2> 
-                </div>
-                <div class="card-pesagem">
-                    <h3 class="peso-card">5KG</h3>
-                </div>
-                <div class="card-confirm">
-                    <h2 class="desc-card">Confirmação de recebimento</h2> 
-                </div>
-                <div class="card-situacao">
-                    <h3 class="situacao-card-pendente">PENDENTE</h3>
-                </div>
-                <div class="card-btn">
-                    <a href="#">
-                        <button class="card-blue">
-                            Ver detalhes
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="numeracao-paginas">
-            <ul class="paginas">
                 <a href="">
-                <li class="num cont-pagina">1</li>
+                    <div class="cont-pagina">Seguinte &#62;</div>
                 </a>
-                <a href="">
-                <li class="num cont-pagina">2</li>
+            </div>
+        </main>
+
+        <footer class="footer-bar">
+            <img
+                class="logo-footer"
+                src="/public/assets/img/Donaro_Logo_White.svg"
+                alt="Logo Donaro"
+            />
+            <ul class="menu-footer">
+                <h2 class="subtitulo-footer titulo-white">Ações sociais</h2>
+                <a href="#">
+                    <li class="list-item">Criar</li>
                 </a>
-                <a href="">
-                <li class="num cont-pagina">3</li>
+                <a href="#">
+                    <li class="list-item">Fazer doação</li>
                 </a>
-                <a href="">
-                <li class="num cont-pagina">4</li>
-                </a>
-                <a href="">
-                <li class="num cont-pagina">5</li>
-                </a>
-                <a href="">
-                <li class="num cont-pagina">6</li>
+                <a href="#">
+                    <li class="list-item">Descobrir</li>
                 </a>
             </ul>
-            <a href="">
-            <div class="cont-pagina">Seguinte &#62;</div>
-        </a>
-        </div>
-    </main>
-
-    <footer class="footer-bar">
-        <img class="logo-footer" src="/public/assets/img/Donaro_Logo_White.svg" alt="Logo Donaro">
-        <ul class="menu-footer">
-            <h2 class="subtitulo-footer titulo-white">Ações sociais</h2>
-            <a href="#">
-                <li class="list-item">Criar</li>
-            </a>
-            <a href="#">
-                <li class="list-item">Fazer doação</li>
-            </a>
-            <a href="#">
-                <li class="list-item">Descobrir</li>
-            </a>
-        </ul>
-        <ul class="menu-footer">
-            <h2 class="subtitulo-footer titulo-white">Ajuda</h2>
-            <a href="#">
-                <li class="list-item">Fale conosco</li>
-            </a>
-            <a href="#">
-                <li class="list-item">Dúvidas frequentes</li>
-            </a>
-            <a href="#">
-                <li class="list-item">Atualizações</li>
-            </a>
-        </ul>
-        <ul class="menu-footer">
-            <h2 class="subtitulo-footer titulo-white">Acompanhe nossas redes sociais</h2>
-            <div class="redes-sociais">
+            <ul class="menu-footer">
+                <h2 class="subtitulo-footer titulo-white">Ajuda</h2>
                 <a href="#">
-                    <img class="icone-midias" src="/public/assets/img/logo-facebook.svg" alt="icone Facebook">
+                    <li class="list-item">Fale conosco</li>
                 </a>
                 <a href="#">
-                    <img class="icone-midias" src="/public/assets/img/logo-instagram.svg" alt="icone Instagram">
+                    <li class="list-item">Dúvidas frequentes</li>
                 </a>
                 <a href="#">
-                    <img class="icone-midias" src="/public/assets/img/logo-twitter.svg" alt="icone Twitter">
+                    <li class="list-item">Atualizações</li>
                 </a>
-            </div>
-        </ul>
-    </footer>
-</body>
-
+            </ul>
+            <ul class="menu-footer">
+                <h2 class="subtitulo-footer titulo-white">
+                    Acompanhe nossas redes sociais
+                </h2>
+                <div class="redes-sociais">
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-facebook.svg"
+                            alt="icone Facebook"
+                        />
+                    </a>
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-instagram.svg"
+                            alt="icone Instagram"
+                        />
+                    </a>
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-twitter.svg"
+                            alt="icone Twitter"
+                        />
+                    </a>
+                </div>
+            </ul>
+        </footer>
+    </body>
 </html>
