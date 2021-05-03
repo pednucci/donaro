@@ -21,6 +21,10 @@ exports.register = async (req, res) => {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(pass, salt);
 
+    if(uf == 0 || city == 0){
+        erros.push({text: 'Selecione um estado/cidade válido!'})
+    }
+
     if(rowsMail.length > 0) {
         erros.push({text: 'Esse e-mail já está cadastrado!'})
     }
