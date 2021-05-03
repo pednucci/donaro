@@ -18,7 +18,9 @@
             </ul>
             <div class="row nav-profile">
                 <div class="img-wrapper">
-                    <img src="/assets/img/nav-person.svg" class="img-profile" alt="Foto de perfil" />
+                    {{#each user}}
+                    <img src="{{cd_foto_usuario}}" class="img-profile" alt="Foto de perfil" />
+                    {{/each}}
                 </div>
                 <img src="/assets/img/arrow-down.svg" alt="Icone de seta" />
             </div>
