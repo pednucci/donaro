@@ -89,3 +89,47 @@ button {
     justify-content: center;
     align-items: center;
 }
+
+
+/* #region Progresso */
+.progresso-container {
+    margin-bottom: 10px;
+}
+
+.porcentagem {
+    width: 100%;
+
+    margin-bottom: 5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progresso-barra,
+.progresso-barra * {
+    width: 100%;
+    height: 15px;
+
+    background-color: var(--blue-logo-transparent);
+    border-radius: 20px;
+}
+
+.progresso-atual {
+    width: 54%;
+
+    background-color: var(--blue-logo);
+}
+
+.alimento .porcentagem {
+    width: 100%;
+    height: 100;
+
+    margin: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* #endregion */
