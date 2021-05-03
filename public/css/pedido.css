@@ -2,7 +2,6 @@
 .container-pedido {
   width: 960px;
   height: auto;
-  /* max-width: 960px; */
 
   margin: auto;
   margin-bottom: 20vh;
@@ -153,8 +152,13 @@ h4 {
   font-weight: 500;
 }
 
-#alimento-container {
-  flex-direction: column;
+.alimento-container {
+
+  height: auto;
+  max-height: 400px;
+  position: relative;
+  overflow-y: scroll;
+  justify-content: flex-start;
   gap: 20px;
 }
 
@@ -182,15 +186,7 @@ h4 {
   margin-bottom: 10px;
 }
 
-.alimento .porcentagem {
-  width: 100%;
 
-  margin: 0;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .meta p {
   font-weight: 500;
@@ -200,17 +196,6 @@ h4 {
   width: 100%;
 }
 
-.main-alimentos :nth-child(2) .progresso-atual {
-  width: 100%;
-}
-
-.main-alimentos :nth-child(3) .progresso-atual {
-  width: 38%;
-}
-
-.main-alimentos :nth-child(4) .progresso-atual {
-  width: 30%;
-}
 
 
 /* Footer */
