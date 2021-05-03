@@ -113,14 +113,16 @@
                     <div class="alimentos row">
                         <div>
                             <label for="">Tipo</label>
-                            <select class="input-form" name="" id="">
-                                <option value="solido">Sólido</option>
+                            <select id="tpf" class="input-form" name="">
+                                <option value="">Selecione um tipo</option>
+                                <option value="">Sólido</option>
+                                <option value="">Líquido</option>
                             </select>
                         </div>
                         <div>
                             <label for="">Alimento</label>
                             <select class="input-form" name="" id="">
-                                <option value="arroz">Arroz</option>
+                                <option value="kg">Arroz</option>
                             </select>
                         </div>
 
@@ -130,16 +132,19 @@
                                 class="input-form"
                                 type="number"
                                 name=""
-                                id=""
+                                id="qtd-ali"
                                 min="1"
                             />
                         </div>
 
                         <div>
                             <label for="">Medida</label>
-                            <select class="input-form" name="" id="">
-                                <option value="kg">KG</option>
-                            </select>
+                            <select
+                                id="alMedida"
+                                class="input-form"
+                                name=""
+                                id=""
+                            ></select>
                         </div>
 
                         <button class="btn red" type="button">
@@ -150,7 +155,12 @@
                         </button>
                     </div>
 
-                    <button class="btn blue adicionar" type="button">
+                    <button
+                        onclick="addFood()"
+                        id="btnAddFood"
+                        class="btn blue adicionar"
+                        type="button"
+                    >
                         + Adicionar mais um alimento
                     </button>
 
@@ -244,4 +254,6 @@
             </ul>
         </footer>
     </body>
+
+    <script src="/public/js/main.js"></script>
 </html>
