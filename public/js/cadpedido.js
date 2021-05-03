@@ -1,6 +1,6 @@
 const foodWrapper = document.querySelector('.alimentos-wrapper');
 const food = document.querySelector('.alimento.row');
-
+let idCount = 1;
 
 const tipoContainer = document.querySelector('.tipo-input');
 const foodContainer = document.querySelector('.alimento-input');
@@ -60,9 +60,10 @@ function medidaLiquido() {
 
 //#region  Adição de novos campos para inserir alimentos
 btnAddFood.addEventListener('click', () => foodWrapper.append(addFood()));
-btnDelFood.addEventListener('click', delFood);
+// btnDelFood.addEventListener('click', delFood);
 
 function addFood() {
+    idCount++;
 
     // Container alimentos 
     var alimentoContainer = document.createElement("div");
@@ -165,14 +166,20 @@ function addFood() {
     alimentoContainer.append(qtd);
     alimentoContainer.append(medida);
     alimentoContainer.append(btn);
+    alimentoContainer.setAttribute("id", idCount);
 
-    console.log(foodWrapper);
+
+
+    console.log(alimentoContainer);
 
     return alimentoContainer;
 }
 //#endregion
 
-function delFood() {
+function delFood(btn) {
+    let div = document.querySelectorAll(".alimento.row")
+    let divId = btn.parentNode.id
 
-    console.log('tipo deleted');
+    console.log(divId)
+    div[divId].remove();
 }
