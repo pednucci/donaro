@@ -1,74 +1,81 @@
 const foodWrapper = document.querySelector('.alimentos-wrapper');
-const food = document.querySelector('.alimento.row');
-let idCount = 1;
-
-const tipoContainer = document.querySelector('.tipo-input');
-const foodContainer = document.querySelector('.alimento-input');
-const qtdContainer = document.querySelector('.quantidade-input');
-const medContainer = document.querySelector('.medida-input');
+var idCount = 1;
 
 const btnAddFood = document.querySelector(".btn.adicionar");
-const btnDelFood = document.querySelector('.btn.excluir');
 
-const tipfisico = document.querySelector(".tpf");
-const medida = document.querySelector(".alMedida");
+const tipfisico = document.querySelectorAll(".tpf");
+const medidaAl = document.querySelectorAll(".alMedida");
 
 //#region Filtro da medida com base no tipo selecionado 
 medidaSolido()
 medidaLiquido()
 
-tipfisico.addEventListener('change', event => {
-    for (i = 0; i < tipfisico.options.length; i++) {
-        medida.remove(medida.options[i])
-    };
-    medidaSolido()
-    medidaLiquido()
-})
+tipfisico.forEach(
+    function (currentValue, currentIndex) {
+        tipfisico[currentIndex].addEventListener('change', event => {
+            for (i = 0; i < tipfisico[currentIndex].options.length; i++) {
+                medidaAl[currentIndex].remove(medidaAl[currentIndex].options[i])
+            };
+            medidaSolido()
+            medidaLiquido()
+        })
+    }
+)
+
 
 
 function medidaSolido() {
-    if (tipfisico.selectedIndex == 0) {
 
-        const kg = document.createElement('option');
-        kg.value = 'KG';
-        kg.text = 'KG';
-        medida.add(kg, medida.options[0]);
+    tipfisico.forEach(
+        function (currentValue, currentIndex) {
+            if (tipfisico[currentIndex].selectedIndex == 0) {
 
-        const gramas = document.createElement('option');
-        gramas.value = 'G';
-        gramas.text = 'Gramas';
-        medida.add(gramas, medida.options[1])
-    }
+                const kg = document.createElement('option');
+                kg.value = 'KG';
+                kg.text = 'KG';
+                medidaAl[currentIndex].add(kg, medidaAl[currentIndex].options[0]);
+
+                const gramas = document.createElement('option');
+                gramas.value = 'G';
+                gramas.text = 'Gramas';
+                medidaAl[currentIndex].add(gramas, medidaAl[currentIndex].options[1])
+            }
+        }
+    )
+
+
 }
 
 function medidaLiquido() {
-    if (tipfisico.selectedIndex == 1) {
+    tipfisico.forEach(
+        function (currentValue, currentIndex) {
+            if (tipfisico[currentIndex].selectedIndex == 1) {
 
-        const litro = document.createElement('option');
-        litro.value = 'L';
-        litro.text = 'Litros';
-        medida.add(litro, medida.options[0]);
+                const litro = document.createElement('option');
+                litro.value = 'L';
+                litro.text = 'Litros';
+                medidaAl[currentIndex].add(litro, medidaAl[currentIndex].options[0]);
 
-        const ml = document.createElement('option');
-        ml.value = 'ML';
-        ml.text = 'ML';
-        medida.add(ml, medida.options[1])
-    }
+                const ml = document.createElement('option');
+                ml.value = 'ML';
+                ml.text = 'ML';
+                medidaAl[currentIndex].add(ml, medidaAl[currentIndex].options[1])
+            }
+        }
+    )
 }
 
 //#endregion
 
 //#region  Adição de novos campos para inserir alimentos
-btnAddFood.addEventListener('click', () => foodWrapper.append(addFood()));
-// btnDelFood.addEventListener('click', delFood);
+
+btnAddFood.addEventListener('click', () => {
+    foodWrapper.append(addFood())
+    medidaSolido()
+    medidaLiquido()
+});
 
 function addFood() {
-    idCount++;
-
-    // Container alimentos 
-    var alimentoContainer = document.createElement("div");
-    alimentoContainer.classList = ("alimento row");
-
 
     //#region Input do tipo
     var tipo = document.createElement("div");
@@ -79,7 +86,6 @@ function addFood() {
 
     var slctTipo = document.createElement("select");
     slctTipo.classList = "input-form tpf";
-    slctTipo.setAttribute('name', 'tipofis');
 
     var optTipoS = document.createElement("option");
     optTipoS.innerHTML = "Sólido";
@@ -106,7 +112,6 @@ function addFood() {
     var txtFood = document.createElement("input");
     txtFood.setAttribute('type', 'text');
     txtFood.classList = "input-form"
-    txtFood.setAttribute('name', 'alimento');
 
     alimento.append(lblFood);
     alimento.append(txtFood);
@@ -123,7 +128,6 @@ function addFood() {
     var txtQtd = document.createElement("input");
     txtQtd.classList = "input-form"
     txtQtd.setAttribute('type', 'number');
-    txtQtd.setAttribute('name', 'quantidade');
     txtQtd.setAttribute('min', '1');
 
     qtd.append(lblQtd);
@@ -139,7 +143,6 @@ function addFood() {
 
     var slctMedida = document.createElement("select");
     slctMedida.classList = "input-form alMedida"
-    slctMedida.setAttribute('name', 'medida');
 
     medida.append(lblMedida);
     medida.append(slctMedida);
@@ -151,16 +154,19 @@ function addFood() {
     btn.classList.add("red");
     btn.classList.add("excluir");
     btn.setAttribute("type", "button");
+    btn.setAttribute("onclick", "delFood(this)");
 
     var imgBtn = document.createElement("img");
     imgBtn.setAttribute("src", "/assets/img/trash.svg");
     imgBtn.setAttribute("alt", "excluir");
-
     btn.append(imgBtn);
     //#endregion
 
+    //#region Container alimentos 
 
-    // Adiciona os elementos ao container
+    var alimentoContainer = document.createElement("div");
+    alimentoContainer.classList = ("alimento row");
+
     alimentoContainer.append(tipo);
     alimentoContainer.append(alimento);
     alimentoContainer.append(qtd);
@@ -168,18 +174,21 @@ function addFood() {
     alimentoContainer.append(btn);
     alimentoContainer.setAttribute("id", idCount);
 
-
-
+    //#endregion
     console.log(alimentoContainer);
+    console.log("added")
 
+    idCount++;
     return alimentoContainer;
 }
 //#endregion
 
 function delFood(btn) {
-    let div = document.querySelectorAll(".alimento.row")
     let divId = btn.parentNode.id
+    let toRemove = document.getElementById(divId);
 
-    console.log(divId)
-    div[divId].remove();
+    console.log(btn.parentNode)
+    foodWrapper.removeChild(toRemove);
+    console.log("removed")
+    idCount--;
 }

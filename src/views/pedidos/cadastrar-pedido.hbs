@@ -61,34 +61,30 @@
             <h2 class="sub titulo">Alimentos</h2>
 
             <div class="alimentos-wrapper column">
-                <div class="alimento row" id="1">
+                <div class="alimento row" id="0">
                     <div class="tipo-input">
                         <label>Tipo</label>
-                        <select class="input-form tpf" name="tipofis">
+                        <select class="input-form tpf">
                             <option value="solido">Sólido</option>
                             <option value="liquido">Líquido</option>
                         </select>
                     </div>
                     <div class="alimento-input">
                         <label>Alimento</label>
-                        <input type="text" class="input-form" name="alimento">
+                        <input type="text" class="input-form">
                     </div>
 
                     <div class="quantidade-input">
                         <label>Quantidade</label>
-                        <input class="input-form" type="number" name="quantidade" min="1" />
+                        <input class="input-form" type="number" min="1" />
                     </div>
 
                     <div class="medida-input">
                         <label>Medida</label>
-                        <select class="input-form alMedida" name="medida">
+                        <select class="input-form alMedida">
 
                         </select>
                     </div>
-
-                    <button onclick="delFood(this)" class="btn red excluir" type="button">
-                        <img src="/assets/img/trash.svg" alt="Excluir" />
-                    </button>
                 </div>
             </div>
 
