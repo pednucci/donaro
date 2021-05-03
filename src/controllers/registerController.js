@@ -16,8 +16,14 @@ exports.register = async (req, res) => {
     const uf = req.body.estado;
     const cel = req.body.cel;
 
+    const [rowsMail] = await conn.query(`SELECT * FROM usuario WHERE cd_email_usuario = ?`, [email])
+
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(pass, salt);
+
+    if(rowsMail.length > 0) {
+        erros.push({text: 'Esse e-mail já está cadastrado!'})
+    }
 
     if (req.body.pass !== req.body.passConf){
         erros.push({text: 'As senhas não coincidem!'})
@@ -53,7 +59,10 @@ exports.register = async (req, res) => {
             hash,
             email
         ])
-    
-        res.redirect('/')
+        
+        req.flash('successMsg', 'Usuário cadastrado com sucesso!')
+        res.redirect('/login')
+        await conn.end();
     }
+    await conn.end();
 };
