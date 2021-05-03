@@ -34,7 +34,7 @@
   color: var(--white);
 }
 
-/* Painel */
+/* Painel Nav */
 .menu-painel {
   height: 100px;
   background-color: var(--red-logo);
@@ -85,11 +85,13 @@
 /* #region Botões */
 
 .botoes {
-  gap: 50px;
-  justify-content: center;
   margin-top: 100px;
   margin-bottom: 100px;
+
+  gap: 40px;
+  justify-content: center;
 }
+
 
 /* #endregion */
 
