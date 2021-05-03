@@ -1,4 +1,4 @@
-const foodWrapper = document.querySelector('.alimentos-contaioner');
+const foodWrapper = document.querySelector('.alimentos-wrapper');
 const btnAddFood = document.querySelector(".btn.adicionar");
 const tipoContainer = document.querySelector('.tipo-input');
 const foodContainer = document.querySelector('.alimento-input');
@@ -41,9 +41,11 @@ function medidaLiquido() {
 
 
 function addFood() {
+    let div = document.createElement('input');
+    // foodWrapper
+    // div.classList.add('alimentos row');
+
     console.log('Coé');
-    var div = foodWrapper.createElement('div');
-    div.classList.add('alimentos row');
 }
 
 function delFood() {

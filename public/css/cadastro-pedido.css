@@ -20,15 +20,15 @@
     color: var(--blue-logo);
 }
 
-.alimentos.row {
+.alimento.row {
     justify-content: space-between;
 }
 
-.alimentos.row div {
+.alimento.row div {
     width: 100%;
 }
 
-.alimentos .btn.red {
+.alimento .btn.red {
     min-height: 40px;
     min-width: 40px;
     margin: 0 0 10px 0;
