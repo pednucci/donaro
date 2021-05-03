@@ -1,0 +1,52 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Donaro -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/forms.css" />
+
+    <title>Login</title>
+</head>
+
+<header>
+    <nav class="nav-bar">
+        <div class="nav-logo">
+            <img src="/assets/img/donaro_logo.svg" class="logo" alt="Logo Donaro" />
+        </div>
+        <div class="nav-menu">
+            <p class="nav-link">
+                Não tem conta?
+                <a href="/cadastro" class="nav-link titulo-link">
+                    Cadastrar-se
+                </a>
+            </p>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="form-container column">
+            {{>msg}}
+            {{#if error}}
+            <div class="error">
+                <h2 class="sub titulo">{{error}}</h2>
+            </div>
+            {{else}}
+            {{/if}}
+        <p class="sub titulo">Login</p>
+        <form class="form-login column" action="/login" method="POST">
+            <label for="">Email</label>
+            <input class="input-form" type="email" name="email" id="" />
+            <div class="chkbx-container exibir row" id="">
+                <input class="checkbox-form" type="checkbox" name="" id="ckbExibir" />
+                <label class="" for="ckbExibir">Exibir senha</label>
+            </div>
+            <label for="">Senha</label>
+            <input class="input-form" type="password" name="pass" id="" />
+            <a class="titulo-link" href="#">Esqueci minha senha</a>
+            <input class="btn btn blue" type="submit" value="Entrar" />
+        </form>
+    </div>
+</main>
