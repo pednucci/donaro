@@ -8,81 +8,81 @@ var tipfisico = document.querySelectorAll(".tpf");
 var medidaAl = document.querySelectorAll(".alMedida");
 
 //#region Filtro da medida com base no tipo selecionado 
-// medidaSolido()
-// medidaLiquido()
+// // medidaSolido()
+// // medidaLiquido()
 
 
 
-tipfisico.forEach(
-    tipfisico => {
-        medidaAl.forEach(
-            medidaAl => {
-                tipfisico.addEventListener('change', event => {
-                    for (i = 0; i < tipfisico.options.length; i++) {
-                        medidaAl.remove(medidaAl.options[i])
-                    };
-                    medidaSolido()
-                    medidaLiquido()
-                })
-            }
-        )
-    }
-)
+// tipfisico.forEach(
+//     tipfisico => {
+//         medidaAl.forEach(
+//             medidaAl => {
+//                 tipfisico.addEventListener('change', event => {
+//                     for (i = 0; i < tipfisico.options.length; i++) {
+//                         medidaAl.remove(medidaAl.options[i])
+//                     };
+//                     medidaSolido()
+//                     medidaLiquido()
+//                 })
+//             }
+//         )
+//     }
+// )
 
 
-function medidaSolido() {
+// function medidaSolido() {
 
 
-    tipfisico.forEach(
-        tipfisico => {
-            medidaAl.forEach(
-                medidaAl => {
-                    if (tipfisico.selectedIndex == 0) {
+//     tipfisico.forEach(
+//         tipfisico => {
+//             medidaAl.forEach(
+//                 medidaAl => {
+//                     if (tipfisico.selectedIndex == 0) {
 
-                        console.log
-                        console.log(food)
+//                         console.log
+//                         console.log(food)
 
-                        const kg = document.createElement('option');
-                        kg.value = 'KG';
-                        kg.text = 'KG';
-                        medidaAl.add(kg, medidaAl.options[0]);
+//                         const kg = document.createElement('option');
+//                         kg.value = 'KG';
+//                         kg.text = 'KG';
+//                         medidaAl.add(kg, medidaAl.options[0]);
 
-                        const gramas = document.createElement('option');
-                        gramas.value = 'G';
-                        gramas.text = 'Gramas';
-                        medidaAl.add(gramas, medidaAl.options[1])
-                    }
-                }
-            )
-        }
-    )
+//                         const gramas = document.createElement('option');
+//                         gramas.value = 'G';
+//                         gramas.text = 'Gramas';
+//                         medidaAl.add(gramas, medidaAl.options[1])
+//                     }
+//                 }
+//             )
+//         }
+//     )
 
 
-}
+// }
 
-function medidaLiquido() {
+// function medidaLiquido() {
 
-    tipfisico.forEach(
-        tipfisico => {
-            medidaAl.forEach(
-                medidaAl => {
-                    if (tipfisico.selectedIndex == 1) {
+//     tipfisico.forEach(
+//         tipfisico => {
+//             medidaAl.forEach(
+//                 medidaAl => {
+//                     if (tipfisico.selectedIndex == 1) {
 
-                        const litro = document.createElement('option');
-                        litro.value = 'L';
-                        litro.text = 'Litros';
-                        medidaAl.add(litro, medidaAl.options[0]);
+//                         const litro = document.createElement('option');
+//                         litro.value = 'L';
+//                         litro.text = 'Litros';
+//                         medidaAl.add(litro, medidaAl.options[0]);
 
-                        const ml = document.createElement('option');
-                        ml.value = 'ML';
-                        ml.text = 'ML';
-                        medidaAl.add(ml, medidaAl.options[1])
-                    }
-                }
-            )
-        }
-    )
-}
+//                         const ml = document.createElement('option');
+//                         ml.value = 'ML';
+//                         ml.text = 'ML';
+//                         medidaAl.add(ml, medidaAl.options[1])
+//                     }
+//                 }
+//             )
+//         }
+//     )
+// }
 
 //#endregion
 
@@ -171,15 +171,25 @@ function addFood() {
     slctMedida.classList = "input-form alMedida"
 
     var optTipoK = document.createElement("option");
-    optTipoK.innerHTML = "KG";
+    optTipoK.innerHTML = "Quilos";
     optTipoK.setAttribute('value', 'KG');
 
     var optTipoG = document.createElement("option");
     optTipoG.innerHTML = "Gramas";
     optTipoG.setAttribute('value', 'G');
 
+    var optTipoL = document.createElement("option");
+    optTipoL.innerHTML = "Litros";
+    optTipoL.setAttribute('value', 'L');
+
+    var optTipoML = document.createElement("option");
+    optTipoML.innerHTML = "ML";
+    optTipoML.setAttribute('value', 'ML');
+
     slctMedida.append(optTipoK);
     slctMedida.append(optTipoG);
+    slctMedida.append(optTipoL);
+    slctMedida.append(optTipoML);
 
     medida.append(lblMedida);
     medida.append(slctMedida);

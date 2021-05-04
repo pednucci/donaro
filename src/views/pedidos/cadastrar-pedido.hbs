@@ -20,19 +20,19 @@
     <div class="form-container column">
         <h1 class="titulo">Cadastrar pedido</h1>
         <h2 class="sub titulo">Dados iniciais</h2>
-        <form class="form-login column" action="" method="">
+        <form class="form-login column" action="" method="" id="formPedido">
             <label for="">Título</label>
             <input class="input-form" type="text" name="" id="" />
 
             <div class="row">
                 <div>
-                    <label for="">Data de encerramento</label>
-                    <input class="input-form" type="date" name="datePedido" id="" />
+                    <label>Data de encerramento</label>
+                    <input class="input-form" type="date" name="" id="" />
                 </div>
 
                 <div>
-                    <label for="">Meta <i class="fas fa-info-circle"></i></label>
-                    <select class="input-form" name="metaPedido" id="">
+                    <label class="lblMeta row">Meta <img src="/assets/img/icone_info.svg" alt="Informação Meta"></label>
+                    <select class="input-form" name="" id="">
                         <option value="aberta">Aberta</option>
                         <option value="fechada">Fechada</option>
                     </select>
@@ -82,8 +82,10 @@
                     <div class="medida-input">
                         <label>Medida</label>
                         <select class="input-form alMedida">
-                            {{!-- <option value="KG">KG</option>
-                            <option value="G">Gramas</option> --}}
+                            <option value="KG">Quilos</option>
+                            <option value="G">Gramas</option>
+                            <option value="L">Litros</option>
+                            <option value="ML">ML</option>
                         </select>
                     </div>
                 </div>

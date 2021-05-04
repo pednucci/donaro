@@ -133,3 +133,11 @@ button {
 }
 
 /* #endregion */
+
+.dblock {
+    display: block;
+}
+
+.dnone {
+    display: none;
+}

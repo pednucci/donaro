@@ -8,10 +8,10 @@
                 <a href="" class="nav-link">
                     <li>Descobrir</li>
                 </a>
-                <a href="" class="nav-link">
+                <a href="/criar" class="nav-link">
                     <li>Criar</li>
                 </a>
-            {{#if user}}
+                {{#if user}}
                 <a href="" class="nav-link">
                     <li>Painel</li>
                 </a>
@@ -23,6 +23,26 @@
                     {{/each}}
                 </div>
                 <img src="/assets/img/arrow-down.svg" alt="Icone de seta" />
+            </div>
+            <div class="toggle-menu">
+                <ul class="">
+                    <li class="toggle-link">
+                        <a href="#" class="sub titulo">Notificações</a>
+                    </li>
+                    <li class="toggle-link">
+                        <a href="#" class="sub titulo">Chat</a>
+                    </li>
+                    <li class="toggle-link">
+                        <a href="#" class="sub titulo">Meus dados</a>
+                    </li>
+                    <li class="toggle-link logout">
+                        <a href="#" class="sub titulo">
+                            Logout
+
+                            <img src="/assets/img/icone_logout.svg" alt="Logout" />
+                        </a>
+                    </li>
+                </ul>
             </div>
             {{else}}
             <a href="/login" class="nav-link">

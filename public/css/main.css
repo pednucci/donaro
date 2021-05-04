@@ -8,12 +8,6 @@
     align-items: center;
 }
 
-/* .section:not(.depoimentos)::after {
-    content: url('/public/assets/img/icone_land-page.svg');
-    position: relative;
-
-    transform: translate(0, -50%);
-} */
 
 .wrapper {
     width: min-content;
@@ -100,7 +94,6 @@
 /* #region Seção Ações */
 .section.acoes {
     background-color: var(--red-logo);
-    /* color: white; */
 }
 
 .processos .wrapper .titulo {
@@ -121,7 +114,7 @@
 }
 
 .processo:not(:last-child):after {
-    content: url('/public/assets/img/arrow-right.svg');
+    content: url('/assets/img/arrow-right.svg');
     position: relative;
     left: 50%;
     top: -150px;

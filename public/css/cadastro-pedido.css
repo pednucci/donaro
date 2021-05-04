@@ -16,8 +16,13 @@
     margin: 40px 0 20px 0;
 }
 
-.fas {
-    color: var(--blue-logo);
+.lblMeta.row {
+    justify-content: flex-start;
+}
+
+img[alt^="Info"] {
+    margin-left: -15px;
+    width: 15px;
 }
 
 .alimento.row {
