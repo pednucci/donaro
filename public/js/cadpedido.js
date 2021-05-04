@@ -7,8 +7,9 @@ const tipfisico = document.querySelectorAll(".tpf");
 const medidaAl = document.querySelectorAll(".alMedida");
 
 //#region Filtro da medida com base no tipo selecionado 
-medidaSolido()
-medidaLiquido()
+// medidaSolido()
+// medidaLiquido()
+
 
 tipfisico.forEach(
     function (currentValue, currentIndex) {
@@ -21,8 +22,6 @@ tipfisico.forEach(
         })
     }
 )
-
-
 
 function medidaSolido() {
 
@@ -67,17 +66,18 @@ function medidaLiquido() {
 
 //#endregion
 
-//#region  Adição de novos campos para inserir alimentos
+//#region  Botões Adicionar/Remover alimentos
 
 btnAddFood.addEventListener('click', () => {
     foodWrapper.append(addFood())
     medidaSolido()
     medidaLiquido()
+    console.log(tipfisico.length)
 });
 
 function addFood() {
 
-    //#region Input do tipo
+    //#region Select do Tipo
     var tipo = document.createElement("div");
     tipo.classList = ("tipo-input");
 
@@ -134,7 +134,7 @@ function addFood() {
     qtd.append(txtQtd);
     //#endregion 
 
-    //#region Input da medida
+    //#region Select da Medida
     var medida = document.createElement("div");
     medida.classList.add("medida-input");
 
@@ -144,11 +144,22 @@ function addFood() {
     var slctMedida = document.createElement("select");
     slctMedida.classList = "input-form alMedida"
 
+    var optTipoK = document.createElement("option");
+    optTipoK.innerHTML = "KG";
+    optTipoK.setAttribute('value', 'KG');
+
+    var optTipoG = document.createElement("option");
+    optTipoG.innerHTML = "Gramas";
+    optTipoG.setAttribute('value', 'G');
+
+    slctMedida.append(optTipoK);
+    slctMedida.append(optTipoG);
+
     medida.append(lblMedida);
     medida.append(slctMedida);
     //#endregion
 
-    //#region Input do botão
+    //#region Input do Botão
     var btn = document.createElement("button");
     btn.classList.add("btn");
     btn.classList.add("red");
@@ -181,7 +192,6 @@ function addFood() {
     idCount++;
     return alimentoContainer;
 }
-//#endregion
 
 function delFood(btn) {
     let divId = btn.parentNode.id
@@ -192,3 +202,4 @@ function delFood(btn) {
     console.log("removed")
     idCount--;
 }
+//#endregion
