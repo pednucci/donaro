@@ -110,9 +110,9 @@
   font-weight: bolder;
 }
 
-/* Pedido nao entregue */
-
-/* #endregion */
+.card-btn .btn {
+  margin-right: 40px;
+}
 
 /* #region Entregue/pendente/não-entregue */
 
