@@ -32,11 +32,73 @@
     cursor: pointer;
 }
 
+.profile.row {
+    cursor: pointer;
+}
+
 .nav-profile .img-wrapper {
     width: 35px;
     height: 35px;
 }
 
+.toggle-menu {
+    width: 250px;
+    height: 230px;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    display: none;
+
+    z-index: 999;
+    position: absolute;
+    right: 40px;
+    top: 80px;
+
+    border: var(--border-form);
+    border-radius: 8px;
+    box-shadow: var(--border-shadow);
+
+    background-color: var(--white);
+}
+
+
+.toggle-link {
+    display: block;
+    margin-top: 15px;
+}
+
+.toggle-link:not(:last-child)::after {
+    content: "";
+    display: block;
+
+    width: 100%;
+
+    margin-top: 15px;
+    border: 0.5px solid var(--gray-border);
+    /* border-color: red; */
+}
+
+
+.toggle-menu .sub.titulo {
+    font-size: 2rem;
+    margin: 0;
+    margin-left: 15px;
+
+}
+
+
+
+.toggle-link.logout {
+    margin-top: 25px;
+}
+
+.logout .sub.titulo {
+    font-size: 1.5rem;
+
+    color: var(--red-logo);
+
+}
 
 /*#endregion*/
 
