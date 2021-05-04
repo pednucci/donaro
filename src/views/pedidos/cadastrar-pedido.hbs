@@ -60,64 +60,32 @@
 
             <h2 class="sub titulo">Alimentos</h2>
 
-            <div class="alimentos-container column">
-                <div class="alimentos row">
+            <div class="alimentos-wrapper column">
+                <div class="alimento row" id="0">
                     <div class="tipo-input">
-                        <label for="">Tipo</label>
-                        <select class="input-form tpf" name="tipofis">
+                        <label>Tipo</label>
+                        <select class="input-form tpf">
                             <option value="solido">Sólido</option>
                             <option value="liquido">Líquido</option>
                         </select>
                     </div>
                     <div class="alimento-input">
-                        <label for="">Alimento</label>
-                        <input type="text" class="input-form" name="alimento">
+                        <label>Alimento</label>
+                        <input type="text" class="input-form">
                     </div>
 
                     <div class="quantidade-input">
-                        <label for="">Quantidade</label>
-                        <input class="input-form" type="number" name="" id="" min="1" />
+                        <label>Quantidade</label>
+                        <input class="input-form" type="number" min="1" />
                     </div>
 
                     <div class="medida-input">
-                        <label for="">Medida</label>
-                        <select class="input-form alMedida" name="">
-
+                        <label>Medida</label>
+                        <select class="input-form alMedida">
+                            {{!-- <option value="KG">KG</option>
+                            <option value="G">Gramas</option> --}}
                         </select>
                     </div>
-
-                    <button class="btn red excluir" type="button">
-                        <img src="/assets/img/trash.svg" alt="Icone lixo" />
-                    </button>
-                </div>
-                <div class="alimentos row">
-                    <div class="tipo-input">
-                        <label for="">Tipo</label>
-                        <select class="input-form tpf" name="tipofis">
-                            <option value="solido">Sólido</option>
-                            <option value="liquido">Líquido</option>
-                        </select>
-                    </div>
-                    <div class="alimento-input">
-                        <label for="">Alimento</label>
-                        <input type="text" class="input-form" name="alimento">
-                    </div>
-
-                    <div class="quantidade-input">
-                        <label for="">Quantidade</label>
-                        <input class="input-form" type="number" name="" id="" min="1" />
-                    </div>
-
-                    <div class="medida-input">
-                        <label for="">Medida</label>
-                        <select class="input-form alMedida" name="">
-
-                        </select>
-                    </div>
-
-                    <button class="btn red excluir" type="button">
-                        <img src="/assets/img/trash.svg" alt="Icone lixo" />
-                    </button>
                 </div>
             </div>
 
