@@ -135,3 +135,16 @@
 
 
 /* #endregion */
+
+/* #region Painel usuário*/
+.usuario .menu-painel {
+  height: 100px;
+  background-color: var(--blue-logo);
+}
+
+.usuario .comentario {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+/* #endregion */
