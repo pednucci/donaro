@@ -87,6 +87,7 @@ var medidaAl = document.querySelectorAll(".alMedida");
 //#endregion
 
 //#region  Botões Adicionar/Remover alimentos
+console.log(document.querySelector('.alimentos-wrapper'))
 
 btnAddFood.addEventListener('click', () => {
     foodWrapper.append(addFood())
@@ -95,10 +96,10 @@ btnAddFood.addEventListener('click', () => {
     var tipfisico = document.querySelectorAll(".tpf");
     var medidaAl = document.querySelectorAll(".alMedida");
 
-    medidaSolido()
-    medidaLiquido()
+    // medidaSolido()
+    // medidaLiquido()
 
-    console.log(tipfisico.length)
+    // console.log(tipfisico.length)
 });
 
 function addFood() {
@@ -235,3 +236,44 @@ function delFood(btn) {
     idCount--;
 }
 //#endregion
+
+document.getElementById("formPedido").addEventListener('submit', event => {
+    event.preventDefault();
+    var valores = []
+    var alimentos = []
+
+    const titulo = document.getElementById("titId").value;
+    const dtPedido = new Date(document.getElementById("dtPed").value);
+    const metaPed = document.getElementById("metaPed").value;
+    const estado = document.getElementById("estadoPed").value;
+    const cidade = document.getElementById("cidadePed").value;
+    const descricao = document.getElementById("descPed").value;
+
+    valores.push({titulo: titulo, data: dtPedido, meta: metaPed, estado: estado, cidade: cidade, descricao: descricao})
+
+    document.querySelectorAll('.alimentos-wrapper > .alimento').forEach(alimento => {
+        const tipofisc = alimento.querySelectorAll('.input-form')[0].value;
+        const alimName = alimento.querySelectorAll('.input-form')[1].value;
+        const quantidade = alimento.querySelectorAll('.input-form')[2].value;
+        const medida = alimento.querySelectorAll('.input-form')[3].value;
+        alimentos.push({tipoFisic: tipofisc, alimento: alimName, quantidade: quantidade, medida: medida})
+    })
+    
+    valores.push(alimentos)
+
+    fetch('cadpedido', {
+        method: 'POST',
+        body: JSON.stringify(valores),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    }).then((response) => {
+        if(response.status == 200){
+            window.location.href = "/cadaccept"
+        }
+        if(response.status == 500){
+            window.location.href = "/cadrecused"
+        }
+    })
+})
