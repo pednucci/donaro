@@ -237,8 +237,16 @@ function delFood(btn) {
 }
 //#endregion
 
+document.getElementById("imagePed").addEventListener('change', event => {
+    console.log(document.getElementById('imagePed').files[0])
+})
+
 document.getElementById("formPedido").addEventListener('submit', event => {
     event.preventDefault();
+    var file = document.getElementById('imagePed').files[0];
+    const img = []
+    img.push({'imgPedido': file})
+
     var valores = []
     var alimentos = []
 
@@ -261,7 +269,7 @@ document.getElementById("formPedido").addEventListener('submit', event => {
     
     valores.push(alimentos)
 
-    fetch('cadpedido', {
+    /* fetch('cadpedido', {
         method: 'POST',
         body: JSON.stringify(valores),
         headers: {
@@ -275,5 +283,5 @@ document.getElementById("formPedido").addEventListener('submit', event => {
         if(response.status == 500){
             window.location.href = "/cadrecused"
         }
-    })
+    }) */
 })
