@@ -57,7 +57,7 @@ exports.newOrder = async (req, res) => {
                  req.body.quantidade, req.body.tpf])
         }
 
-        if(meta == 'fechada'){
+        if(meta == 'Fechada'){
             await conn.query(`
             UPDATE pedido SET qt_total_pedido = 
             (select sum(qt_alimento) from alimento where cd_pedido_alimento = ?) WHERE cd_pedido = ?
