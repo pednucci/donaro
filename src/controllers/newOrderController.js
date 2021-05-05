@@ -18,7 +18,7 @@ exports.newOrder = async (req, res) => {
             sg_estado_pedido, ds_acao_pedido) VALUES(?,?,?,?,?,?,?)
             `, [idUser, titulo, meta, dataPed, cidade, estado, descricao]);
 
-        idPedido = pedido[0].insertId;
+        const idPedido = pedido[0].insertId;
 
         req.body[1].forEach(async alimento => {
             await conn.query(`INSERT INTO alimento
@@ -26,9 +26,19 @@ exports.newOrder = async (req, res) => {
                 VALUES(?,?,?,?,?)`
                 , [alimento.alimento, idPedido, alimento.medida, alimento.quantidade, alimento.tipoFisic])
         });
+
+        if(meta == 'fechada'){
+            await conn.query(`
+            UPDATE pedido SET qt_total_pedido = 
+            (select sum(qt_alimento) from alimento where cd_pedido = ?) WHERE cd_pedido = ?
+            `, [idPedido, idPedido])
+        }
+
+
         res.status(200).send("Pedido cadastrado com sucesso!")
     }
-    catch {
+    catch(err) {
+        console.log(err)
         res.status(500).send("Erro ao cadastrar o pedido!")
     }
     
