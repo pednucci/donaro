@@ -63,6 +63,7 @@
 
 .error {
   width: 100%;
+  max-width: 350px;
 
   padding: 10px;
   margin: 0 auto 20px 0;
