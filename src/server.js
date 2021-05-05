@@ -9,6 +9,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
+const { format } = require('date-fns');
 require('./config/auth')(passport);
 
 app.use(express.json());
@@ -38,7 +39,11 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 app.set('views', path.join(__dirname, 'views'));
-app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs'}));
+app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
+    formatDate: (date) => {
+        return format(new Date(date), 'dd/MM/yyyy - HH:mm:ss')
+    }
+}}));
 app.set('view engine', 'hbs');
 
 app.use(router)

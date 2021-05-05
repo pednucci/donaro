@@ -1,0 +1,137 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Donaro -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/painel.css" />
+    <link rel="stylesheet" href="/css/usuario-pedido.css" />
+
+    <title>Requisição</title>
+</head>
+
+{{>navbar}}
+
+<main>
+    <div class="container-painel">
+        <div class="background-painel">
+            <h1 class="painel-titulo">ADM</h1>
+            <div class="img-wrapper">
+                <img src="/assets/img/background_adm.png" alt="" />
+            </div>
+        </div>
+
+        <div class="menu-painel">
+            <ul class="menu-painel-buttons row">
+                <a href="#">
+                    <li class="painel-text active">Requisições</li>
+                </a>
+                <a href="#">
+                    <li class="painel-text">Denúncias</li>
+                </a>
+                <a href="#">
+                    <li class="painel-text">Pedidos não entregues</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="profile-container columm">
+        <div class="user-container column">
+            <h1 class="titulo-user">Pedido</h1>
+            <div class="user-wrapper row">
+                <div class="imagePerfil column">
+                    <img src="/assets/img/pedido_sopao-moradores.png" alt="Foto de perfil" />
+                </div>
+                <div class="informacoes column">
+                    <div>
+                        <h1 class="sub titulo-user">Título</h1>
+                        <p>Batata na praça</p>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <h1 class="sub titulo-user">Alimentos</h1>
+                            <p>Batata</p>
+                        </div>
+
+                        <div>
+                            <h1 class="sub titulo-user">Quantidade</h1>
+                            <p>10Kg</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <h1 class="sub titulo-user">Meta</h1>
+                            <p>Aberta</p>
+                        </div>
+
+                        <div>
+                            <h1 class="sub titulo-user">
+                                Data de encerramento
+                            </h1>
+                            <p>30/04/2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comentario-container column">
+            <h1 class="sub titulo-user">Descrição</h1>
+            <div class="comentario">
+                <p>
+                    Mussum Ipsum, cacilds vidis litro abertis. Mais vale
+                    um bebadis conhecidiss, que um alcoolatra anonimis.
+                    Praesent vel viverra nisi. Mauris aliquet nunc non
+                    turpis scelerisque, eget. Mauris nec dolor in eros
+                    commodo tempor. Aenean aliquam molestie leo, vitae
+                    iaculis nisl. Praesent malesuada urna nisi, quis
+                    volutpat erat hendrerit non. Nam vulputate dapibus.
+                </p>
+                <p>
+                    Quem num gosta di mé, boa gentis num é. Detraxit
+                    consequat et quo num tendi nada. Em pé sem cair,
+                    deitado sem dormir, sentado sem cochilar e fazendo
+                    pose. Delegadis gente finis, bibendum egestas augue
+                    arcu ut est.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-container columm">
+        <div class="user-container column">
+            <h1 class="titulo-user">Usuário</h1>
+            <div class="user-wrapper row">
+                <div class="imagePerfil column">
+                    <img src="/assets/img/user_fabio.png" alt="Foto de perfil" />
+                </div>
+                <div class="informacoes column">
+                    <div>
+                        <h1 class="sub titulo-user">Nome</h1>
+                        <p>Fábio Ricardo Oliver Gomes</p>
+                    </div>
+
+                    <div>
+                        <div>
+                            <h1 class="sub titulo-user">Email</h1>
+                            <p>fabioricardo87@gmail.com</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h1 class="sub titulo-user">ID</h1>
+                            <p>1238391</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="botoes row">
+        <button class="btn green" type="submit">Aceitar</button>
+        <button class="btn ghost-red" type="submit">Recusar</button>
+    </div>
+</main>

@@ -5,7 +5,7 @@ const path = require('path')
 exports.newOrder = async (req, res) => {
     const conn = await db.connection();
     const titulo = req.body.titulo;
-    const dtPed = new Date(req.body.dtPedido);
+    const dtPed = req.body.dtPedido;
     const meta = req.body.metaPedido;
     const estado = req.body.estado;
     const cidade = req.body.cidade;
@@ -43,7 +43,7 @@ exports.newOrder = async (req, res) => {
             for(let i = 0; i<req.body.alMedida.length; i++) {
 
                 await conn.query(`INSERT INTO alimento
-                (nm_alimento, cd_pedido, nm_medida_alimento, qt_alimento, nm_tipoFisico_alimento)
+                (nm_alimento, cd_pedido_alimento, nm_medida_alimento, qt_alimento, nm_tipoFisico_alimento)
                 VALUES(?,?,?,?,?)`
                 , [req.body.alimentoInput[i], idPedido, req.body.alMedida[i],
                  req.body.quantidade[i], req.body.tpf[i]])
@@ -51,7 +51,7 @@ exports.newOrder = async (req, res) => {
         }
         if(typeof req.body.alMedida == 'string'){
             await conn.query(`INSERT INTO alimento
-                (nm_alimento, cd_pedido, nm_medida_alimento, qt_alimento, nm_tipoFisico_alimento)
+                (nm_alimento, cd_pedido_alimento, nm_medida_alimento, qt_alimento, nm_tipoFisico_alimento)
                 VALUES(?,?,?,?,?)`
                 , [req.body.alimentoInput, idPedido, req.body.alMedida,
                  req.body.quantidade, req.body.tpf])
@@ -60,7 +60,7 @@ exports.newOrder = async (req, res) => {
         if(meta == 'fechada'){
             await conn.query(`
             UPDATE pedido SET qt_total_pedido = 
-            (select sum(qt_alimento) from alimento where cd_pedido = ?) WHERE cd_pedido = ?
+            (select sum(qt_alimento) from alimento where cd_pedido_alimento = ?) WHERE cd_pedido = ?
             `, [idPedido, idPedido])
         }
         req.flash('successMsg', 'Pedido cadastrado com sucesso!')
