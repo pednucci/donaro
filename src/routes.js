@@ -3,7 +3,8 @@ dotenv.config();
 const express = require('express');
 const router = express.Router();
 const auth = require('./routes/auth');
-const pedido = require('./routes/pedido')
+const pedido = require('./routes/pedido');
+const admin = require('./routes/admin');
 
 router.get('/', (req, res) => {
     res.render('landing-page/index')
@@ -11,5 +12,6 @@ router.get('/', (req, res) => {
 
 router.use(auth);
 router.use(pedido);
+router.use('/admin', admin)
 
 module.exports = router;
