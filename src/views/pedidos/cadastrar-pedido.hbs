@@ -20,19 +20,19 @@
     <div class="form-container column">
         <h1 class="titulo">Cadastrar pedido</h1>
         <h2 class="sub titulo">Dados iniciais</h2>
-        <form class="form-login column" action="/cadpedido" method="POST" id="formPedido">
+        <form class="form-login column" id="formPedido" method="POST" action="/cadpedido" enctype="multipart/form-data">
             <label for="">Título</label>
-            <input class="input-form" type="text" name="" id="titId" />
+            <input class="input-form" type="text" name="titulo" id="titId" />
 
             <div class="row">
                 <div>
                     <label>Data de encerramento</label>
-                    <input class="input-form" type="date" name="" id="dtPed" />
+                    <input class="input-form" type="date" name="dtPedido" id="dtPed" />
                 </div>
 
                 <div>
                     <label class="lblMeta row">Meta <img src="/assets/img/icone_info.svg" alt="Informação Meta"></label>
-                    <select class="input-form" name="" id="metaPed">
+                    <select class="input-form" name="metaPedido" id="metaPed">
                         <option value="aberta">Aberta</option>
                         <option value="fechada">Fechada</option>
                     </select>
@@ -89,6 +89,7 @@
                         </select>
                     </div>
                 </div>
+                
             </div>
 
             <button class="btn blue adicionar" type="button">
@@ -100,12 +101,12 @@
             <div class="texts column">
                 <div class="column">
                     <label for="">Adicionar descrição da sua ação social</label>
-                    <textarea id="descPed" class="input-form" name="" id="" cols="30" rows="10"
+                    <textarea id="descPed" class="input-form" name="descPed" id="" cols="30" rows="10"
                         placeholder="Insira a relevância por trás do seu pedido, descrevendo a ação social."></textarea>
                 </div>
 
                 <label for="">Adicionar imagem de capa (Máximo: 5 imagens)</label>
-                <input class="input-form" type="file" name="" id="" />
+                <input class="input-form imagePed" type="file" accept="image/*" name="picPed" multiple/>
 
                 <input class="btn blue" type="submit" value="Cadastrar pedido" />
             </div>
