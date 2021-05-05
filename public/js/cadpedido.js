@@ -113,6 +113,7 @@ function addFood() {
 
     var slctTipo = document.createElement("select");
     slctTipo.classList = "input-form tpf";
+    slctTipo.setAttribute('name', 'tpf');
 
     var optTipoS = document.createElement("option");
     optTipoS.innerHTML = "Sólido";
@@ -131,14 +132,15 @@ function addFood() {
 
     //#region Input do Alimento
     var alimento = document.createElement("div");
-    alimento.classList.add("alimento-input");
+    alimento.classList = ("alimento-input");
 
     var lblFood = document.createElement("label");
     lblFood.innerHTML = "Alimento"
 
     var txtFood = document.createElement("input");
     txtFood.setAttribute('type', 'text');
-    txtFood.classList = "input-form"
+    txtFood.classList = "input-form alimentoInput"
+    txtFood.setAttribute('name', 'alimentoInput');
 
     alimento.append(lblFood);
     alimento.append(txtFood);
@@ -147,7 +149,7 @@ function addFood() {
 
     //#region Input da quantidade
     var qtd = document.createElement("div");
-    qtd.classList.add("quantidade-input");
+    qtd.classList = ("quantidade-input ");
 
     var lblQtd = document.createElement("label");
     lblQtd.innerHTML = "Quantidade"
@@ -156,6 +158,7 @@ function addFood() {
     txtQtd.classList = "input-form"
     txtQtd.setAttribute('type', 'number');
     txtQtd.setAttribute('min', '1');
+    txtQtd.setAttribute('name', 'quantidade');
 
     qtd.append(lblQtd);
     qtd.append(txtQtd);
@@ -170,6 +173,7 @@ function addFood() {
 
     var slctMedida = document.createElement("select");
     slctMedida.classList = "input-form alMedida"
+    slctMedida.setAttribute('name', 'alMedida')
 
     var optTipoK = document.createElement("option");
     optTipoK.innerHTML = "Quilos";
@@ -257,16 +261,16 @@ document.getElementById("formPedido").addEventListener('submit', event => {
     const cidade = document.getElementById("cidadePed").value;
     const descricao = document.getElementById("descPed").value;
 
-    valores.push({titulo: titulo, data: dtPedido, meta: metaPed, estado: estado, cidade: cidade, descricao: descricao})
+    valores.push({ titulo: titulo, data: dtPedido, meta: metaPed, estado: estado, cidade: cidade, descricao: descricao })
 
     document.querySelectorAll('.alimentos-wrapper > .alimento').forEach(alimento => {
         const tipofisc = alimento.querySelectorAll('.input-form')[0].value;
         const alimName = alimento.querySelectorAll('.input-form')[1].value;
         const quantidade = alimento.querySelectorAll('.input-form')[2].value;
         const medida = alimento.querySelectorAll('.input-form')[3].value;
-        alimentos.push({tipoFisic: tipofisc, alimento: alimName, quantidade: quantidade, medida: medida})
+        alimentos.push({ tipoFisic: tipofisc, alimento: alimName, quantidade: quantidade, medida: medida })
     })
-    
+
     valores.push(alimentos)
 
     /* fetch('cadpedido', {
@@ -277,10 +281,10 @@ document.getElementById("formPedido").addEventListener('submit', event => {
             'Content-Type': 'application/json'
         }
     }).then((response) => {
-        if(response.status == 200){
+        if (response.status == 200) {
             window.location.href = "/cadaccept"
         }
-        if(response.status == 500){
+        if (response.status == 500) {
             window.location.href = "/cadrecused"
         }
     }) */
