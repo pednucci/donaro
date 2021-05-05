@@ -20,7 +20,7 @@
     <div class="form-container column">
         <h1 class="titulo">Cadastrar pedido</h1>
         <h2 class="sub titulo">Dados iniciais</h2>
-        <form class="form-login column" action="/cadpedido" method="POST" id="formPedido">
+        <form class="form-login column" id="formPedido" method="POST" action="/test" enctype="multipart/form-data">
             <label for="">Título</label>
             <input class="input-form" type="text" name="" id="titId" />
 
@@ -89,6 +89,7 @@
                         </select>
                     </div>
                 </div>
+                
             </div>
 
             <button class="btn blue adicionar" type="button">
@@ -105,7 +106,7 @@
                 </div>
 
                 <label for="">Adicionar imagem de capa (Máximo: 5 imagens)</label>
-                <input class="input-form" type="file" name="" id="" />
+                <input class="input-form imagePed" type="file" accept="image/*" name="" multiple/>
 
                 <input class="btn blue" type="submit" value="Cadastrar pedido" />
             </div>
