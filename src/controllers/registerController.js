@@ -9,7 +9,7 @@ exports.register = async (req, res) => {
     const username = req.body.username;
     const email = req.body.email;
     const cpf = req.body.cpf;
-    const dtUser = new Date(req.body.dtuser);
+    const dtUser = req.body.dtuser;
     const pass = req.body.pass;
     const confPass = req.body.passConf;
     const city = req.body.cidade;
