@@ -52,6 +52,12 @@
   margin-bottom: 100px;
 }
 
+.cards-container .titulo {
+  margin-bottom: 50px;
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+
 .card {
   height: 150px;
   width: 960px;
@@ -103,6 +109,14 @@
   font-weight: 500;
 
   color: var(--gray-dark);
+}
+
+.desc-card.min {
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  color: var(--gray-dark);
+  margin-top: 5px;
 }
 
 .peso-card {
