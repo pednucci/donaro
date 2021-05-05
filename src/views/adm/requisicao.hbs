@@ -39,21 +39,22 @@
 
     <div class="profile-container columm">
         <div class="user-container column">
+            {{#each pedido}}
             <h1 class="titulo-user">Pedido</h1>
             <div class="user-wrapper row">
                 <div class="imagePerfil column">
-                    <img src="/public/assets/img/pedido_sopao-moradores.png" alt="Foto de perfil" />
+                    <img src="/assets/pedidos/{{cd_imagem_pedido}}" alt="Foto de perfil" />
                 </div>
                 <div class="informacoes column">
                     <div>
                         <h1 class="sub titulo-user">Título</h1>
-                        <p>Sopão para moradores de rua</p>
+                        <p>{{nm_titulo_pedido}}</p>
                     </div>
 
                     <div class="row">
                         <div>
                             <h1 class="sub titulo-user">Meta</h1>
-                            <p>Aberta</p>
+                            <p>{{nm_meta_pedido}}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -61,99 +62,84 @@
                             <h1 class="sub titulo-user">
                                 Data de encerramento
                             </h1>
-                            <p>30/04/2021</p>
+                            <p>{{dateNoHour dt_encerramento_pedido}}</p>
                         </div>
                     </div>
                 </div>
             </div>
+            {{/each}}
         </div>
+
         <div class="alimento-container">
             <div class="row">
                 <h1>Alimentos</h1>
                 <h1>Quantidade</h1>
             </div>
             <div class="column">
+                {{#each alimento}}
                 <div class="alReq row">
-                    <h1 class="reqAlimento">Arroz</h1>
-                    <h1 class="reqQuantidade">5Kg</h1>
+                    <h1 class="reqAlimento">{{nm_alimento}}</h1>
+                    <h1 class="reqQuantidade">{{qt_alimento}}{{nm_medida_alimento}}</h1>
                 </div>
-                <div class="alReq row">
-                    <h1 class="reqAlimento">Arroz</h1>
-                    <h1 class="reqQuantidade">5Kg</h1>
-                </div>
-                <div class="alReq row">
-                    <h1 class="reqAlimento">Arroz</h1>
-                    <h1 class="reqQuantidade">5Kg</h1>
-                </div>
-                <div class="alReq row">
-                    <h1 class="reqAlimento">Arroz</h1>
-                    <h1 class="reqQuantidade">5Kg</h1>
-                </div>
-                <div class="alReq row">
-                    <h1 class="reqAlimento">Arroz</h1>
-                    <h1 class="reqQuantidade">5Kg</h1>
-                </div>
-                <div class="alReq row">
-                    <h1 class="reqAlimento">Arroz</h1>
-                    <h1 class="reqQuantidade">5Kg</h1>
-                </div>
+                {{/each}}
             </div>
         </div>
         <div class="comentario-container column">
+            {{#each pedido}}
             <h1 class="sub titulo-user">Descrição</h1>
             <div class="comentario">
                 <p>
-                    Mussum Ipsum, cacilds vidis litro abertis. Mais vale
-                    um bebadis conhecidiss, que um alcoolatra anonimis.
-                    Praesent vel viverra nisi. Mauris aliquet nunc non
-                    turpis scelerisque, eget. Mauris nec dolor in eros
-                    commodo tempor. Aenean aliquam molestie leo, vitae
-                    iaculis nisl. Praesent malesuada urna nisi, quis
-                    volutpat erat hendrerit non. Nam vulputate dapibus.
-                </p>
-                <p>
-                    Quem num gosta di mé, boa gentis num é. Detraxit
-                    consequat et quo num tendi nada. Em pé sem cair,
-                    deitado sem dormir, sentado sem cochilar e fazendo
-                    pose. Delegadis gente finis, bibendum egestas augue
-                    arcu ut est.
+                    {{ds_acao_pedido}}
                 </p>
             </div>
+            {{/each}}
         </div>
     </div>
 
     <div class="profile-container columm">
+        {{#each usuario}}
         <div class="user-container column">
             <h1 class="titulo-user">Usuário</h1>
             <div class="user-wrapper row">
                 <div class="imagePerfil column">
-                    <img src="/assets/img/user_fabio.png" alt="Foto de perfil" />
+                    <img src="/assets/profile/{{cd_foto_usuario}}" alt="Foto de perfil" />
                 </div>
                 <div class="informacoes column">
                     <div>
                         <h1 class="sub titulo-user">Nome</h1>
-                        <p>Fábio Ricardo Oliver Gomes</p>
+                        <p>{{nm_usuario}}</p>
                     </div>
 
                     <div>
                         <div>
                             <h1 class="sub titulo-user">Email</h1>
-                            <p>fabioricardo87@gmail.com</p>
+                            <p>{{cd_email_usuario}}</p>
                         </div>
                     </div>
                     <div>
                         <div>
                             <h1 class="sub titulo-user">ID</h1>
-                            <p>1238391</p>
+                            <p>{{cd_usuario}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        {{/each}}
     </div>
 
     <div class="botoes row">
-        <button class="btn green" type="submit">Aceitar</button>
-        <button class="btn ghost-red" type="submit">Recusar</button>
+        <form action="/admin/accept" method="POST">
+            {{#each pedido}}
+            <input type="hidden" name="idPedido" value="{{cd_pedido}}">
+            {{/each}}
+            <button class="btn green" type="submit" value="aceito">Aceitar</button>
+        </form>
+        <form action="/admin/recused" method="POST">
+            {{#each pedido}}
+            <input type="hidden" name="idPedido" value="{{cd_pedido}}">
+            {{/each}}
+            <button class="btn ghost-red" type="submit" value="recusado">Recusar</button>
+        </form>
     </div>
 </main>
