@@ -59,11 +59,23 @@
   min-width: 130px;
 }
 
+/* #region */
+.alimento-container {
+  min-width: min-content;
+  max-width: 480px;
+  max-height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  text-align: left;
+}
+
+/* #endregion */
 /* Comentário/Descrição */
 .comentario-container,
 .user-container {
   gap: 20px;
-  margin-bottom: 40px;
+  margin: 50px 0;
 }
 
 .comentario {
