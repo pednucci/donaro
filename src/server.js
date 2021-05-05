@@ -3,13 +3,16 @@ const express = require('express');
 const app = express();
 const path = require('path')
 const PORT = process.env.PORT || 3000;
-const bodyParser = require('body-parser');
 const hbs = require('express-handlebars');
 const router = require('./routes');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 require('./config/auth')(passport);
+
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.use(session({
     secret: process.env.SECRET,
@@ -31,9 +34,6 @@ app.use((req, res, next) => {
 })
 
 app.use(express.static(path.join(__dirname, '..', 'public')))
-
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
 
 app.set('views', path.join(__dirname, 'views'));
 app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs'}));
