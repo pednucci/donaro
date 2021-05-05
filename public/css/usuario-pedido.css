@@ -1,7 +1,7 @@
 /* #region Usuário/Pedido */
 .profile-container {
   min-width: min-content;
-  max-width: 960px;
+  max-width: 720px;
 
   margin: auto;
   margin-bottom: 50px;
@@ -70,7 +70,7 @@
   text-align: left;
 }
 
-.alReq {}
+/* .alReq {} */
 
 /* #endregion */
 /* Comentário/Descrição */
