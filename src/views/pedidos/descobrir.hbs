@@ -32,7 +32,9 @@
         <div class="pedidos row">
             {{#each pedido}}
             <div class="pedido">
-                <div class="imagem-pedido"><img src="/assets/pedidos/{{cd_imagem_pedido}}" alt=""></div>
+                <div class="imagem-pedido">
+                    <img src="/assets/pedidos/{{cd_imagem_pedido}}" alt="">
+                </div>
                 <div class="informacoes-pedido column">
                     <div class="descricao-pedido">
                         <h1 class="titulo">
@@ -41,10 +43,9 @@
 
                         <h2 class="sub titulo">
                             Alimentos:
-                            <span class="titulo-link">Arroz</span>,
-                            <span class="titulo-link">Feijão</span>,
-                            <span class="titulo-link">Óleo</span>,
-                            <span class="titulo-link">Azeite</span>
+                            {{#each this.comida}}
+                            <span class="titulo-link">{{this}} -</span>
+                            {{/each}}
                         </h2>
                     </div>
                     <div class="progresso-container column">
