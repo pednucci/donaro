@@ -36,6 +36,18 @@
     color: var(--blue-link);
 }
 
+.pending {
+    color: var(--yellow-pending);
+}
+
+.denounce {
+    color: var(--red-denounce);
+}
+
+.accepted {
+    color: var(--green-accept);
+}
+
 
 .titulo-depoimento {
     font-size: 4rem;
@@ -46,8 +58,8 @@
 }
 
 .titulo-categoria {
-  font-size: 3rem;
-  font-weight: 500;
+    font-size: 3rem;
+    font-weight: 500;
 }
 
 .texto-depoimento {
