@@ -8,11 +8,13 @@ const router = require('./routes');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+const fileUpload = require('express-fileupload');
 require('./config/auth')(passport);
-
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+
+app.use(fileUpload())
 
 app.use(session({
     secret: process.env.SECRET,
