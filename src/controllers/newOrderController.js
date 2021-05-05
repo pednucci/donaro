@@ -5,7 +5,7 @@ const path = require('path')
 exports.newOrder = async (req, res) => {
     const conn = await db.connection();
     const titulo = req.body.titulo;
-    const dtPed = new Date(req.body.dtPedido);
+    const dtPed = req.body.dtPedido;
     const meta = req.body.metaPedido;
     const estado = req.body.estado;
     const cidade = req.body.cidade;
