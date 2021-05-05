@@ -110,11 +110,12 @@
   font-weight: bolder;
 }
 
-/* Pedido nao entregue */
-
-/* #endregion */
+.card-btn .btn {
+  margin-right: 40px;
+}
 
 /* #region Entregue/pendente/não-entregue */
+
 
 .situacao-card-entregue {
   font-size: 1.7rem;
@@ -134,6 +135,19 @@
   font-weight: bold;
 
   color: var(--red-denounce);
+}
+
+/* #endregion */
+
+/* #region Painel Usuário */
+
+
+.usuario .underline {
+  border-bottom: 4px solid var(--red-logo);
+}
+
+.usuario .titulo-categoria:hover {
+  border-bottom: 4px solid var(--red-logo);
 }
 
 /* #endregion */
