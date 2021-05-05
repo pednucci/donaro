@@ -1,0 +1,94 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Donaro -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/painel.css" />
+    <link rel="stylesheet" href="/css/notificacoes.css" />
+
+    <title>Requisições</title>
+</head>
+
+    {{>navbar}}
+
+<main>
+    <div class="container-painel">
+        <div class="background-painel">
+            <h1 class="painel-titulo">ADM</h1>
+            <div class="img-wrapper">
+                <img src="/assets/img/background_adm.png" alt="" />
+            </div>
+        </div>
+
+        <div class="menu-painel">
+            <ul class="menu-painel-buttons row">
+                <a href="#">
+                    <li class="painel-text active">Requisições</li>
+                </a>
+                <a href="#">
+                    <li class="painel-text">Denúncias</li>
+                </a>
+                <a href="#">
+                    <li class="painel-text">Pedidos não entregues</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cards-container">
+
+
+        {{#each pedidos}}
+            <div class="card row">
+                <div class="card-user row">
+                    <div class="card-image">
+                        <img class="image-card" src="/assets/pedidos/{{cd_imagem_pedido}}" alt="" />
+                    </div>
+                    <div class="card-info column">
+                        <h1 class="nome-card">
+                            {{nm_titulo_pedido}}
+                        </h1>
+                        <h2 class="desc-card">ID do pedido: {{cd_pedido}}</h2>
+
+                        <h2 class="desc-card">{{formatDate dt_createdAt_pedido}}</h2>
+                            
+                    </div>
+                </div>
+                <div class="card-btn row">
+                    <a href="/admin/pedidos/{{cd_pedido}}">
+                        <button class="btn blue">Ver pedido</button>
+                    </a>
+                </div>
+            </div>
+        {{/each}}
+
+    </div>
+
+    <div class="numeracao-paginas">
+        <ul class="paginas">
+            <a href="">
+                <li class="num cont-pagina">1</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">2</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">3</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">4</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">5</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">6</li>
+            </a>
+        </ul>
+        <a href="">
+            <div class="cont-pagina">Seguinte &#62;</div>
+        </a>
+    </div>
+</main>
