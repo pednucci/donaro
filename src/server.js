@@ -42,6 +42,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
     formatDate: (date) => {
         return format(new Date(date), 'dd/MM/yyyy - HH:mm:ss')
+    },
+    dateNoHour: (date) => {
+        return format(new Date(date), 'dd/MM/yyyy')
     }
 }}));
 app.set('view engine', 'hbs');
