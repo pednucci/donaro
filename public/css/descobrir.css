@@ -97,10 +97,15 @@
     width: 100%;
     height: 180px;
 
-    background-image: url("/public/assets/img/pedido_almoco-creche.png");
-    background-size: cover;
-    background-position: center;
 
+}
+
+.imagem-pedido img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
 
