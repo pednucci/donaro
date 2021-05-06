@@ -36,10 +36,10 @@ img[alt^="Info"] {
 .alimento .btn.red {
     min-height: 40px;
     min-width: 40px;
-    margin: 0 0 10px 0;
+    margin: 0;
 
-    justify-self: flex-end;
-    align-self: flex-end;
+    justify-self: center;
+    align-self: center;
 }
 
 .btn.adicionar {
