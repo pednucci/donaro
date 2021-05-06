@@ -1,0 +1,10 @@
+.qtdAlimentos {
+  max-height: 300px;
+
+  overflow: hidden;
+  overflow-y: scroll;
+
+  margin: 40px 0;
+}
+
+.form-container.pedido {}
