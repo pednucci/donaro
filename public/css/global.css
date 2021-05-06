@@ -1,12 +1,12 @@
 /* #region Imports */
 
 @import "buttons.css";
-@import "colors.css";
 @import "forms.css";
 @import "header-footer.css";
 @import "notificacoes.css";
 @import "painel.css";
 @import "typography.css";
+@import "variables.css";
 
 /* #endregion  */
 
@@ -51,19 +51,6 @@ body {
     height: 100%;
 }
 
-.input-form {
-    height: 40px;
-    padding-left: 15px;
-
-    background-color: var(--gray-background);
-
-    border: var(--border-form);
-    border-radius: 10px;
-
-    font-family: 'Red Hat Display', sans-serif;
-    font-size: 2rem;
-    font-weight: 500;
-}
 
 .row {
     display: flex;
@@ -80,6 +67,25 @@ body {
     justify-content: center;
     align-items: space-between;
 }
+
+.input-form {
+    height: 40px;
+    padding-left: 15px;
+
+    background-color: var(--gray-background);
+
+    border: var(--border-form);
+    border-radius: 10px;
+
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.input-form:focus {
+    border: var(--border-form-focus);
+}
+
 
 textarea.input-form {
     min-height: 200px;

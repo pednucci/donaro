@@ -1,205 +1,170 @@
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- CSS Donaro -->
-        <link rel="stylesheet" href="/css/global.css" />
-        <link rel="stylesheet" href="/css/pedido.css" />
+    <!-- CSS Donaro -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/pedido.css" />
 
-        <title>Pedido</title>
-    </head>
-        
-        {{>navbar}}
+    <title>Pedido</title>
+</head>
 
-        <main>
-            <div class="container-pedido column">
-                {{#each pedido}}
-                <h1 class="titulo black">{{nm_titulo_pedido}}</h1>
-                <div class="subcontainer-pedido row">
-                    <div class="container-descricao">
-                        <img
-                            src="/assets/pedidos/{{cd_imagem_pedido}}"
-                            alt=""
-                        />
-                        <div class="descricao">
-                            <h1 class="sub titulo black">Descrição</h1>
-                            <p>
-                                {{ds_acao_pedido}}
-                            </p>
+{{>navbar}}
 
-                            <button class="btn ghost-red">
-                                Denunciar pedido
-                            </button>
-                        </div>
-                    </div>
-                    <div class="container-alimentos column">
-                        <header class="header-alimentos row">
-                            <div class="usuario row">
-                                <div class="img-wrapper">
-                                    <img
-                                        src="/assets/profile/{{cd_foto_usuario}}"
-                                        alt="Foto do usuário"
-                                    />
-                                </div>
-                                <div>
-                                    <h2 class="">{{nm_usuario}}</h2>
-                                    <p class="titulo-gray">{{nm_cidade_usuario}}, {{sg_estado_usuario}}</p>
-                                </div>
-                            </div>
-                            <div class="header-pedido">
-                                <div>
-                                    <img
-                                        src="/assets/img/icone_pin.svg"
-                                        alt="Icone pin"
-                                    />
-                                    <p>{{nm_cidade_pedido}}, {{sg_estado_pedido}}</p>
-                                </div>
+<main>
+    <div class="container-pedido column">
+        {{#each pedido}}
+        <h1 class="titulo black">{{nm_titulo_pedido}}</h1>
+        <div class="subcontainer-pedido row">
+            <div class="container-descricao">
+                <img src="/assets/pedidos/{{cd_imagem_pedido}}" alt="" />
+                <div class="descricao">
+                    <h1 class="sub titulo black">Descrição</h1>
+                    <p>
+                        {{ds_acao_pedido}}
+                    </p>
 
-                                <div>
-                                    <img
-                                        src="/assets/img/icone_relogio.svg"
-                                        alt="Icone relógio"
-                                    />
-                                    <p>Expira em: 10 dias</p>
-                                </div>
-                            </div>
-                        </header>
-                {{/each}}
-                        <div class="main-alimentos column">
-                            <div class="filtro row">
-                                <h2 class="titulo">Ordenar por:</h2>
-                                <form action="" method="" id="form-sort">
-                                    <select class="select-sort" name="sort-by">
-                                        <option id="c" value="1">
-                                            Concluídos
-                                        </option>
-                                        <option id="nc" value="2">
-                                            Não Concluídos
-                                        </option>
-                                    </select>
-                                </form>
-                            </div>
-                            <h2 class="titulo black">Alimentos:</h2>
-                            <div class="alimento-container column">
-                                {{#each alimento}}
-                                <div class="alimento">
-                                    <h2 class="sub titulo">{{nm_alimento}}</h2>
-                                    <div class="progresso-container row">
-                                        <div class="arrecadado">
-                                            <p><span>54</span>%</p>
-                                        </div>
-                                        <div class="porcentagem">
-                                            <div class="progresso-barra">
-                                                <div
-                                                    class="progresso-atual"
-                                                ></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="meta row">
-                                        <p>Arrecadado: {{qt_doada_alimento}}{{nm_medida_alimento}}</p>
-                                    </div>
-                                </div>
-                                {{/each}}
-                            </div>
-                            {{#each pedido}}
-                            <a href="/descobrir/pedido/{{cd_pedido}}/ajudar"><button class="btn blue">Ajudar</button></a>
-                            {{/each}}
-                        </div>
-                        <footer class="footer-alimentos column">
-                            <h2 class="sub titulo">
-                                Compartilhe nas redes sociais:
-                            </h2>
-                            <div class="redes-sociais row">
-                                <a href="#">
-                                    <img
-                                        src="/assets/img/icone_blue-facebook.svg"
-                                        alt="Compartilhe no Facebook"
-                                    />
-                                </a>
-                                <a href="#">
-                                    <img
-                                        src="/assets/img/icone_blue-whats.svg"
-                                        alt="Compartilhe no WhatsApp"
-                                    />
-                                </a>
-                            </div>
-                        </footer>
-                    </div>
+                    <button class="btn ghost-red">
+                        Denunciar pedido
+                    </button>
                 </div>
             </div>
-        </main>
+            <div class="container-alimentos column">
+                <header class="header-alimentos row">
+                    <div class="usuario row">
+                        <div class="img-wrapper">
+                            <img src="/assets/profile/{{cd_foto_usuario}}" alt="Foto do usuário" />
+                        </div>
+                        <div>
+                            <h2 class="">{{nm_usuario}}</h2>
+                            <p class="titulo-gray">{{nm_cidade_usuario}}, {{sg_estado_usuario}}</p>
+                        </div>
+                    </div>
+                    <div class="header-pedido">
+                        <div>
+                            <img src="/assets/img/icone_pin.svg" alt="Icone pin" />
+                            <p>{{nm_cidade_pedido}}, {{sg_estado_pedido}}</p>
+                        </div>
 
-        <footer class="footer-bar">
-            <img
-                class="logo-footer"
-                src="/assets/img/Donaro_Logo_White.svg"
-                alt="Logo Donaro"
-            />
-            <ul class="menu-footer">
-                <h2 class="sub titulo white">Ações sociais</h2>
-                <a href="#">
-                    <li class="list-item">Criar</li>
-                </a>
-                <a href="#">
-                    <li class="list-item">Fazer doação</li>
-                </a>
-                <a href="#">
-                    <li class="list-item">Descobrir</li>
-                </a>
-            </ul>
-            <ul class="menu-footer">
-                <h2 class="sub titulo white">Ajuda</h2>
-                <a href="#">
-                    <li class="list-item">Fale conosco</li>
-                </a>
-                <a href="#">
-                    <li class="list-item">Dúvidas frequentes</li>
-                </a>
-                <a href="#">
-                    <li class="list-item">Atualizações</li>
-                </a>
-            </ul>
-            <ul class="menu-footer">
-                <h2 class="sub titulo white">Acompanhe nossas redes sociais</h2>
-                <div class="redes-sociais">
-                    <a href="#">
-                        <img
-                            class="icone-midias"
-                            src="/assets/img/logo-facebook.svg"
-                            alt="icone Facebook"
-                        />
-                    </a>
-                    <a href="#">
-                        <img
-                            class="icone-midias"
-                            src="/assets/img/logo-instagram.svg"
-                            alt="icone Instagram"
-                        />
-                    </a>
-                    <a href="#">
-                        <img
-                            class="icone-midias"
-                            src="/assets/img/logo-twitter.svg"
-                            alt="icone Twitter"
-                        />
-                    </a>
+                        <div>
+                            <img src="/assets/img/icone_relogio.svg" alt="Icone relógio" />
+                            <p>Expira em: 10 dias</p>
+                        </div>
+                    </div>
+                </header>
+                {{/each}}
+                <div class="main-alimentos column">
+                    <div class="filtro row">
+                        <h2 class="titulo">Ordenar por:</h2>
+                        <form action="" method="" id="form-sort">
+                            <select class="select-sort" name="sort-by">
+                                <option id="c" value="1">
+                                    Concluídos
+                                </option>
+                                <option id="nc" value="2">
+                                    Não Concluídos
+                                </option>
+                            </select>
+                        </form>
+                    </div>
+                    <h2 class="titulo black">Alimentos:</h2>
+                    <div class="alimento-container column">
+                        {{#each alimento}}
+                        <div class="alimento">
+                            <h2 class="sub titulo">{{nm_alimento}}</h2>
+                            <div class="progresso-container row">
+                                <div class="arrecadado">
+                                    <p><span>54</span>%</p>
+                                </div>
+                                <div class="porcentagem">
+                                    <div class="progresso-barra">
+                                        <div class="progresso-atual"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta row">
+                                <p>Arrecadado: {{qt_doada_alimento}}{{nm_medida_alimento}}</p>
+                                <p>Meta: {{qt_doada_alimento}}{{nm_medida_alimento}}</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{#each pedido}}
+                    <a href="/descobrir/pedido/{{cd_pedido}}/ajudar"><button class="btn blue">Ajudar</button></a>
+                    {{/each}}
                 </div>
-            </ul>
-        </footer>
+                <footer class="footer-alimentos column">
+                    <h2 class="sub titulo">
+                        Compartilhe nas redes sociais:
+                    </h2>
+                    <div class="redes-sociais row">
+                        <a href="#">
+                            <img src="/assets/img/icone_blue-facebook.svg" alt="Compartilhe no Facebook" />
+                        </a>
+                        <a href="#">
+                            <img src="/assets/img/icone_blue-whats.svg" alt="Compartilhe no WhatsApp" />
+                        </a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</main>
 
-    <script>
-        let selectSort = document.querySelector(".select-sort");
-        let alimentos = document.querySelector(".alimento-container");
+<footer class="footer-bar">
+    <img class="logo-footer" src="/assets/img/Donaro_Logo_White.svg" alt="Logo Donaro" />
+    <ul class="menu-footer">
+        <h2 class="sub titulo white">Ações sociais</h2>
+        <a href="#">
+            <li class="list-item">Criar</li>
+        </a>
+        <a href="#">
+            <li class="list-item">Fazer doação</li>
+        </a>
+        <a href="#">
+            <li class="list-item">Descobrir</li>
+        </a>
+    </ul>
+    <ul class="menu-footer">
+        <h2 class="sub titulo white">Ajuda</h2>
+        <a href="#">
+            <li class="list-item">Fale conosco</li>
+        </a>
+        <a href="#">
+            <li class="list-item">Dúvidas frequentes</li>
+        </a>
+        <a href="#">
+            <li class="list-item">Atualizações</li>
+        </a>
+    </ul>
+    <ul class="menu-footer">
+        <h2 class="sub titulo white">Acompanhe nossas redes sociais</h2>
+        <div class="redes-sociais">
+            <a href="#">
+                <img class="icone-midias" src="/assets/img/logo-facebook.svg" alt="icone Facebook" />
+            </a>
+            <a href="#">
+                <img class="icone-midias" src="/assets/img/logo-instagram.svg" alt="icone Instagram" />
+            </a>
+            <a href="#">
+                <img class="icone-midias" src="/assets/img/logo-twitter.svg" alt="icone Twitter" />
+            </a>
+        </div>
+    </ul>
+</footer>
 
-        selectSort.addEventListener("click", () => {
-            if (selectSort.options.selectedIndex == 0) {
-                alimentos.style.flexDirection = "column";
-            } else {
-                alimentos.style.flexDirection = "column-reverse";
-            }
-        });
+<script>
+    let selectSort = document.querySelector(".select-sort");
+    let alimentos = document.querySelector(".alimento-container");
+
+    selectSort.addEventListener("click", () => {
+        if (selectSort.options.selectedIndex == 0) {
+            alimentos.style.flexDirection = "column";
+        } else {
+            alimentos.style.flexDirection = "column-reverse";
+        }
+    });
 
         // if (selectSort.options.namedItem == "c") {
         //     console.log("aqui");
@@ -224,4 +189,4 @@
         //         console.log(select.selectedIndex);
         //         select.options[2];
         //     });
-    </script>
+</script>

@@ -23,6 +23,7 @@
 
     /* Bordas */
     --border-form: 0.5px solid var(--gray-border);
+    --border-form-focus: 1px solid var(--blue-logo);
     --border-red: 1.5px solid var(--red-logo);
     --border-green: 1.5px solid var(--green-accept);
     --border-black: 1.5px solid var(--black-logo);
