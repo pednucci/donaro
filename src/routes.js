@@ -5,13 +5,21 @@ const router = express.Router();
 const auth = require('./routes/auth');
 const pedido = require('./routes/pedido');
 const admin = require('./routes/admin');
+const notificacao = require('./routes/notificacao');
 
 router.get('/', (req, res) => {
     res.render('landing-page/index')
 })
 
+router.get('/logout', (req, res) => {
+    req.logout()
+    req.flash('successMsg', "Deslogado")
+    res.redirect('/')
+})
+
 router.use(auth);
 router.use(pedido);
-router.use('/admin', admin)
+router.use('/admin', admin);
+router.use('/notificacoes', notificacao)
 
 module.exports = router;
