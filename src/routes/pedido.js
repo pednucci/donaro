@@ -69,7 +69,6 @@ router.post('/ajudar', async (req, res) => {
 
     try{
         const idUser = req.user[0].cd_usuario;
-        console.log(idUser)
 
         const solicitacao = await conn.query(`INSERT INTO solicitacao(cd_pedido_solicitacao,
         ds_comentario_solicitacao, cd_usuario_solicitacao) VALUES(?,?,?)`,[idPedido[0], comentario, idUser]);
