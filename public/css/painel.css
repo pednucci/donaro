@@ -84,6 +84,44 @@
 
 /* #endregion */
 
+/* #region Users */
+.users {
+  width: 960px;
+  margin-bottom: 30px;
+
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+.titulo-categoria {
+  padding-bottom: 10px;
+  border-bottom: 4px solid transparent;
+}
+
+.underline {
+  border-bottom: 4px solid var(--gray-dark);
+}
+
+.titulo-categoria:hover {
+  border-bottom: 4px solid var(--gray-dark);
+}
+
+.underline-white {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-white:after {
+  content: "";
+  position: absolute;
+  top: 165%;
+  width: 145px;
+  border-bottom: white solid 5px;
+}
+
+/* #endregion */
+
+
 /* #region Botões */
 
 .botoes-wrapper {
