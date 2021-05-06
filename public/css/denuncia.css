@@ -1,3 +1,5 @@
+/* #region */
+
 .form-container {
   width: 100%;
   max-width: 600px;
@@ -34,6 +36,8 @@
   margin-top: 20px;
 }
 
+/* #endregion */
+
 /* #region Select */
 
 .form-login select {
@@ -47,12 +51,12 @@
   font-weight: 500;
 }
 
-/* #endregion */
-
 .form-login .btn {
   margin-top: 30px;
   align-self: center;
 }
+
+/* #endregion */
 
 /* #region Textarea */
 
@@ -63,12 +67,27 @@ textarea {
 
   background-color: var(--gray-background);
   color: var(--black-logo);
-  
+
   font-family: 'Red Hat Display', sans-serif;
   font-size: 2rem;
   font-weight: 500;
 
   resize: vertical;
 }
+
+/* #endregion */
+
+/* #region Pedido */
+
+.qtdAlimentos {
+  max-height: 300px;
+
+  overflow: hidden;
+  overflow-y: scroll;
+
+  margin: 40px 0;
+}
+
+.form-container.pedido {}
 
 /* #endregion */
