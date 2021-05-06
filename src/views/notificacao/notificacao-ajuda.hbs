@@ -1,0 +1,119 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Donaro -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/painel.css" />
+    <link rel="stylesheet" href="/css/notificacoes.css" />
+
+    <title>Notificações de ajuda</title>
+</head>
+
+{{>navbar}}
+
+<main>
+    <div class="usuario cards-container">
+        <ul class="users row">
+            <a href="#">
+                <li class="titulo-categoria underline">
+                    Solicitações de ajuda
+                </li>
+            </a>
+            <a href="">
+                <li class="titulo-categoria">Doações</li>
+            </a>
+        </ul>
+        {{#each notificacao}}
+        <div class="card row">
+            <div class="card-user row">
+                <div class="card-image">
+                    <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
+                </div>
+                <div class="card-info column">
+                    <h1 class="nome-card">{{nm_usuario}}</h1>
+                    <h2 class="desc-card">
+                        Pedido:
+                        <strong>
+                            {{nm_titulo_pedido}}</strong>
+                    </h2>
+                </div>
+            </div>
+            <div class="card-btn row">
+                <a href="#">
+                    <button class="btn blue">Detalhes</button>
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="numeracao-paginas">
+        <ul class="paginas">
+            <a href="">
+                <li class="num cont-pagina">1</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">2</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">3</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">4</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">5</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">6</li>
+            </a>
+        </ul>
+        <a href="">
+            <div class="cont-pagina">Seguinte &#62;</div>
+        </a>
+    </div>
+</main>
+
+<footer class="footer-bar">
+    <img class="logo-footer" src="/assets/img/Donaro_Logo_White.svg" alt="Logo Donaro" />
+    <ul class="menu-footer">
+        <h2 class="sub titulo white">Ações sociais</h2>
+        <a href="#">
+            <li class="list-item">Criar</li>
+        </a>
+        <a href="#">
+            <li class="list-item">Fazer doação</li>
+        </a>
+        <a href="#">
+            <li class="list-item">Descobrir</li>
+        </a>
+    </ul>
+    <ul class="menu-footer">
+        <h2 class="sub titulo white">Ajuda</h2>
+        <a href="#">
+            <li class="list-item">Fale conosco</li>
+        </a>
+        <a href="#">
+            <li class="list-item">Dúvidas frequentes</li>
+        </a>
+        <a href="#">
+            <li class="list-item">Atualizações</li>
+        </a>
+    </ul>
+    <ul class="menu-footer">
+        <h2 class="sub titulo white">Acompanhe nossas redes sociais</h2>
+        <div class="redes-sociais">
+            <a href="#">
+                <img class="icone-midias" src="/assets/img/logo-facebook.svg" alt="icone Facebook" />
+            </a>
+            <a href="#">
+                <img class="icone-midias" src="/assets/img/logo-instagram.svg" alt="icone Instagram" />
+            </a>
+            <a href="#">
+                <img class="icone-midias" src="/assets/img/logo-twitter.svg" alt="icone Twitter" />
+            </a>
+        </div>
+    </ul>
+</footer>
