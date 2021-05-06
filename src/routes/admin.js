@@ -4,7 +4,7 @@ const db = require('../database/database');
 
 router.get('/pedidos', async (req, res) => {
     const conn = await db.connection();
-    const [pedidos] = await conn.query('SELECT * FROM pedido WHERE cd_avaliacao_admin_pedido = 0');
+    const [pedidos] = await conn.query(`SELECT * FROM pedido WHERE cd_situacao_pedido = 'PENDENTE'`);
     res.render('adm/requisicoes', {
         pedidos: pedidos
     })
@@ -18,7 +18,7 @@ router.get('/pedidos/:id', async (req, res) => {
     const [acceptOrNot] = await conn.query(`SELECT cd_avaliacao_admin_pedido FROM pedido
     WHERE cd_pedido = ?`, [id]);
 
-    if(acceptOrNot[0].cd_avaliacao_admin_pedido == 1){
+    if(acceptOrNot[0].cd_avaliacao_admin_pedido == 1 || 0){
         req.flash("errorMsg", "O pedido já foi avaliado!");
         res.redirect('/admin/pedidos');
         return
@@ -40,7 +40,8 @@ router.get('/pedidos/:id', async (req, res) => {
 router.post('/accept', async (req, res) => {
     const idPed = req.body.idPedido;
     const conn = await db.connection();
-    await conn.query(`UPDATE pedido SET cd_avaliacao_admin_pedido = 1 WHERE cd_pedido = ?`,[idPed]);
+    await conn.query(`UPDATE pedido SET cd_avaliacao_admin_pedido = 1,
+    cd_situacao_pedido = 'ACEITO' WHERE cd_pedido = ?`,[idPed]);
     req.flash('successMsg', 'Pedido aprovado!');
     res.redirect('/admin/pedidos');
     await conn.end();
@@ -49,8 +50,8 @@ router.post('/accept', async (req, res) => {
 router.post('/recused', async (req, res) => {
     const idPed = req.body.idPedido;
     const conn = await db.connection();
-    await conn.query(`DELETE FROM alimento WHERE cd_pedido_alimento = ?`, [idPed]);
-    await conn.query(`DELETE FROM pedido WHERE cd_pedido = ?`, [idPed]);
+    await conn.query(`UPDATE pedido SET cd_avaliacao_admin_pedido = 0,
+    cd_situacao_pedido = 'RECUSADO' WHERE cd_pedido = ?`, [idPed]);
     req.flash('successMsg', 'Pedido recusado');
     res.redirect('/admin/pedidos');
     await conn.end();

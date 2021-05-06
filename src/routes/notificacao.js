@@ -9,7 +9,7 @@ router.get('/', isAuth, async (req, res) => {
 
     const [notificacao] = await conn.query(`SELECT * FROM solicitacao
      INNER JOIN pedido ON cd_usuario_pedido = ? INNER JOIN usuario ON
-      cd_usuario_solicitacao = cd_usuario`, [idUser])
+      cd_usuario_solicitacao = cd_usuario WHERE cd_avaliacao_admin_pedido = 1`, [idUser])
 
     res.render('notificacao/notificacao-ajuda', {
         notificacao: notificacao
