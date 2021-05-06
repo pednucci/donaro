@@ -6,6 +6,7 @@ const auth = require('./routes/auth');
 const pedido = require('./routes/pedido');
 const admin = require('./routes/admin');
 const notificacao = require('./routes/notificacao');
+const painel = require('./routes/painel')
 const { isAuth } = require('./helpers/isAuth');
 const { isAdmin } = require('./helpers/isAdmin');
 
@@ -22,6 +23,7 @@ router.get('/logout', (req, res) => {
 router.use(auth);
 router.use(pedido);
 router.use('/admin', isAdmin, admin);
-router.use('/notificacoes', isAuth, notificacao)
+router.use('/notificacoes', isAuth, notificacao);
+router.use('/painel', painel);
 
 module.exports = router;
