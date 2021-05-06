@@ -103,7 +103,9 @@
                                 </div>
                                 {{/each}}
                             </div>
-                            <button class="btn blue">Ajudar</button>
+                            {{#each pedido}}
+                            <a href="/descobrir/pedido/{{cd_pedido}}/ajudar"><button class="btn blue">Ajudar</button></a>
+                            {{/each}}
                         </div>
                         <footer class="footer-alimentos column">
                             <h2 class="sub titulo">
