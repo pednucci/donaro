@@ -15,6 +15,11 @@
                 <a href="" class="nav-link">
                     <li>Painel</li>
                 </a>
+                {{#if admin}}
+                    <a href="/admin/pedidos" class="nav-link">
+                        <li>Admin</li>
+                    </a>
+                {{/if}}
             </ul>
             <div class="row nav-profile">
                 <div class="img-wrapper">
