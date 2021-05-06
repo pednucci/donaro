@@ -21,8 +21,13 @@
                 Encontre eventos de combate à fome perto de você
             </h2>
             <div class="row">
-                <input type="text" name="estado" class="input-form" id="txt-estado" placeholder="Estado" />
-                <input type="text" name="cidade" class="input-form" id="txt-cidade" placeholder="Cidade" />
+                <select name="estado" class="input-form" id="estadoPed">
+                    <option value="0">Selecione o Estado</option>
+                </select>
+                <input type="hidden" name="state">
+                <select name="cidade" class="input-form" id="cidadePed">
+                    <option value="0">Seleciona a Cidade</option>
+                </select>
                 <button class="btn red" type="submit">Procurar</button>
             </div>
         </form>
@@ -32,61 +37,61 @@
         <div class="pedidos row">
             {{#each pedido}}
             <a href="/descobrir/pedido/{{cd_pedido}}">
-            <div class="pedido">
-                <div class="imagem-pedido">
-                    <img src="/assets/pedidos/{{cd_imagem_pedido}}" alt="">
-                </div>
-                <div class="informacoes-pedido column">
-                    <div class="descricao-pedido">
-                        <h1 class="titulo">
-                            {{nm_titulo_pedido}}
-                        </h1>
-
-                        <h2 class="sub titulo">
-                            Alimentos:
-                            {{#each this.comida}}
-                            <span class="titulo-link">{{this}} </span>
-                            {{/each}}
-                        </h2>
+                <div class="pedido">
+                    <div class="imagem-pedido">
+                        <img src="/assets/pedidos/{{cd_imagem_pedido}}" alt="">
                     </div>
-                    <div class="progresso-container column">
-                        <div class="porcentagem">
-                            <div class="progresso-barra">
-                                <div class="progresso-atual"></div>
+                    <div class="informacoes-pedido column">
+                        <div class="descricao-pedido">
+                            <h1 class="titulo">
+                                {{nm_titulo_pedido}}
+                            </h1>
+
+                            <h2 class="sub titulo">
+                                Alimentos:
+                                {{#each this.comida}}
+                                <span class="titulo-link">{{this}} </span>
+                                {{/each}}
+                            </h2>
+                        </div>
+                        <div class="progresso-container column">
+                            <div class="porcentagem">
+                                <div class="progresso-barra">
+                                    <div class="progresso-atual"></div>
+                                </div>
+                            </div>
+                            <div class="arrecadado">
+                                <p><span>54</span>% arrecadado</p>
                             </div>
                         </div>
-                        <div class="arrecadado">
-                            <p><span>54</span>% arrecadado</p>
-                        </div>
-                    </div>
-                    <div class="rodape-pedido">
-                        <div class="row">
-                            <div class="usuario row">
-                                <div class="img-wrapper">
-                                    <img src="/assets/profile/{{cd_foto_usuario}}" alt="Foto do usuário" />
+                        <div class="rodape-pedido">
+                            <div class="row">
+                                <div class="usuario row">
+                                    <div class="img-wrapper">
+                                        <img src="/assets/profile/{{cd_foto_usuario}}" alt="Foto do usuário" />
+                                    </div>
+                                    <div class="column">
+                                        <h2 class="">{{nm_usuario}}</h2>
+                                        <p class="titulo-gray">
+                                            {{nm_cidade_usuario}}, {{sg_estado_usuario}}
+                                        </p>
+                                    </div>
                                 </div>
                                 <div class="column">
-                                    <h2 class="">{{nm_usuario}}</h2>
-                                    <p class="titulo-gray">
-                                        {{nm_cidade_usuario}}, {{sg_estado_usuario}}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div>
-                                    <img class="svg-pedido" src="/assets/img/icone_relogio.svg"
-                                        alt="Icone relógio" />
-                                    <p>Expira em: 10 dias</p>
-                                </div>
-                                <div>
-                                    <img class="svg-pedido" src="/assets/img/icone_pin.svg" alt="Icone pin" />
-                                    <p>{{nm_cidade_pedido}}, {{sg_estado_pedido}}</p>
+                                    <div>
+                                        <img class="svg-pedido" src="/assets/img/icone_relogio.svg"
+                                            alt="Icone relógio" />
+                                        <p>Expira em: 10 dias</p>
+                                    </div>
+                                    <div>
+                                        <img class="svg-pedido" src="/assets/img/icone_pin.svg" alt="Icone pin" />
+                                        <p>{{nm_cidade_pedido}}, {{sg_estado_pedido}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </a>
             {{/each}}
         </div>
@@ -159,3 +164,5 @@
         </div>
     </ul>
 </footer>
+
+<script src="/js/estado-cidade.js"></script>
