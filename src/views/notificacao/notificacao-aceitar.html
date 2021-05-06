@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="/public/css/painel.css" />
         <link rel="stylesheet" href="/public/css/usuario-pedido.css" />
 
-        <title>Requisição</title>
+        <title>Aceitar solicitação</title>
     </head>
     <body>
         <header>
@@ -25,19 +25,19 @@
                 <div class="nav-menu">
                     <ul class="row nav-list">
                         <a href="" class="nav-link">
-                            <li>Requisições</li>
+                            <li>Descobrir</li>
                         </a>
                         <a href="" class="nav-link">
-                            <li>Denúncias</li>
+                            <li>Criar</li>
                         </a>
                         <a href="" class="nav-link">
-                            <li>Não entregues</li>
+                            <li>Painel</li>
                         </a>
                     </ul>
                     <div class="row nav-profile">
                         <div class="img-wrapper">
                             <img
-                                src="/public/assets/img/user_nathan.png"
+                                src="/public/assets/img/user_andre.png"
                                 class="img-profile"
                                 alt="Foto de perfil"
                             />
@@ -52,31 +52,18 @@
         </header>
 
         <main>
-            <div class="usuario container-painel">
-                <div class="background-painel">
-                    <h1 class="painel-titulo">Almoço na creche Arco-Íris</h1>
-                    <div class="img-wrapper">
-                        <img
-                            src="/public/assets/img/background_user.png"
-                            alt=""
-                        />
-                    </div>
-                </div>
-
-                <div class="menu-painel">
-                    <ul class="menu-painel-buttons row">
-                        <a href="#">
-                            <li class="painel-text">Relatório</li>
-                        </a>
-                        <a href="#">
-                            <li class="painel-text active">Ajudas recebidas</li>
-                        </a>
-                    </ul>
-                </div>
-            </div>
-
             <div class="usuario profile-container columm">
                 <div class="user-container column">
+                    <ul class="users row">
+                        <a href="#">
+                            <li class="titulo-categoria underline">
+                                Solicitações de ajuda
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="titulo-categoria">Doações</li>
+                        </a>
+                    </ul>
                     <h1 class="titulo-user">Usuário</h1>
                     <div class="user-wrapper row">
                         <div class="imagePerfil column">
@@ -96,25 +83,37 @@
                                     <h1 class="sub titulo-user">Email</h1>
                                     <p>jpoliv21@gmail.com</p>
                                 </div>
-
+                            </div>
+                            <div class="row">
                                 <div>
                                     <h1 class="sub titulo-user">Telefone</h1>
                                     <p>(13) 99914-1099</p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div>
-                                    <h1 class="sub titulo-user">
-                                        Quantidade ofertada
-                                    </h1>
-                                    <p>5 Kg</p>
-                                </div>
-
-                                <div>
-                                    <h1 class="sub titulo-user">Alimento</h1>
-                                    <p>Arroz</p>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alimento-container">
+                    <div class="row">
+                        <h1>Alimentos</h1>
+                        <h1>Quantidade ofertada</h1>
+                    </div>
+                    <div class="column">
+                        <div class="alReq row">
+                            <h1 class="reqAlimento">Arroz</h1>
+                            <h1 class="reqQuantidade">5 Kg</h1>
+                        </div>
+                        <div class="alReq row">
+                            <h1 class="reqAlimento">Óleo</h1>
+                            <h1 class="reqQuantidade">4 L</h1>
+                        </div>
+                        <div class="alReq row">
+                            <h1 class="reqAlimento">Azeite</h1>
+                            <h1 class="reqQuantidade">5 L</h1>
+                        </div>
+                        <div class="alReq row">
+                            <h1 class="reqAlimento">Feijão</h1>
+                            <h1 class="reqQuantidade">10 Kg</h1>
                         </div>
                     </div>
                 </div>
@@ -139,5 +138,62 @@
                 <button class="btn ghost-red" type="submit">Recusar</button>
             </div>
         </main>
+        <footer class="footer-bar">
+            <img
+                class="logo-footer"
+                src="/public/assets/img/Donaro_Logo_White.svg"
+                alt="Logo Donaro"
+            />
+            <ul class="menu-footer">
+                <h2 class="sub titulo white">Ações sociais</h2>
+                <a href="#">
+                    <li class="list-item">Criar</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Fazer doação</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Descobrir</li>
+                </a>
+            </ul>
+            <ul class="menu-footer">
+                <h2 class="sub titulo white">Ajuda</h2>
+                <a href="#">
+                    <li class="list-item">Fale conosco</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Dúvidas frequentes</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Atualizações</li>
+                </a>
+            </ul>
+            <ul class="menu-footer">
+                <h2 class="sub titulo white">Acompanhe nossas redes sociais</h2>
+                <div class="redes-sociais">
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-facebook.svg"
+                            alt="icone Facebook"
+                        />
+                    </a>
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-instagram.svg"
+                            alt="icone Instagram"
+                        />
+                    </a>
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-twitter.svg"
+                            alt="icone Twitter"
+                        />
+                    </a>
+                </div>
+            </ul>
+        </footer>
     </body>
 </html>

@@ -62,7 +62,7 @@
 /* #region */
 .alimento-container {
   min-width: min-content;
-  max-width: 480px;
+  max-width: 600px;
   max-height: 200px;
   overflow: hidden;
   overflow-y: scroll;
