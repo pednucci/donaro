@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { isAuth } = require('../helpers/isAuth');
 const db = require('../database/database');
 
-router.get('/', isAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     const conn = await db.connection();
     const idUser = req.user[0].cd_usuario;
 
@@ -19,7 +18,7 @@ router.get('/', isAuth, async (req, res) => {
     await conn.end();
 })
 
-router.get('/:id', isAuth, async (req, res) => {
+router.get('/one/:id', async (req, res) => {
     const conn = await db.connection();
     const idUser = req.user[0].cd_usuario;
     const idSoli = req.params.id;
@@ -36,6 +35,19 @@ router.get('/:id', isAuth, async (req, res) => {
     res.render('notificacao/notificacao-aceitar', {
         notificacao: notificacao,
         alimento: alimento
+    })
+
+    await conn.end();
+})
+
+router.get('/doacoes', async (req, res) => {
+    const conn = await db.connection();
+    const idUser = req.user[0].cd_usuario;
+    const [notificacao] = await conn.query(`SELECT * FROM solicitacao INNER JOIN
+    pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON cd_usuario_pedido = cd_usuario
+    WHERE cd_aceito_solicitacao >= 0 AND cd_usuario_solicitacao = ?`, [idUser])
+    res.render('notificacao/notificacao-doacoes', {
+        notificacao: notificacao
     })
 
     await conn.end();
@@ -62,7 +74,9 @@ router.post('/recused', async (req, res) => {
     'RECUSADA' WHERE cd_solicitacao = ?`, [idSoli]);
 
     req.flash('successMsg', 'Ajuda recusada');
-    res.redirect('/')
+    res.redirect('/');
+
+    await conn.end();
 })
 
 module.exports = router;
