@@ -24,9 +24,9 @@
 
 /* #region Seção Arrecade */
 .section.arrecade {
-    height: calc(100vh - 150px);
+    height: calc(100vh - 100px);
     background-color: var(--white);
-    padding-bottom: calc(50%-100px);
+    padding-bottom: 100px;
 }
 
 .wrapper.arrecade {

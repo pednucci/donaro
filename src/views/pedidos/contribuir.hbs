@@ -25,7 +25,7 @@
                     </div>
                     <div>
                         <label>Quantidade</label>
-                        <div style="flex-direction: row">
+                        <div class="row">
                             <input class="input-form" type="text" name="qtd" />
                             <h1>{{nm_medida_alimento}}</h1>
                         </div>
@@ -39,7 +39,7 @@
             </label>
             <textarea name="descricao" cols="30" rows="4"></textarea>
             {{#each alimento}}
-                <input type="hidden" name="idPedido" value="{{cd_pedido}}">
+            <input type="hidden" name="idPedido" value="{{cd_pedido}}">
             {{/each}}
             <input class="btn blue" type="submit" value="Enviar" />
         </form>

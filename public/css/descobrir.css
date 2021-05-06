@@ -120,7 +120,7 @@
 
 
 .descricao-pedido {
-    height: 50px;
+    height: 60px;
 
     margin-bottom: 20px;
 
@@ -132,12 +132,36 @@
 .descricao-pedido .titulo {
     font-size: 2.5rem;
     margin: 0 0 10px 0;
+
+    max-width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.descricao-pedido .sub.titulo {
+    justify-content: flex-start;
 }
 
 .descricao-pedido .sub.titulo,
 .arrecadado {
     font-size: 2rem;
 }
+
+.pedido .titulo-link {
+    color: var(--blue-link);
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.pedido .titulo-link:not(:last-child)::after {
+    content: "-";
+    display: block;
+
+    margin-left: 5px;
+    width: 10px;
+}
+
 
 .arrecadado * {
     color: var(--blue-logo);
@@ -158,11 +182,6 @@
     display: flex;
 
     color: var(--gray-minor-font);
-}
-
-.pedido .titulo-link {
-    color: var(--blue-link);
-    cursor: pointer;
 }
 
 .rodape-pedido p {
