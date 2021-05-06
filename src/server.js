@@ -48,10 +48,10 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
     },
     donationNoti: (msg) => {
         if(msg == 'PENDENTE'){
-            return "Aceitou sua solicitação de ajuda"
+            return 'accepted';
         }
         if(msg == 'RECUSADA'){
-            return "Recusou sua solicitação de ajuda"
+            return undefined;
         }
     }
 }}));
