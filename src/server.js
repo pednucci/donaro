@@ -33,6 +33,9 @@ app.use((req, res, next) => {
     res.locals.errorMsg = req.flash("errorMsg");
     res.locals.error = req.flash("error");
     res.locals.user = req.user || null;
+    if(req.user){
+        if(req.user[0].cd_isAdmin_usuario == 1) res.locals.admin = 1;
+    }
     next()
 })
 
