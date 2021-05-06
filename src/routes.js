@@ -24,6 +24,6 @@ router.use(auth);
 router.use(pedido);
 router.use('/admin', isAdmin, admin);
 router.use('/notificacoes', isAuth, notificacao);
-router.use('/painel', painel);
+router.use('/painel', isAuth, painel);
 
 module.exports = router;
