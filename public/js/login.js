@@ -5,7 +5,7 @@ var pass = document.querySelector('.pass')
 var attribute = pass.getAttribute('type')
 
 
-ckb.addEventListener('change', () => {
+ckb.addEventListener('click', () => {
   if (checked) {
     pass.setAttribute('type', 'password')
   } else {
