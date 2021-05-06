@@ -41,11 +41,11 @@
 }
 
 .denounce {
-    color: var(--red-denounce);
+    color: var(--red-denounce) !important;
 }
 
 .accepted {
-    color: var(--green-accept);
+    color: var(--green-accept) !important;
 }
 
 

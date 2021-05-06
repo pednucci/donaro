@@ -17,7 +17,7 @@
 <main>
     <div class="usuario container-painel">
         <div class="background-painel">
-            <h1 class="painel-titulo">Almoço na creche Arco-Íris</h1>
+            <h1 class="painel-titulo">Painel</h1>
             <div class="img-wrapper">
                 <img src="/assets/img/background_user.png" alt="" />
             </div>
@@ -36,18 +36,19 @@
     </div>
 
     <div class="pedidos painel row">
+        {{#each pedido}}
         <div class="pedido column">
             <div class="imagem-pedido">
-                <img src="/assets/img/pedido_almoco-creche.png" alt="">
+                <img src="/assets/pedidos/{{cd_imagem_pedido}}" alt="">
             </div>
             <div class="informacoes-pedido column">
                 <div class="descricao-pedido">
                     <h1 class="titulo">
-                        Almoço na creche Arco-Íris
+                        {{nm_titulo_pedido}}
                     </h1>
                     <h2 class="sub titulo">
                         Status:
-                        <span class="link-accept">Aceito</span>
+                        <span class="link-accept">{{cd_situacao_pedido}}</span>
                     </h2>
                 </div>
             </div>
@@ -57,7 +58,7 @@
                 </button>
             </a>
         </div>
-
+        {{/each}}
     </div>
 </main>
 
