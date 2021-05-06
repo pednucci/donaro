@@ -28,25 +28,27 @@
 
 <main>
     <div class="form-container column">
-            {{>msg}}
-            {{#if error}}
-            <div class="error">
-                <h2 class="sub titulo">{{error}}</h2>
-            </div>
-            {{else}}
-            {{/if}}
+        {{>msg}}
+        {{#if error}}
+        <div class="error">
+            <h2 class="sub titulo">{{error}}</h2>
+        </div>
+        {{else}}
+        {{/if}}
         <p class="sub titulo">Login</p>
         <form class="form-login column" action="/login" method="POST">
             <label for="">Email</label>
-            <input class="input-form" type="email" name="email" id="" />
+            <input class="input-form" type="email" name="email" />
             <div class="chkbx-container exibir row" id="">
                 <input class="checkbox-form" type="checkbox" name="" id="ckbExibir" />
                 <label class="" for="ckbExibir">Exibir senha</label>
             </div>
             <label for="">Senha</label>
-            <input class="input-form" type="password" name="pass" id="" />
+            <input class="input-form pass" type="password" name="pass" />
             <a class="titulo-link" href="#">Esqueci minha senha</a>
             <input class="btn btn blue" type="submit" value="Entrar" />
         </form>
     </div>
 </main>
+
+<script src="/js/login.js"></script>

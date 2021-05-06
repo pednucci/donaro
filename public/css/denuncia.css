@@ -61,13 +61,6 @@
 /* #region Textarea */
 
 textarea {
-  border: 1px solid var(--gray-border);
-  border-radius: 10px;
-  padding: 20px;
-
-  background-color: var(--gray-background);
-  color: var(--black-logo);
-
   font-family: 'Red Hat Display', sans-serif;
   font-size: 2rem;
   font-weight: 500;
@@ -82,12 +75,43 @@ textarea {
 .qtdAlimentos {
   max-height: 300px;
 
+
   overflow: hidden;
   overflow-y: scroll;
 
   margin: 40px 0;
 }
 
-.form-container.pedido {}
+.qtdAlimentos .row {
+  display: flex;
+
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.qtdAlimentos .row div:last-child div {
+  height: 60px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: var(--gray-background);
+
+  border: var(--border-form);
+  border-radius: 10px;
+}
+
+.qtdAlimentos .row div:last-child div .input-form {
+  height: 100%;
+
+  margin: 0;
+  border: none;
+}
+
+
+
 
 /* #endregion */
