@@ -15,7 +15,7 @@
 
 <main>
     <div class="usuario profile-container columm">
-        
+
         <div class="user-container column">
             <ul class="users row">
                 <a href="#">
@@ -57,7 +57,7 @@
         </div>
 
         <div class="alimento-container">
-            <div class="row">
+            <div class="head row">
                 <h1>Alimentos</h1>
                 <h1>Quantidade ofertada</h1>
             </div>
@@ -85,13 +85,13 @@
     <div class="botoes row">
         <form action="/notificacoes/accept" method="POST">
             {{#each notificacao}}
-                <input type="hidden" name="idSoli" value="{{cd_solicitacao}}">
+            <input type="hidden" name="idSoli" value="{{cd_solicitacao}}">
             {{/each}}
             <button class="btn green" type="submit">Aceitar</button>
         </form>
         <form action="/notificacoes/recused" method="POST">
             {{#each notificacao}}
-                <input type="hidden" name="idSoli" value="{{cd_solicitacao}}">
+            <input type="hidden" name="idSoli" value="{{cd_solicitacao}}">
             {{/each}}
             <button class="btn ghost-red" type="submit">Recusar</button>
         </form>
