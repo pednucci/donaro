@@ -2,14 +2,14 @@
 
 
 
-.hidden {
+/* .hidden {
     -webkit-transform: translateY(-100%);
     -moz-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
     -o-transform: translateY(-100%);
     transform: translateY(-100%);
     transition: all 0.3s ease-in-out;
-}
+} */
 
 .nav-bar {
     width: 100%;
@@ -108,11 +108,11 @@
 
 
 .toggle-link.logout {
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .logout .sub.titulo {
-    font-size: 1.5rem;
+    font-size: 2rem;
 
     color: var(--red-logo);
 
