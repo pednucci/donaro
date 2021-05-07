@@ -111,6 +111,10 @@
     margin-top: 20px;
 }
 
+img[alt^="Logout"] {
+    width: 14px;
+}
+
 .logout .sub.titulo {
     font-size: 2rem;
 

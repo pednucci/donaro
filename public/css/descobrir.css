@@ -51,6 +51,7 @@
 
 .pedidos-container .titulo {
     margin: 50px 0;
+
 }
 
 .pedidos {
@@ -58,11 +59,15 @@
     flex-wrap: wrap;
 }
 
+.pedido-link {
+    margin: 20px 40px;
+}
+
 .pedido {
     width: 400px;
     height: max-content;
 
-    margin: 20px 40px;
+
     margin-left: 0;
 
     border-radius: 10px;
@@ -121,6 +126,9 @@
 
 .descricao-pedido {
     height: 60px;
+    width: 360px;
+
+    overflow: hidden;
 
     margin-bottom: 20px;
 
@@ -132,15 +140,22 @@
 .descricao-pedido .titulo {
     font-size: 2.5rem;
     margin: 0 0 10px 0;
+    height: 20px;
+    line-height: 2rem;
 
-    /* max-width: 360px;
-    overflow-x: hidden;
-    text-overflow: ellipsis; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
 .descricao-pedido .sub.titulo {
     justify-content: flex-start;
+    width: 360px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .descricao-pedido .sub.titulo,
@@ -160,6 +175,14 @@
 
     margin-left: 5px;
     width: 10px;
+}
+
+.pedido .titulo-link:last-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    background-color: aqua;
 }
 
 

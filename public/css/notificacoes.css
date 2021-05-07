@@ -1,9 +1,7 @@
 /* #region Cards */
 
 .cards-container {
-  /* min-width: min-content; */
   max-width: 900px;
-  /* height: 100%; */
 
   display: flex;
   flex-direction: column;
@@ -103,6 +101,9 @@
 
 /* #region Painel Usuário */
 
+.usuario.cards-container {
+  margin-top: 30px;
+}
 
 .usuario .underline {
   border-bottom: 4px solid var(--red-logo);
