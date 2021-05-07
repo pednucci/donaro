@@ -15,9 +15,8 @@ router.get('/', (req, res) => {
 })
 
 router.get('/logout', (req, res) => {
-    req.logout()
-    req.flash('successMsg', "Deslogado")
-    res.redirect('/')
+    req.logout();
+    res.redirect('/');
 })
 
 router.use(auth);
