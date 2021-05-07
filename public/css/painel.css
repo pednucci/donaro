@@ -202,7 +202,7 @@
 
 
 .pedidos.painel {
-  max-width: 720px;
+  width: 720px;
 
   flex-wrap: wrap;
 
@@ -210,14 +210,15 @@
   margin-bottom: 50px;
 
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 
 .painel .pedido {
-  width: 250px;
+  width: 280px;
   height: 300px;
 
+  margin: 20px 30px;
   justify-content: space-between;
 
   border: var(--border-form);
@@ -242,19 +243,25 @@
 
 .painel .titulo {
   font-size: 2rem;
+
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .painel .sub.titulo {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .painel .pedido .btn {
   height: 20px;
   width: 100%;
+
+  border-radius: 0 0 10px 10px;
 }
 
 .painel .informacoes-pedido {
   padding: 10px;
+  gap: 10px;
 }
 
 /* #endregion  */
