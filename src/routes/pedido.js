@@ -77,6 +77,7 @@ router.post('/ajudar', async (req, res) => {
 
         if(typeof req.body.qtd == 'object'){
             for(let i = 0; i<req.body.qtd.length; i++) {
+                if(req.body.nmAlimento[i] == '' || req.body.qtd[i] == '') continue;
                 await conn.query(`INSERT INTO donation
                 (nm_alimento_donation, qt_contribuicao_donation, cd_solicitacao_donation,
                 cd_pedido_donation)

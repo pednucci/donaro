@@ -30,7 +30,8 @@ router.get('/one/:id', async (req, res) => {
     [idUser, idSoli]);
 
     const [alimento] = await conn.query(`SELECT * FROM donation INNER JOIN alimento ON 
-    nm_alimento_donation = nm_alimento WHERE cd_solicitacao_donation = ?;`,[idSoli])
+    nm_alimento_donation = nm_alimento WHERE cd_solicitacao_donation = ? AND cd_pedido_alimento = 
+    (SELECT cd_pedido_solicitacao FROM solicitacao WHERE cd_solicitacao = ?);;`,[idSoli, idSoli])
 
     res.render('notificacao/notificacao-aceitar', {
         notificacao: notificacao,
