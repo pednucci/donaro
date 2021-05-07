@@ -19,15 +19,15 @@
             <div class="qtdAlimentos">
                 {{#each alimento}}
                 <div class="row">
-                    <div>
+                    <div class="alimento-pedido">
                         <label>Alimento</label>
                         <input class="input-form" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly>
                     </div>
                     <div>
                         <label>Quantidade</label>
-                        <div class="row">
+                        <div class="qtdAl row">
                             <input class="input-form" type="text" name="qtd" />
-                            <h1>{{nm_medida_alimento}}</h1>
+                            <h1 class="sub titulo">{{nm_medida_alimento}}</h1>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
             <label for="comentario">
                 Adicione um comentário (opcional)
             </label>
-            <textarea name="descricao" cols="30" rows="4"></textarea>
+            <textarea class="input-form" name="descricao" cols="30" rows="4"></textarea>
             {{#each alimento}}
             <input type="hidden" name="idPedido" value="{{cd_pedido}}">
             {{/each}}
