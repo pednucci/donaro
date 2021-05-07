@@ -11,7 +11,7 @@
     <title>Requisições</title>
 </head>
 
-    {{>navbar}}
+{{>navbar}}
 
 <main>
     <div class="container-painel">
@@ -38,30 +38,30 @@
     </div>
 
     <div class="cards-container">
-    {{>msg}}
+        {{>msg}}
 
         {{#each pedidos}}
-            <div class="card row">
-                <div class="card-user row">
-                    <div class="card-image">
-                        <img class="image-card" src="/assets/pedidos/{{cd_imagem_pedido}}" alt="" />
-                    </div>
-                    <div class="card-info column">
-                        <h1 class="nome-card">
-                            {{nm_titulo_pedido}}
-                        </h1>
-                        <h2 class="desc-card">ID do pedido: {{cd_pedido}}</h2>
-
-                        <h2 class="desc-card">{{formatDate dt_createdAt_pedido}}</h2>
-                            
-                    </div>
+        <div class="card row">
+            <div class="card-user row">
+                <div class="card-image">
+                    <img class="image-card" src="/assets/pedidos/{{cd_imagem_pedido}}" alt="" />
                 </div>
-                <div class="card-btn row">
-                    <a href="/admin/pedidos/{{cd_pedido}}">
-                        <button class="btn blue">Ver pedido</button>
-                    </a>
+                <div class="card-info column">
+                    <h1 class="nome-card">
+                        {{nm_titulo_pedido}}
+                    </h1>
+                    <h2 class="desc-card">ID do pedido: {{cd_pedido}}</h2>
+
+                    <h2 class="desc-card">{{formatDate dt_createdAt_pedido}}</h2>
+
                 </div>
             </div>
+            <div class="card-btn row">
+                <a href="/admin/pedidos/{{cd_pedido}}">
+                    <button class="btn blue">Ver pedido</button>
+                </a>
+            </div>
+        </div>
         {{/each}}
 
     </div>
@@ -86,9 +86,9 @@
             <a href="">
                 <li class="num cont-pagina">6</li>
             </a>
+            <a href="">
+                <div class="cont-pagina">Seguinte &#62;</div>
+            </a>
         </ul>
-        <a href="">
-            <div class="cont-pagina">Seguinte &#62;</div>
-        </a>
     </div>
 </main>
