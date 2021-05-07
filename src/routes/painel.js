@@ -9,6 +9,7 @@ router.get('/pedidos', async (req, res) => {
     res.render('painel/meus-pedidos', {
         pedido: pedidos
     })
+    await conn.end();
 })
 
 module.exports = router;

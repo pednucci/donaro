@@ -102,6 +102,7 @@ router.post('/ajudar', async (req, res) => {
         req.flash('errorMsg', 'Erro inesperado ao enviar ajuda!');
         res.redirect('/')
     }
+    await conn.end();
 })
 
 router.post('/cadpedido', newOrderController.newOrder);
