@@ -15,6 +15,16 @@ navProfile.addEventListener('click', () => {
 
 })
 
+// var footer = document.querySelector('.footer-bar');
+// var html = document.querySelector('html')
+// var height = html.
+
+
+
+// window.addEventListener('scroll', () => {
+//   alert('html')
+//   if (window.innerHeight > )
+// })
 // window.addEventListener("scroll", () => {
 //   if (window.scrollY > 0) {
 //     navbar.style.position = "fixed"

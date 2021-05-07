@@ -43,17 +43,19 @@
                     </div>
                     <div class="informacoes-pedido column">
                         <div class="descricao-pedido">
-                            <h1 class="titulo">
+                            <h1 class="titulo ped">
                                 {{nm_titulo_pedido}}
                             </h1>
 
-                            <h2 class="sub titulo row">
-                                Alimentos:
-                                {{#each this.comida}}
-                                <span class="titulo-link row">{{this}} </span>
-                                {{/each}}
-
-                            </h2>
+                            <div class="titulo-wrapper row">
+                                <h2 class="sub titulo row">
+                                    Alimentos:
+                                    {{#each this.comida}}
+                                    <span class="titulo-link row">{{this}} </span>
+                                    {{/each}}
+                                </h2>
+                                <span class="sub titulo titulo-link before">...</span>
+                            </div>
                         </div>
                         <div class="progresso-container column">
                             <div class="porcentagem">
