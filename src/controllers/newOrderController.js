@@ -64,10 +64,12 @@ exports.newOrder = async (req, res) => {
             `, [idPedido, idPedido])
         }
         req.flash('successMsg', 'Pedido cadastrado com sucesso!')
-        res.redirect('/')
+        res.redirect('/painel/pedidos')
     }
     catch(err) {
         console.log(err)
+        req.flash('errorMsg', 'Erro ao cadastrar pedido!')
+        res.redirect('/')
     }
     
     await conn.end();
