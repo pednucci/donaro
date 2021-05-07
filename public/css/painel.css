@@ -21,12 +21,12 @@
 
 .container-painel .img-wrapper {
   border-radius: 0;
-  height: 200px;
+  height: 160px;
   width: 100%;
 }
 
 .painel-titulo {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
 
   position: absolute;
@@ -63,7 +63,7 @@
 
 .painel-text {
   line-height: 75px;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 500;
   color: var(--white);
 

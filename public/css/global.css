@@ -88,6 +88,8 @@ body {
 
 
 textarea.input-form {
+    padding-top: 15px;
+
     min-height: 200px;
     max-height: 200px;
 

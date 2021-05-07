@@ -71,15 +71,15 @@
         </div>
 
         <div class="alimento-container">
-            <div class="row">
+            <div class="head row">
                 <h1>Alimentos</h1>
                 <h1>Quantidade</h1>
             </div>
-            <div class="column">
+            <div class="alReq-container column">
                 {{#each alimento}}
                 <div class="alReq row">
                     <h1 class="reqAlimento">{{nm_alimento}}</h1>
-                    <h1 class="reqQuantidade">{{qt_alimento}}{{nm_medida_alimento}}</h1>
+                    <h1 class="reqQuantidade">{{qt_alimento}} {{nm_medida_alimento}}</h1>
                 </div>
                 {{/each}}
             </div>
