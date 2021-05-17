@@ -53,6 +53,23 @@ img[alt^="Info"] {
     height: 200px;
 }
 
+.imagePed {
+    background-image: url(/assets/pedidos/default.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.img-container .img-wrapper {
+    width: 12rem !important;
+    height: 12rem !important;
+
+    border-radius: 0.8rem;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
 .form-login .continuar {
     align-self: flex-start;
     width: max-content;

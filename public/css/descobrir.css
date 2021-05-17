@@ -144,11 +144,6 @@
 
 }
 
-.descricao-pedido .titulo.ped {
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
-}
 
 .titulo-wrapper {
     justify-content: flex-start;

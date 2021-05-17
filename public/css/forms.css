@@ -16,7 +16,7 @@
   font-weight: 500;
 }
 
-.form-login .row:not(.chkbx-container) {
+.form-login .row:not(.chkbx-container, .img-container) {
   justify-content: flex-start;
   gap: 20px;
 }
@@ -26,7 +26,7 @@
   font-weight: bold;
 }
 
-.form-login .row div {
+.form-login .row div:not(.img-wrapper) {
   width: max-content;
   display: flex;
   flex-direction: column;
