@@ -29,14 +29,6 @@
                     <label>Data de encerramento</label>
                     <input class="input-form" type="date" name="dtPedido" id="dtPed" />
                 </div>
-
-                <div>
-                    <label class="lblMeta row">Meta <img src="/assets/img/icone_info.svg" alt="Informação Meta"></label>
-                    <select class="input-form" name="metaPedido" id="metaPed">
-                        <option value="Aberta">Aberta</option>
-                        <option value="Fechada">Fechada</option>
-                    </select>
-                </div>
             </div>
 
             <h2 class="sub titulo">Local de entrega do alimento</h2>
@@ -71,7 +63,10 @@
                     </div>
                     <div class="alimento-input">
                         <label>Alimento</label>
-                        <input name="alimentoInput" type="text" class="input-form alimentoInput">
+                        <select name="alimentoInput" class="input-form alimentoInput">
+                            <option value="Arroz">Arroz</option>
+                        </select>
+                        {{!-- <input name="alimentoInput" type="text" class="input-form alimentoInput"> --}}
                     </div>
 
                     <div class="quantidade-input">
@@ -79,7 +74,7 @@
                         <input name="quantidade" class="input-form quantidade" type="number" min="1" />
                     </div>
 
-                    <div class="medida-input">
+                {{!-- <div class="medida-input">
                         <label>Medida</label>
                         <select name="alMedida" class="input-form alMedida">
                             <option value="KG">Quilos</option>
@@ -87,7 +82,8 @@
                             <option value="L">Litros</option>
                             <option value="ML">ML</option>
                         </select>
-                    </div>
+                    </div> --}}
+                <button style="opacity:0" class="btn red excluir" type="button" onclick="delFood(this)"><img src="/assets/img/trash.svg" alt="excluir"></button>
                 </div>
 
             </div>

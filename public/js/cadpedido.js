@@ -92,13 +92,11 @@ console.log(document.querySelector('.alimentos-wrapper'))
 btnAddFood.addEventListener('click', () => {
     foodWrapper.append(addFood())
 
-    var food = document.querySelectorAll(".alimento.row");
-    var tipfisico = document.querySelectorAll(".tpf");
-    var medidaAl = document.querySelectorAll(".alMedida");
-
+    // var food = document.querySelectorAll(".alimento.row");
+    // var tipfisico = document.querySelectorAll(".tpf");
+    // var medidaAl = document.querySelectorAll(".alMedida");
     // medidaSolido()
     // medidaLiquido()
-
     // console.log(tipfisico.length)
 });
 
@@ -130,21 +128,26 @@ function addFood() {
 
     //#endregion
 
-    //#region Input do Alimento
+    //#region Select do Alimento
     var alimento = document.createElement("div");
-    alimento.classList = ("alimento-input");
+    alimento.classList.add("alimento-input");
 
-    var lblFood = document.createElement("label");
-    lblFood.innerHTML = "Alimento"
+    var lblAlimento = document.createElement("label");
+    lblAlimento.innerHTML = "Alimento"
 
-    var txtFood = document.createElement("input");
-    txtFood.setAttribute('type', 'text');
-    txtFood.classList = "input-form alimentoInput"
-    txtFood.setAttribute('name', 'alimentoInput');
+    var slctAlimento = document.createElement("select");
+    slctAlimento.classList = "input-form alimentoInput"
+    slctAlimento.setAttribute('name', 'alimentoInput')
 
-    alimento.append(lblFood);
-    alimento.append(txtFood);
+    var optArroz = document.createElement("option");
+    optArroz.innerHTML = "Arroz";
+    optArroz.setAttribute('value', 'Arroz');
 
+    slctAlimento.append(optArroz);
+
+
+    alimento.append(lblAlimento);
+    alimento.append(slctAlimento);
     //#endregion
 
     //#region Input da quantidade
@@ -163,42 +166,6 @@ function addFood() {
     qtd.append(lblQtd);
     qtd.append(txtQtd);
     //#endregion 
-
-    //#region Select da Medida
-    var medida = document.createElement("div");
-    medida.classList.add("medida-input");
-
-    var lblMedida = document.createElement("label");
-    lblMedida.innerHTML = "Medida"
-
-    var slctMedida = document.createElement("select");
-    slctMedida.classList = "input-form alMedida"
-    slctMedida.setAttribute('name', 'alMedida')
-
-    var optTipoK = document.createElement("option");
-    optTipoK.innerHTML = "Quilos";
-    optTipoK.setAttribute('value', 'KG');
-
-    var optTipoG = document.createElement("option");
-    optTipoG.innerHTML = "Gramas";
-    optTipoG.setAttribute('value', 'G');
-
-    var optTipoL = document.createElement("option");
-    optTipoL.innerHTML = "Litros";
-    optTipoL.setAttribute('value', 'L');
-
-    var optTipoML = document.createElement("option");
-    optTipoML.innerHTML = "ML";
-    optTipoML.setAttribute('value', 'ML');
-
-    slctMedida.append(optTipoK);
-    slctMedida.append(optTipoG);
-    slctMedida.append(optTipoL);
-    slctMedida.append(optTipoML);
-
-    medida.append(lblMedida);
-    medida.append(slctMedida);
-    //#endregion
 
     //#region Input do Botão
     var btn = document.createElement("button");
@@ -222,7 +189,6 @@ function addFood() {
     alimentoContainer.append(tipo);
     alimentoContainer.append(alimento);
     alimentoContainer.append(qtd);
-    alimentoContainer.append(medida);
     alimentoContainer.append(btn);
     alimentoContainer.setAttribute("id", idCount);
 
@@ -241,6 +207,6 @@ function delFood(btn) {
 }
 //#endregion
 
-document.getElementById("imagePed").addEventListener('change', event => {
-    console.log(document.getElementById('imagePed').files[0])
-})
+// document.getElementById("imagePed").addEventListener('change', event => {
+//     console.log(document.getElementById('imagePed').files[0])
+// })
