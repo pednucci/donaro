@@ -59,11 +59,11 @@
                         <div class="progresso-container column">
                             <div class="porcentagem">
                                 <div class="progresso-barra">
-                                    <div class="progresso-atual"></div>
+                                    <div class="progresso-atual progresso-atual-{{cd_pedido}}"></div>
                                 </div>
                             </div>
                             <div class="arrecadado">
-                                <p><span>54</span>% arrecadado</p>
+                                <p><span class="arrecadado-{{cd_pedido}}"></span>% arrecadado</p>
                             </div>
                         </div>
                         <div class="rodape-pedido">
@@ -83,7 +83,7 @@
                                     <div>
                                         <img class="svg-pedido" src="/assets/img/icone_relogio.svg"
                                             alt="Icone relógio" />
-                                        <p>Expira em: 10 dias</p>
+                                        <p>Expira em: {{dateRemaining}}</p>
                                     </div>
                                     <div>
                                         <img class="svg-pedido" src="/assets/img/icone_pin.svg" alt="Icone pin" />
@@ -166,5 +166,11 @@
         </div>
     </ul>
 </footer>
-
 <script src="/js/estado-cidade.js"></script>
+<script type="text/javascript">
+    {{#each pedido}}
+    math = ({{qt_doacoes_pedido}}*100)/{{qt_total_pedido}};
+    document.querySelector('.progresso-atual-{{cd_pedido}}').style.width = math + '%';
+    document.querySelectorAll('.arrecadado-{{cd_pedido}}')[0].innerText = Math.trunc(math);
+    {{/each}}
+</script>
