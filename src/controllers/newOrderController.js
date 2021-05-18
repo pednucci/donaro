@@ -6,7 +6,6 @@ exports.newOrder = async (req, res) => {
     const conn = await db.connection();
     const titulo = req.body.titulo;
     const dtPed = req.body.dtPedido;
-    const meta = req.body.metaPedido;
     const estado = req.body.estado;
     const cidade = req.body.cidade;
     const desc = req.body.descPed;
@@ -16,9 +15,9 @@ exports.newOrder = async (req, res) => {
     try {
         const idUser = req.user[0].cd_usuario;
         const pedido = await conn.query(`INSERT INTO pedido(cd_usuario_pedido, nm_titulo_pedido,
-            nm_meta_pedido, dt_encerramento_pedido, nm_cidade_pedido,
-            sg_estado_pedido, ds_acao_pedido) VALUES(?,?,?,?,?,?,?)
-            `, [idUser, titulo, meta, dtPed, cidade, estado, desc]);
+            dt_encerramento_pedido, nm_cidade_pedido,
+            sg_estado_pedido, ds_acao_pedido) VALUES(?,?,?,?,?,?)
+            `, [idUser, titulo, dtPed, cidade, estado, desc]);
 
         const idPedido = pedido[0].insertId;
         
@@ -39,30 +38,36 @@ exports.newOrder = async (req, res) => {
             })
         }
         
-        if(typeof req.body.alMedida == 'object'){
-            for(let i = 0; i<req.body.alMedida.length; i++) {
+        if(typeof req.body.alimentoInput == 'object'){
+            for(let i = 0; i<req.body.alimentoInput.length; i++) {
+
+                let medida = await conn.query(`SELECT sg_medida_produto FROM produto WHERE nm_produto =
+                ? LIMIT 1`,[req.body.alimentoInput[i]])
 
                 await conn.query(`INSERT INTO alimento
-                (nm_alimento, cd_pedido_alimento, nm_medida_alimento, qt_alimento, nm_tipoFisico_alimento)
-                VALUES(?,?,?,?,?)`
-                , [req.body.alimentoInput[i], idPedido, req.body.alMedida[i],
-                 req.body.quantidade[i], req.body.tpf[i]])
+                (nm_alimento, cd_pedido_alimento, nm_medida_alimento, qt_alimento)
+                VALUES(?,?,?,?)`
+                , [req.body.alimentoInput[i], idPedido, medida[0][0].sg_medida_produto,
+                 req.body.quantidade[i]])
             }
         }
-        if(typeof req.body.alMedida == 'string'){
+        if(typeof req.body.alimentoInput == 'string'){
+            
+            let medida = await conn.query(`SELECT sg_medida_produto FROM produto WHERE nm_produto =
+            ? LIMIT 1`,[req.body.alimentoInput])
+
             await conn.query(`INSERT INTO alimento
-                (nm_alimento, cd_pedido_alimento, nm_medida_alimento, qt_alimento, nm_tipoFisico_alimento)
-                VALUES(?,?,?,?,?)`
-                , [req.body.alimentoInput, idPedido, req.body.alMedida,
-                 req.body.quantidade, req.body.tpf])
+                (nm_alimento, cd_pedido_alimento, nm_medida_alimento, qt_alimento)
+                VALUES(?,?,?,?)`
+                , [req.body.alimentoInput, idPedido, medida[0][0].sg_medida_produto,
+                 req.body.quantidade])
         }
 
-        if(meta == 'Fechada'){
-            await conn.query(`
-            UPDATE pedido SET qt_total_pedido = 
-            (select sum(qt_alimento) from alimento where cd_pedido_alimento = ?) WHERE cd_pedido = ?
-            `, [idPedido, idPedido])
-        }
+        await conn.query(`
+        UPDATE pedido SET qt_total_pedido = 
+        (select sum(qt_alimento) from alimento where cd_pedido_alimento = ?) WHERE cd_pedido = ?
+        `, [idPedido, idPedido])
+
         req.flash('successMsg', 'Pedido cadastrado com sucesso!')
         res.redirect('/painel/pedidos')
     }
