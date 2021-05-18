@@ -3,24 +3,38 @@ const router = express.Router();
 const newOrderController = require('../controllers/newOrderController');
 const { isAuth } = require('../helpers/isAuth');
 const db = require('../database/database');
+const { formatDistanceToNow, formatDistanceStrict } = require('date-fns');
+const { ptBR } = require('date-fns/locale');
 
-router.get('/criar', isAuth, (req, res) => {
-    res.render('pedidos/cadastrar-pedido')
+router.get('/criar', isAuth, async (req, res) => {
+    const conn = await db.connection();
+    const [produtos] = await conn.query('SELECT * FROM produto')
+    res.render('pedidos/cadastrar-pedido', {
+        produtos
+    })
+    await conn.end();
 })
 
 router.get('/descobrir', async (req, res) => {
     const conn = await db.connection();
     const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_avaliacao_admin_pedido = 1`);
+    cd_usuario_pedido = cd_usuario`);
     for(let i = 0; i<pedidos.length; i++){
-        let alPedido = [];
         const id = pedidos[i].cd_pedido;
+        let datPedido = [];
+        const [data] = await conn.query(`SELECT dt_encerramento_pedido FROM pedido
+        WHERE cd_pedido = ?`,[id]);
+        data.forEach(data => {
+            datPedido.push(formatDistanceStrict(Date.now(), data.dt_encerramento_pedido, {locale: ptBR}));
+        })
+        let alPedido = [];
         const [alimentos] = await conn.query(`SELECT nm_alimento FROM alimento
         WHERE cd_pedido_alimento = ?`, [id]);
         alimentos.forEach(alimento => {
             alPedido.push(alimento.nm_alimento);
         })
         pedidos[i].comida = alPedido;
+        pedidos[i].dateRemaining = datPedido
     }
 
     res.render('pedidos/descobrir', {
@@ -35,7 +49,7 @@ router.get('/descobrir/pedido/:id', async (req, res) => {
     const idPed = req.params.id;
 
     const [pedido] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_pedido = ? AND cd_avaliacao_admin_pedido = 1`,[idPed]);
+    cd_usuario_pedido = cd_usuario WHERE cd_pedido = ?`,[idPed]);
 
     const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
      cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
