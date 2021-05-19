@@ -51,7 +51,7 @@
 
                         <div>
                             <img src="/assets/img/icone_relogio.svg" alt="Icone relógio" />
-                            <p>Expira em: 10 dias</p>
+                            <p>Expira em: {{dateRemaining}}</p>
                         </div>
                     </div>
                 </header>
@@ -77,11 +77,11 @@
                             <h2 class="sub titulo">{{nm_alimento}}</h2>
                             <div class="progresso-container row">
                                 <div class="arrecadado">
-                                    <p><span>54</span>%</p>
+                                    <p><span class="arrecadado-{{nm_alimento}}"></span>%</p>
                                 </div>
                                 <div class="porcentagem">
                                     <div class="progresso-barra">
-                                        <div class="progresso-atual"></div>
+                                        <div class="progresso-atual progresso-atual-{{nm_alimento}}"></div>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +156,7 @@
     </ul>
 </footer>
 
-<script>
+<script type="text/javascript">
     let selectSort = document.querySelector(".select-sort");
     let alimentos = document.querySelector(".alimento-container");
 
@@ -167,6 +167,17 @@
             alimentos.style.flexDirection = "column-reverse";
         }
     });
+
+    {{#each alimento}}
+    math = ({{qt_doada_alimento}}*100)/{{qt_alimento}};
+    if(math >= 100){
+        document.querySelector('.progresso-atual-{{nm_alimento}}').style.width = 100 + '%';
+    }
+    else{
+        document.querySelector('.progresso-atual-{{nm_alimento}}').style.width = math + '%';
+    }
+    document.querySelectorAll('.arrecadado-{{nm_alimento}}')[0].innerText = Math.trunc(math);
+    {{/each}}
 
         // if (selectSort.options.namedItem == "c") {
         //     console.log("aqui");
