@@ -51,9 +51,18 @@ router.get('/descobrir/pedido/:id', async (req, res) => {
     const [pedido] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
     cd_usuario_pedido = cd_usuario WHERE cd_pedido = ?`,[idPed]);
 
+    const id = pedido[0].cd_pedido;
+    let datPedido = [];
+    const [data] = await conn.query(`SELECT dt_encerramento_pedido FROM pedido
+    WHERE cd_pedido = ?`,[id]);
+    data.forEach(data => {
+        datPedido.push(formatDistanceStrict(Date.now(), data.dt_encerramento_pedido, {locale: ptBR}));
+    })
+    pedido[0].dateRemaining = datPedido
+
     const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
      cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
-
+    
     res.render('pedidos/pedido', {
         pedido: pedido,
         alimento: alimento
