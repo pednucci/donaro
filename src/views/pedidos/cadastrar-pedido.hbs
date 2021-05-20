@@ -18,9 +18,14 @@
 
 <main>
     <div class="form-container column">
+        {{#each erros}}
+        <div class="error">
+            <h2 class="sub titulo">{{text}}</h2>
+        </div>
+        {{/each}}
         <h1 class="titulo">Cadastrar pedido</h1>
         <h2 class="sub titulo">Dados iniciais</h2>
-        <form class="form-login column" id="formPedido" method="POST" action="/cadpedido" enctype="multipart/form-data">
+        <form class="form-login column" id="formPedido" method="POST" action="/criar" enctype="multipart/form-data">
             <label for="">Título</label>
             <input class="input-form" type="text" name="titulo" id="titId" maxlength="30" />
 
