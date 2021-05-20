@@ -48,14 +48,6 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
     },
     dateNoHour: (date) => {
         return format(new Date(date), 'dd/MM/yyyy')
-    },
-    donationNoti: (msg) => {
-        if(msg == 'PENDENTE'){
-            return 'accepted';
-        }
-        if(msg == 'RECUSADA'){
-            return undefined;
-        }
     }
 }}));
 app.set('view engine', 'hbs');
