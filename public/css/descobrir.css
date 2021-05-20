@@ -214,6 +214,21 @@
     font-size: 1.5rem;
 }
 
+.usuario .img-wrapper {
+    height: 50px;
+    width: 50px;
+
+    margin-right: 10px;
+
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.usuario h2,
+h4 {
+    font-size: 1.5rem;
+}
+
 .svg-pedido {
     width: 15px;
     margin-right: 3px;
