@@ -1,9 +1,4 @@
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- CSS Donaro -->
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/forms.css" />
 
@@ -13,7 +8,11 @@
 <header>
     <nav class="nav-bar">
         <div class="nav-logo">
-            <img src="/assets/img/donaro_logo.svg" class="logo" alt="Logo Donaro" />
+            <img
+                src="/assets/img/donaro_logo.svg"
+                class="logo"
+                alt="Logo Donaro"
+            />
         </div>
         <div class="nav-menu">
             <p class="nav-link">
@@ -29,9 +28,9 @@
 <main>
     <div class="form-container column">
         {{#each erros}}
-        <div class="error">
-            <h2 class="sub titulo">{{text}}</h2>
-        </div>
+            <div class="error">
+                <h2 class="sub titulo">{{text}}</h2>
+            </div>
         {{/each}}
         <p class="sub titulo">Cadastrar-se</p>
         <form class="form-login column" action="/cadastro" method="POST">
@@ -65,8 +64,12 @@
                 <div class="column">
                     <label for="">Cidade</label>
 
-                    <input type="hidden" name="state">
-                    <select name="cidade" disabled="disabled" class="input-form">
+                    <input type="hidden" name="state" />
+                    <select
+                        name="cidade"
+                        disabled="disabled"
+                        class="input-form"
+                    >
                         <option value="0">Seleciona a Cidade</option>
                     </select>
                 </div>
