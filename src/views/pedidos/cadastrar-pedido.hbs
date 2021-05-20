@@ -1,22 +1,13 @@
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- CSS Donaro -->
-    <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/cadastro-pedido.css" />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/scss/dist/main.css" />
 
     <title>Cadastrar pedido</title>
 </head>
 
 {{>navbar}}
 
-<main>
+<main class="pg_cadastro-pedido">
     <div class="form-container column">
         {{#each erros}}
         <div class="error">
