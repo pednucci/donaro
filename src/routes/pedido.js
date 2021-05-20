@@ -3,7 +3,7 @@ const router = express.Router();
 const newOrderController = require('../controllers/newOrderController');
 const { isAuth } = require('../helpers/isAuth');
 const db = require('../database/database');
-const { formatDistanceToNow, formatDistanceStrict } = require('date-fns');
+const { isPast, formatDistanceStrict, format } = require('date-fns');
 const { ptBR } = require('date-fns/locale');
 
 router.get('/criar', isAuth, async (req, res) => {
@@ -18,7 +18,15 @@ router.get('/criar', isAuth, async (req, res) => {
 router.get('/descobrir', async (req, res) => {
     const conn = await db.connection();
     const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario`);
+    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0`)
+    
+    await pedidos.forEach(async pedido => {
+        if (isPast(pedido.dt_encerramento_pedido)) {
+            await conn.query('UPDATE pedido SET cd_expirado_pedido = 1 WHERE cd_pedido = ?'
+                , [pedido.cd_pedido]);
+        }
+    })
+
     for(let i = 0; i<pedidos.length; i++){
         const id = pedidos[i].cd_pedido;
         let datPedido = [];
@@ -39,6 +47,40 @@ router.get('/descobrir', async (req, res) => {
 
     res.render('pedidos/descobrir', {
         pedido: pedidos
+    })
+
+    await conn.end();
+})
+
+router.get('/descobrir/filter', async (req, res) => {
+    const conn = await db.connection();
+    const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
+    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0 AND sg_estado_pedido = ? AND
+    nm_cidade_pedido = ?`, [req.query.estado, req.query.cidade]);
+
+    for(let i = 0; i<pedidos.length; i++){
+        const id = pedidos[i].cd_pedido;
+        let datPedido = [];
+        const [data] = await conn.query(`SELECT dt_encerramento_pedido FROM pedido
+        WHERE cd_pedido = ?`,[id]);
+        data.forEach(data => {
+            datPedido.push(formatDistanceStrict(Date.now(), data.dt_encerramento_pedido, {locale: ptBR}));
+        })
+        let alPedido = [];
+        const [alimentos] = await conn.query(`SELECT nm_alimento FROM alimento
+        WHERE cd_pedido_alimento = ?`, [id]);
+        alimentos.forEach(alimento => {
+            alPedido.push(alimento.nm_alimento);
+        })
+        pedidos[i].comida = alPedido;
+        pedidos[i].dateRemaining = datPedido
+    }
+
+    const titulo = `${req.query.estado} - ${req.query.cidade}`
+
+    res.render('pedidos/descobrir', {
+        pedido: pedidos,
+        titulo
     })
 
     await conn.end();
@@ -128,7 +170,7 @@ router.post('/ajudar', async (req, res) => {
     await conn.end();
 })
 
-router.post('/cadpedido', newOrderController.newOrder);
+router.post('/criar', newOrderController.newOrder);
 
 module.exports = router
 

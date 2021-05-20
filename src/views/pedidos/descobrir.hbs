@@ -8,7 +8,7 @@
 
 <main class="pg_descobrir">
     <div class="background">
-        <form class="filtro-pedidos column" action="" method="">
+        <form class="filtro-pedidos column" action="/descobrir/filter" method="GET">
             <h1 class="titulo white">Insira o estado e a cidade</h1>
             <h2 class="sub titulo white">
                 Encontre eventos de combate à fome perto de você
@@ -26,7 +26,11 @@
         </form>
     </div>
     <div class="pedidos-container column">
-        <h1 class="titulo black">Pedidos mais recentes</h1>
+        {{#if titulo}}
+            <h1 class="titulo black">{{titulo}}</h1>
+        {{else}}
+            <h1 class="titulo black">Pedidos mais recentes</h1>
+        {{/if}}
         <div class="pedidos row">
             {{#each pedido}}
             <a class="pedido-link" href="/descobrir/pedido/{{cd_pedido}}">
