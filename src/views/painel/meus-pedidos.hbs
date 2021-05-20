@@ -1,13 +1,12 @@
 <head>
-    <link rel="stylesheet" href="/css/notificacoes.css">
-    <link rel="stylesheet" href="/css/painel.css">
+    <link rel="stylesheet" href="/scss/dist/main.css" />
 
     <title>Meus pedidos</title>
 </head>
 
 {{>navbar}}
 
-<main>
+<main class="lyt_painel pg_meus-pedidos">
     <div class="usuario container-painel">
         <div class="background-painel">
             <h1 class="painel-titulo">Painel</h1>
@@ -39,10 +38,6 @@
                     <h1 class="titulo">
                         {{nm_titulo_pedido}}
                     </h1>
-                    <h2 class="sub titulo">
-                        Status:
-                        <span class="link-accept">{{cd_situacao_pedido}}</span>
-                    </h2>
                 </div>
             </div>
             <a href="">
