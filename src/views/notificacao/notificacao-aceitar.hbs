@@ -83,17 +83,6 @@
     </div>
 
     <div class="botoes row">
-        <form action="/notificacoes/accept" method="POST">
-            {{#each notificacao}}
-            <input type="hidden" name="idSoli" value="{{cd_solicitacao}}">
-            {{/each}}
-            <button class="btn green" type="submit">Aceitar</button>
-        </form>
-        <form action="/notificacoes/recused" method="POST">
-            {{#each notificacao}}
-            <input type="hidden" name="idSoli" value="{{cd_solicitacao}}">
-            {{/each}}
-            <button class="btn ghost-red" type="submit">Recusar</button>
-        </form>
+        <button class="btn green" type="button">Entrar no chat</button>
     </div>
 </main>

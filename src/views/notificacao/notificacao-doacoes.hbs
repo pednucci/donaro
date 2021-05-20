@@ -31,30 +31,18 @@
                 </div>
                 <div class="card-info column">
                     <h1 class="nome-card">{{nm_usuario}}</h1>
-                    {{#if (donationNoti cd_situacao_solicitacao)}}
-                    <h2 class="accepted desc-card">
-                       Aceitou sua solicitação de ajuda
-                    </h2>
-                    {{else}}
-                    <h2 class="desc-card denounce">
-                       Recusou sua solicitação de ajuda
-                    </h2>
-                    {{/if}}
                     <h2 class="desc-card">
                         Pedido:
                         <strong>{{nm_titulo_pedido}}</strong>
                     </h2>
                 </div>
             </div>
-
-            {{#if (donationNoti cd_situacao_solicitacao)}}
+            
             <div class="card-btn row">
                 <a href="#">
                     <button class="btn blue">Entrar no chat</button>
                 </a>
             </div>
-            {{else}}
-            {{/if}}
         </div>
         {{/each}}
     </div>
