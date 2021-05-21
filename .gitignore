@@ -2,3 +2,7 @@ node_modules
 .env
 .vscode/
 package-lock.json
+public/assets/pedidos/*
+!public/assets/pedidos/default.png
+public/assets/profile/*
+!public/assets/profile/default.png

@@ -3,7 +3,7 @@
 
     .background {
         width: 100%;
-        height: 300px;
+        height: 30rem;
         background-color: var(--blue-logo);
     }
 
@@ -24,7 +24,7 @@
     }
 
     .input-form[name="estado"] {
-        border-radius: 10px 0 0 10px;
+        border-radius: 1rem 0 0 1rem;
     }
 
     .input-form[name="cidade"] {
@@ -33,8 +33,8 @@
 
     .filtro-pedidos .btn.red {
         margin: 0;
-        border-radius: 0 10px 10px 0;
-        min-height: 40px;
+        border-radius: 0 1rem 1rem 0;
+        min-height: 4rem;
     }
 
     .filtro-pedidos .row {
@@ -51,7 +51,7 @@
     }
 
     .pedidos-container .titulo {
-        margin: 50px 0;
+        margin: 5rem 0;
     }
 
     .pedidos {
@@ -60,16 +60,16 @@
     }
 
     .pedido-link {
-        margin: 0 40px 20px 0;
+        margin: 0 4rem 2rem 0;
     }
 
     .pedido {
-        width: 400px;
+        width: 40rem;
         height: max-content;
 
         margin-left: 0;
 
-        border-radius: 10px;
+        border-radius: 1rem;
         box-shadow: var(--border-shadow);
 
         overflow: hidden;
@@ -79,18 +79,18 @@
         content: "Falta Pouco";
         display: inline-block;
 
-        width: 100px;
-        height: 25px;
+        width: 10rem;
+        height: 2.5rem;
 
-        margin-top: 15px;
-        margin-left: calc(400px - 125px);
+        margin-top: 1.5rem;
+        margin-left: calc(40rem - 12.5rem);
 
         background-color: var(--red-logo);
         color: var(--white);
 
         position: absolute;
 
-        border-radius: 6px;
+        border-radius: 0.6rem;
 
         font-size: 1.6rem;
         text-align: center;
@@ -99,7 +99,7 @@
 
     .imagem-pedido {
         width: 100%;
-        height: 180px;
+        height: 18rem;
     }
 
     .imagem-pedido img {
@@ -112,17 +112,17 @@
 
     .informacoes-pedido {
         height: max-content;
-        padding: 20px;
+        padding: 2rem;
 
         justify-content: space-between;
-        gap: 20px;
+        gap: 2rem;
     }
 
     .descricao-pedido {
-        height: 60px;
-        width: 360px;
+        height: 6rem;
+        width: 36rem;
 
-        margin-bottom: 20px;
+        margin-bottom: 2rem;
 
         display: flex;
         flex-direction: column;
@@ -131,19 +131,19 @@
 
     .descricao-pedido .titulo {
         font-size: 2.5rem;
-        margin: 0 0 30px 0;
-        height: 20px;
+        margin: 0 0 3rem 0;
+        height: 2rem;
         line-height: 2rem;
     }
 
     .titulo-wrapper {
         justify-content: flex-start;
-        gap: 5px;
+        gap: 0.5rem;
     }
 
     .descricao-pedido .sub.titulo {
         justify-content: flex-start;
-        width: 330px;
+        width: 33rem;
 
         flex-wrap: wrap;
     }
@@ -156,21 +156,21 @@
     .pedido .titulo-link {
         color: var(--blue-link);
         cursor: pointer;
-        margin-left: 5px;
+        margin-left: 0.5rem;
     }
 
     .pedido .titulo-link:not(:last-child)::after {
         content: "-";
         display: block;
 
-        margin-left: 5px;
-        width: 10px;
+        margin-left: 0.5rem;
+        width: 1rem;
     }
 
     .sub.titulo.before {
         width: max-content;
         margin: 0;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
     }
 
     .arrecadado * {
@@ -183,9 +183,9 @@
         display: block;
 
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
 
-        border-top: 1px solid var(--gray-border);
+        border-top: 0.1rem solid var(--gray-border);
     }
 
     .rodape-pedido div {
@@ -199,12 +199,12 @@
     }
 
     .usuario .img-wrapper {
-        height: 50px;
-        width: 50px;
+        height: 5rem;
+        width: 5rem;
 
-        margin-right: 10px;
+        margin-right: 1rem;
 
-        border-radius: 2px;
+        border-radius: 0.2rem;
         overflow: hidden;
     }
 
@@ -214,8 +214,8 @@
     }
 
     .svg-pedido {
-        width: 15px;
-        margin-right: 3px;
+        width: 1.5rem;
+        margin-right: 0.3rem;
     }
 
     /* #endregion */
@@ -224,7 +224,7 @@
     .numeracao-paginas {
         width: max-content;
 
-        margin: 50px auto;
+        margin: 5rem auto;
         display: flex;
     }
 
@@ -233,11 +233,11 @@
     }
 
     .cont-pagina {
-        min-width: 45px;
-        height: 50px;
+        min-width: 4.5rem;
+        height: 5rem;
 
-        margin: 3px;
-        padding: 10px;
+        margin: 0.3rem;
+        padding: 1rem;
 
         text-align: center;
         font-size: 2rem;
@@ -245,7 +245,7 @@
         background-color: var(--gray-background);
 
         border: var(--border-form);
-        border-radius: 5px;
+        border-radius: 0.5rem;
         box-shadow: var(--border-shadow);
     }
 
