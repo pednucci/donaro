@@ -1,0 +1,50 @@
+/* #region Footer */
+
+.footer-bar {
+    width: 100%;
+    height: 200px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--black-footer);
+    color: var(--white);
+}
+
+.logo-footer {
+    width: 200px;
+    margin: 20px 0;
+
+    align-self: center;
+}
+
+.menu-footer {
+    margin: 20px;
+    height: auto;
+    font-size: 0.8rem;
+}
+
+.list-item {
+    color: var(--white);
+    font-size: 2em;
+    margin: 5px 0;
+}
+
+.rede-sociais {
+    display: flex;
+    flex-direction: row;
+}
+
+.icone-midias {
+    width: 30px;
+    height: 30px;
+    margin: 20px 20px 0 0;
+}
+
+.subtitulo-footer {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/*#endregion*/
