@@ -17,7 +17,7 @@
         }
 
         &.arrecade {
-            height: calc(100vh - 10rem);
+            height: calc(100vh - 8rem);
             background-color: var(--white);
             padding-bottom: 10rem;
 
@@ -175,12 +175,15 @@
                     line-height: 150%;
 
                     h4 {
+                        font-weight: 600;
                         margin-top: 1rem;
                     }
 
                     .nome-depoimento {
                         color: var(--black-logo);
                         margin-bottom: 1rem;
+                        font-size: 2.5rem;
+                        font-weight: bold;
                     }
 
                     .desc-depoimento {
