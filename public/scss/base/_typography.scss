@@ -1,0 +1,51 @@
+.titulo {
+    font-size: 5rem;
+    font-weight: bold;
+
+    line-height: 101.8%;
+    margin-bottom: 20px;
+}
+
+.sub.titulo {
+    font-size: 2.5rem;
+    font-weight: 500;
+
+    color: var(--black-logo);
+}
+
+.titulo.black {
+    color: var(--black-logo);
+}
+
+.titulo.white {
+    color: var(--white);
+}
+
+.titulo-gray {
+    color: var(--gray-minor-font);
+}
+
+.titulo-blue {
+    color: var(--blue-logo);
+}
+
+.titulo-link {
+    color: var(--blue-link);
+}
+
+.pending {
+    color: var(--yellow-pending);
+}
+
+.denounce {
+    color: var(--red-denounce) !important;
+}
+
+.accepted {
+    color: var(--green-accept) !important;
+}
+
+.titulo-categoria {
+    font-size: 3rem;
+    font-weight: 500;
+}
