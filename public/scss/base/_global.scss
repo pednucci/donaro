@@ -1,35 +1,3 @@
-/* #region Imports */
-
-@import "buttons.css";
-@import "header-footer.css";
-@import "notificacoes.css";
-@import "painel.css";
-@import "typography.css";
-@import "variables.css";
-
-/* #endregion  */
-
-/* #region Configurações globais */
-*,
-*:after,
-*:before {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    list-style: none;
-    font-style: none;
-    text-decoration: none;
-    color: var(--black-logo);
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-
-
-/*#endregion*/
-
-
 .img-wrapper {
     border-radius: 100%;
     overflow: hidden;
@@ -40,14 +8,12 @@
     height: 100%;
 }
 
-
 .row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-
 
 .column {
     display: flex;
@@ -65,7 +31,7 @@
     border: var(--border-form);
     border-radius: 10px;
 
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: "Red Hat Display", sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
 }
@@ -73,7 +39,6 @@
 .input-form:focus {
     border: var(--border-form-focus);
 }
-
 
 textarea.input-form {
     padding-top: 15px;
@@ -90,7 +55,6 @@ button {
     justify-content: center;
     align-items: center;
 }
-
 
 /* #region Progresso */
 .progresso-container {
@@ -142,7 +106,6 @@ button {
     display: none;
 }
 
-
 .error {
     width: 100%;
 
@@ -159,7 +122,6 @@ button {
     margin: 0 !important;
 
     font-weight: 400;
-
 
     color: var(--red-logo);
 }
@@ -178,7 +140,6 @@ button {
 .sucess .sub.titulo {
     font-size: 1.8rem !important;
     margin: 0 !important;
-
 
     margin: 0;
 
