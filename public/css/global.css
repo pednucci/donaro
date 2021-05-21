@@ -1,6 +1,6 @@
 /* #region Imports */
 
-@import "buttons.css";
+/* @import "buttons.css"; */
 @import "header-footer.css";
 @import "notificacoes.css";
 /* @import "painel.css"; */
@@ -54,7 +54,6 @@ body {
 .row {
     display: flex;
     flex-direction: row;
-
     justify-content: space-between;
     align-items: center;
 }
@@ -166,10 +165,11 @@ button {
 }
 
 .error .sub.titulo {
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
+    margin: 0 !important;
+
     font-weight: 400;
 
-    margin: 0;
 
     color: var(--red-logo);
 }
@@ -186,8 +186,9 @@ button {
 }
 
 .sucess .sub.titulo {
-    font-size: 1.8rem;
-    font-weight: 400;
+    font-size: 1.8rem !important;
+    margin: 0 !important;
+
 
     margin: 0;
 

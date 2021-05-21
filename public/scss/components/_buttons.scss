@@ -19,7 +19,7 @@
 
     transition: filter 0.5s;
 
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: "Red Hat Display", sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
 }
@@ -27,7 +27,6 @@
 .btn:hover {
     filter: brightness(0.9);
 }
-
 
 .btn.red {
     background-color: var(--red-logo);

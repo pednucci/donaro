@@ -49,37 +49,8 @@
 }
 
 
-.titulo-depoimento {
-    font-size: 4rem;
-    font-weight: bold;
-
-    line-height: 101.8%;
-    margin-bottom: 70px;
-}
 
 .titulo-categoria {
     font-size: 3rem;
     font-weight: 500;
-}
-
-.texto-depoimento {
-    font-size: 1.8rem;
-    font-weight: 400;
-
-    line-height: 150%;
-}
-
-.texto-depoimento h4 {
-    margin-top: 10px;
-}
-
-
-.nome-depoimento {
-    color: var(--black-logo);
-    margin-bottom: 10px;
-}
-
-.desc-depoimento {
-    color: var(--gray-minor-font);
-    line-height: 165%;
 }
