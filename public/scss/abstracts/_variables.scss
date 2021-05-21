@@ -1,0 +1,31 @@
+/* Declaração de variáveis */
+:root {
+    /* Cores */
+    --white: #ffffff;
+    --blue-logo: #064789;
+    --blue-logo-transparent: rgba(6, 71, 137, 0.2);
+    --blue-link: #029692;
+    --blue-light: #13a4f2;
+    --red-logo: #f32b38;
+    --red-logo-transparent: rgba(243, 43, 56, 0.1);
+    --red-denounce: #cc1408;
+    --black-logo: #191929;
+    --black-footer: #171717;
+    --gray-background: #f6f6f6;
+    --gray-message: #eaeaea;
+    --gray-minor-font: #939393;
+    --gray-dark: #747474;
+    --gray-border: #cdcdcd;
+    --green-accept: #37cc12;
+    --green-accept-transparent: rgba(23, 174, 65, 0.1);
+    --green-concluded: #17ae41;
+    --yellow-pending: #e1cb05;
+
+    /* Bordas */
+    --border-form: 0.5px solid var(--gray-border);
+    --border-form-focus: 1px solid var(--blue-logo);
+    --border-red: 1.5px solid var(--red-logo);
+    --border-green: 1.5px solid var(--green-accept);
+    --border-black: 1.5px solid var(--black-logo);
+    --border-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+}
