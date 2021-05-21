@@ -10,7 +10,7 @@
 /* #endregion  */
 
 /* #region Configurações globais */
-*,
+/* *,
 *:after,
 *:before {
     margin: 0;
@@ -25,16 +25,6 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 62.5%;
-    font-family: 'Red Hat Display', sans-serif;
-}
-
-body {
-    font-size: 1.6rem;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 
 
 /*#endregion*/
