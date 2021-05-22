@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- {{! General Config }} -->
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- CSS Donaro -->
-        <link rel="stylesheet" href="/public/css/global.css" />
-        <link rel="stylesheet" href="/public/css/painel.css" />
-        <link rel="stylesheet" href="/public/css/usuario-pedido.css" />
+        <!-- {{! Google Fonts }} -->
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- {{! Style & Favicon }} -->
+
+        <link rel="stylesheet" href="/public/scss/dist/main.css" />
+        <link
+            rel="shortcut icon"
+            href="/public/assets/img/icon.png"
+            type="image/x-icon"
+        />
 
         <title>Requisição</title>
     </head>
@@ -51,7 +64,7 @@
             </nav>
         </header>
 
-        <main>
+        <main class="lyt_painel lyt_usuario-pedido pg_pajuda">
             <div class="usuario container-painel">
                 <div class="background-painel">
                     <h1 class="painel-titulo">Almoço na creche Arco-Íris</h1>
@@ -77,7 +90,6 @@
 
             <div class="usuario profile-container columm">
                 <div class="user-container column">
-                    <h1 class="titulo-user">Usuário</h1>
                     <div class="user-wrapper row">
                         <div class="imagePerfil column">
                             <img
@@ -86,44 +98,63 @@
                             />
                         </div>
                         <div class="informacoes column">
-                            <div class="row">
-                                <div>
-                                    <h1 class="sub titulo-user">Nome</h1>
-                                    <p>João Oliveira</p>
+                            <h1 class="sub titulo-user">João Oliveira</h1>
+                            <p>(13) 99914-1099 | jpoliv21@gmail.com</p>
+                        </div>
+                        <a href="#" class="btn blue" type="button">
+                            Entrar no chat
+                        </a>
+                    </div>
+                </div>
+                <div class="row fc-wrapper">
+                    <div class="column">
+                        <h1 class="sub titulo-user">Alimentos ofertados</h1>
+                        <div class="row">
+                            <h1>Alimentos</h1>
+                            <h1>Quantidade</h1>
+                        </div>
+                        <div class="alimento-container">
+                            <div class="column">
+                                <div class="alReq row">
+                                    <h1 class="reqAlimento">Arroz</h1>
+                                    <h1 class="reqQuantidade">5Kg</h1>
                                 </div>
-
-                                <div>
-                                    <h1 class="sub titulo-user">Telefone</h1>
-                                    <p>(13) 99914-1099</p>
+                                <div class="alReq row">
+                                    <h1 class="reqAlimento">Arroz</h1>
+                                    <h1 class="reqQuantidade">5Kg</h1>
+                                </div>
+                                <div class="alReq row">
+                                    <h1 class="reqAlimento">Arroz</h1>
+                                    <h1 class="reqQuantidade">5Kg</h1>
+                                </div>
+                                <div class="alReq row">
+                                    <h1 class="reqAlimento">Arroz</h1>
+                                    <h1 class="reqQuantidade">5Kg</h1>
+                                </div>
+                                <div class="alReq row">
+                                    <h1 class="reqAlimento">Arroz</h1>
+                                    <h1 class="reqQuantidade">5Kg</h1>
+                                </div>
+                                <div class="alReq row">
+                                    <h1 class="reqAlimento">Arroz</h1>
+                                    <h1 class="reqQuantidade">5Kg</h1>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div>
-                                    <h1 class="sub titulo-user">Email</h1>
-                                    <p>jpoliv21@gmail.com</p>
-                                </div>
-
-                                <div>
-                                    <h1 class="sub titulo-user">Alimento</h1>
-                                    <p>Arroz</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div>
-                                    <h1 class="sub titulo-u ser">
-                                        Quantidade ofertada
-                                    </h1>
-                                    <p>5 Kg</p>
-                                </div>
-
-                                <div>
-                                    <h1 class="sub titulo-user">
-                                        Situação da entrega
-                                    </h1>
-                                    <p>PENDENTE</p>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                    <div class="comentario-container column">
+                        <h1 class="sub titulo-user">Comentário</h1>
+                        <div class="comentario">
+                            <p>
+                                Mussum Ipsum, cacilds vidis litro abertis. Mais
+                                vale um bebadis conhecidiss, que um alcoolatra
+                                anonimis. Praesent vel viverra nisi. Mauris
+                                aliquet nunc non turpis scelerisque, eget.
+                                Mauris nec dolor in eros commodo tempor. Aenean
+                                aliquam molestie leo, vitae iaculis nisl.
+                                Praesent malesuada urna nisi, quis volutpat erat
+                                hendrerit non. Nam vulputate dapibus.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -131,19 +162,16 @@
 
             <div class="botoes-wrapper column">
                 <div class="botoes row">
-                    <a href="#" class="btn blue" type="button">
-                        Entrar no chat
-                    </a>
                     <a href="#" class="btn green-concluded" type="button">
                         Entregou o pedido
                     </a>
                     <a href="#" class="btn red" type="button">
                         Não entregou o pedido
                     </a>
+                    <a href="#" class="btn ghost-red" type="button">
+                        Denunciar usuário
+                    </a>
                 </div>
-                <a href="#" class="btn ghost-red" type="button">
-                    Denunciar usuário
-                </a>
             </div>
         </main>
 
