@@ -12,12 +12,14 @@
         </div>
         {{/each}}
         <h1 class="titulo">Cadastrar pedido</h1>
-        <h2 class="sub titulo">Dados iniciais</h2>
         <form class="form-login column" id="formPedido" method="POST" action="/criar" enctype="multipart/form-data">
-            <label for="">Título</label>
-            <input class="input-form" type="text" name="titulo" id="titId" maxlength="30" />
 
-            <div class="row">
+            <h2 class="sub titulo">Dados iniciais</h2>
+            <div class="dados-iniciais row">
+                <div>
+                    <label for="">Título</label>
+                    <input class="input-form" type="text" name="titulo" id="titId" maxlength="30" />
+                </div>
                 <div>
                     <label>Data de encerramento</label>
                     <input class="input-form" type="date" name="dtPedido" id="dtPed" />
@@ -25,8 +27,7 @@
             </div>
 
             <h2 class="sub titulo">Local de entrega do alimento</h2>
-
-            <div class="row">
+            <div class=" local-entrega row">
                 <div class="column">
                     <label for="">Estado</label>
                     <select name="estado" class="input-form" id="estadoPed">
@@ -44,48 +45,49 @@
             </div>
 
             <h2 class="sub titulo">Alimentos</h2>
-
-            <div class="alimentos-wrapper column">
-                <div class="alimento row" id="0">
-                    <div class="tipo-input">
-                        <label>Tipo</label>
-                        <select name="tpf" class="input-form tpf">
-                            <option value="solido">Sólido</option>
-                            <option value="liquido">Líquido</option>
-                        </select>
+            <div class="alimentos-container">
+                <div class="alimentos-wrapper column">
+                    <div class="alimento row" id="0">
+                        <div class="tipo-input">
+                            <label>Tipo</label>
+                            <select name="tpf" class="input-form tpf">
+                                <option value="solido">Sólido</option>
+                                <option value="liquido">Líquido</option>
+                            </select>
+                        </div>
+                        <div class="alimento-input">
+                            <label>Alimento</label>
+                            <select name="alimentoInput" class="input-form alimentoInput">
+                                {{#each produtos}}
+                                <option value={{nm_produto}}>{{nm_produto}}</option>
+                                {{/each}}
+                            </select>
+                            {{!-- <input name="alimentoInput" type="text" class="input-form alimentoInput"> --}}
+                        </div>
+                
+                        <div class="quantidade-input">
+                            <label>Quantidade</label>
+                            <input name="quantidade" class="input-form quantidade" type="number" min="1" />
+                        </div>
+                
+                    {{!-- <div class="medida-input">
+                            <label>Medida</label>
+                            <select name="alMedida" class="input-form alMedida">
+                                <option value="KG">Quilos</option>
+                                <option value="G">Gramas</option>
+                                <option value="L">Litros</option>
+                                <option value="ML">ML</option>
+                            </select>
+                        </div> --}}
+                    <button style="opacity:0" class="btn red excluir" type="button" onclick="delFood(this)"><img src="/assets/img/trash.svg" alt="excluir"></button>
                     </div>
-                    <div class="alimento-input">
-                        <label>Alimento</label>
-                        <select name="alimentoInput" class="input-form alimentoInput">
-                            {{#each produtos}}
-                            <option value={{nm_produto}}>{{nm_produto}}</option>
-                            {{/each}}
-                        </select>
-                        {{!-- <input name="alimentoInput" type="text" class="input-form alimentoInput"> --}}
-                    </div>
-
-                    <div class="quantidade-input">
-                        <label>Quantidade</label>
-                        <input name="quantidade" class="input-form quantidade" type="number" min="1" />
-                    </div>
-
-                {{!-- <div class="medida-input">
-                        <label>Medida</label>
-                        <select name="alMedida" class="input-form alMedida">
-                            <option value="KG">Quilos</option>
-                            <option value="G">Gramas</option>
-                            <option value="L">Litros</option>
-                            <option value="ML">ML</option>
-                        </select>
-                    </div> --}}
-                <button style="opacity:0" class="btn red excluir" type="button" onclick="delFood(this)"><img src="/assets/img/trash.svg" alt="excluir"></button>
+                
                 </div>
-
+                
+                <button class="btn blue adicionar" type="button">
+                    + Adicionar mais um alimento
+                </button>
             </div>
-
-            <button class="btn blue adicionar" type="button">
-                + Adicionar mais um alimento
-            </button>
 
             <h2 class="sub titulo">Dados finais</h2>
 
@@ -228,6 +230,7 @@
         // console.log(tipfisico.length)
     });
 
+
     function addFood() {
 
         //#region Select do Tipo
@@ -334,11 +337,11 @@
         foodWrapper.removeChild(toRemove);
         idCount--;
     }
-    //#endregion
 
     // document.getElementById("imagePed").addEventListener('change', event => {
     //     console.log(document.getElementById('imagePed').files[0])
     // })
+    // #endregion 
 </script>
 
 <script src="/js/estado-cidade.js"></script>

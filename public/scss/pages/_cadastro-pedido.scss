@@ -1,75 +1,100 @@
 .pg_cadastro-pedido {
     .form-container {
-        max-width: 720px;
+        max-width: 72rem;
         border: none;
-    }
 
-    .form-container .titulo {
-        font-weight: 500;
-        margin-bottom: 10px;
-    }
+        .titulo {
+            font-size: 4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
 
-    .form-container .sub.titulo {
-        align-self: flex-start;
-        margin: 40px 0 20px 0;
-    }
+        .sub.titulo {
+            margin: 3rem 0 2rem 0;
 
-    .lblMeta.row {
-        justify-content: flex-start;
-    }
+            font-size: 2.5rem;
+            font-weight: 500;
+            align-self: flex-start;
+        }
 
-    img[alt^="Info"] {
-        margin-left: -15px;
-        width: 15px;
-    }
+        label {
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
 
-    .alimento.row {
-        justify-content: space-between;
-    }
+        .input-form {
+            &[name="estado"] {
+                min-width: 18rem;
+            }
 
-    .alimento.row div {
-        width: 100% !important;
-    }
+            &[name="cidade"] {
+                min-width: 25rem;
+            }
+        }
 
-    .alimento .btn.red {
-        min-height: 40px;
-        min-width: 40px;
-        margin: 0;
+        .dados-iniciais {
+            div:first-child {
+                width: 100%;
+            }
+            div:last-child {
+                width: 40rem;
+            }
+        }
 
-        justify-self: center;
-        align-self: center;
-    }
+        .alimentos-container {
+            .alimentos-wrapper {
+                .alimento.row {
+                    justify-content: space-between;
 
-    .btn.adicionar {
-        min-height: 40px;
-        width: 100%;
-        margin-top: 20px;
-    }
+                    div {
+                        width: 100% !important;
+                    }
 
-    .texts.column .input-form {
-        padding: 20px;
-        height: 200px;
-    }
+                    .btn.red {
+                        min-height: 4rem;
+                        min-width: 4rem;
+                        margin: 0;
 
-    .imagePed {
-        background-image: url(/assets/pedidos/default.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-    }
+                        justify-self: center;
+                        align-self: center;
+                    }
+                }
+            }
 
-    .img-container .img-wrapper {
-        width: 12rem !important;
-        height: 12rem !important;
+            .btn.adicionar {
+                min-height: 4rem;
+                width: 100%;
+                margin-top: 2rem;
+            }
+        }
 
-        border-radius: 0.8rem;
-        justify-content: space-between;
+        .texts {
+            .input-form {
+                padding: 2rem;
+                height: 20rem;
+            }
 
-        cursor: pointer;
-    }
+            .imagePed {
+                background-image: url(/assets/pedidos/default.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
 
-    .form-login .continuar {
-        align-self: flex-start;
-        width: max-content;
+            .img-container .img-wrapper {
+                width: 12rem;
+                height: 12rem;
+
+                border-radius: 0.8rem;
+                justify-content: space-between;
+
+                cursor: pointer;
+            }
+
+            .form-login .continuar {
+                align-self: flex-start;
+                width: max-content;
+            }
+        }
     }
 }
