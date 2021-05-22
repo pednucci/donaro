@@ -5,217 +5,225 @@
         width: 100%;
         height: 30rem;
         background-color: var(--blue-logo);
+
+        .filtro-pedidos {
+            width: 70%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+
+            .titulo {
+                font-size: 3.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .sub.titulo {
+                font-size: 2rem;
+                margin-bottom: 3rem;
+            }
+
+            .row {
+                justify-content: flex-start;
+
+                .input-form {
+                    min-width: 18rem;
+
+                    &[name="estado"] {
+                        border-radius: 1rem 0 0 1rem;
+                    }
+
+                    &[name="cidade"] {
+                        min-width: 20rem;
+                        border-radius: 0;
+                    }
+                }
+
+                .btn.red {
+                    margin: 0;
+                    border-radius: 0 1rem 1rem 0;
+                    min-height: 4rem;
+                }
+            }
+        }
     }
-
-    .filtro-pedidos {
-        width: 70%;
-        height: 100%;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-    }
-
-    .filtro-pedidos .titulo {
-        font-size: 3.5rem;
-    }
-
-    .filtro-pedidos .sub.titulo {
-        font-size: 2rem;
-    }
-
-    .input-form[name="estado"] {
-        border-radius: 1rem 0 0 1rem;
-    }
-
-    .input-form[name="cidade"] {
-        border-radius: 0;
-    }
-
-    .filtro-pedidos .btn.red {
-        margin: 0;
-        border-radius: 0 1rem 1rem 0;
-        min-height: 4rem;
-    }
-
-    .filtro-pedidos .row {
-        justify-content: flex-start;
-    }
-
-    /* #endregion */
-
-    /* #region - Pedidos */
 
     .pedidos-container {
         width: 70%;
         margin: auto;
-    }
 
-    .pedidos-container .titulo {
-        margin: 5rem 0;
-    }
+        .titulo {
+            margin: 5rem 0;
+            font-size: 4rem;
+        }
 
-    .pedidos {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+        .pedidos {
+            max-width: 130rem;
+            margin: auto;
 
-    .pedido-link {
-        margin: 0 4rem 2rem 0;
-    }
+            justify-content: center;
+            flex-wrap: wrap;
 
-    .pedido {
-        width: 40rem;
-        height: max-content;
+            .pedido-link {
+                margin: 0 4rem 4rem 0;
 
-        margin-left: 0;
+                .pedido {
+                    width: 35rem;
+                    height: max-content;
 
-        border-radius: 1rem;
-        box-shadow: var(--border-shadow);
+                    margin-left: 0;
 
-        overflow: hidden;
-    }
+                    border-radius: 1rem;
+                    box-shadow: var(--border-shadow);
 
-    .pedido.falta-pouco::before {
-        content: "Falta Pouco";
-        display: inline-block;
+                    overflow: hidden;
 
-        width: 10rem;
-        height: 2.5rem;
+                    &.falta-pouco::before {
+                        content: "Falta Pouco";
+                        display: inline-block;
 
-        margin-top: 1.5rem;
-        margin-left: calc(40rem - 12.5rem);
+                        width: 10rem;
+                        height: 2.5rem;
 
-        background-color: var(--red-logo);
-        color: var(--white);
+                        margin-top: 1.5rem;
+                        margin-left: calc(40rem - 12.5rem);
 
-        position: absolute;
+                        background-color: var(--red-logo);
+                        color: var(--white);
 
-        border-radius: 0.6rem;
+                        position: absolute;
 
-        font-size: 1.6rem;
-        text-align: center;
-        font-weight: 500;
-    }
+                        border-radius: 0.6rem;
 
-    .imagem-pedido {
-        width: 100%;
-        height: 18rem;
-    }
+                        font-size: 1.6rem;
+                        text-align: center;
+                        font-weight: 500;
+                    }
 
-    .imagem-pedido img {
-        width: 100%;
-        height: 100%;
+                    .imagem-pedido {
+                        width: 100%;
+                        height: 18rem;
 
-        object-fit: cover;
-        object-position: 50% 50%;
-    }
+                        img {
+                            width: 100%;
+                            height: 100%;
 
-    .informacoes-pedido {
-        height: max-content;
-        padding: 2rem;
+                            object-fit: cover;
+                            object-position: 50% 50%;
+                        }
+                    }
 
-        justify-content: space-between;
-        gap: 2rem;
-    }
+                    .informacoes-pedido {
+                        height: max-content;
+                        padding: 2rem;
 
-    .descricao-pedido {
-        height: 6rem;
-        width: 36rem;
+                        justify-content: space-between;
+                        gap: 0.5rem;
 
-        margin-bottom: 2rem;
+                        .descricao-pedido {
+                            width: 100%;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+                            margin-bottom: 1rem;
 
-    .descricao-pedido .titulo {
-        font-size: 2.5rem;
-        margin: 0 0 3rem 0;
-        height: 2rem;
-        line-height: 2rem;
-    }
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
 
-    .titulo-wrapper {
-        justify-content: flex-start;
-        gap: 0.5rem;
-    }
+                            .titulo {
+                                font-size: 2.2rem;
+                                margin: 0 0 2rem 0;
+                                height: 2rem;
+                                line-height: 2rem;
+                            }
 
-    .descricao-pedido .sub.titulo {
-        justify-content: flex-start;
-        width: 33rem;
+                            .sub.titulo {
+                                justify-content: flex-start;
 
-        flex-wrap: wrap;
-    }
+                                font-size: 1.9rem;
+                                flex-wrap: wrap;
 
-    .descricao-pedido .sub.titulo,
-    .arrecadado {
-        font-size: 2rem;
-    }
+                                &.before {
+                                    width: max-content;
+                                    margin: 0;
+                                    margin-bottom: 1rem;
+                                }
+                            }
 
-    .pedido .titulo-link {
-        color: var(--blue-link);
-        cursor: pointer;
-        margin-left: 0.5rem;
-    }
+                            .titulo-wrapper {
+                                justify-content: flex-start;
+                                gap: 0.5rem;
+                            }
 
-    .pedido .titulo-link:not(:last-child)::after {
-        content: "-";
-        display: block;
+                            .titulo-link {
+                                color: var(--blue-link);
+                                cursor: pointer;
+                                margin-left: 0.5rem;
 
-        margin-left: 0.5rem;
-        width: 1rem;
-    }
+                                &:not(:last-child)::after {
+                                    content: "-";
+                                    display: block;
 
-    .sub.titulo.before {
-        width: max-content;
-        margin: 0;
-        margin-bottom: 1rem;
-    }
+                                    margin-left: 0.5rem;
+                                    width: 1rem;
+                                }
+                            }
+                        }
 
-    .arrecadado * {
-        color: var(--blue-logo);
-        font-weight: 500;
-    }
+                        .progresso-container {
+                            .arrecadado * {
+                                color: var(--blue-logo);
+                                font-weight: 500;
+                                font-size: 1.8rem;
+                            }
+                        }
 
-    .rodape-pedido::before {
-        content: "";
-        display: block;
+                        .rodape-pedido {
+                            &::before {
+                                content: "";
+                                display: block;
 
-        width: 100%;
-        margin-bottom: 1rem;
+                                width: 100%;
+                                margin-bottom: 1rem;
 
-        border-top: 0.1rem solid var(--gray-border);
-    }
+                                border-top: 0.1rem solid var(--gray-border);
+                            }
 
-    .rodape-pedido div {
-        display: flex;
+                            div {
+                                display: flex;
 
-        color: var(--gray-minor-font);
-    }
+                                color: var(--gray-minor-font);
+                            }
 
-    .rodape-pedido p {
-        font-size: 1.5rem;
-    }
+                            p {
+                                font-size: 1.4rem;
+                            }
 
-    .usuario .img-wrapper {
-        height: 5rem;
-        width: 5rem;
+                            .usuario {
+                                .img-wrapper {
+                                    height: 5rem;
+                                    width: 5rem;
 
-        margin-right: 1rem;
+                                    margin-right: 1rem;
 
-        border-radius: 0.2rem;
-        overflow: hidden;
-    }
+                                    border-radius: 0.5rem;
+                                    overflow: hidden;
+                                }
 
-    .usuario h2,
-    h4 {
-        font-size: 1.5rem;
-    }
+                                h2,
+                                h4 {
+                                    font-size: 1.4rem;
+                                }
+                            }
 
-    .svg-pedido {
-        width: 1.5rem;
-        margin-right: 0.3rem;
+                            .svg-pedido {
+                                width: 1.5rem;
+                                margin-right: 0.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /* #endregion */

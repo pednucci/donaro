@@ -59,7 +59,7 @@ video {
 
     font-style: none;
     font-size: 100%;
-    font: inherit;
+    // font: inherit;
     text-decoration: none;
     vertical-align: baseline;
     text-rendering: optimizeLegibility;
@@ -85,7 +85,7 @@ video {
 
     font-style: none;
     font-size: 100%;
-    font: inherit;
+    // font: inherit;
     text-decoration: none;
     vertical-align: baseline;
     text-rendering: optimizeLegibility;
@@ -107,7 +107,7 @@ main {
 }
 
 body {
-    line-height: 1;
+    line-height: 150%;
 }
 
 ol,
