@@ -1,0 +1,127 @@
+.lyt_usuario-pedido {
+    /* #region Usuário/Pedido */
+    .profile-container {
+        min-width: min-content;
+        max-width: 72rem;
+
+        margin: auto;
+        margin-bottom: 5rem;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .user-container {
+        width: 100%;
+
+        align-items: flex-start;
+    }
+
+    .user-container p {
+        font-size: 1.8rem;
+    }
+
+    .titulo-user {
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
+    .user-wrapper {
+        width: 100%;
+
+        align-items: center;
+        justify-content: flex-start;
+        gap: 3rem;
+
+        .btn {
+            justify-self: flex-end;
+            min-width: 180px;
+        }
+    }
+
+    /* Imagem */
+
+    .imagePerfil {
+        width: 12rem;
+        height: 12rem;
+
+        border-radius: 0.8rem;
+        overflow: hidden;
+    }
+
+    .imagePerfil img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .informacoes.column {
+        height: max-content;
+
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    /* Informações */
+
+    .informacoes .row {
+        gap: 4rem;
+    }
+
+    .informacoes .row div {
+        min-width: 13rem;
+    }
+
+    .fc-wrapper {
+        .alimento-container {
+            min-width: min-content;
+            max-width: 100%;
+            max-height: 20rem;
+
+            overflow: hidden;
+            overflow-y: scroll;
+
+            text-align: left;
+            .column {
+                justify-content: flex-start;
+                gap: 2rem 17rem;
+                .alReq {
+                    h1 {
+                        font-size: 2.5rem;
+                        width: 16rem;
+                    }
+                }
+
+                .alReq {
+                    padding: 0.5rem;
+
+                    background-color: var(--gray-message);
+                    border-radius: 0.4rem;
+                }
+            }
+        }
+    }
+
+    .comentario-container,
+    .user-container {
+        gap: 2rem;
+        margin: 3rem 0;
+    }
+
+    .comentario {
+        max-height: 40rem;
+        overflow-y: scroll;
+    }
+
+    .sub.titulo-user {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .comentario-container p {
+        margin-bottom: 2rem;
+
+        font-size: 3rem;
+        text-align: justify;
+    }
+}
