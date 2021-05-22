@@ -23,13 +23,13 @@
 }
 
 .input-form {
-    height: 40px;
-    padding-left: 15px;
+    height: 4rem;
+    padding-left: 1.5rem;
 
     background-color: var(--gray-background);
 
     border: var(--border-form);
-    border-radius: 10px;
+    border-radius: 1rem;
 
     font-family: "Red Hat Display", sans-serif;
     font-size: 1.5rem;
@@ -41,10 +41,10 @@
 }
 
 textarea.input-form {
-    padding-top: 15px;
+    padding-top: 1.5rem;
 
-    min-height: 200px;
-    max-height: 200px;
+    min-height: 20rem;
+    max-height: 20rem;
 
     min-width: 100%;
     max-width: 100%;
@@ -58,13 +58,13 @@ button {
 
 /* #region Progresso */
 .progresso-container {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .porcentagem {
     width: 100%;
 
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
 
     display: flex;
     justify-content: space-between;
@@ -74,10 +74,10 @@ button {
 .progresso-barra,
 .progresso-barra * {
     width: 100%;
-    height: 15px;
+    height: 1.5rem;
 
     background-color: var(--blue-logo-transparent);
-    border-radius: 20px;
+    border-radius: 2rem;
 }
 
 .progresso-atual {
@@ -109,11 +109,11 @@ button {
 .error {
     width: 100%;
 
-    padding: 10px;
-    margin: 0 auto 20px 0;
+    padding: 1rem;
+    margin: 0 auto 2rem 0;
 
     background-color: var(--red-logo-transparent);
-    border-radius: 5px;
+    border-radius: 0.5rem;
     border: var(--border-red);
 }
 
@@ -129,11 +129,11 @@ button {
 .sucess {
     width: 100%;
 
-    padding: 10px;
-    margin: 0 auto 20px 0;
+    padding: 1rem;
+    margin: 0 auto 2rem 0;
 
     background-color: var(--green-accept-transparent);
-    border-radius: 5px;
+    border-radius: 0.5rem;
     border: var(--border-green);
 }
 

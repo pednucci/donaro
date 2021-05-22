@@ -2,7 +2,7 @@
     /* #region Cards */
 
     .cards-container {
-        max-width: 900px;
+        max-width: 72rem;
 
         display: flex;
         flex-direction: column;
@@ -11,90 +11,90 @@
         align-items: center;
 
         margin: auto;
-        margin-bottom: 100px;
-    }
+        margin-bottom: 10rem;
 
-    .cards-container .titulo {
-        margin-bottom: 50px;
-        font-size: 3.5rem;
-        font-weight: 500;
-    }
+        .titulo {
+            margin-bottom: 5rem;
+            font-size: 3.5rem;
+            font-weight: 500;
+        }
 
-    .card {
-        height: 150px;
-        width: 100%;
+        .card {
+            height: 10rem;
+            width: 100%;
 
-        margin-bottom: 20px;
+            margin-bottom: 2rem;
 
-        align-items: center;
-        justify-content: space-between;
+            align-items: center;
+            justify-content: space-between;
 
-        border: 0.5px solid var(--gray-border);
-        border-radius: 8px;
+            border: 0.05rem solid var(--gray-border);
+            border-radius: 0.8rem;
 
-        background-color: var(--white);
+            background-color: var(--white);
 
-        box-shadow: var(--border-shadow);
-    }
+            box-shadow: var(--border-shadow);
 
-    .card-user {
-        gap: 20px;
-    }
+            div {
+                height: 100%;
+            }
 
-    .card div {
-        height: 100%;
-    }
+            .card-user {
+                gap: 2rem;
 
-    /* Imagem */
+                .card-image {
+                    width: 12rem;
+                    // height: 100%;
+                    display: flex;
+                    flex-direction: row;
 
-    .card-image {
-        width: 150px;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
 
-        align-items: center;
-        justify-content: flex-start;
-    }
+                    .image-card {
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 0.8rem 0 0 0.8rem;
+                    }
+                }
 
-    .image-card {
-        height: 100%;
-        width: 100%;
-        border-radius: 8px 0 0 8px;
-    }
+                .card-info {
+                    .nome-card {
+                        font-size: 2.3rem;
+                        // max-width: 53rem;
+                        font-weight: 500;
+                        margin-bottom: 1rem;
+                    }
 
-    /* Informações */
+                    .desc-card {
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        margin-top: 0rem;
 
-    .nome-card {
-        font-size: 3rem;
-        max-width: 530px;
-        font-weight: 500;
-        margin-bottom: 10px;
-    }
+                        color: var(--gray-dark);
+                    }
 
-    .desc-card {
-        font-size: 2rem;
-        font-weight: 500;
-        margin-top: 5px;
+                    .desc-card.min {
+                        font-size: 1.6rem;
+                        font-weight: 500;
 
-        color: var(--gray-dark);
-    }
+                        color: var(--gray-dark);
+                        margin-top: 0.5rem;
+                    }
 
-    .desc-card.min {
-        font-size: 1.6rem;
-        font-weight: 500;
+                    .peso-card {
+                        font-size: 2rem;
+                        font-weight: bolder;
+                    }
+                }
+            }
 
-        color: var(--gray-dark);
-        margin-top: 5px;
-    }
-
-    .peso-card {
-        font-size: 2rem;
-        font-weight: bolder;
-    }
-
-    .card-btn .btn {
-        margin-right: 40px;
+            .card-btn .btn {
+                min-width: 16rem !important;
+                min-height: 4rem !important;
+                margin-right: 4rem;
+            }
+        }
     }
 
     /* #endregion */
@@ -102,15 +102,15 @@
     /* #region Painel Usuário */
 
     .usuario.cards-container {
-        margin-top: 30px;
+        margin-top: 3rem;
     }
 
     .usuario .underline {
-        border-bottom: 4px solid var(--red-logo);
+        border-bottom: 0.4rem solid var(--red-logo);
     }
 
     .usuario .titulo-categoria:hover {
-        border-bottom: 4px solid var(--red-logo);
+        border-bottom: 0.4rem solid var(--red-logo);
     }
 
     /* #endregion */
