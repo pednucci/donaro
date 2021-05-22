@@ -1,0 +1,91 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Donaro -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/painel.css" />
+    <link rel="stylesheet" href="/css/usuario-pedido.css" />
+
+    <title>Requisição</title>
+</head>
+
+{{>navbar}}
+
+<main>
+    <div class="usuario container-painel">
+        <div class="background-painel">
+            {{#each pedido}}
+            <h1 class="painel-titulo">{{nm_titulo_pedido}}</h1>
+            {{/each}}
+            <div class="img-wrapper">
+                <img src="/assets/img/background_user.png" alt="" />
+            </div>
+        </div>
+
+        <div class="menu-painel">
+            <ul class="menu-painel-buttons row">
+                <a href="#">
+                    <li class="painel-text">Relatório</li>
+                </a>
+                <a href="#">
+                    <li class="painel-text active">Ajudas recebidas</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cards-container">
+        {{#each notificacao}}
+        <div class="card row">
+            <div class="card-user row">
+                <div class="card-image">
+                    <img class="image-card" src="/assets/img/user_joao.png" alt="" />
+                </div>
+                <div class="card-info column">
+                    <h1 class="nome-card">{{nm_usuario}}</h1>
+                    <h2 class="desc-card">
+                        Quantidade ofertada: <strong>5Kg</strong>
+                    </h2>
+                    <h2 class="desc-card">
+                        Confirmação de recebimento:
+                        <strong class="accepted"> ENTREGUE</strong>
+                    </h2>
+                </div>
+            </div>
+            <div class="card-btn row">
+                <a href="#">
+                    <button class="btn blue">Ver detalhes</button>
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="numeracao-paginas">
+        <ul class="paginas">
+            <a href="">
+                <li class="num cont-pagina">1</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">2</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">3</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">4</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">5</li>
+            </a>
+            <a href="">
+                <li class="num cont-pagina">6</li>
+            </a>
+        </ul>
+        <a href="">
+            <div class="cont-pagina">Seguinte &#62;</div>
+        </a>
+    </div>
+</main>
