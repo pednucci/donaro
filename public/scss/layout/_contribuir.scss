@@ -1,38 +1,38 @@
 .lyt_denuncia {
     .form-container {
         width: 100%;
-        max-width: 600px;
+        max-width: 60rem;
         height: auto;
         margin: auto;
-        padding: 40px;
-        border-radius: 20px;
+        padding: 4rem;
+        border-radius: 2rem;
         border: var(--border-form);
 
-        margin-top: 26px;
-        margin-bottom: 100px;
+        margin-top: 2.6rem;
+        margin-bottom: 10rem;
 
         box-shadow: var(--border-shadow);
     }
 
     .form-container .sub.titulo {
-        font-size: 3rem;
+        font-size: 2.8rem;
         align-self: center;
 
-        margin-bottom: 20px;
+        margin-bottom: 2rem;
         font-weight: bold;
     }
 
     .input-form {
-        height: 70px;
+        height: 7rem;
     }
 
     .form-login label {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 600;
         text-align: start;
 
-        margin-bottom: 20px;
-        margin-top: 40px;
+        margin-bottom: 4rem;
+        margin-top: 4rem;
     }
 
     /* #endregion */
@@ -51,7 +51,7 @@
     }
 
     .form-login .btn {
-        margin-top: 30px;
+        margin-top: 3rem;
         align-self: center;
     }
 
@@ -72,24 +72,25 @@
     /* #region Pedido */
 
     .qtdAlimentos {
-        max-height: 300px;
+        max-height: 30rem;
 
         overflow: hidden;
         overflow-y: scroll;
 
-        margin: 0px 0;
+        margin: 0;
     }
 
     .qtdAlimentos .sub.titulo {
         font-size: 2rem;
         align-self: center;
 
-        margin-bottom: 0px;
+        margin-bottom: 0;
         font-weight: bold;
     }
 
     .qtdAlimentos .label {
         margin-top: 0;
+        margin-bottom: 1rem !important;
     }
 
     .qtdAlimentos .row {
@@ -98,13 +99,15 @@
         flex-direction: row;
         align-items: flex-start;
         justify-content: flex-start;
+
+        margin-bottom: 1rem;
     }
 
     .alimento-pedido .input-form {
-        height: 40px;
-        width: 180px;
+        height: 4rem;
+        width: 18rem;
         margin: 0;
-        padding: 0px;
+        padding: 0;
 
         display: flex;
         flex-direction: row;
@@ -115,16 +118,16 @@
 
         border: none;
         background-color: var(--white);
-        border-radius: 10px;
+        border-radius: 1rem;
 
         cursor: default;
     }
 
     .qtdAl {
         flex-direction: row !important;
-        width: 260px !important;
-        height: 50px;
-        padding: 15px;
+        width: 26rem !important;
+        height: 5rem;
+        padding: 1.5rem;
 
         display: flex;
         flex-direction: row;
@@ -132,7 +135,7 @@
 
         background-color: var(--gray-background);
         border: var(--border-form);
-        border-radius: 10px;
+        border-radius: 1rem;
     }
 
     .qtdAl .input-form {
