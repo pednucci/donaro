@@ -4,7 +4,7 @@
         display: flex;
         flex-direction: column;
 
-        margin-bottom: 80px;
+        margin-bottom: 8rem;
     }
 
     .background-painel {
@@ -19,7 +19,7 @@
 
     .container-painel .img-wrapper {
         border-radius: 0;
-        height: 160px;
+        height: 16rem;
         width: 100%;
     }
 
@@ -34,7 +34,7 @@
 
     /* Painel Nav */
     .menu-painel {
-        height: 80px;
+        height: 8rem;
         background-color: var(--red-logo);
 
         display: flex;
@@ -42,10 +42,9 @@
     }
 
     .menu-painel-buttons {
-        height: 80px;
+        height: 8rem;
         width: 100%;
-        max-width: 720px;
-        /* width: 955px; */
+        max-width: 72rem;
 
         justify-content: flex-start;
     }
@@ -60,46 +59,46 @@
     }
 
     .painel-text {
-        line-height: 75px;
+        line-height: 7.5rem;
         font-size: 2.5rem;
         font-weight: 500;
         color: var(--white);
 
-        margin-right: 30px;
+        margin-right: 3rem;
 
-        border-bottom: 5px solid transparent;
+        border-bottom: 0.5rem solid transparent;
     }
 
     .menu-painel .active {
-        border-bottom: 5px solid var(--white);
+        border-bottom: 0.5rem solid var(--white);
     }
 
     .menu-painel li:hover {
-        border-bottom: 5px solid var(--white);
+        border-bottom: 0.5rem solid var(--white);
     }
 
     /* #endregion */
 
     /* #region Users */
     .users {
-        width: 900px;
-        margin-bottom: 30px;
+        width: 90rem;
+        margin-bottom: 3rem;
 
         justify-content: flex-start;
-        gap: 50px;
+        gap: 0.5rem;
     }
 
     .titulo-categoria {
-        padding-bottom: 10px;
-        border-bottom: 4px solid transparent;
+        padding-bottom: 1rem;
+        border-bottom: 0.4rem solid transparent;
     }
 
     .underline {
-        border-bottom: 4px solid var(--gray-dark);
+        border-bottom: 0.4rem solid var(--gray-dark);
     }
 
     .titulo-categoria:hover {
-        border-bottom: 4px solid var(--gray-dark);
+        border-bottom: 0.4rem solid var(--gray-dark);
     }
 
     .underline-white {
@@ -111,8 +110,8 @@
         content: "";
         position: absolute;
         top: 165%;
-        width: 145px;
-        border-bottom: white solid 5px;
+        width: 14.5rem;
+        border-bottom: white solid 0.5rem;
     }
 
     /* #endregion */
@@ -120,20 +119,20 @@
     /* #region Botões */
 
     .botoes-wrapper {
-        margin-top: 100px;
-        margin-bottom: 100px;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
 
-        gap: 40px;
+        gap: 4rem;
         justify-content: center;
         align-items: center;
     }
 
     .botoes {
-        gap: 40px;
+        gap: 4rem;
         justify-content: center;
         align-items: center;
 
-        margin-bottom: 50px;
+        margin-bottom: 0.5rem;
     }
 
     /* #endregion */
@@ -145,25 +144,25 @@
         margin: auto;
         display: flex;
 
-        margin-top: 100px;
-        margin-bottom: 100px;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
     }
 
     .paginas {
         display: flex;
-        margin-bottom: 50px;
+        margin-bottom: 0.5rem;
     }
 
     .cont-pagina {
-        min-width: 45px;
-        height: 50px;
+        min-width: 4.5rem;
+        height: 0.5rem;
         text-align: center;
-        margin: 3px;
-        padding: 10px;
+        margin: 0.3rem;
+        padding: 1rem;
         font-size: 2rem;
         background-color: var(--gray-background);
         border: var(--border-form);
-        border-radius: 5px;
+        border-radius: 0.5rem;
         box-shadow: var(--border-shadow);
 
         transition: 0.5s ease;
@@ -184,7 +183,7 @@
     }
 
     .usuario .comentario {
-        max-height: 200px;
+        max-height: 20rem;
         overflow-y: scroll;
     }
 
@@ -193,33 +192,33 @@
     /* #region Painel */
 
     .pedidos.painel {
-        width: 720px;
+        width: 72rem;
 
         flex-wrap: wrap;
 
         margin: auto;
-        margin-bottom: 50px;
+        margin-bottom: 0.5rem;
 
         align-items: center;
         justify-content: flex-start;
     }
 
     .painel .pedido {
-        width: 280px;
-        height: 300px;
+        width: 28rem;
+        height: 30rem;
 
-        margin: 20px 30px;
+        margin: 2rem 3rem;
         justify-content: space-between;
 
         border: var(--border-form);
-        border-radius: 10px;
+        border-radius: 1rem;
         overflow: hidden;
-        gap: 10px;
+        gap: 1rem;
     }
 
     .painel .imagem-pedido {
         width: 100%;
-        height: 120px;
+        height: 12rem;
     }
 
     .painel .imagem-pedido img {
@@ -234,7 +233,7 @@
         font-size: 2rem;
 
         margin: 0;
-        margin-bottom: 20px;
+        margin-bottom: 2rem;
     }
 
     .painel .sub.titulo {
@@ -242,15 +241,15 @@
     }
 
     .painel .pedido .btn {
-        height: 20px;
+        height: 2rem;
         width: 100%;
 
-        border-radius: 0 0 10px 10px;
+        border-radius: 0 0 1rem 1rem;
     }
 
     .painel .informacoes-pedido {
-        padding: 10px;
-        gap: 10px;
+        padding: 1rem;
+        gap: 1rem;
     }
 
     /* #endregion  */

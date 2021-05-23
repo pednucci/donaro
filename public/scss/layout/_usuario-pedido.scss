@@ -1,5 +1,9 @@
 .lyt_usuario-pedido {
-    /* #region Usuário/Pedido */
+    .titulo-user {
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
     .profile-container {
         min-width: min-content;
         max-width: 72rem;
@@ -9,119 +13,155 @@
 
         align-items: center;
         justify-content: center;
-    }
 
-    .user-container {
-        width: 100%;
+        .user-container {
+            width: 100%;
 
-        align-items: flex-start;
-    }
+            align-items: flex-start;
 
-    .user-container p {
-        font-size: 1.8rem;
-    }
+            gap: 2rem;
+            margin-bottom: 5rem;
 
-    .titulo-user {
-        font-size: 3rem;
-        font-weight: 500;
-    }
+            p {
+                font-size: 1.8rem;
+            }
 
-    .user-wrapper {
-        width: 100%;
+            .user-wrapper {
+                width: 100%;
 
-        align-items: center;
-        justify-content: flex-start;
-        gap: 3rem;
-
-        .btn {
-            justify-self: flex-end;
-            min-width: 180px;
-        }
-    }
-
-    /* Imagem */
-
-    .imagePerfil {
-        width: 12rem;
-        height: 12rem;
-
-        border-radius: 0.8rem;
-        overflow: hidden;
-    }
-
-    .imagePerfil img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .informacoes.column {
-        height: max-content;
-
-        align-items: flex-start;
-        justify-content: space-between;
-    }
-
-    /* Informações */
-
-    .informacoes .row {
-        gap: 4rem;
-    }
-
-    .informacoes .row div {
-        min-width: 13rem;
-    }
-
-    .fc-wrapper {
-        .alimento-container {
-            min-width: min-content;
-            max-width: 100%;
-            max-height: 20rem;
-
-            overflow: hidden;
-            overflow-y: scroll;
-
-            text-align: left;
-            .column {
+                align-items: center;
                 justify-content: flex-start;
-                gap: 2rem 17rem;
-                .alReq {
-                    h1 {
-                        font-size: 2.5rem;
-                        width: 16rem;
+                gap: 3rem;
+
+                .imagePerfil {
+                    width: 12rem;
+                    height: 12rem;
+
+                    border-radius: 0.8rem;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
                     }
                 }
 
-                .alReq {
-                    padding: 0.5rem;
+                .informacoes.column {
+                    height: max-content;
 
-                    background-color: var(--gray-message);
-                    border-radius: 0.4rem;
+                    align-items: flex-start;
+                    justify-content: space-between;
+
+                    .informacoes .row {
+                        gap: 4rem;
+
+                        div {
+                            min-width: 13rem;
+                        }
+                    }
+                }
+
+                .btn {
+                    justify-self: flex-end;
+                    min-width: 18rem;
                 }
             }
         }
     }
 
-    .comentario-container,
-    .user-container {
-        gap: 2rem;
-        margin: 3rem 0;
-    }
+    .fc-wrapper {
+        gap: 8rem;
+        align-items: flex-start;
 
-    .comentario {
-        max-height: 40rem;
-        overflow-y: scroll;
-    }
+        .titulo-user {
+            font-size: 2.4rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
 
-    .sub.titulo-user {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-    }
+        .food-container {
+            max-width: 50rem;
+            padding: 2rem 6rem;
 
-    .comentario-container p {
-        margin-bottom: 2rem;
+            border-radius: 1rem;
+            border: var(--border-form);
+            box-shadow: var(--border-shadow);
 
-        font-size: 3rem;
-        text-align: justify;
+            .titulo-user::after {
+                content: "";
+                display: block;
+
+                width: 100%;
+                height: 0.1rem;
+                background-color: var(--gray-border);
+                margin: 1rem 0;
+            }
+
+            .descAlimentos {
+                justify-content: flex-start;
+                margin-bottom: 0.5rem;
+
+                h1 {
+                    color: var(--gray-dark);
+                    font-size: 1.4rem;
+                    font-weight: normal;
+
+                    &:first-child {
+                        width: 18rem;
+                    }
+                }
+            }
+
+            .alimento-container {
+                min-width: max-content;
+                width: 30rem;
+                max-height: 20rem;
+
+                overflow: hidden;
+                overflow-y: scroll;
+
+                text-align: left;
+
+                padding-right: 1rem;
+
+                .column {
+                    justify-content: flex-start;
+
+                    .alReq {
+                        margin-bottom: 1rem;
+                        padding: 0.5rem;
+                        justify-content: flex-start;
+
+                        background-color: var(--gray-message);
+                        border-radius: 0.8rem;
+
+                        h1 {
+                            font-size: 1.8rem;
+
+                            &:first-child {
+                                width: 18rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .comentario-container {
+            max-width: 30rem;
+            gap: 2rem;
+            // margin: 3rem 0;
+
+            .comentario {
+                max-height: 16rem;
+                overflow-y: scroll;
+            }
+            p {
+                margin-bottom: 2rem;
+
+                font-size: 2rem;
+                text-align: justify;
+            }
+        }
     }
 }
