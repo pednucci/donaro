@@ -8,22 +8,26 @@
     <div class="form-container pedido column">
         <p class="sub titulo">Informe a quantidade da doação:</p>
         <form class="form-login column" action="/ajudar" method="POST">
-            <div class="qtdAlimentos">
-                {{#each alimento}}
-                <div class="row">
-                    <div class="alimento-pedido">
+            <div class="alimento column">
+                   <div class="row">
                         <label>Alimento</label>
-                        <input class="input-form" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly>
-                    </div>
-                    <div class="alimento-quantidade">
                         <label>Quantidade</label>
-                        <div class="qtdAl row">
-                            <input class="input-form" type="text" name="qtd" />
-                            <h1 class="sub titulo">{{nm_medida_alimento}}</h1>
+                   </div>
+                <div class="qtdAlimentos">
+                    {{#each alimento}}
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="text" name="qtd" />
+                                <h1 class="sub titulo">{{nm_medida_alimento}}</h1>
+                            </div>
                         </div>
                     </div>
+                    {{/each}}
                 </div>
-                {{/each}}
             </div>
 
             <div class="comentario column">
