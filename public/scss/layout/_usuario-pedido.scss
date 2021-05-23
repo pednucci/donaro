@@ -30,8 +30,12 @@
                 width: 100%;
 
                 align-items: center;
-                justify-content: flex-start;
+                justify-content: space-between;
                 gap: 3rem;
+
+                .row:first-child {
+                    gap: 2rem;
+                }
 
                 .imagePerfil {
                     width: 12rem;
@@ -52,12 +56,8 @@
                     align-items: flex-start;
                     justify-content: space-between;
 
-                    .informacoes .row {
-                        gap: 4rem;
-
-                        div {
-                            min-width: 13rem;
-                        }
+                    .titulo-user {
+                        margin-bottom: 0.5rem;
                     }
                 }
 
@@ -150,8 +150,10 @@
         .comentario-container {
             max-width: 30rem;
             gap: 2rem;
-            // margin: 3rem 0;
 
+            .titulo-user:last-child {
+                margin-top: 20rem;
+            }
             .comentario {
                 max-height: 16rem;
                 overflow-y: scroll;

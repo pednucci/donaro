@@ -65,6 +65,7 @@
         </header>
 
         <main class="lyt_painel lyt_usuario-pedido pg_pajuda">
+            <!-- Painel Topo-->
             <div class="usuario container-painel">
                 <div class="background-painel">
                     <h1 class="painel-titulo">Almoço na creche Arco-Íris</h1>
@@ -76,6 +77,7 @@
                     </div>
                 </div>
 
+                <!-- Painel Menu-->
                 <div class="menu-painel">
                     <ul class="menu-painel-buttons row">
                         <a href="#">
@@ -88,25 +90,41 @@
                 </div>
             </div>
 
+            <!-- Informações da ajuda -->
             <div class="usuario profile-container columm">
+                <!-- Usuário -->
                 <div class="user-container column">
                     <div class="user-wrapper row">
-                        <div class="imagePerfil column">
-                            <img
-                                src="/public/assets/img/user_joao.png"
-                                alt="Foto de perfil"
-                            />
+                        <div class="row">
+                            <!-- Imagem -->
+                            <div class="imagePerfil column">
+                                <img
+                                    src="/public/assets/img/user_joao.png"
+                                    alt="Foto de perfil"
+                                />
+                            </div>
+
+                            <!-- Nome -->
+                            <div class="informacoes column">
+                                <h1 class="sub titulo-user user-name">
+                                    João Oliveira
+                                </h1>
+                                <p class="user-info">
+                                    (13) 99914-1099 | jpoliv21@gmail.com
+                                </p>
+                            </div>
                         </div>
-                        <div class="informacoes column">
-                            <h1 class="sub titulo-user">João Oliveira</h1>
-                            <p>(13) 99914-1099 | jpoliv21@gmail.com</p>
-                        </div>
+
+                        <!-- Botão -->
                         <a href="#" class="btn blue" type="button">
                             Entrar no chat
                         </a>
                     </div>
                 </div>
+
+                <!-- Alimentos, comentário e situação -->
                 <div class="row fc-wrapper">
+                    <!-- Container dos alimentos -->
                     <div class="food-container column">
                         <h1 class="sub titulo-user">Alimentos ofertados</h1>
                         <div class="row descAlimentos">
@@ -115,22 +133,7 @@
                         </div>
                         <div class="alimento-container">
                             <div class="column">
-                                <div class="alReq row">
-                                    <h1 class="reqAlimento">Arroz</h1>
-                                    <h1 class="reqQuantidade">5Kg</h1>
-                                </div>
-                                <div class="alReq row">
-                                    <h1 class="reqAlimento">Arroz</h1>
-                                    <h1 class="reqQuantidade">5Kg</h1>
-                                </div>
-                                <div class="alReq row">
-                                    <h1 class="reqAlimento">Arroz</h1>
-                                    <h1 class="reqQuantidade">5Kg</h1>
-                                </div>
-                                <div class="alReq row">
-                                    <h1 class="reqAlimento">Arroz</h1>
-                                    <h1 class="reqQuantidade">5Kg</h1>
-                                </div>
+                                <!-- Alimentos -->
                                 <div class="alReq row">
                                     <h1 class="reqAlimento">Arroz</h1>
                                     <h1 class="reqQuantidade">5Kg</h1>
@@ -142,7 +145,10 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Comentário e situação da entrega -->
                     <div class="comentario-container column">
+                        <!-- Comentário -->
                         <h1 class="sub titulo-user">Comentário</h1>
                         <div class="comentario">
                             <p>
@@ -156,12 +162,15 @@
                                 hendrerit non. Nam vulputate dapibus.
                             </p>
                         </div>
+
+                        <!-- Situação -->
                         <h1 class="sub titulo-user">Situação da entrega</h1>
-                        <p>Pendente</p>
+                        <p class="situacaoReq">Pendente</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Botões -->
             <div class="botoes-wrapper column">
                 <div class="botoes row">
                     <a href="#" class="btn green-concluded" type="button">
@@ -169,9 +178,6 @@
                     </a>
                     <a href="#" class="btn red" type="button">
                         Não entregou o pedido
-                    </a>
-                    <a href="#" class="btn ghost-red" type="button">
-                        Denunciar usuário
                     </a>
                 </div>
             </div>
