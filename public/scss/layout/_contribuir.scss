@@ -12,145 +12,130 @@
         margin-bottom: 10rem;
 
         box-shadow: var(--border-shadow);
+
+        .sub.titulo {
+            font-size: 2.8rem;
+            align-self: center;
+
+            margin-bottom: 3rem;
+            font-weight: bold;
+        }
     }
 
-    .form-container .sub.titulo {
-        font-size: 2.8rem;
-        align-self: center;
+    .form-login {
+        .input-form {
+            height: 7rem;
+        }
 
-        margin-bottom: 2rem;
-        font-weight: bold;
+        label {
+            font-size: 2rem;
+            font-weight: 500;
+            text-align: start;
+
+            margin: 4rem 0;
+        }
+
+        select {
+            font-family: "Red Hat Display", sans-serif;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        option {
+            font-size: 1.7rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            margin-top: 3rem;
+            align-self: center;
+        }
+
+        .qtdAlimentos {
+            max-height: 30rem;
+
+            overflow: hidden;
+            overflow-y: scroll;
+
+            margin: 0;
+
+            .sub.titulo {
+                font-size: 2rem;
+                align-self: center;
+
+                margin-bottom: 0;
+                font-weight: bold;
+            }
+
+            .label {
+                margin-top: 0;
+                margin-bottom: 1rem !important;
+            }
+
+            .row {
+                display: flex;
+
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                margin-bottom: 1rem;
+            }
+
+            .alimento-pedido {
+                .input-form {
+                    height: 4rem;
+                    width: 18rem;
+                    margin: 0;
+                    padding: 0;
+
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    font-size: 2.5rem;
+                    font-weight: 500;
+
+                    border: none;
+                    background-color: var(--white);
+                    border-radius: 1rem;
+
+                    cursor: default;
+                }
+            }
+            .alimento-quantidade {
+                .qtdAl {
+                    flex-direction: row !important;
+                    width: 26rem !important;
+                    height: 5rem;
+                    padding: 1.5rem;
+
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    background-color: var(--gray-background);
+                    border: var(--border-form);
+                    border-radius: 1rem;
+
+                    .input-form {
+                        height: 100%;
+
+                        margin: 0;
+                        border: none;
+                    }
+                }
+            }
+        }
+
+        .comentario {
+            textarea {
+                font-family: "Red Hat Display", sans-serif;
+                font-size: 2rem;
+                font-weight: 500;
+
+                resize: vertical;
+            }
+        }
     }
-
-    .input-form {
-        height: 7rem;
-    }
-
-    .form-login label {
-        font-size: 2rem;
-        font-weight: 600;
-        text-align: start;
-
-        margin-bottom: 4rem;
-        margin-top: 4rem;
-    }
-
-    /* #endregion */
-
-    /* #region Select */
-
-    .form-login select {
-        font-family: "Red Hat Display", sans-serif;
-        font-size: 2rem;
-        font-weight: 500;
-    }
-
-    .form-login option {
-        font-size: 1.7rem;
-        font-weight: 500;
-    }
-
-    .form-login .btn {
-        margin-top: 3rem;
-        align-self: center;
-    }
-
-    /* #endregion */
-
-    /* #region Textarea */
-
-    textarea {
-        font-family: "Red Hat Display", sans-serif;
-        font-size: 2rem;
-        font-weight: 500;
-
-        resize: vertical;
-    }
-
-    /* #endregion */
-
-    /* #region Pedido */
-
-    .qtdAlimentos {
-        max-height: 30rem;
-
-        overflow: hidden;
-        overflow-y: scroll;
-
-        margin: 0;
-    }
-
-    .qtdAlimentos .sub.titulo {
-        font-size: 2rem;
-        align-self: center;
-
-        margin-bottom: 0;
-        font-weight: bold;
-    }
-
-    .qtdAlimentos .label {
-        margin-top: 0;
-        margin-bottom: 1rem !important;
-    }
-
-    .qtdAlimentos .row {
-        display: flex;
-
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-
-        margin-bottom: 1rem;
-    }
-
-    .alimento-pedido .input-form {
-        height: 4rem;
-        width: 18rem;
-        margin: 0;
-        padding: 0;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        font-size: 2.5rem;
-        font-weight: 500;
-
-        border: none;
-        background-color: var(--white);
-        border-radius: 1rem;
-
-        cursor: default;
-    }
-
-    .qtdAl {
-        flex-direction: row !important;
-        width: 26rem !important;
-        height: 5rem;
-        padding: 1.5rem;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        background-color: var(--gray-background);
-        border: var(--border-form);
-        border-radius: 1rem;
-    }
-
-    .qtdAl .input-form {
-        height: 100%;
-
-        margin: 0;
-        border: none;
-    }
-
-    .input-form:-internal-autofill-selected {
-        appearance: menulist-button;
-        background-color: black !important;
-        background-image: none !important;
-        color: -internal-light-dark(black, white) !important;
-    }
-
-    /* #endregion */
 }

@@ -1,7 +1,7 @@
 .footer-bar {
     width: 100%;
-    height: 200px;
-    padding: 20px 40px;
+    height: 20rem;
+    padding: 2rem 4rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,33 +11,31 @@
 }
 
 .logo-footer {
-    width: 200px;
-    margin: 20px 0;
+    width: 20rem;
+    margin: 2rem 0;
 
     align-self: center;
 }
 
 .menu-footer {
-    margin: 20px;
+    margin: 2rem;
     height: auto;
     font-size: 0.8rem;
+
+    .list-item {
+        color: var(--white);
+        font-size: 2em;
+        margin: 0.5rem 0;
+    }
 }
 
-.list-item {
-    color: var(--white);
-    font-size: 2em;
-    margin: 5px 0;
-}
-
-.rede-sociais {
-    display: flex;
-    flex-direction: row;
-}
-
-.icone-midias {
-    width: 30px;
-    height: 30px;
-    margin: 20px 20px 0 0;
+.redes-sociais {
+    justify-content: flex-start;
+    gap: 2rem;
+    .icone-midias {
+        width: 3rem;
+        height: 3rem;
+    }
 }
 
 .subtitulo-footer {

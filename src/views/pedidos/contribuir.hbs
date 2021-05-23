@@ -15,7 +15,7 @@
                         <label>Alimento</label>
                         <input class="input-form" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly>
                     </div>
-                    <div>
+                    <div class="alimento-quantidade">
                         <label>Quantidade</label>
                         <div class="qtdAl row">
                             <input class="input-form" type="text" name="qtd" />
@@ -26,13 +26,15 @@
                 {{/each}}
             </div>
 
-            <label for="comentario">
-                Adicione um comentário (opcional)
-            </label>
-            <textarea class="input-form" name="descricao" cols="30" rows="4"></textarea>
-            {{#each alimento}}
-            <input type="hidden" name="idPedido" value="{{cd_pedido}}">
-            {{/each}}
+            <div class="comentario column">
+                <label >
+                    Adicione um comentário (opcional)
+                </label>
+                <textarea class="input-form" name="comentario"></textarea>
+                {{#each alimento}}
+                <input type="hidden" name="idPedido" value="{{cd_pedido}}">
+                {{/each}}
+            </div>
             <input class="btn blue" type="submit" value="Enviar" />
         </form>
     </div>

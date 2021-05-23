@@ -81,11 +81,11 @@
 
     /* #region Users */
     .users {
-        width: 90rem;
+        width: 72rem;
         margin-bottom: 3rem;
 
         justify-content: flex-start;
-        gap: 0.5rem;
+        gap: 5rem;
     }
 
     .titulo-categoria {
@@ -133,46 +133,6 @@
         align-items: center;
 
         margin-bottom: 0.5rem;
-    }
-
-    /* #endregion */
-
-    /* #region Numeração das páginas */
-
-    .numeracao-paginas {
-        width: max-content;
-        margin: auto;
-        display: flex;
-
-        margin-top: 10rem;
-        margin-bottom: 10rem;
-    }
-
-    .paginas {
-        display: flex;
-        margin-bottom: 0.5rem;
-    }
-
-    .cont-pagina {
-        min-width: 4.5rem;
-        height: 0.5rem;
-        text-align: center;
-        margin: 0.3rem;
-        padding: 1rem;
-        font-size: 2rem;
-        background-color: var(--gray-background);
-        border: var(--border-form);
-        border-radius: 0.5rem;
-        box-shadow: var(--border-shadow);
-
-        transition: 0.5s ease;
-    }
-
-    .cont-pagina:hover {
-        border: var(--border-red);
-        background-color: var(--red-logo-transparent);
-
-        transition: 0.5s ease;
     }
 
     /* #endregion */
