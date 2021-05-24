@@ -14,6 +14,13 @@
     justify-content: space-between;
     align-items: center;
 
+    transition-property: opacity, transform;
+    transition: 0.3s ease-in-out;
+
+    &.hidden {
+        transform: translateY(-200%);
+    }
+
     .nav-logo {
         width: 15rem;
     }
