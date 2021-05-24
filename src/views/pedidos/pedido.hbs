@@ -49,7 +49,7 @@
                 </header>
                 {{/each}}
                 <div class="main-alimentos column">
-                    <div class="filtro row">
+                    {{!-- <div class="filtro row">
                         <h2 class="titulo">Ordenar por:</h2>
                         <form action="" method="" id="form-sort">
                             <select class="select-sort" name="sort-by">
@@ -61,7 +61,7 @@
                                 </option>
                             </select>
                         </form>
-                    </div>
+                    </div> --}}
                     <h2 class="titulo black">Alimentos:</h2>
                     <div class="alimento-container column">
                         {{#each alimento}}
@@ -108,7 +108,7 @@
 
 {{>footer}}
 
-<script type="text/javascript">
+{{!-- <script type="text/javascript">
     let selectSort = document.querySelector(".select-sort");
     let alimentos = document.querySelector(".alimento-container");
 
@@ -154,4 +154,4 @@
         //         console.log(select.selectedIndex);
         //         select.options[2];
         //     });
-</script>
+</script> --}}

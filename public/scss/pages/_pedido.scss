@@ -163,10 +163,13 @@
 
     .alimento-container {
         height: auto;
-        max-height: 40rem;
-        position: relative;
-        overflow-y: scroll;
+        max-height: 30rem;
+        padding-right: 1rem;
+
         justify-content: flex-start;
+        position: relative;
+
+        overflow-y: scroll;
         gap: 2rem;
     }
 
