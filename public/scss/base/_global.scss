@@ -8,11 +8,11 @@ main {
 .img-wrapper {
     border-radius: 100%;
     overflow: hidden;
-}
 
-.img-wrapper img {
-    width: 100%;
-    height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .row {
@@ -41,10 +41,10 @@ main {
     font-family: "Red Hat Display", sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
-}
 
-.input-form:focus {
-    border: var(--border-form-focus);
+    &:focus {
+        border: var(--border-form-focus);
+    }
 }
 
 textarea.input-form {
@@ -105,15 +105,70 @@ button {
 
 /* #endregion */
 
-.dblock {
-    display: block;
+// #region Mensagem Flash
+.msg-container {
+    width: 100%;
+    align-items: flex-end;
+
+    position: absolute;
+    gap: 2rem;
+
+    overflow: hidden;
+
+    .flash-msg {
+        width: max-content;
+        padding: 1rem 2rem;
+
+        border-radius: 0.5rem;
+
+        transition: all 0.3s ease-in-out;
+        transform: translateX(calc(101% + 2rem));
+        animation: flash 5s 2 alternate forwards;
+
+        @keyframes flash {
+            0% {
+                transform: translateX(calc(101% + 2rem));
+                visibility: hidden;
+                opacity: 0;
+            }
+            20% {
+                transform: translateX(-2rem);
+                visibility: visible;
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-2rem);
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .sub.titulo {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        &.error {
+            background-color: var(--red-logo-transparent);
+            border: var(--border-red);
+
+            .sub.titulo {
+                color: var(--red-logo);
+            }
+        }
+
+        &.sucess {
+            background-color: var(--green-accept-transparent);
+            border: var(--border-green);
+
+            .sub.titulo {
+                color: var(--green-accept);
+            }
+        }
+    }
 }
 
-.dnone {
-    display: none;
-}
-
-.error {
+.form-error {
     width: 100%;
 
     padding: 1rem;
@@ -122,36 +177,18 @@ button {
     background-color: var(--red-logo-transparent);
     border-radius: 0.5rem;
     border: var(--border-red);
+
+    .sub.titulo {
+        font-size: 1.8rem !important;
+        margin: 0 !important;
+
+        font-weight: 400;
+
+        color: var(--red-logo);
+    }
 }
 
-.error .sub.titulo {
-    font-size: 1.8rem !important;
-    margin: 0 !important;
-
-    font-weight: 400;
-
-    color: var(--red-logo);
-}
-
-.sucess {
-    width: 100%;
-
-    padding: 1rem;
-    margin: 0 auto 2rem 0;
-
-    background-color: var(--green-accept-transparent);
-    border-radius: 0.5rem;
-    border: var(--border-green);
-}
-
-.sucess .sub.titulo {
-    font-size: 1.8rem !important;
-    margin: 0 !important;
-
-    margin: 0;
-
-    color: var(--green-accept);
-}
+// #endregion
 
 /* #region - Numeração das páginas */
 .numeracao-paginas {

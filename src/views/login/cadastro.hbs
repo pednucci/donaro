@@ -25,23 +25,43 @@
 <main class="lyt_forms pg_cadastro">
     <div class="form-container column">
         {{#each erros}}
-            <div class="error">
+            <div class="form-error">
                 <h2 class="sub titulo">{{text}}</h2>
             </div>
         {{/each}}
         <p class="sub titulo">Cadastrar-se</p>
         <form class="form-login column" action="/cadastro" method="POST">
             <label for="">Nome completo</label>
-            <input class="input-form" type="text" name="username" />
+            <input
+                class="input-form"
+                type="text"
+                name="username"
+                placeholder="Ex: Pedro de Andrade Souza"
+            />
 
             <label for="">Email</label>
-            <input class="input-form" type="email" name="email" />
+            <input
+                class="input-form"
+                type="email"
+                name="email"
+                placeholder="Ex: exemplo@email.com"
+            />
 
             <label for="">CPF</label>
-            <input class="input-form" type="text" name="cpf" />
+            <input
+                class="input-form"
+                type="text"
+                name="cpf"
+                placeholder="000.000.000-0"
+            />
 
             <label for="">Celular</label>
-            <input class="input-form" type="tel" name="cel" />
+            <input
+                class="input-form"
+                type="tel"
+                name="cel"
+                placeholder="(00) 00000-0000"
+            />
 
             <label for="">Data de nascimento</label>
             <input class="input-form" type="date" name="dtuser" />

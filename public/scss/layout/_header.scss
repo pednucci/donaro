@@ -61,7 +61,7 @@
             justify-content: flex-start;
             align-items: flex-start;
 
-            // display: none;
+            visibility: hidden;
             opacity: 0;
 
             z-index: 999;
@@ -75,10 +75,11 @@
 
             background-color: var(--white);
 
-            transition: 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
 
             &.visible {
                 opacity: 1;
+                visibility: visible;
             }
 
             .toggle-link {

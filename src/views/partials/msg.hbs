@@ -1,11 +1,13 @@
-{{#if successMsg}}
-    <div class="sucess">
-        <h2 class="sub titulo">{{successMsg}}</h2>
-    </div>
-{{/if}}
+<div class="msg-container column">
+    {{#if successMsg}}
+        <div class="flash-msg sucess">
+            <h2 class="sub titulo">{{successMsg}}</h2>
+        </div>
+    {{/if}}
+    {{#if errorMsg}}
+        <div class="flash-msg sucess">
+            <h2 class="sub titulo">{{errorMsg}}</h2>
+        </div>
+    {{/if}}
 
-{{#if errorMsg}}
-    <div class="error">
-        <h2 class="sub titulo">{{errorMsg}}</h2>
-    </div>
-{{/if}}
+</div>
