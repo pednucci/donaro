@@ -99,13 +99,19 @@
                     margin-bottom: 0.5rem;
                 }
 
-                .row {
+                .date {
                     gap: 0.5rem;
                     height: auto;
 
-                    .data {
+                    img {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+
+                    .date-time {
                         font-size: 1.4rem;
-                        color: var(--gray-minor-font);
+                        font-weight: 500;
+                        color: var(--gray-dark);
                     }
                 }
             }

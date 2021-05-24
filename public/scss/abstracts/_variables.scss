@@ -14,7 +14,7 @@
     --gray-background: #f6f6f6;
     --gray-message: #eaeaea;
     --gray-minor-font: #939393;
-    --gray-dark: #747474;
+    --gray-dark: #706e6e;
     --gray-border: #cdcdcd;
     --green-accept: #37cc12;
     --green-accept-transparent: rgba(23, 174, 65, 0.1);
@@ -22,10 +22,10 @@
     --yellow-pending: #e1cb05;
 
     /* Bordas */
-    --border-form: 0.5px solid var(--gray-border);
-    --border-form-focus: 1px solid var(--blue-logo);
-    --border-red: 1.5px solid var(--red-logo);
-    --border-green: 1.5px solid var(--green-accept);
-    --border-black: 1.5px solid var(--black-logo);
-    --border-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    --border-form: 0.05rem solid var(--gray-border);
+    --border-form-focus: 0.1rem solid var(--blue-logo);
+    --border-red: 0.15rem solid var(--red-logo);
+    --border-green: 0.15rem solid var(--green-accept);
+    --border-black: 0.15rem solid var(--black-logo);
+    --border-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.15);
 }

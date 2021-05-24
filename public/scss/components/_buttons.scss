@@ -3,17 +3,17 @@
 .btn {
     width: max-content;
     height: max-content;
-    min-width: 200px;
-    min-height: 50px;
+    min-width: 20rem;
+    min-height: 5rem;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 5px 20px;
+    padding: 0.5rem 2rem;
 
-    border-radius: 10px;
+    border-radius: 1rem;
     border: none;
     cursor: pointer;
 

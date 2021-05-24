@@ -1,6 +1,22 @@
 html {
     font-size: 62.5%;
     font-family: "Red Hat Display", sans-serif;
+
+    @media screen and (min-width: 1920px) {
+        font-size: 62.5%;
+    }
+
+    @media screen and (min-width: 1440px) {
+        font-size: 56.25%;
+    }
+
+    @media screen and (max-width: 1366px) {
+        font-size: 50%;
+    }
+
+    @media screen and (max-width: 1280px) {
+        font-size: 43.75%;
+    }
 }
 
 body {
@@ -14,7 +30,7 @@ body {
     font-weight: bold;
 
     line-height: 101.8%;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .sub.titulo {
