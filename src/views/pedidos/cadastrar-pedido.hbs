@@ -62,7 +62,6 @@
                                 <option value={{nm_produto}}>{{nm_produto}}</option>
                                 {{/each}}
                             </select>
-                            {{!-- <input name="alimentoInput" type="text" class="input-form alimentoInput"> --}}
                         </div>
                 
                         <div class="quantidade-input">
@@ -70,16 +69,7 @@
                             <input name="quantidade" class="input-form quantidade" type="number" min="1" />
                         </div>
                 
-                    {{!-- <div class="medida-input">
-                            <label>Medida</label>
-                            <select name="alMedida" class="input-form alMedida">
-                                <option value="KG">Quilos</option>
-                                <option value="G">Gramas</option>
-                                <option value="L">Litros</option>
-                                <option value="ML">ML</option>
-                            </select>
-                        </div> --}}
-                    <button style="opacity:0" class="btn red excluir" type="button" onclick="delFood(this)"><img src="/assets/img/trash.svg" alt="excluir"></button>
+                    <button style="opacity:0; cursor:default;" type="button" class="btn red excluir"><img src="/assets/img/trash.svg" alt="excluir"></button>
                     </div>
                 
                 </div>
@@ -95,7 +85,7 @@
                 <div class="column">
                     <label for="">Adicionar descrição da sua ação social</label>
                     <textarea id="descPed" class="input-form" name="descPed" id="" cols="30" rows="10"
-                        placeholder="Insira a relevância por trás do seu pedido, descrevendo a ação social."></textarea>
+                        placeholder="Insira a relevância por trás do seu pedido, descrevendo sua camapanha de combate à fome."></textarea>
                 </div>
 
                 <label for="">Adicionar imagem de capa</label>

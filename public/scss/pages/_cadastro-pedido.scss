@@ -20,6 +20,8 @@
         label {
             font-size: 1.8rem;
             font-weight: 500;
+
+            margin-top: 1rem;
         }
 
         .input-form {
@@ -43,6 +45,7 @@
 
         .alimentos-container {
             margin-bottom: 3rem;
+
             .alimentos-wrapper {
                 .alimento.row {
                     justify-content: space-between;
@@ -54,10 +57,15 @@
                     .btn.red {
                         min-height: 4rem;
                         min-width: 4rem;
+                        padding: 0 1rem;
                         margin: 0;
 
                         justify-self: center;
                         align-self: center;
+
+                        img {
+                            width: 2.5rem;
+                        }
                     }
                 }
             }
