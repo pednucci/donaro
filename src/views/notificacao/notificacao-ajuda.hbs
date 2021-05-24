@@ -29,17 +29,17 @@
                         <strong>
                             {{nm_titulo_pedido}}</strong>
                     </h2>
-                    <h2 class="desc-card">
-                        Enviada em:
-                        <strong>
-                            {{formatDate dt_createdAt_solicitacao}}</strong>
-                    </h2>
+
                 </div>
             </div>
-            <div class="card-btn row">
+            <div class="card-btn column">
                 <a href="/notificacoes/one/{{cd_solicitacao}}">
                     <button class="btn blue">Detalhes</button>
                 </a>
+                <div class="row">
+                    <img src="/assets/img/icone_calendar.svg" alt="Data">
+                    <span class="data">{{formatDate dt_createdAt_solicitacao}}</span>
+                </div>
             </div>
         </div>
         {{/each}}

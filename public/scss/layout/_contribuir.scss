@@ -23,16 +23,10 @@
     }
 
     .form-login {
-        .input-form {
-            height: 7rem;
-        }
-
         label {
             font-size: 2rem;
             font-weight: 500;
             text-align: start;
-
-            margin: 4rem 0;
         }
 
         select {
@@ -46,89 +40,92 @@
             font-weight: 500;
         }
 
+        .input-form {
+            height: 7rem;
+        }
+
+        .row {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
         .btn {
             margin-top: 3rem;
             align-self: center;
         }
 
-        .qtdAlimentos {
-            max-height: 30rem;
-
-            overflow: hidden;
-            overflow-y: scroll;
-
-            margin: 0;
-
-            .sub.titulo {
-                font-size: 2rem;
-                align-self: center;
-
-                margin-bottom: 0;
-                font-weight: bold;
+        .alimento {
+            label:first-child {
+                width: 18rem;
             }
 
-            .label {
-                margin-top: 0;
-                margin-bottom: 1rem !important;
-            }
+            .qtdAlimentos {
+                max-height: 30rem;
 
-            .row {
-                display: flex;
+                overflow: hidden;
+                overflow-y: scroll;
 
-                flex-direction: row;
-                align-items: flex-start;
-                justify-content: flex-start;
+                margin: 0;
 
-                margin-bottom: 1rem;
-            }
+                .sub.titulo {
+                    font-size: 2rem;
+                    align-self: center;
 
-            .alimento-pedido {
-                .input-form {
-                    height: 4rem;
-                    width: 18rem;
-                    margin: 0;
-                    padding: 0;
-
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-
-                    font-size: 2.5rem;
-                    font-weight: 500;
-
-                    border: none;
-                    background-color: var(--white);
-                    border-radius: 1rem;
-
-                    cursor: default;
+                    margin-bottom: 0;
+                    font-weight: bold;
                 }
-            }
-            .alimento-quantidade {
-                .qtdAl {
-                    flex-direction: row !important;
-                    width: 26rem !important;
-                    height: 5rem;
-                    padding: 1.5rem;
 
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-
-                    background-color: var(--gray-background);
-                    border: var(--border-form);
-                    border-radius: 1rem;
-
+                .alimento-pedido {
                     .input-form {
-                        height: 100%;
+                        height: 4rem;
+                        width: 18rem;
+                        margin-top: 2rem;
+                        padding: 0;
 
-                        margin: 0;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        font-size: 2.5rem;
+                        font-weight: 500;
+
                         border: none;
+                        background-color: var(--white);
+                        border-radius: 1rem;
+
+                        cursor: default;
+                    }
+                }
+                .alimento-quantidade {
+                    .qtdAl {
+                        width: 26rem;
+                        height: 5rem;
+                        padding: 1.5rem;
+                        margin-top: 2rem;
+
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        background-color: var(--gray-background);
+                        border: var(--border-form);
+                        border-radius: 1rem;
+
+                        .input-form {
+                            height: 100%;
+
+                            margin: 0;
+                            border: none;
+                        }
                     }
                 }
             }
         }
 
         .comentario {
+            label {
+                margin: 4rem 0;
+            }
             textarea {
                 font-family: "Red Hat Display", sans-serif;
                 font-size: 2rem;
