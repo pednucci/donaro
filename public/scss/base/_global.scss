@@ -115,6 +115,8 @@ button {
 
     overflow: hidden;
 
+    transform: translateY(4rem);
+
     .flash-msg {
         width: max-content;
         padding: 1rem 2rem;
@@ -122,22 +124,22 @@ button {
         border-radius: 0.5rem;
 
         transition: all 0.3s ease-in-out;
-        transform: translateX(calc(101% + 2rem));
+        transform: translateX(calc(101% + 4rem));
         animation: flash 5s 2 alternate forwards;
 
         @keyframes flash {
             0% {
-                transform: translateX(calc(101% + 2rem));
+                transform: translateX(calc(101% + 4rem));
                 visibility: hidden;
                 opacity: 0;
             }
             20% {
-                transform: translateX(-2rem);
+                transform: translateX(-4rem);
                 visibility: visible;
                 opacity: 1;
             }
             100% {
-                transform: translateX(-2rem);
+                transform: translateX(-4rem);
                 visibility: visible;
                 opacity: 1;
             }
