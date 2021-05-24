@@ -17,19 +17,27 @@ router.get('/pedidos/:id', async (req, res) => {
     const idUser = req.user[0].cd_usuario;
     const idPedido = req.params.id;
 
-    const [pedido] = await conn.query(`SELECT * FROM pedido WHERE cd_usuario_pedido = ? AND
-    cd_pedido = ?`, [idUser, idPedido])
+    const [isAUser] = await conn.query(`SELECT count(*) FROM
+    pedido WHERE cd_usuario_pedido = ? AND cd_pedido = ?`, [idUser, idPedido]);
 
-    const [notificacao] = await conn.query(`SELECT * FROM solicitacao
-    INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON
-     cd_usuario_solicitacao = cd_usuario WHERE 
-     cd_usuario_pedido = ? AND
-     cd_pedido_solicitacao = ?`, [idUser, idPedido])
-       
-    res.render('painel/meus-pedidos-ajudas', {
-        notificacao,
-        pedido
-    })
+    if(isAUser == 1){
+        const [pedido] = await conn.query(`SELECT * FROM pedido WHERE cd_usuario_pedido = ? AND
+        cd_pedido = ?`, [idUser, idPedido])
+    
+        const [notificacao] = await conn.query(`SELECT * FROM solicitacao
+        INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON
+         cd_usuario_solicitacao = cd_usuario WHERE 
+         cd_usuario_pedido = ? AND
+         cd_pedido_solicitacao = ?`, [idUser, idPedido])
+           
+        res.render('painel/meus-pedidos-ajudas', {
+            notificacao,
+            pedido
+        })
+    }
+    else{
+        res.redirect('/')
+    }
 
     await conn.end();
 })
@@ -41,29 +49,39 @@ router.get('/pedidos/:id/:solicitacao', async (req, res) => {
     const soli = req.params.solicitacao;
     let entregueOrNot = 1;
 
-    const [solicitacao] = await conn.query(`SELECT * FROM solicitacao
-    INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON
-     cd_usuario_solicitacao = cd_usuario WHERE 
-     cd_usuario_pedido = ? AND
-     cd_pedido_solicitacao = ? AND cd_solicitacao = ?`, [idUser, idPedido, soli])
+    const [isAUser] = await conn.query(`SELECT count(*) FROM
+    pedido WHERE cd_usuario_pedido = ? AND cd_pedido = ?`, [idUser, idPedido]);
 
-    const [alimento] = await conn.query(`SELECT * FROM donation INNER JOIN produto ON
-    nm_alimento_donation = nm_produto INNER JOIN pedido ON cd_pedido_donation = cd_pedido
-    WHERE cd_solicitacao_donation = ? AND cd_usuario_pedido = ?`
-    ,[soli, idUser])
-
-    const [situacao] = await conn.query(`SELECT cd_situacao_solicitacao FROM solicitacao
-    WHERE cd_solicitacao = ?`,[soli])
-
-    if(situacao[0].cd_situacao_solicitacao == 'ENTREGUE'){
-        entregueOrNot = null;
+    if(isAUser == 1){
+        const [solicitacao] = await conn.query(`SELECT * FROM solicitacao
+        INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON
+         cd_usuario_solicitacao = cd_usuario WHERE 
+         cd_usuario_pedido = ? AND
+         cd_pedido_solicitacao = ? AND cd_solicitacao = ?`, [idUser, idPedido, soli])
+    
+        const [alimento] = await conn.query(`SELECT * FROM donation INNER JOIN produto ON
+        nm_alimento_donation = nm_produto INNER JOIN pedido ON cd_pedido_donation = cd_pedido
+        WHERE cd_solicitacao_donation = ? AND cd_usuario_pedido = ?`
+        ,[soli, idUser])
+    
+        const [situacao] = await conn.query(`SELECT cd_situacao_solicitacao FROM solicitacao
+        WHERE cd_solicitacao = ?`,[soli])
+    
+        if(situacao[0].cd_situacao_solicitacao == 'ENTREGUE'){
+            entregueOrNot = null;
+        }
+    
+        res.render('painel/meus-pedidos-ajuda', {
+            solicitacao,
+            alimento,
+            entregueOrNot
+        })
+    }
+    else{
+        res.redirect('/')
     }
 
-    res.render('painel/meus-pedidos-ajuda', {
-        solicitacao,
-        alimento,
-        entregueOrNot
-    })
+    await conn.end();
 })
 
 router.post('/ressoli', async (req, res) => {
@@ -102,6 +120,8 @@ router.post('/ressoli', async (req, res) => {
             req.flash('errorMsg', 'Erro inesperado')
             res.redirect('/')
         }
+        
+        await conn.end();
     }
 })
 
