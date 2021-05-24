@@ -32,18 +32,18 @@
         <div class="card row">
             <div class="card-user row">
                 <div class="card-image">
-                    <img class="image-card" src="/assets/img/user_joao.png" alt="" />
+                    <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
                 </div>
                 <div class="card-info column">
                     <h1 class="nome-card">{{nm_usuario}}</h1>
                     <h2 class="desc-card">
                         Confirmação de recebimento:
-                        <strong class="accepted"> ENTREGUE</strong>
+                        <strong class="accepted"> {{cd_situacao_solicitacao}}</strong>
                     </h2>
                 </div>
             </div>
             <div class="card-btn row">
-                <a href="#">
+                <a href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
                     <button class="btn blue">Ver detalhes</button>
                 </a>
             </div>

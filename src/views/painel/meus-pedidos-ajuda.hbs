@@ -8,9 +8,11 @@
         <!-- Painel Topo-->
         <div class="usuario container-painel">
             <div class="background-painel">
-                <h1 class="painel-titulo">Almoço na creche Arco-Íris</h1>
+                {{#each solicitacao}}
+                <h1 class="painel-titulo">{{nm_titulo_pedido}}</h1>
+                {{/each}}
                 <div class="img-wrapper">
-                    <img src="/public/assets/img/background_user.png" alt="" />
+                    <img src="/assets/img/background_user.png" alt="" />
                 </div>
             </div>
 
@@ -30,13 +32,14 @@
         <!-- Informações da ajuda -->
         <div class="usuario profile-container columm">
             <!-- Usuário -->
+            {{#each solicitacao}}
             <div class="user-container column">
                 <div class="user-wrapper row">
                     <div class="row">
                         <!-- Imagem -->
                         <div class="imagePerfil column">
                             <img
-                                src="/public/assets/img/user_joao.png"
+                                src="/assets/profile/{{cd_foto_usuario}}"
                                 alt="Foto de perfil"
                             />
                         </div>
@@ -44,10 +47,10 @@
                         <!-- Nome -->
                         <div class="informacoes column">
                             <h1 class="sub titulo-user user-name">
-                                João Oliveira
+                                {{nm_usuario}}
                             </h1>
                             <p class="user-info">
-                                (13) 99914-1099 | jpoliv21@gmail.com
+                                {{telNumber cd_celular_usuario}} | {{cd_email_usuario}}
                             </p>
                         </div>
                     </div>
@@ -58,6 +61,7 @@
                     </a>
                 </div>
             </div>
+            {{/each}}
 
             <!-- Alimentos, comentário e situação -->
             <div class="row fc-wrapper">
@@ -71,14 +75,12 @@
                     <div class="alimento-container">
                         <div class="column">
                             <!-- Alimentos -->
+                            {{#each alimento}}
                             <div class="alReq row">
-                                <h1 class="reqAlimento">Arroz</h1>
-                                <h1 class="reqQuantidade">5Kg</h1>
+                                <h1 class="reqAlimento">{{nm_alimento_donation}}</h1>
+                                <h1 class="reqQuantidade">{{qt_contribuicao_donation}}{{sg_medida_produto}}</h1>
                             </div>
-                            <div class="alReq row">
-                                <h1 class="reqAlimento">Arroz</h1>
-                                <h1 class="reqQuantidade">5Kg</h1>
-                            </div>
+                            {{/each}}
                         </div>
                     </div>
                 </div>
@@ -87,36 +89,42 @@
                 <div class="comentario-container column">
                     <!-- Comentário -->
                     <h1 class="sub titulo-user">Comentário</h1>
+                    {{#each solicitacao}}
                     <div class="comentario">
                         <p>
-                            Mussum Ipsum, cacilds vidis litro abertis. Mais vale
-                            um bebadis conhecidiss, que um alcoolatra anonimis.
-                            Praesent vel viverra nisi. Mauris aliquet nunc non
-                            turpis scelerisque, eget. Mauris nec dolor in eros
-                            commodo tempor. Aenean aliquam molestie leo, vitae
-                            iaculis nisl. Praesent malesuada urna nisi, quis
-                            volutpat erat hendrerit non. Nam vulputate dapibus.
+                            {{ds_comentario_solicitacao}}
                         </p>
                     </div>
+                    {{/each}}
 
                     <!-- Situação -->
                     <h1 class="sub titulo-user">Situação da entrega</h1>
-                    <p class="situacaoReq">Pendente</p>
+                    {{#each solicitacao}}
+                    <p class="situacaoReq">{{cd_situacao_solicitacao}}</p>
+                    {{/each}}
                 </div>
             </div>
         </div>
 
         <!-- Botões -->
+        {{#if entregueOrNot}}
+        <form action="/painel/ressoli" method="POST">
+        {{#each solicitacao}}
+        <input type="hidden" name="soli" value="{{cd_solicitacao}}">
+        {{/each}}
         <div class="botoes-wrapper column">
             <div class="botoes row">
-                <a href="#" class="btn green-concluded" type="button">
+                <button class="btn green-concluded" type="submit" name="bt" value="true">
                     Entregou o pedido
-                </a>
-                <a href="#" class="btn red" type="button">
+                </button>
+                <button class="btn red" type="submit" name="bt" value="false">
                     Não entregou o pedido
-                </a>
+                </button>
             </div>
         </div>
+        </form>
+        {{else}}
+        {{/if}}
     </main>
 
 {{>footer}}
