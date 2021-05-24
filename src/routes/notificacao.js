@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     const [notificacao] = await conn.query(`SELECT * FROM solicitacao
     INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON
      cd_usuario_solicitacao = cd_usuario WHERE 
-     cd_situacao_solicitacao = 'A CONFIRMAR' AND cd_usuario_pedido = ?`, [idUser])
+    cd_usuario_pedido = ?`, [idUser])
 
     res.render('notificacao/notificacao-ajuda', {
         notificacao: notificacao
@@ -24,8 +24,7 @@ router.get('/one/:id', async (req, res) => {
     const idSoli = req.params.id;
 
     const [notificacao] = await conn.query(`SELECT * FROM solicitacao  INNER JOIN usuario ON
-    cd_usuario_solicitacao = cd_usuario WHERE cd_solicitacao = ?
-    AND cd_situacao_solicitacao = 'A CONFIRMAR';`,
+    cd_usuario_solicitacao = cd_usuario WHERE cd_solicitacao = ?;`,
     [idSoli]);
 
     const [alimento] = await conn.query(`SELECT * FROM donation INNER JOIN alimento ON 
