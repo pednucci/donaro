@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../database/database');
+const { format } = require('date-fns')
 
 router.get('/pedidos', async (req, res) => {
     const conn = await db.connection();
@@ -89,7 +90,8 @@ router.post('/ressoli', async (req, res) => {
     const soli = req.body.soli;
     if(req.body.bt == 'true'){
         try{
-            await conn.query(`UPDATE solicitacao SET cd_situacao_solicitacao = 'ENTREGUE' WHERE
+            await conn.query(`UPDATE solicitacao SET cd_situacao_solicitacao = 'ENTREGUE',
+            dt_deliveredAt_solicitacao = CURDATE() WHERE
             cd_solicitacao = ?`, [soli])
     
             const [alimentosDonation] = await conn.query(`SELECT * FROM donation 
@@ -116,13 +118,28 @@ router.post('/ressoli', async (req, res) => {
             req.flash('successMsg', 'Pedido confirmado com sucesso!')
             res.redirect('/')
         }
-        catch{
+        catch(err){
+            console.log(err)
             req.flash('errorMsg', 'Erro inesperado')
             res.redirect('/')
         }
         
         await conn.end();
     }
+})
+
+router.get('/doacoes', async (req, res) => {
+    const conn = await db.connection();
+    const idUser = req.user[0].cd_usuario;
+    const [quant] = await conn.query(`SELECT count(*) AS count FROM solicitacao WHERE
+    cd_situacao_solicitacao = 'ENTREGUE' AND cd_usuario_solicitacao = ?`, [idUser])
+    const [doacoes] = await conn.query(`SELECT * FROM solicitacao INNER JOIN
+    pedido ON cd_pedido_solicitacao = cd_pedido
+    WHERE cd_usuario_solicitacao = ? AND cd_situacao_solicitacao = 'ENTREGUE'`, [idUser])
+    res.render('painel/minhas-doacoes', {
+        doacoes,
+        quant
+    })
 })
 
 module.exports = router;
