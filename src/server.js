@@ -48,6 +48,12 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
     },
     dateNoHour: (date) => {
         return format(new Date(date), 'dd/MM/yyyy')
+    },
+    telNumber: (tel) => {
+        const ddd = tel.slice(0,2); 
+        const part1 = tel.slice(2,7);
+        const part2 = tel.slice(7,11);
+        return `(${ddd}) ${part1}-${part2}` //(XX) YYYYY-YYYY
     }
 }}));
 app.set('view engine', 'hbs');
