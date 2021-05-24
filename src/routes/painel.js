@@ -17,10 +17,10 @@ router.get('/pedidos/:id', async (req, res) => {
     const idUser = req.user[0].cd_usuario;
     const idPedido = req.params.id;
 
-    const [isAUser] = await conn.query(`SELECT count(*) FROM
+    const [isAUser] = await conn.query(`SELECT count(*) AS count FROM
     pedido WHERE cd_usuario_pedido = ? AND cd_pedido = ?`, [idUser, idPedido]);
 
-    if(isAUser == 1){
+    if(isAUser[0].count == 1){
         const [pedido] = await conn.query(`SELECT * FROM pedido WHERE cd_usuario_pedido = ? AND
         cd_pedido = ?`, [idUser, idPedido])
     
@@ -49,10 +49,10 @@ router.get('/pedidos/:id/:solicitacao', async (req, res) => {
     const soli = req.params.solicitacao;
     let entregueOrNot = 1;
 
-    const [isAUser] = await conn.query(`SELECT count(*) FROM
+    const [isAUser] = await conn.query(`SELECT count(*) AS count FROM
     pedido WHERE cd_usuario_pedido = ? AND cd_pedido = ?`, [idUser, idPedido]);
 
-    if(isAUser == 1){
+    if(isAUser[0].count == 1){
         const [solicitacao] = await conn.query(`SELECT * FROM solicitacao
         INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON
          cd_usuario_solicitacao = cd_usuario WHERE 
