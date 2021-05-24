@@ -76,6 +76,9 @@
         box-shadow: var(--border-shadow);
 
         gap: 2rem;
+        top: 10rem;
+        position: sticky;
+        position: -webkit-sticky;
     }
 
     /* Header */

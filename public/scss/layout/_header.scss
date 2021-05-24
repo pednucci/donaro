@@ -18,7 +18,8 @@
     transition: 0.3s ease-in-out;
 
     &.hidden {
-        transform: translateY(-200%);
+        // opacity: 0.8;
+        // transform: translateY(-200%);
     }
 
     .nav-logo {
