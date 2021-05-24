@@ -15,6 +15,20 @@ exports.newOrder = async (req, res) => {
     let uploadPath;
 
     try {
+        if(desc == '' || estado == '0' || cidade == '0' || titulo == ''|| dtPed == ''){
+            erros.push({text: 'Não deixe campos em branco!'})
+        }
+        if(typeof req.body.alimentoInput == 'object'){
+            let alimentos = [];
+            let quantidades = [];
+            for(i = 0; i<req.body.alimentoInput.length; i++){
+                quantidades[i] = req.body.quantidade[i];
+                alimentos[i] = req.body.alimentoInput[i];
+            }
+            if(!(alimentos.length === new Set(alimentos).size)){
+                erros.push({text: 'Não repita alimentos!'})
+            }
+        }
         if(isPast(new Date(dtPed))){
             erros.push({text: 'Selecione uma data válida!'})
         }
