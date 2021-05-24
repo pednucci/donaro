@@ -52,7 +52,8 @@
             justify-content: flex-start;
             align-items: flex-start;
 
-            display: none;
+            // display: none;
+            opacity: 0;
 
             z-index: 999;
             position: absolute;
@@ -64,6 +65,12 @@
             box-shadow: var(--border-shadow);
 
             background-color: var(--white);
+
+            transition: 0.2s ease-in-out;
+
+            &.visible {
+                opacity: 1;
+            }
 
             .toggle-link {
                 display: block;

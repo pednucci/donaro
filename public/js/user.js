@@ -1,20 +1,28 @@
 var navProfile = document.querySelector('.nav-profile');
 var toggleMenu = document.querySelector('.toggle-menu');
-var display = toggleMenu.style.display;
-
 
 
 navProfile.addEventListener('click', () => {
-  if (display == "block") {
-    toggleMenu.style.display = "none";
+  if (toggleMenu.classList.contains('visible')) {
+    toggleMenu.classList = "toggle-menu"
+    console.log('si')
   } else {
-    toggleMenu.style.display = "block";
+    toggleMenu.classList = "toggle-menu visible"
+    console.log('no')
   }
-  display = toggleMenu.style.display;
 
 })
 
-window.addEventListener('click', (e) => {
-  console.log(e)
-})
+// window.addEventListener('click', (e) => {
+//   if (display == "block") {
+//     if (e.target.tagName == "section") {
+//       console.log(e.target.tagName)
+//       toggleMenu.style.display = "none";
+//     } else {
+//       console.log(e.target.tagName)
+//       toggleMenu.style.display = "block";
+//     }
+//     display = toggleMenu.style.display;
+//   }
+// })
 
