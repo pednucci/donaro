@@ -1,19 +1,10 @@
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- CSS Donaro -->
-    <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/painel.css" />
-    <link rel="stylesheet" href="/css/usuario-pedido.css" />
-
     <title>Requisição</title>
 </head>
 
 {{>navbar}}
 
-<main>
+<main class="lyt_painel lyt_notificacoes pg_pdoações">
     <div class="usuario container-painel">
         <div class="background-painel">
             <h1 class="painel-titulo">Painel</h1>
@@ -33,6 +24,7 @@
             </ul>
         </div>
     </div>
+
     <div class="cards-container">
         <h1 class="titulo">
             Quantidade de doações:
@@ -50,16 +42,14 @@
                     <h1 class="nome-card">
                         {{nm_titulo_pedido}}
                     </h1>
-                    <h2 class="desc-card">
-                        Quantidade doada: <strong>5Kg</strong>
-                    </h2>
                     <h2 class="desc-card min">
                         Data da doação: {{dateNoHour dt_deliveredAt_solicitacao}}
                     </h2>
                 </div>
             </div>
-            <div class="card-btn row">
-                <a href="#">
+
+            <div class="card-btn column">
+                <a href="/descobrir/pedido/{{cd_pedido}}">
                     <button class="btn blue">Ver pedido</button>
                 </a>
             </div>
