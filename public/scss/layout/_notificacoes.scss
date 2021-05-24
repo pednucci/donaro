@@ -1,6 +1,4 @@
 .lyt_notificacoes {
-    /* #region Cards */
-
     .cards-container {
         width: 72rem;
 
@@ -91,29 +89,40 @@
                 }
             }
 
-            .card-btn .btn {
-                min-width: 16rem !important;
-                min-height: 4rem !important;
-                margin-right: 4rem;
+            .card-btn {
+                align-items: center;
+                margin: 2rem 4rem 0 0;
+
+                .btn {
+                    min-width: 16rem;
+                    min-height: 4rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .row {
+                    gap: 0.5rem;
+                    height: auto;
+
+                    .data {
+                        font-size: 1.4rem;
+                        color: var(--gray-minor-font);
+                    }
+                }
             }
         }
     }
 
-    /* #endregion */
+    .usuario {
+        &.cards-container {
+            margin-top: 3rem;
+        }
 
-    /* #region Painel Usuário */
+        .underline {
+            border-bottom: 0.4rem solid var(--red-logo);
+        }
 
-    .usuario.cards-container {
-        margin-top: 3rem;
+        .titulo-categoria:hover {
+            border-bottom: 0.4rem solid var(--red-logo);
+        }
     }
-
-    .usuario .underline {
-        border-bottom: 0.4rem solid var(--red-logo);
-    }
-
-    .usuario .titulo-categoria:hover {
-        border-bottom: 0.4rem solid var(--red-logo);
-    }
-
-    /* #endregion */
 }
