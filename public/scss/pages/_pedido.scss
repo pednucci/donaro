@@ -31,15 +31,18 @@
         border: var(--border-form);
         box-shadow: var(--border-shadow);
 
-        overflow: hidden;
+        // overflow: hidden;
     }
 
     .container-img {
         width: 100%;
         height: 38rem;
+
+        border-radius: 1rem 1rem 0 0;
+        overflow: hidden;
     }
 
-    .container-descricao img {
+    .container-img img {
         width: 100%;
         height: 100%;
 
@@ -49,16 +52,35 @@
 
     .descricao {
         padding: 2.5rem;
-    }
 
-    .descricao p {
-        font-size: 2rem;
+        p {
+            font-size: 2rem;
 
-        text-align: justify;
-    }
+            text-align: justify;
+        }
 
-    .descricao .btn {
-        margin-top: 6rem;
+        .btn {
+            transform: translateY(10rem);
+            // margin-top: 6rem;
+        }
+
+        .denunciar {
+            transform: translateY(8rem);
+            .row {
+                justify-content: flex-start;
+                gap: 1rem;
+
+                span {
+                    color: var(--black-logo);
+                    font-size: 2rem;
+                    text-decoration: underline;
+                }
+            }
+
+            img {
+                width: 1.5rem;
+            }
+        }
     }
 
     /* #endregion */
