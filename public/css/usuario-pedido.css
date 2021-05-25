@@ -2,6 +2,7 @@
 .profile-container {
   min-width: min-content;
   max-width: 720px;
+  height: max-content;
 
   margin: auto;
   margin-bottom: 50px;
@@ -49,7 +50,7 @@
 }
 
 .informacoes.column {
-  height: 300px;
+  height: max-content;
 
   align-items: flex-start;
   justify-content: space-between;

@@ -1,0 +1,261 @@
+<form class="form-login column" action="" method="">
+    <label for="">Nome completo</label>
+    <input
+        class="input-form"
+        type="text"
+        name="username"
+        placeholder="Ex: Pedro de Andrade Souza"
+    />
+
+    <label for="">Email</label>
+    <input
+        class="input-form"
+        type="email"
+        name="email"
+        placeholder="Ex: exemplo@email.com"
+    />
+
+    <label for="">CPF</label>
+    <input
+        class="input-form"
+        type="text"
+        name="cpf"
+        placeholder="000.000.000-0"
+    />
+
+    <label for="">Celular</label>
+    <input
+        class="input-form"
+        type="tel"
+        name="cel"
+        placeholder="(00) 00000-0000"
+    />
+
+    <label for="">Data de nascimento</label>
+    <input class="input-form" type="date" name="dtuser" />
+
+    <label for="">Senha</label>
+    <input class="input-form" type="password" name="pass" />
+    <label for="">Confirme sua senha</label>
+    <input class="input-form" type="password" name="passConf" />
+
+    <div class="row">
+        <div class="column">
+            <label for="">Estado</label>
+            <select name="estado" class="input-form">
+                <option value="0">Selecione o Estado</option>
+            </select>
+        </div>
+        <div class="column">
+            <label for="">Cidade</label>
+
+            <input type="hidden" name="state" />
+            <select name="cidade" disabled="disabled" class="input-form">
+                <option value="0">Seleciona a Cidade</option>
+            </select>
+        </div>
+    </div>
+
+    <input class="btn btn blue" type="submit" value="Cadastrar" />
+</form>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS Donaro -->
+        <link rel="stylesheet" href="/public/css/global.css" />
+        <link rel="stylesheet" href="/public/css/informacoes.css" />
+
+        <title>Cópiaaaa</title>
+    </head>
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <div class="nav-logo">
+                    <img
+                        src="/public/assets/img/donaro_logo.svg"
+                        class="logo"
+                        alt="Logo Donaro"
+                    />
+                </div>
+                <div class="nav-menu">
+                    <ul class="row nav-list">
+                        <a href="" class="nav-link">
+                            <li>Descobrir</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Criar</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Painel</li>
+                        </a>
+                    </ul>
+                    <div class="row nav-profile">
+                        <div class="img-wrapper">
+                            <img
+                                src="/public/assets/img/nav-person.svg"
+                                class="img-profile"
+                                alt="Foto de perfil"
+                            />
+                        </div>
+                        <img
+                            src="/public/assets/img/arrow-down.svg"
+                            alt="Icone de seta"
+                        />
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="form-info">
+                    <h1 class="form-titulo">Minhas informações</h1>
+
+                    <form action="">
+                        <img
+                            class="foto-dados"
+                            name="lbl-image"
+                            src="/public/assets/img/nav-person.svg"
+                            alt=""
+                        />
+
+                        <h2 class="titulo-form">Dados pessoais</h2>
+
+                        <label class="subtitulo-form" for="">Nome</label>
+                        <input
+                            class="box-style"
+                            type="text"
+                            name="lbl-nome"
+                            id=""
+                            placeholder="André de Oliveira Paiva"
+                        />
+
+                        <label class="subtitulo-form" for="">Email</label>
+                        <input
+                            class="box-style"
+                            type="email"
+                            name="lbl-email"
+                            id=""
+                            placeholder="andreopv@gmail.com"
+                        />
+
+                        <label class="subtitulo-form" for="">CPF</label>
+                        <input
+                            class="box-style"
+                            type="text"
+                            name="lbl-cpf"
+                            id=""
+                            placeholder="708.986.148-13"
+                        />
+
+                        <label class="subtitulo-form" for="">Telefone</label>
+                        <input
+                            class="box-style"
+                            type="text"
+                            name="lbl-tel"
+                            id=""
+                            placeholder="(13) 3890-3764"
+                        />
+
+                        <label class="subtitulo-form" for="">Celular</label>
+                        <input
+                            class="box-style"
+                            type="text"
+                            name="lbl-cel"
+                            id=""
+                            placeholder="(13) 99914-1099"
+                        />
+                    </form>
+
+                    <form action="">
+                        <h2 class="titulo-form">De onde você é?</h2>
+
+                        <label class="subtitulo-form" for="">Cidade</label>
+                        <input
+                            class="box-style"
+                            type="text"
+                            name=""
+                            id=""
+                            placeholder="Santos"
+                        />
+
+                        <label class="subtitulo-form" for="">UF</label>
+                        <select class="box-style" name="" id="">
+                            <option value="">SP</option>
+                        </select>
+
+                        <input
+                            class="btn btn blue"
+                            type="submit"
+                            value="Editar informações"
+                        />
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer-bar">
+            <img
+                class="logo-footer"
+                src="/public/assets/img/Donaro_Logo_White.svg"
+                alt="Logo Donaro"
+            />
+            <ul class="menu-footer">
+                <h2 class="subtitulo-footer titulo-white">Ações sociais</h2>
+                <a href="#">
+                    <li class="list-item">Criar</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Fazer doação</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Descobrir</li>
+                </a>
+            </ul>
+            <ul class="menu-footer">
+                <h2 class="subtitulo-footer titulo-white">Ajuda</h2>
+                <a href="#">
+                    <li class="list-item">Fale conosco</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Dúvidas frequentes</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Atualizações</li>
+                </a>
+            </ul>
+            <ul class="menu-footer">
+                <h2 class="subtitulo-footer titulo-white">
+                    Acompanhe nossas redes sociais
+                </h2>
+                <div class="redes-sociais">
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-facebook.svg"
+                            alt="icone Facebook"
+                        />
+                    </a>
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-instagram.svg"
+                            alt="icone Instagram"
+                        />
+                    </a>
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-twitter.svg"
+                            alt="icone Twitter"
+                        />
+                    </a>
+                </div>
+            </ul>
+        </footer>
+    </body>
+</html>
