@@ -18,7 +18,19 @@ router.get('/criar', isAuth, async (req, res) => {
 router.get('/descobrir', async (req, res) => {
     const conn = await db.connection();
     const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0`)
+    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0 ORDER BY dt_createdAt_pedido DESC
+    LIMIT 0,6`)
+    const [count] = await conn.query(`SELECT count(*) AS count FROM pedido`);
+    let pags = count[0].count/6;;
+    
+    if(pags%1 != 0){
+        split = (pags.toString()).split('.');
+        pags = parseInt(split[0]) + 1;
+    }
+    const pagsEach = [];
+    for(c = 1; c<=pags; c++){
+        pagsEach[c-1] = c;
+    }
     
     await pedidos.forEach(async pedido => {
         if (isPast(pedido.dt_encerramento_pedido)) {
@@ -46,7 +58,59 @@ router.get('/descobrir', async (req, res) => {
     }
 
     res.render('pedidos/descobrir', {
-        pedido: pedidos
+        pedido: pedidos,
+        pagsEach
+    })
+
+    await conn.end();
+})
+
+router.get('/descobrir/pag/:num', async (req, res) => {
+    const num = req.params.num;
+    const conn = await db.connection();
+    const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
+    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0 ORDER BY dt_createdAt_pedido DESC
+    LIMIT ${(num*6)-6},6`)
+    const [count] = await conn.query(`SELECT count(*) AS count FROM pedido`);
+    let pags = count[0].count/6;;
+    
+    if(pags%1 != 0){
+        split = (pags.toString()).split('.');
+        pags = parseInt(split[0]) + 1;
+    }
+    const pagsEach = [];
+    for(c = 1; c<=pags; c++){
+        pagsEach[c-1] = c;
+    }
+    
+    await pedidos.forEach(async pedido => {
+        if (isPast(pedido.dt_encerramento_pedido)) {
+            await conn.query('UPDATE pedido SET cd_expirado_pedido = 1 WHERE cd_pedido = ?'
+                , [pedido.cd_pedido]);
+        }
+    })
+
+    for(let i = 0; i<pedidos.length; i++){
+        const id = pedidos[i].cd_pedido;
+        let datPedido = [];
+        const [data] = await conn.query(`SELECT dt_encerramento_pedido FROM pedido
+        WHERE cd_pedido = ?`,[id]);
+        data.forEach(data => {
+            datPedido.push(formatDistanceStrict(Date.now(), data.dt_encerramento_pedido, {locale: ptBR}));
+        })
+        let alPedido = [];
+        const [alimentos] = await conn.query(`SELECT nm_alimento FROM alimento
+        WHERE cd_pedido_alimento = ?`, [id]);
+        alimentos.forEach(alimento => {
+            alPedido.push(alimento.nm_alimento);
+        })
+        pedidos[i].comida = alPedido;
+        pedidos[i].dateRemaining = datPedido
+    }
+
+    res.render('pedidos/descobrir', {
+        pedido: pedidos,
+        pagsEach
     })
 
     await conn.end();

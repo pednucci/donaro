@@ -93,31 +93,21 @@
             {{/each}}
         </div>
     </div>
+    {{#if pagsEach}}
     <div class="numeracao-paginas">
         <ul class="paginas">
-            <a href="">
-                <li class="num cont-pagina">1</li>
+        {{#each pagsEach}}
+            <a href="/descobrir/pag/{{this}}">
+                <li class="num cont-pagina">{{this}}</li>
             </a>
-            <a href="">
-                <li class="num cont-pagina">2</li>
-            </a>
-            <a href="">
-                <li class="num cont-pagina">3</li>
-            </a>
-            <a href="">
-                <li class="num cont-pagina">4</li>
-            </a>
-            <a href="">
-                <li class="num cont-pagina">5</li>
-            </a>
-            <a href="">
-                <li class="num cont-pagina">6</li>
-            </a>
+        {{/each}}
         </ul>
         <a href="">
             <div class="cont-pagina">Seguinte &#62;</div>
         </a>
     </div>
+    {{else}}
+    {{/if}}
 </main>
 
 {{>footer}}
