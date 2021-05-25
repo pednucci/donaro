@@ -5,6 +5,7 @@
 {{>navbar}}
 
 <main class="lyt_painel pg_meus-pedidos">
+        {{>msg}}
     <div class="usuario container-painel">
         <div class="background-painel">
             <h1 class="painel-titulo">Painel</h1>
@@ -24,7 +25,7 @@
             </ul>
         </div>
     </div>
-    {{>msg}}
+
     <div class="pedidos painel row">
         {{#each pedido}}
         <div class="pedido column">
