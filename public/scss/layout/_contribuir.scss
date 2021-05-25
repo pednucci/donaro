@@ -46,7 +46,7 @@
 
         .row {
             align-items: flex-start;
-            justify-content: flex-start;
+            justify-content: space-between;
         }
 
         .btn {
@@ -55,17 +55,25 @@
         }
 
         .alimento {
+            width: 100%;
+
+            .desc {
+                padding-right: 11rem;
+            }
+
             label:first-child {
                 width: 18rem;
             }
 
             .qtdAlimentos {
+                width: 100%;
                 max-height: 30rem;
 
                 overflow: hidden;
                 overflow-y: scroll;
 
                 margin: 0;
+                padding-right: 2rem;
 
                 .sub.titulo {
                     font-size: 2rem;
@@ -78,7 +86,7 @@
                 .alimento-pedido {
                     .input-form {
                         height: 4rem;
-                        width: 18rem;
+                        width: 100%;
                         margin-top: 2rem;
                         padding: 0;
 
@@ -98,9 +106,9 @@
                 }
                 .alimento-quantidade {
                     .qtdAl {
-                        width: 26rem;
+                        width: max-content;
                         height: 5rem;
-                        padding: 1.5rem;
+                        padding: 0 1.5rem;
                         margin-top: 2rem;
 
                         display: flex;
@@ -113,9 +121,19 @@
 
                         .input-form {
                             height: 100%;
+                            width: 10rem;
 
                             margin: 0;
                             border: none;
+
+                            font-size: 2rem;
+                        }
+
+                        .sub.titulo {
+                            margin-left: 2rem;
+                            font-weight: 500;
+                            font-size: 1.8rem;
+                            color: var(--gray-minor-font);
                         }
                     }
                 }
