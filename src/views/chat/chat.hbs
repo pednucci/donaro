@@ -27,13 +27,16 @@
 
                 <!-- Coluna de conversas -->
                 <div class="conversas column">
-                    <a href="#">
+                    <h1>Conversas - Minhas campanhas</h1>
+                    {{#if chatCampanhas}}
+                    {{#each chatCampanhas}}
+                    <a href="/chat/{{cd_chat}}" class="chat-{{cd_chat}}">
                         <div class="row conversa">
                             <!-- Imagem -->
                             <div class="conversa-img">
                                 <div class="img-wrapper">
                                     <img
-                                        src="/assets/img/user_gabriela.png"
+                                        src="/assets/profile/{{cd_foto_usuario}}"
                                         alt="Imagem usuário"
                                     />
                                 </div>
@@ -44,62 +47,120 @@
                                 <!-- Nome e horário -->
                                 <div class="row row1">
                                     <p class="titulo black nome-conversa">
-                                        Gabriela Arantes
+                                        {{nm_usuario}}
                                     </p>
-                                    <p class="titulo-gray horario">18:25</p>
+                                   <!-- <p class="titulo-gray horario">18:25</p> -->
                                 </div>
 
                                 <!-- Última mensagem e número de notificações -->
-                                <div class="row row2">
-                                    <p class="titulo-gray ultimas-msg">
-                                        Oi, boa tarde
+                                <div class="row row2 read-{{cd_chat}}">
+                                    <p class="ultimas-msg">
+                                        Campanha: {{nm_titulo_pedido}}
                                     </p>
-                                    <p class="titulo white qnt-msg">5</p>
                                 </div>
                             </div>
                         </div>
                     </a>
+                    {{/each}}
+                    {{else}}
+                    <h1>Não há nada por aqui</h1>
+                    {{/if}}
+                    <h1>Conversas - Minhas solicitações</h1>
+                    {{#if chatSolicitacoes}}
+                    {{#each chatSolicitacoes}}
+                    <a href="/chat/{{cd_chat}}" class="chat-{{cd_chat}}">
+                        <div class="row conversa">
+                            <!-- Imagem -->
+                            <div class="conversa-img">
+                                <div class="img-wrapper">
+                                    <img
+                                        src="/assets/profile/{{cd_foto_usuario}}"
+                                        alt="Imagem usuário"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Infos da conversa -->
+                            <div class="conversa-info">
+                                <!-- Nome e horário -->
+                                <div class="row row1">
+                                    <p class="titulo black nome-conversa">
+                                        {{nm_usuario}}
+                                    </p>
+                                   <!-- <p class="titulo-gray horario">18:25</p> -->
+                                </div>
+
+                                <!-- Última mensagem e número de notificações -->
+                                <div class="row row2 read-{{cd_chat}}">
+                                    <p class="ultimas-msg">
+                                        Campanha: {{nm_titulo_pedido}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {{/each}}
+                    {{else}}
+                    <h1>Não há nada por aqui</h1>
+                    {{/if}}
                 </div>
             </div>
 
             <!-- Container do Chat  -->
             <div class="chat">
                 <div class="chat-header row">
-                    <!-- Imagem -->
+                    {{#if userPedido}}
+                    {{#each userPedido}}
                     <div class="img-wrapper">
                         <img
-                            src="/assets/img/user_gabriela.png"
+                            src="/assets/profile/{{cd_foto_usuario}}"
                             alt="Imagem usuário"
                         />
                     </div>
-
-                    <!-- Nome -->
-                    <p class="titulo-black nome-conversa">
-                        Gabriela Arantes
+                     <p class="titulo-black nome-conversa">
+                        {{nm_usuario}} -
+                        <span class="nmPedido">{{nm_titulo_pedido}}<span></span>
                     </p>
+                    {{/each}}
+                    {{/if}}
+                    {{#if userSoli}}
+                    {{#each userSoli}}
+                    <div class="img-wrapper">
+                        <img
+                            src="/assets/profile/{{cd_foto_usuario}}"
+                            alt="Imagem usuário"
+                        />
+                    </div>
+                     <p class="titulo-black nome-conversa">
+                        {{nm_usuario}} -
+                        <span class="nmPedido">{{nm_titulo_pedido}}<span></span>
+                    </p>
+                    {{/each}}
+                    {{/if}}
                 </div>
 
                 <div class="chat-content">
                     <!-- Mensagem enviada -->
-                    <div class="message-row enviada row">
+                    {{#each mensagem}}
+                    <div class="message-row {{cd_usuario_mensagem}} row">
                         <div class="mensagem row">
-                            <span class="message-txt">Bom dia Gabriela, tudo
-                                bom?</span>
+                            <span class="message-txt">{{ds_conteudo_mensagem}}</span>
                             <div class="message-info row">
                                 <div>
                                     <span
                                         class="titulo-gray time-msg"
-                                    >10:26</span>
-                                    <img
+                                    >{{onlyHour ds_time_mensagem}}</span>
+                                    <!--<img
                                         src="/assets/img/arrow-visualized.svg"
                                         alt="Icone mensagem visualizada"
-                                    />
+                                    />!-->
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {{/each}}
 
-                    <!-- Mensagem recebida -->
+                    <!-- Mensagem recebida 
                     <div class="message-row recebida row">
                         <div class="mensagem row">
                             <span class="message-txt">Bom dia André, tudo ótimo!</span>
@@ -109,11 +170,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="chat-footer">
-                    <form class="send-message row" action="">
+                    <form class="send-message row" action="" id="chatForm">
                         <input
                             class="input-form"
                             type="text"
@@ -128,3 +189,5 @@
         </div>
     </main>
 </body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>
