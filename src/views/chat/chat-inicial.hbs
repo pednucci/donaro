@@ -1,0 +1,77 @@
+<head>
+    <title>Chat</title>
+</head>
+
+{{>navbar}}
+
+<body>
+    <main class="pg_chat">
+        <div class="chat-container">
+            <!-- Container de conversas -->
+            <div class="conversas-container">
+                <!-- Barra de pesquisa -->
+                <form class="pesquisa">
+                    <button type="submit">
+                        <img
+                            src="/assets/img/icone_lupa.svg"
+                            alt="Icone lupa"
+                        />
+                    </button>
+                    <input
+                        class="input-form"
+                        type="text"
+                        name="txtPesquisa"
+                        placeholder="Procurar mensagens"
+                    />
+                </form>
+
+                <!-- Coluna de conversas -->
+                <div class="conversas column">
+                    <a href="#">
+                        <div class="row conversa">
+                            <!-- Imagem -->
+                            <div class="conversa-img">
+                                <div class="img-wrapper">
+                                    <img
+                                        src="/assets/img/user_gabriela.png"
+                                        alt="Imagem usuário"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Infos da conversa -->
+                            <div class="conversa-info">
+                                <!-- Nome e horário -->
+                                <div class="row row1">
+                                    <p class="titulo black nome-conversa">
+                                        Gabriela Arantes
+                                    </p>
+                                    <p class="titulo-gray horario">18:25</p>
+                                </div>
+
+                                <!-- Última mensagem e número de notificações -->
+                                <div class="row row2">
+                                    <p class="titulo-gray ultimas-msg">
+                                        Oi, boa tarde
+                                    </p>
+                                    <p class="titulo white qnt-msg">5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Container do Chat  -->
+            <div class="chat">
+                <div class="svg-mensagem column">
+                    <img
+                        src="/assets/img/illustrate_new-message.svg"
+                        alt=""
+                    />
+                    <h1 class="titulo">Inicie uma conversa</h1>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
