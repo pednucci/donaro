@@ -223,6 +223,12 @@ router.post('/ajudar', async (req, res) => {
                 , [req.body.nmAlimento, req.body.qtd, idSoli,
                 idPedido[0]])
         }
+        const [userPedido] = await conn.query(`SELECT cd_usuario_pedido FROM pedido WHERE
+        cd_pedido = ?`, [idPedido[0]])
+
+        await conn.query(`INSERT INTO chat(cd_pedido_chat, cd_solicitacao_chat, cd_userPedido_chat,
+        cd_userSoli_chat) VALUES(?,?,?,?)`,[idPedido[0], idSoli, userPedido[0].cd_usuario_pedido,
+        idUser]);
         req.flash('successMsg', 'Solicitação enviada com sucesso, espere a resposta do donatário!');
         res.redirect('/')
     }
