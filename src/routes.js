@@ -6,7 +6,8 @@ const auth = require('./routes/auth');
 const pedido = require('./routes/pedido');
 const admin = require('./routes/admin');
 const notificacao = require('./routes/notificacao');
-const painel = require('./routes/painel')
+const painel = require('./routes/painel');
+const chat = require('./routes/chat');
 const { isAuth } = require('./helpers/isAuth');
 const { isAdmin } = require('./helpers/isAdmin');
 
@@ -24,5 +25,6 @@ router.use(pedido);
 router.use('/admin', isAdmin, admin);
 router.use('/notificacoes', isAuth, notificacao);
 router.use('/painel', isAuth, painel);
+router.use('/chat', isAuth, chat)
 
 module.exports = router;
