@@ -5,23 +5,30 @@ const path = require('path')
 const PORT = process.env.PORT || 3000;
 const hbs = require('express-handlebars');
 const router = require('./routes');
-const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const fileUpload = require('express-fileupload');
 const { format } = require('date-fns');
+const server = require("http").createServer(app);
+const io = require("socket.io")(server);
+module.exports = {io};
 require('./config/auth')(passport);
+require('./Websocket');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(fileUpload())
 
-app.use(session({
+const session = require('express-session')({
     secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false
-}))
+    resave: true,
+    saveUninitialized: true
+});
+const sharedsession = require('express-socket.io-session');
+
+app.use(session)
+io.use(sharedsession(session))
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -49,6 +56,9 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
     dateNoHour: (date) => {
         return format(new Date(date), 'dd/MM/yyyy')
     },
+    onlyHour: (hour) => {
+        return format(new Date(hour), 'HH:mm')
+    },
     telNumber: (tel) => {
         const ddd = tel.slice(0,2); 
         const part1 = tel.slice(2,7);
@@ -58,8 +68,8 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
 }}));
 app.set('view engine', 'hbs');
 
-app.use(router)
+app.use(router);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server is running in port ${PORT}`)
 })
