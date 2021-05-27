@@ -1,58 +1,53 @@
-    <head>
-        <title>Informações</title>
-    </head>
+<head>
+    <title>Informações</title>
+</head>
 
-    <body>
-        
-        {{>navbar}}
+{{>navbar}}
 
-        <main class="pg_informacoes">
-            <form class="form-login column" action="" method="">
-                <div class="profile-container columm">
-                    <div class="user-container column">
-                        <h1 class="titulo-user">Minhas informações</h1>
+<body>
+    <main class="lyt_painel pg_informacoes">
+        <form class="form-login column" action="" method="">
+            <div class="profile-container columm">
+                <div class="user-container column">
+                    <h1 class="titulo-user">Minhas informações</h1>
+                    <div class="container-user column">
                         <div class="user-wrapper row">
+                            <!-- Imagem -->
                             <div class="imagePerfil column">
                                 <img
                                     src="/assets/img/user_fabio.png"
                                     alt="Foto de perfil"
+                                    class="imgUser"
                                 />
-                                <div
-                                    class="column"
-                                    style="
-                                        position: absolute;
-                                        width: 300px;
-                                        height: 300px;
-                                    "
-                                >
-                                    <label for="">Adicionar imagem de capa</label>
+                                <div class="column changeImg">
                                     <input
-                                        class="input-form imagePed"
+                                        class="input-form"
                                         type="file"
                                         accept="image/*"
                                         name="userImg"
                                         multiple
-                                        style="
-                                            position: absolute;
-                                            width: 300px;
-                                            height: 300px;
-                                            opacity: 0.2;
-                                        "
                                     />
                                 </div>
                             </div>
+
+                            <!-- Informações -->
                             <div class="informacoes column">
-                                <div class="row">
+                                <!-- Nome -->
+                                <div class="row nome">
                                     <div class="column">
                                         <label for="">Nome completo</label>
                                         <input
                                             class="input-form"
                                             type="text"
                                             name="username"
-                                            placeholder="Ex: Pedro de Andrade Souza"
+                                            placeholder="João de Oliveira"
                                             value="André de Oliveira Paiva"
                                         />
                                     </div>
+                                </div>
+
+                                <!-- Email e CPF -->
+                                <div class="row">
                                     <div class="column">
                                         <label for="">Email</label>
                                         <input
@@ -60,9 +55,22 @@
                                             type="email"
                                             name="email"
                                             value="andreopv@gmail.com"
+                                            placeholder="email@exemplo.com"
+                                        />
+                                    </div>
+                                    <div class="column">
+                                        <label for="">CPF</label>
+                                        <input
+                                            class="input-form"
+                                            type="text"
+                                            name="cpf"
+                                            placeholder="000.000.000-0"
+                                            value="234.986.345-0"
                                         />
                                     </div>
                                 </div>
+
+                                <!-- Data Nascimento e Celular -->
                                 <div class="row">
                                     <div class="column">
                                         <label for="">Data de nascimento</label>
@@ -79,10 +87,13 @@
                                             class="input-form"
                                             type="tel"
                                             name="cel"
-                                            value="(13) 997 1612-2135"
+                                            placeholder="(00) 00000-0000"
+                                            value="(13) 99788-2135"
                                         />
                                     </div>
                                 </div>
+
+                                <!-- Estado e Cidade -->
                                 <div class="row">
                                     <div class="column">
                                         <label for="">Estado</label>
@@ -110,49 +121,65 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="column">
-                                        <label for="">Senha atual</label>
-                                        <input
-                                            class="input-form"
-                                            type="password"
-                                            name="pass"
-                                        />
-                                    </div>
-                                    <div class="column">
-                                        <label for="">Senha Nova</label>
-                                        <input
-                                            class="input-form"
-                                            type="password"
-                                            name="newPass"
-                                        />
-                                    </div>
-                                    <div class="column">
-                                        <label for="">Confirme sua senha</label>
-                                        <input
-                                            class="input-form"
-                                            type="password"
-                                            name="passConf"
-                                        />
-                                    </div>
+                            </div>
+                        </div>
+
+                        <!-- Redefinir senha -->
+                        <div class="informacoes column">
+                            <div class="row">
+                                <div class="column">
+                                    <label for="">Senha atual</label>
+                                    <input
+                                        class="input-form"
+                                        type="password"
+                                        name="pass"
+                                    />
+                                </div>
+                                <div class="column">
+                                    <label for="">Senha Nova</label>
+                                    <input
+                                        class="input-form"
+                                        type="password"
+                                        name="newPass"
+                                    />
+                                </div>
+                                <div class="column">
+                                    <label for="">Confirme sua senha</label>
+                                    <input
+                                        class="input-form"
+                                        type="password"
+                                        name="passConf"
+                                    />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="botoes row">
-                    <input
-                        class="btn blue"
-                        type="submit"
-                        value="Editar informações"
-                    />
-                </div>
-            </form>
-        </main>
+            <!-- Botão Editar Informações-->
+            <div class="botoes row">
+                <input
+                    class="btn blue"
+                    type="submit"
+                    value="Editar informações"
+                />
+            </div>
+        </form>
+    </main>
+</body>
 
-        {{>footer}}
+<script src="/js/estado-cidade.js"></script>
 
-    </body>
+<script>
+    const img = document.querySelector(".imagePerfil");
+    const changeImage = document.querySelector(".changeImg");
 
-    <script src="/js/estado-cidade.js"></script>
+    img.addEventListener("mouseover", () => {
+        changeImage.classList.add("visible");
+    });
+
+    img.addEventListener("mouseout", () => {
+        changeImage.classList.remove("visible");
+    });
+</script>
