@@ -10,6 +10,30 @@ label {
     user-select: none;
 }
 
+.toggle-menu {
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    visibility: hidden;
+    opacity: 0;
+
+    z-index: 999;
+    position: absolute;
+
+    border: var(--border-form);
+    border-radius: 0.8rem;
+    box-shadow: var(--border-shadow);
+
+    background-color: var(--white);
+
+    transition: all 0.2s ease-in-out;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 .img-wrapper {
     border-radius: 100%;
     overflow: hidden;

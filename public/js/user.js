@@ -4,9 +4,9 @@ var toggleMenu = document.querySelector('.toggle-menu.header');
 
 navProfile.addEventListener('click', () => {
   if (toggleMenu.classList.contains('visible')) {
-    toggleMenu.classList = "toggle-menu header"
+    toggleMenu.classList.remove('visible');
   } else {
-    toggleMenu.classList = "toggle-menu header visible"
+    toggleMenu.classList.add('visible');
   }
 
 })

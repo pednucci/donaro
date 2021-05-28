@@ -2,260 +2,345 @@
     min-height: calc(100vh - 8rem);
     /* #region Configuração geral */
 
-    .svg-mensagem {
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        padding: 5rem;
-        gap: 3rem;
-
-        img {
-            height: 50rem;
-        }
-
-        h1 {
-            font-size: auto;
-        }
-    }
-
     .chat-container {
         width: 100%;
         height: calc(100vh - 8rem);
-        max-width: 1400px;
+        max-width: 150rem;
+
         margin: 0 auto;
+        padding-bottom: 2rem;
+
         display: flex;
-    }
 
-    /* #endregion */
+        .conversas-container {
+            width: 30%;
+            min-width: 35rem;
+            height: 100%;
 
-    /* #region Barra de conversas */
-    .conversas-container {
-        width: 30%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+            display: flex;
+            flex-direction: column;
 
-        a {
-            width: 100%;
+            a {
+                width: 100%;
+            }
+
+            .pesquisa {
+                width: 95%;
+                height: 5rem;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: var(--gray-background);
+
+                border-radius: 1rem;
+
+                button {
+                    width: 4rem;
+                    height: 4rem;
+
+                    background-color: transparent;
+
+                    position: relative;
+                    left: 2rem;
+
+                    cursor: pointer;
+
+                    img {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+
+                .input-form {
+                    border: none;
+                    width: 100%;
+                    padding: 0 3rem;
+                }
+            }
+
+            .conversas {
+                width: 100%;
+                height: 100%;
+                padding: 2rem 1rem;
+
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                overflow-y: scroll;
+
+                // &:before {
+                //     content: "";
+                //     display: block;
+                //     // position: absolute;
+
+                //     width: 100%;
+                //     height: 0.05rem;
+
+                //     background-color: var(--gray-border);
+
+                //     margin-bottom: 2rem;
+                // }
+
+                .titulo-conversas {
+                    margin-bottom: 2rem;
+                    font-size: 2rem;
+
+                    &.soli {
+                        margin-top: 3rem;
+                    }
+                }
+
+                .conversa {
+                    $white: #ffffff;
+                    width: 100%;
+                    height: 9rem;
+                    padding: 1rem 2rem;
+
+                    margin: 0.2rem 0;
+
+                    justify-content: flex-start;
+
+                    border-radius: 1rem;
+                    border: var(--border-form);
+
+                    background-color: $white;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        background-color: darken($white, 8%);
+
+                        transition: all 0.2s ease-in-out;
+                    }
+
+                    .img-wrapper {
+                        width: 6rem;
+                        height: 6rem;
+                    }
+
+                    .conversa-info {
+                        width: 70%;
+                        margin-left: 2rem;
+
+                        .row1 {
+                            .titulo {
+                                font-size: 1.8rem;
+                                margin: 0;
+                                margin-bottom: 0.5rem;
+
+                                font-weight: bold;
+                            }
+                        }
+
+                        // .row2 {
+                        // }
+                    }
+                }
+
+                .qnt-msg {
+                    width: 2rem;
+                    height: 2rem;
+
+                    margin: 0;
+                    padding: 0.6rem;
+
+                    border-radius: 100%;
+
+                    background-color: var(--blue-light);
+
+                    font-size: 1.07rem;
+                }
+            }
+        }
+
+        .chat {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 70%;
+            height: 100%;
+
+            .svg-mensagem {
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                padding: 5rem;
+                gap: 3rem;
+
+                img {
+                    height: 50rem;
+                }
+
+                h1 {
+                    font-size: auto;
+                }
+            }
+
+            .chat-header {
+                width: 100%;
+                height: 8rem;
+                padding: 2rem;
+                justify-content: flex-start;
+                background-color: var(--white);
+                /* border-radius: 1rem; */
+                border: var(--border-form);
+                /* box-shadow: var(--border-shadow); */
+
+                .img-wrapper {
+                    width: 6rem;
+                    height: 6rem;
+                    margin-right: 2rem;
+                }
+
+                .nome-conversa.row {
+                    font-size: 2em;
+
+                    align-items: baseline;
+
+                    .nmPedido {
+                        font-size: 2.5rem;
+                        color: var(--gray-minor-font);
+                        margin-left: 1rem;
+                    }
+                }
+
+                .menu {
+                    margin-left: auto;
+                    margin-right: 1rem;
+
+                    .wrapper-menu {
+                        justify-content: center;
+                        cursor: pointer;
+
+                        height: 4rem;
+                        width: 4rem;
+
+                        user-select: none;
+                        img {
+                            width: 2rem;
+                        }
+                    }
+
+                    .toggle-menu {
+                        width: max-content;
+                        height: max-content;
+
+                        padding: 2rem;
+
+                        transform: translate(-21rem, 1rem);
+
+                        border: var(--border-form);
+                        border-radius: 0.8rem;
+                        box-shadow: var(--border-shadow);
+
+                        background-color: var(--white);
+
+                        transition: all 0.2s ease-in-out;
+                        z-index: 100;
+
+                        &.visible {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+
+                        .toggle-link {
+                            .sub.titulo {
+                                font-size: 2rem;
+                                margin: 0;
+                                margin-left: 1.5rem;
+                                gap: 1rem;
+                                color: var(--red-denounce);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .chat-content {
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll;
+
+                .message-row {
+                    width: 90%;
+                    min-height: 4rem;
+                    margin: 2rem auto;
+
+                    .mensagem {
+                        max-width: 60%;
+                        height: 5rem;
+
+                        padding: 1rem;
+                        border-radius: 1rem;
+
+                        .message-txt {
+                            font-size: 1.7rem;
+                            font-weight: 500;
+                            max-width: 80%;
+                            overflow-wrap: break-word;
+                            white-space: pre-wrap;
+                        }
+
+                        .message-info {
+                            font-size: 1.2rem;
+                            height: 100%;
+                            align-items: flex-end;
+                            margin-left: 5rem;
+                        }
+                    }
+
+                    &.enviada {
+                        justify-content: flex-end;
+
+                        .mensagem {
+                            background-color: var(--gray-message);
+                        }
+                    }
+
+                    &.recebida {
+                        justify-content: flex-start;
+
+                        .mensagem {
+                            background-color: var(--blue-logo);
+                        }
+
+                        span {
+                            color: var(--white);
+                        }
+                    }
+                }
+            }
+
+            .chat-footer {
+                width: 100%;
+                height: 8rem;
+                padding: 1rem;
+                background-color: var(--white);
+                border: var(--border-form);
+
+                .send-message {
+                    width: 100%;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .input-form {
+                    width: 90%;
+                    height: 4rem;
+                    margin-right: 1rem;
+                    background-color: var(--gray-background);
+                }
+
+                .btn {
+                    min-height: 4rem;
+                    min-width: 14rem;
+                    width: 1rem;
+                    border-radius: 1rem;
+                }
+            }
         }
     }
-
-    /* Barra de pesquisa */
-    .pesquisa {
-        width: 95%;
-        height: 50px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        background-color: var(--gray-background);
-
-        border-radius: 10px;
-    }
-
-    img[alt="Icone lupa"] {
-        width: 15px;
-        height: 15px;
-        position: relative;
-        left: 20px;
-    }
-
-    .input-form[name="txtPesquisa"] {
-        border: none;
-        width: 100%;
-        padding: 0 30px;
-    }
-
-    /* Conversas */
-    .conversas {
-        width: 100%;
-        height: 100%;
-        padding: 20px 10px 20px 0;
-
-        align-items: center;
-        justify-content: flex-start;
-
-        overflow-y: scroll;
-    }
-
-    .conversa {
-        width: 100%;
-        height: 90px;
-        padding: 10px;
-
-        margin: 2px 0;
-
-        justify-content: center;
-
-        border-radius: 10px;
-        border: var(--border-form);
-        /* box-shadow: var(--border-shadow); */
-    }
-
-    /* Imagem */
-    .conversas .img-wrapper {
-        width: 70px;
-        height: 70px;
-    }
-
-    .conversa-img {
-        width: 20%;
-    }
-
-    /* Informações */
-
-    .conversa-info {
-        width: 70%;
-        margin-left: 20px;
-    }
-
-    .row1 .titulo {
-        font-size: 1.8rem;
-        margin: 0;
-        margin-bottom: 5px;
-
-        font-weight: bold;
-    }
-
-    .qnt-msg {
-        width: 20px;
-        height: 20px;
-
-        margin: 0;
-        padding: 6px;
-
-        border-radius: 100%;
-
-        background-color: var(--blue-light);
-
-        font-size: 1.07rem;
-    }
-
-    /* #endregion */
-
-    /* #region Chat */
-
-    .chat {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 70%;
-        height: 100%;
-    }
-
-    /* #region Header do chat */
-    .chat-header {
-        width: 100%;
-        height: 80px;
-        padding: 20px;
-        justify-content: flex-start;
-        background-color: var(--white);
-        /* border-radius: 10px; */
-        border: var(--border-form);
-        /* box-shadow: var(--border-shadow); */
-    }
-
-    .chat .img-wrapper {
-        width: 50px;
-        height: 50px;
-        margin-right: 20px;
-    }
-
-    .chat .nome-conversa {
-        font-size: 2em;
-    }
-
-    /* #endregion */
-
-    /* #region Conteúdo do chat */
-    .chat-content {
-        width: 100%;
-        height: 100%;
-        overflow-y: scroll;
-    }
-
-    .message-row {
-        width: 90%;
-        min-height: 40px;
-        margin: 20px auto;
-    }
-
-    .enviada {
-        justify-content: flex-end;
-    }
-
-    .recebida {
-        justify-content: flex-start;
-    }
-
-    .mensagem {
-        max-width: 60%;
-        height: 50px;
-        /* height: auto; */
-        padding: 10px;
-        border-radius: 10px;
-    }
-
-    .enviada .mensagem {
-        background-color: var(--gray-message);
-    }
-
-    .recebida .mensagem {
-        background-color: var(--blue-logo);
-    }
-
-    .recebida span {
-        color: var(--white);
-    }
-
-    .message-txt {
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
-
-    .message-info {
-        /* width: 40px; */
-        height: 100%;
-        /* justify-content: center; */
-        align-items: flex-end;
-    }
-
-    .message-info {
-        margin-left: 30px;
-    }
-
-    /* #endregion */
-
-    /* #region Footer do chat */
-    .chat-footer {
-        width: 100%;
-        height: 80px;
-        padding: 10px;
-        background-color: var(--white);
-        border: var(--border-form);
-    }
-
-    .send-message {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .chat .input-form {
-        width: 90%;
-        margin-right: 10px;
-        border-radius: 20px;
-        background-color: var(--gray-background);
-    }
-
-    .chat .btn {
-        width: 200px;
-        border-radius: 10px;
-    }
-
-    /* #endregion */
-
-    /* #endregion */
 }

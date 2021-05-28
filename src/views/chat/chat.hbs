@@ -27,7 +27,7 @@
 
                 <!-- Coluna de conversas -->
                 <div class="conversas column">
-                    <h1>Conversas - Minhas campanhas</h1>
+                    <h1 class="titulo-conversas camp">Conversas - Minhas campanhas</h1>
                     {{#if chatCampanhas}}
                     {{#each chatCampanhas}}
                     <a href="/chat/{{cd_chat}}" class="chat-{{cd_chat}}">
@@ -65,7 +65,7 @@
                     {{else}}
                     <h1>Não há nada por aqui</h1>
                     {{/if}}
-                    <h1>Conversas - Minhas solicitações</h1>
+                    <h1 class="titulo-conversas soli" >Conversas - Minhas solicitações</h1>
                     {{#if chatSolicitacoes}}
                     {{#each chatSolicitacoes}}
                     <a href="/chat/{{cd_chat}}" class="chat-{{cd_chat}}">
@@ -117,9 +117,9 @@
                             alt="Imagem usuário"
                         />
                     </div>
-                     <p class="titulo-black nome-conversa">
-                        {{nm_usuario}} -
-                        <span class="nmPedido">{{nm_titulo_pedido}}<span></span>
+                     <p class="titulo-black nome-conversa row">
+                        {{nm_usuario}} 
+                        <span class="nmPedido"> • {{nm_titulo_pedido}}</span>
                     </p>
                     {{/each}}
                     {{/if}}
@@ -131,12 +131,31 @@
                             alt="Imagem usuário"
                         />
                     </div>
-                     <p class="titulo-black nome-conversa">
-                        {{nm_usuario}} -
-                        <span class="nmPedido">{{nm_titulo_pedido}}<span></span>
+                     <p class="titulo-black nome-conversa row">
+                        {{nm_usuario}}  
+                        <span class="nmPedido"> • {{nm_titulo_pedido}}</span>
                     </p>
                     {{/each}}
                     {{/if}}
+
+                    <div class="menu">
+                        <div class="wrapper-menu row">
+                            <img src="/assets/img/icone_reticencias.svg" alt="Abrir Menu">
+                        </div>
+
+                        <div class="toggle-menu denuncia">
+                             <ul>
+                                 <li class="toggle-link">
+                                    <a href="" class="sub titulo row">
+                                        <img src="/assets/img/icone_denounce.svg" alt="Logout" />
+                                        
+                                        Denunciar usuário 
+                                 
+                                    </a>
+                                 </li>
+                             </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="chat-content">
@@ -147,33 +166,17 @@
                             <span class="message-txt">{{ds_conteudo_mensagem}}</span>
                             <div class="message-info row">
                                 <div>
-                                    <span
-                                        class="titulo-gray time-msg"
-                                    >{{onlyHour ds_time_mensagem}}</span>
-                                    <!--<img
-                                        src="/assets/img/arrow-visualized.svg"
-                                        alt="Icone mensagem visualizada"
-                                    />!-->
+                                    <span class="titulo-gray time-msg">
+                                    {{onlyHour ds_time_mensagem}}
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     {{/each}}
-
-                    <!-- Mensagem recebida 
-                    <div class="message-row recebida row">
-                        <div class="mensagem row">
-                            <span class="message-txt">Bom dia André, tudo ótimo!</span>
-                            <div class="message-info row">
-                                <div>
-                                    <span class="time-msg">10:26</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
 
-                <div class="chat-footer">
+                <div class="chat-footer ">
                     <form class="send-message row" action="" id="chatForm">
                         <input
                             class="input-form"
@@ -181,6 +184,7 @@
                             name="mensagem"
                             id="txt-mensagem"
                             placeholder="Digite sua mensagem"
+                            autocomplete="off"
                         />
                         <input class="btn red" type="submit" value="Enviar" />
                     </form>
@@ -191,3 +195,15 @@
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/chat.js"></script>
+<script>
+    const openMenu = document.querySelector(".wrapper-menu")
+    const denunciaMenu = document.querySelector(".toggle-menu.denuncia")
+
+    openMenu.addEventListener('click', () => {
+        if (denunciaMenu.classList.contains('visible')) {
+            denunciaMenu.classList.remove('visible')
+        } else {
+            denunciaMenu.classList.add('visible')
+        }
+    })
+</script>
