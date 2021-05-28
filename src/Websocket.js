@@ -11,8 +11,7 @@ io.on('connection', async socket => {
     socket.on('sendMessage', async msg => {
         const conn = await db.connection();
         const idUser = socket.handshake.session.passport.user;
-        const time = format(Date.now(), 'hh:mm');
-        console.log(idUser)
+        const time = format(Date.now(), 'HH:mm');
         let messageObject = {
             msg: msg.message,
             time,
