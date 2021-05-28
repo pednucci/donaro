@@ -72,16 +72,19 @@
                 name="cel"
             />
 
-            <div class="column nasc">
+            {{!-- <div class="column nascWrapper">
                 <label class="lblDtNasc" for="">Data de nascimento</label>
                 <input class="input-form" type="date" name="dtuser" />
+            </div> --}}
+
+             <div class="column passWrapper">
+                <label for="">Senha</label>
+                <input class="input-form" type="password" name="pass" />
             </div>
-
-            <label for="">Senha</label>
-            <input class="input-form" type="password" name="pass" />
-
-            <label for="">Confirme sua senha</label>
-            <input class="input-form" type="password" name="passConf" />
+            
+                <label for="">Confirme sua senha</label>
+                <input class="input-form" type="password" name="passConf" />
+            
 
             <div class="row">
                 <div class="column">
@@ -120,25 +123,48 @@
     const lblCpf = document.querySelector(".lblCpf");
     
     const fieldNome = document.querySelector("input[name=dtuser]");
-    const fieldCpf = document.querySelector("input[name=username]");
+    const fieldCpf = document.querySelector("input[name=cpf]");
 
-    const dtNasc = document.querySelector(".nasc")
+
+    const dtNasc = document.querySelector(".nascWrapper");
+    const passContainer = document.querySelector(".passWrapper");
+    const form = document.querySelector(".form-login")
+
+    var nascDiv = document.createElement('div');
+    nascDiv.classList="column nascWrapper";
+
+    var nascLbl = document.createElement('label');
+    nascLbl.classList="lblDtNasc";
+    nascLbl.innerText="Data de nascimento";
+
+    var nascInpt = document.createElement('input');
+    nascInpt.classList="input-form";
+    nascInpt.setAttribute('type', 'date');
+    nascInpt.setAttribute('name', 'dtuser');
+    nascDiv.append(nascLbl);
+    nascDiv.append(nascInpt);
+    form.insertBefore(nascDiv, passContainer);
+
 
 
 
     function changeHandler(event) {
     if ( this.value === 'pf' ) {
-        lblNome.innerHTML="Nome completo"
-        lblCpf.innerHTML="CPF"
-        dtNasc.style.display="inherit"
-        dtNasc.style.visibility="visible"
+        lblNome.innerHTML="Nome completo";
+        lblCpf.innerHTML="CPF";
+
+        fieldCpf.setAttribute('name', 'cpf');
+
+        
+        form.insertBefore(nascDiv, passContainer);
 
     } else if ( this.value === 'pj' ) {
-        lblNome.innerHTML="Nome da instituição"
-        lblCpf.innerHTML="CNPJ"
-        dtNasc.style.display="none"
-        dtNasc.style.visibility="hidden"
+        lblNome.innerHTML="Nome da instituição";
+        lblCpf.innerHTML="CNPJ";
 
+        fieldCpf.setAttribute('name', 'cnpj');
+
+        form.removeChild(nascDiv);
     }  
     };
 
