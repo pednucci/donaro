@@ -4,7 +4,7 @@ var containerChat = document.querySelector('.chat-content');
 
 var children = containerChat.children;
 
-document.onreadystatechange = () => {
+window.addEventListener('load', () => {
     for(i = 0; i<children.length; i++){
         let msgClass = children[i].className;
         let msgSplit = msgClass.split(' ');
@@ -16,7 +16,7 @@ document.onreadystatechange = () => {
         }
     }
     containerChat.scrollTop = containerChat.scrollHeight;
-}
+})
 
 socket.on('sendMessage', message => {
     if(message.idUser == localStorage.getItem('userId')){
