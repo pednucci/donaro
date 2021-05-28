@@ -1,4 +1,10 @@
 .lyt_denuncia {
+    &.pg_denuncia {
+        .input-form[name="motivos"] {
+            height: 6rem;
+        }
+    }
+
     .form-container {
         width: 100%;
         max-width: 60rem;
