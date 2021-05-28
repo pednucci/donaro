@@ -1,4 +1,5 @@
 .lyt_notificacoes {
+    justify-content: flex-start;
     .cards-container {
         width: 72rem;
 
@@ -8,7 +9,7 @@
         justify-content: top;
         align-items: center;
 
-        margin: auto;
+        margin: 0 auto;
         margin-bottom: 10rem;
 
         .titulo {
