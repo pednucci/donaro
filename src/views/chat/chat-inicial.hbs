@@ -27,7 +27,7 @@
 
                 <!-- Coluna de conversas -->
                 <div class="conversas column">
-                    <h1>Conversas - Minhas campanhas</h1>
+                    <h1 class="titulo-conversas camp">Conversas - Minhas campanhas</h1>
                     {{#if chatCampanhas}}
                     {{#each chatCampanhas}}
                     <a href="/chat/{{cd_chat}}" class="chat-{{cd_chat}}">
@@ -65,7 +65,7 @@
                     {{else}}
                     <h1>Não há nada por aqui</h1>
                     {{/if}}
-                    <h1>Conversas - Minhas solicitações</h1>
+                    <h1 class="titulo-conversas soli">Conversas - Minhas solicitações</h1>
                     {{#if chatSolicitacoes}}
                     {{#each chatSolicitacoes}}
                     <a href="/chat/{{cd_chat}}" class="chat-{{cd_chat}}">
