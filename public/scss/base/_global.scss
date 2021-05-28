@@ -3,6 +3,11 @@ main {
     margin-top: 8rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+label {
+    user-select: none;
 }
 
 .img-wrapper {

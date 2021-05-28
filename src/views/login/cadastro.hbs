@@ -31,43 +31,55 @@
         {{/each}}
         <p class="sub titulo">Cadastrar-se</p>
         <form class="form-login column" action="/cadastro" method="POST">
-            <label for="">Nome completo</label>
+            <div class="row cpfj">
+                <div class="row">
+                    <input type="radio" name="pessoa" id="pf" value="pf" checked/>
+                    <label for="pf">Pessoa Física</label>
+                </div>
+                <div class="row">
+                    <input type="radio" name="pessoa" id="pj" value="pj" />
+                    <label for="pj">Pessoa Júridica</label>
+                </div>
+            </div>
+            <label class="lblNome"  for="">Nome completo</label>
             <input
                 class="input-form"
                 type="text"
                 name="username"
-                placeholder="Ex: Pedro de Andrade Souza"
             />
 
+            <label class="lblCpf" for="">CPF</label>
+            <input
+                class="input-form"
+                type="text"
+                name="cpf"
+            />
+
+            
             <label for="">Email</label>
             <input
                 class="input-form"
                 type="email"
                 name="email"
-                placeholder="Ex: exemplo@email.com"
+                placeholder="exemplo@email.com"
             />
 
-            <label for="">CPF</label>
-            <input
-                class="input-form"
-                type="text"
-                name="cpf"
-                placeholder="000.000.000-0"
-            />
 
             <label for="">Celular</label>
             <input
                 class="input-form"
                 type="tel"
                 name="cel"
-                placeholder="(00) 00000-0000"
             />
 
-            <label for="">Data de nascimento</label>
-            <input class="input-form" type="date" name="dtuser" />
+            <div class="column nasc">
+                <label class="lblDtNasc" for="">Data de nascimento</label>
+                <input class="input-form" type="date" name="dtuser" />
+            </div>
 
             <label for="">Senha</label>
             <input class="input-form" type="password" name="pass" />
+
             <label for="">Confirme sua senha</label>
             <input class="input-form" type="password" name="passConf" />
 
@@ -98,3 +110,40 @@
 </main>
 
 <script src="/js/estado-cidade.js"></script>
+
+<script>
+
+
+    var radios = document.querySelectorAll('input[type=radio][name="pessoa"]');
+
+    const lblNome = document.querySelector(".lblNome");
+    const lblCpf = document.querySelector(".lblCpf");
+    
+    const fieldNome = document.querySelector("input[name=dtuser]");
+    const fieldCpf = document.querySelector("input[name=username]");
+
+    const dtNasc = document.querySelector(".nasc")
+
+
+
+    function changeHandler(event) {
+    if ( this.value === 'pf' ) {
+        lblNome.innerHTML="Nome completo"
+        lblCpf.innerHTML="CPF"
+        dtNasc.style.display="inherit"
+        dtNasc.style.visibility="visible"
+
+    } else if ( this.value === 'pj' ) {
+        lblNome.innerHTML="Nome da instituição"
+        lblCpf.innerHTML="CNPJ"
+        dtNasc.style.display="none"
+        dtNasc.style.visibility="hidden"
+
+    }  
+    };
+
+    Array.prototype.forEach.call(radios, function(radio) {
+    radio.addEventListener('change', changeHandler);
+    });
+
+</script>

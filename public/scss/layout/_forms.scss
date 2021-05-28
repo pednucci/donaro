@@ -46,6 +46,24 @@
         width: max-content;
     }
 
+    .row.cpfj {
+        justify-content: center !important;
+        align-items: center !important;
+
+        margin: 1rem 0 3rem 0rem;
+
+        gap: 5rem !important;
+
+        .row {
+            flex-direction: row !important;
+            gap: 0.5rem !important;
+        }
+
+        label {
+            line-height: 200%;
+        }
+    }
+
     .form-login .titulo-link {
         align-self: flex-start;
         width: max-content;
