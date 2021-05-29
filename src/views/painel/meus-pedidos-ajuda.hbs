@@ -5,7 +5,7 @@
 {{>navbar}}
 
     <main class="lyt_painel lyt_usuario-pedido pg_pajuda">
-        <!-- Painel Topo-->
+        {{!-- <!-- Painel Topo--> --}}
         <div class="usuario container-painel">
             <div class="background-painel">
                 {{#each solicitacao}}
@@ -29,14 +29,14 @@
             </div>
         </div>
 
-        <!-- Informações da ajuda -->
+        {{!-- <!-- Informações da ajuda --> --}}
         <div class="usuario profile-container columm">
             <!-- Usuário -->
             {{#each solicitacao}}
             <div class="user-container column">
                 <div class="user-wrapper row">
                     <div class="row">
-                        <!-- Imagem -->
+                        {{!-- <!-- Imagem --> --}}
                         <div class="imagePerfil column">
                             <img
                                 src="/assets/profile/{{cd_foto_usuario}}"
@@ -44,7 +44,7 @@
                             />
                         </div>
 
-                        <!-- Nome -->
+                        {{!-- <!-- Nome --> --}}
                         <div class="informacoes column">
                             <h1 class="sub titulo-user user-name">
                                 {{nm_usuario}}
@@ -55,7 +55,7 @@
                         </div>
                     </div>
 
-                    <!-- Botão -->
+                    {{!-- <!-- Botão --> --}}
                     <a href="/chat/{{cd_solicitacao}}" class="btn blue" type="button">
                         Entrar no chat
                     </a>
@@ -63,9 +63,9 @@
             </div>
             {{/each}}
 
-            <!-- Alimentos, comentário e situação -->
+            {{!-- <!-- Alimentos, comentário e situação --> --}}
             <div class="row fc-wrapper">
-                <!-- Container dos alimentos -->
+                {{!-- <!-- Container dos alimentos --> --}}
                 <div class="food-container column">
                     <h1 class="sub titulo-user">Alimentos ofertados</h1>
                     <div class="row descAlimentos">
@@ -74,7 +74,7 @@
                     </div>
                     <div class="alimento-container">
                         <div class="column">
-                            <!-- Alimentos -->
+                            {{!-- <!-- Alimentos --> --}}
                             {{#each alimento}}
                             <div class="alReq row">
                                 <h1 class="reqAlimento">{{nm_alimento_donation}}</h1>
@@ -85,9 +85,9 @@
                     </div>
                 </div>
 
-                <!-- Comentário e Situação da entrega -->
+                {{!-- <!-- Comentário e Situação da entrega --> --}}
                 <div class="comentario-container column">
-                    <!-- Comentário -->
+                    {{!-- <!-- Comentário --> --}}
                     <h1 class="sub titulo-user">Comentário</h1>
                     {{#each solicitacao}}
                     <div class="comentario">
@@ -97,7 +97,7 @@
                     </div>
                     {{/each}}
 
-                    <!-- Situação -->
+                    {{!-- <!-- Situação --> --}}
                     <h1 class="sub titulo-user">Situação da entrega</h1>
                     {{#each solicitacao}}
                     <p class="situacaoReq">{{cd_situacao_solicitacao}}</p>
@@ -106,7 +106,7 @@
             </div>
         </div>
 
-        <!-- Botões -->
+        {{!-- <!-- Botões --> --}}
         {{#if entregueOrNot}}
         <form action="/painel/ressoli" method="POST">
         {{#each solicitacao}}
