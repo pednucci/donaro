@@ -20,7 +20,7 @@
     transition: filter 0.5s;
 
     font-family: "Red Hat Display", sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -33,8 +33,10 @@
     color: var(--white);
 }
 
-.btn.red.denounce {
+.btn.red-denounce {
     background-color: var(--red-denounce);
+
+    color: var(--white);
 }
 
 .btn.ghost-red {

@@ -1,4 +1,5 @@
 .lyt_painel {
+    justify-content: flex-start;
     .container-painel {
         width: 100%;
         display: flex;
@@ -156,7 +157,7 @@
 
         flex-wrap: wrap;
 
-        margin: auto;
+        margin: 0 auto;
         margin-bottom: 0.5rem;
 
         align-items: center;
