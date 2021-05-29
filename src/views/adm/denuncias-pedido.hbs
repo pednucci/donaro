@@ -1,153 +1,152 @@
 <head>
     <title>Denúncias (Pedido)</title>
 </head>
-<body>
+
     {{>navbar}}
 
-    <main class="lyt_painel lyt_usuario-pedido pg_dpedido">
-        {{!-- <!-- Painel Topo--> --}}
-        <div class="container-painel">
-            <div class="background-painel">
-                <h1 class="painel-titulo">ADM</h1>
-                <div class="img-wrapper">
-                    <img
-                        src="/assets/img/background_adm.png"
-                        alt=""
-                    />
-                </div>
-            </div>
-
-            {{!-- <!-- Painel Menu--> --}}
-            <div class="menu-painel">
-                <ul class="menu-painel-buttons row">
-                    <a href="#">
-                        <li class="painel-text">Requisições</li>
-                    </a>
-                    <a href="#">
-                        <li class="painel-text active">Denúncias</li>
-                    </a>
-                    <a href="#">
-                        <li class="painel-text">Não entregues</li>
-                    </a>
-                </ul>
+<main class="lyt_painel lyt_usuario-pedido pg_dpedido">
+    {{!-- <!-- Painel Topo--> --}}
+    <div class="container-painel">
+        <div class="background-painel">
+            <h1 class="painel-titulo">ADM</h1>
+            <div class="img-wrapper">
+                <img
+                    src="/assets/img/background_adm.png"
+                    alt=""
+                />
             </div>
         </div>
 
-        {{!-- <!-- Informações da ajuda --> --}}
-        <div class="profile-container columm">
+        {{!-- <!-- Painel Menu--> --}}
+        <div class="menu-painel">
+            <ul class="menu-painel-buttons row">
+                <a href="#">
+                    <li class="painel-text">Requisições</li>
+                </a>
+                <a href="#">
+                    <li class="painel-text active">Denúncias</li>
+                </a>
+                <a href="#">
+                    <li class="painel-text">Não entregues</li>
+                </a>
+            </ul>
+        </div>
+    </div>
 
-            {{!-- <!-- Pedido --> --}}
-            <h1 class="titulo-user">Pedido</h1>
-            <div class="user-container column">
-                <div class="user-wrapper row">
-                    <div class="row">
+    {{!-- <!-- Informações da ajuda --> --}}
+    <div class="profile-container columm">
 
-                        {{!-- <!-- Imagem --> --}}
-                        <div class="imagePerfil column">
-                            <img
-                                src="/assets/img/pedido_sopao-moradores.png"
-                                alt="Foto de perfil"
-                            />
-                        </div>
+        {{!-- <!-- Pedido --> --}}
+        <h1 class="titulo-user">Pedido</h1>
+        <div class="user-container column">
+            <div class="user-wrapper row">
+                <div class="row">
 
-                        {{!-- <!-- Informações --> --}}
-                        <div class="informacoes column">
-                            <h1 class="sub titulo-user user-name">
-                                Sopão para moradores de rua
-                            </h1>
-                            <p class="user-info">
-                                Data de encerramento:
-                                <span>30/04/2021</span>
-                            </p>
-                        </div>
+                    {{!-- <!-- Imagem --> --}}
+                    <div class="imagePerfil column">
+                        <img
+                            src="/assets/img/pedido_sopao-moradores.png"
+                            alt="Foto de perfil"
+                        />
                     </div>
-                </div>
-            </div>
 
-            {{!-- <!-- Alimentos, descrição --> --}}
-            <div class="row fc-wrapper">
-                
-                {{!-- <!-- Container dos alimentos --> --}}
-                <div class="food-container column">
-                    <h1 class="sub titulo-user">Alimentos pedidos</h1>
-                    <div class="row descAlimentos">
-                        <h1>Alimentos</h1>
-                        <h1>Quantidade</h1>
-                    </div>
-                    <div class="alimento-container">
-                        <div class="column">
-                            {{!-- <!-- Alimentos --> --}}
-                            <div class="alReq row">
-                                <h1 class="reqAlimento">Arroz</h1>
-                                <h1 class="reqQuantidade">5Kg</h1>
-                            </div>
-                            <div class="alReq row">
-                                <h1 class="reqAlimento">Arroz</h1>
-                                <h1 class="reqQuantidade">5Kg</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {{!-- <!-- Descrição --> --}}
-                <div class="comentario-container column">
-                    <h1 class="sub titulo-user">Descrição</h1>
-                    <div class="comentario">
-                        <p>
-                            Mussum Ipsum, cacilds vidis litro abertis. Mais
-                            vale um bebadis conhecidiss, que um alcoolatra
-                            anonimis. Praesent vel viverra nisi. Mauris
-                            aliquet nunc non turpis scelerisque, eget.
-                            Mauris nec dolor in eros commodo tempor. Aenean
-                            aliquam molestie leo, vitae iaculis nisl.
-                            Praesent malesuada urna nisi, quis volutpat erat
-                            hendrerit non. Nam vulputate dapibus.
+                    {{!-- <!-- Informações --> --}}
+                    <div class="informacoes column">
+                        <h1 class="sub titulo-user user-name">
+                            Sopão para moradores de rua
+                        </h1>
+                        <p class="user-info">
+                            Data de encerramento:
+                            <span>30/04/2021</span>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="profile-container columm">
-            {{!-- <!-- Usuário --> --}}
-            <h1 class="titulo-user">Usuário</h1>
-            <div class="user-container column">
-                <div class="user-wrapper row">
-                    <div class="row">
-                        {{!-- <!-- Imagem --> --}}
-                        <div class="imagePerfil column">
-                            <img
-                                src="/assets/img/user_julio.png"
-                                alt="Foto de perfil"
-                            />
+        {{!-- <!-- Alimentos, descrição --> --}}
+        <div class="row fc-wrapper">
+            
+            {{!-- <!-- Container dos alimentos --> --}}
+            <div class="food-container column">
+                <h1 class="sub titulo-user">Alimentos pedidos</h1>
+                <div class="row descAlimentos">
+                    <h1>Alimentos</h1>
+                    <h1>Quantidade</h1>
+                </div>
+                <div class="alimento-container">
+                    <div class="column">
+                        {{!-- <!-- Alimentos --> --}}
+                        <div class="alReq row">
+                            <h1 class="reqAlimento">Arroz</h1>
+                            <h1 class="reqQuantidade">5Kg</h1>
                         </div>
-
-                        {{!-- <!-- Nome --> --}}
-                        <div class="informacoes column">
-                            <h1 class="sub titulo-user user-name">
-                                Julio Vieira de Andrade
-                            </h1>
-                            <p class="user-info">
-                                juliovand@gmail.com | 1238391
-                            </p>
+                        <div class="alReq row">
+                            <h1 class="reqAlimento">Arroz</h1>
+                            <h1 class="reqQuantidade">5Kg</h1>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        {{!-- <!-- Botões --> --}}
-
-        <div class="botoes-wrapper column">
-            <div class="botoes row">
-                <a href="#" class="btn blue" type="button"> Ignorar </a>
-                <a href="#" class="btn ghost-red" type="button">
-                    Excluir pedido
-                </a>
-                <a href="#" class="btn ghost-red" type="button">
-                    Punir usuário
-                </a>
+            {{!-- <!-- Descrição --> --}}
+            <div class="comentario-container column">
+                <h1 class="sub titulo-user">Descrição</h1>
+                <div class="comentario">
+                    <p>
+                        Mussum Ipsum, cacilds vidis litro abertis. Mais
+                        vale um bebadis conhecidiss, que um alcoolatra
+                        anonimis. Praesent vel viverra nisi. Mauris
+                        aliquet nunc non turpis scelerisque, eget.
+                        Mauris nec dolor in eros commodo tempor. Aenean
+                        aliquam molestie leo, vitae iaculis nisl.
+                        Praesent malesuada urna nisi, quis volutpat erat
+                        hendrerit non. Nam vulputate dapibus.
+                    </p>
+                </div>
             </div>
         </div>
-    </main>
-</body>
+    </div>
+
+    <div class="profile-container columm">
+        {{!-- <!-- Usuário --> --}}
+        <h1 class="titulo-user">Usuário</h1>
+        <div class="user-container column">
+            <div class="user-wrapper row">
+                <div class="row">
+                    {{!-- <!-- Imagem --> --}}
+                    <div class="imagePerfil column">
+                        <img
+                            src="/assets/img/user_julio.png"
+                            alt="Foto de perfil"
+                        />
+                    </div>
+
+                    {{!-- <!-- Nome --> --}}
+                    <div class="informacoes column">
+                        <h1 class="sub titulo-user user-name">
+                            Julio Vieira de Andrade
+                        </h1>
+                        <p class="user-info">
+                            juliovand@gmail.com | 1238391
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- <!-- Botões --> --}}
+
+    <div class="botoes-wrapper column">
+        <div class="botoes row">
+            <a href="#" class="btn blue" type="button"> Ignorar </a>
+            <a href="#" class="btn ghost-red" type="button">
+                Excluir pedido
+            </a>
+            <a href="#" class="btn ghost-red" type="button">
+                Punir usuário
+            </a>
+        </div>
+    </div>
+</main>
