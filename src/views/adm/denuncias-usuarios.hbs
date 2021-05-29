@@ -1,0 +1,85 @@
+<head>
+    <title>Denúncias (Usuários)</title>
+</head>
+
+<body>
+
+    {{>navbar}}
+
+    <main class="lyt_painel lyt_notificacoes pg_pajudas">
+        
+        {{!-- Painel --}}
+        <div class="container-painel">
+            <div class="background-painel">
+                <h1 class="painel-titulo">ADM</h1>
+                <div class="img-wrapper">
+                    <img
+                        src="/assets/img/background_adm.png"
+                        alt=""
+                    />
+                </div>
+            </div>
+
+            <div class="menu-painel">
+                <ul class="menu-painel-buttons row">
+                    <a href="#">
+                        <li class="painel-text">Requisições</li>
+                    </a>
+                    <a href="#">
+                        <li class="painel-text active">Denúncias</li>
+                    </a>
+                    <a href="#">
+                        <li class="painel-text">Pedidos não entregues</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        {{!-- Cards --}}
+        <div class="cards-container">
+            {{!-- Menu tipo da denuncia --}}
+            <ul class="users row">
+                <a href="#">
+                    <li class="titulo-categoria">Pedidos</li>
+                </a>
+                <a href="">
+                    <li class="titulo-categoria underline">Usuários</li>
+                </a>
+            </ul>
+
+            {{!-- Card --}}
+            <div class="card row">
+                {{!-- Informações --}}
+                <div class="card-user row">
+                    <div class="card-image">
+                        <img
+                            class="image-card"
+                            src="/assets/profile/user_julio.png"
+                            alt=""
+                        />
+                    </div>
+                    <div class="card-info column">
+                        <h1 class="nome-card">Julio Vieira</h1>
+                        <h2 class="desc-card">ID da denúncia: 634</h2>
+                    </div>
+                </div>
+
+                {{!-- Btn --}}
+                <div class="card-btn column">
+                    <a href="#">
+                        <button class="btn red-denounce">
+                            Ver denúncia
+                        </button>
+                    </a>
+                    <div class="date row">
+                        <img
+                            src="/assets/img/icone_calendar.svg"
+                            alt="Data"
+                        />
+                        <span class="date-time">28/05/2021 - 21:44:08</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
