@@ -7,9 +7,12 @@
     <main class="lyt_denuncia pg_denuncia">
         <div class="form-container pedido column">
             <p class="sub titulo">Denunciar usuário</p>
+            {{!-- Form --}}
             <form class="form-login column" action="" method="">
                 <div class="comentario column">
                     <label for="">Qual é o motivo da denúncia?</label>
+
+                    {{!-- Select --}}
                     <select class="input-form" name="motivos" id="">
                         <option value="0">Escolha uma opção</option>
                         <option value="1">Mensagens inapropriadas</option>
@@ -23,6 +26,8 @@
                 </div>
                 <div class="comentario column">
                     <label for="">Detalhe a denúncia:</label>
+
+                    {{!-- Textarea --}}
                     <textarea
                         class="input-form"
                         name="descricao"
@@ -30,6 +35,8 @@
                     >
                     </textarea>
                 </div>
+
+                {{!-- Btn --}}
                 <input class="btn blue" type="submit" value="Enviar" />
             </form>
         </div>
