@@ -6,9 +6,10 @@
 
     .profile-container {
         min-width: min-content;
+        width: 100%;
         max-width: 72rem;
 
-        margin: auto;
+        margin: 0 auto;
         margin-bottom: 5rem;
 
         align-items: center;
@@ -168,6 +169,12 @@
                 font-size: 2rem;
                 text-align: justify;
             }
+        }
+    }
+
+    &.pg_pedido {
+        .botoes-wrapper {
+            margin-top: 0rem;
         }
     }
 }
