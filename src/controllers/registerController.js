@@ -15,14 +15,15 @@ exports.register = async (req, res) => {
     const city = req.body.cidade;
     const uf = req.body.estado;
     const cel = req.body.cel;
+    const cnpj = req.body.cnpj;
 
     const [rowsMail] = await conn.query(`SELECT * FROM usuario WHERE cd_email_usuario = ?`, [email])
 
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(pass, salt);
 
-    if(uf == 0 || city == 0){
-        erros.push({text: 'Selecione um estado/cidade válido!'})
+    if(!username || !email || !pass || !confPass || uf == 0 || city == 0){
+        erros.push({text: 'Não deixe nenhum campo vazio!'})
     }
 
     if(rowsMail.length > 0) {
@@ -33,7 +34,11 @@ exports.register = async (req, res) => {
         erros.push({text: 'As senhas não coincidem!'})
     }
 
-    if(cpf.length < 11){
+    if(req.body.pessoa == 'pj' && cnpj.length < 14){
+        erros.push({text: 'CNPJ Inválido'})
+    }
+
+    if(req.body.pessoa == 'pf' && cpf.length < 11){
         erros.push({text: 'CPF Inválido'})
     }
 
@@ -47,26 +52,43 @@ exports.register = async (req, res) => {
             erros: erros
         })
     } else{
-        await conn.query(
-            `INSERT INTO
-            usuario
-            (nm_usuario, cd_cpf_usuario,
-            dt_nascimento_usuario, cd_celular_usuario, sg_estado_usuario, nm_cidade_usuario,
-            cd_senha_usuario, cd_email_usuario) VALUES(?,?,?,?,?,?,?,?)`
-        ,[
-            username,
-            cpf,
-            dtUser,
-            cel,
-            uf,
-            city,
-            hash,
-            email
-        ])
-        
+        if(req.body.pessoa == 'pf'){
+            await conn.query(
+                `INSERT INTO
+                usuario
+                (nm_usuario, cd_cpf_usuario,
+                dt_nascimento_usuario, cd_celular_usuario, sg_estado_usuario, nm_cidade_usuario,
+                cd_senha_usuario, cd_email_usuario) VALUES(?,?,?,?,?,?,?,?)`
+            ,[
+                username,
+                cpf,
+                dtUser,
+                cel,
+                uf,
+                city,
+                hash,
+                email
+            ])
+        }
+        else if(req.body.pessoa == 'pj'){
+            await conn.query(
+                `INSERT INTO
+                usuario
+                (nm_usuario, cd_cnpj_usuario, 
+                cd_celular_usuario, sg_estado_usuario, nm_cidade_usuario,
+                cd_senha_usuario, cd_email_usuario) VALUES(?,?,?,?,?,?,?)`
+            ,[
+                username,
+                cnpj,
+                cel,
+                uf,
+                city,
+                hash,
+                email
+            ])
+        }    
         req.flash('successMsg', 'Usuário cadastrado com sucesso!')
         res.redirect('/login')
-        await conn.end();
     }
     await conn.end();
 };
