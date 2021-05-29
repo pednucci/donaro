@@ -1,7 +1,15 @@
 .lyt_denuncia {
+    min-height: calc(100vh - 8rem);
+    // justify-content: center;
     &.pg_denuncia {
         .input-form[name="motivos"] {
             height: 6rem;
+        }
+    }
+
+    &.pg_contribuir {
+        textarea {
+            min-height: 15rem;
         }
     }
 
@@ -9,13 +17,11 @@
         width: 100%;
         max-width: 60rem;
         height: auto;
-        margin: auto;
+        max-height: 70rem;
+        margin: 0 auto;
         padding: 4rem;
         border-radius: 2rem;
         border: var(--border-form);
-
-        margin-top: 2.6rem;
-        margin-bottom: 10rem;
 
         box-shadow: var(--border-shadow);
 
@@ -73,7 +79,7 @@
 
             .qtdAlimentos {
                 width: 100%;
-                max-height: 30rem;
+                max-height: 20rem;
 
                 overflow: hidden;
                 overflow-y: scroll;
