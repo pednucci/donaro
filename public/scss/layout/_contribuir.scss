@@ -1,25 +1,64 @@
 .lyt_denuncia {
     min-height: calc(100vh - 8rem);
     justify-content: center;
+    padding-bottom: 4rem;
 
     &.pg_denuncia {
-        .input-form[name="motivos"] {
-            height: 6rem;
+        .sub.titulo {
+            margin-bottom: 1rem !important;
         }
-    }
 
-    &.pg_contribuir {
-        textarea {
-            min-height: 15rem;
+        .row.radio {
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+
+            label,
+            input {
+                margin: 0;
+                cursor: pointer;
+
+                & {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        fieldset {
+            display: none;
+
+            &:first-child {
+                display: initial;
+            }
+        }
+
+        .btnsForm.row {
+            justify-content: flex-end;
+            gap: 1rem;
+            .btn {
+                min-width: 16rem;
+                &.previous {
+                    background-color: var(--white);
+                    color: var(--blue-logo);
+
+                    display: none;
+                    visibility: hidden;
+
+                    &.visible {
+                        display: inline-flex;
+                        visibility: visible;
+                    }
+                }
+            }
         }
     }
 
     .form-container {
-        transform: translateY(-4rem);
         width: 100%;
         max-width: 60rem;
         height: auto;
-        max-height: 70rem;
+        max-height: max-content;
         margin: 0 auto;
         padding: 4rem;
         border-radius: 2rem;
@@ -156,14 +195,15 @@
 
         .comentario {
             label {
-                margin: 4rem 0;
+                font-size: 2.4rem;
+                margin: 2.5rem 0 2rem 0;
             }
             textarea {
                 font-family: "Red Hat Display", sans-serif;
                 font-size: 2rem;
                 font-weight: 500;
 
-                resize: vertical;
+                min-height: 15rem;
             }
         }
     }
