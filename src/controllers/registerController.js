@@ -52,43 +52,51 @@ exports.register = async (req, res) => {
             erros: erros
         })
     } else{
-        if(req.body.pessoa == 'pf'){
-            await conn.query(
-                `INSERT INTO
-                usuario
-                (nm_usuario, cd_cpf_usuario,
-                dt_nascimento_usuario, cd_celular_usuario, sg_estado_usuario, nm_cidade_usuario,
-                cd_senha_usuario, cd_email_usuario) VALUES(?,?,?,?,?,?,?,?)`
-            ,[
-                username,
-                cpf,
-                dtUser,
-                cel,
-                uf,
-                city,
-                hash,
-                email
-            ])
+        try{
+            if(req.body.pessoa == 'pf'){
+                await conn.query(
+                    `INSERT INTO
+                    usuario
+                    (nm_usuario, cd_cpf_usuario,
+                    dt_nascimento_usuario, cd_celular_usuario, sg_estado_usuario, nm_cidade_usuario,
+                    cd_senha_usuario, cd_email_usuario) VALUES(?,?,?,?,?,?,?,?)`
+                ,[
+                    username,
+                    cpf,
+                    dtUser,
+                    cel,
+                    uf,
+                    city,
+                    hash,
+                    email
+                ])
+            }
+            else if(req.body.pessoa == 'pj'){
+                await conn.query(
+                    `INSERT INTO
+                    usuario
+                    (nm_usuario, cd_cnpj_usuario, 
+                    cd_celular_usuario, sg_estado_usuario, nm_cidade_usuario,
+                    cd_senha_usuario, cd_email_usuario) VALUES(?,?,?,?,?,?,?)`
+                ,[
+                    username,
+                    cnpj,
+                    cel,
+                    uf,
+                    city,
+                    hash,
+                    email
+                ])
+            }    
+            req.flash('successMsg', 'Usuário cadastrado com sucesso!')
+            res.redirect('/login')
         }
-        else if(req.body.pessoa == 'pj'){
-            await conn.query(
-                `INSERT INTO
-                usuario
-                (nm_usuario, cd_cnpj_usuario, 
-                cd_celular_usuario, sg_estado_usuario, nm_cidade_usuario,
-                cd_senha_usuario, cd_email_usuario) VALUES(?,?,?,?,?,?,?)`
-            ,[
-                username,
-                cnpj,
-                cel,
-                uf,
-                city,
-                hash,
-                email
-            ])
-        }    
-        req.flash('successMsg', 'Usuário cadastrado com sucesso!')
-        res.redirect('/login')
+        catch(err){
+            console.log(err)
+            req.flash('errorMsg', 'Erro inesperado')
+            res.redirect('/')
+        }
+        
     }
     await conn.end();
 };
