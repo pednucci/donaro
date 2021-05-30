@@ -87,9 +87,14 @@
                         </div>
                         {{/each}}
                     </div>
+                    {{#if identify}}
+                    <a href="#"><button class="btn blue">Editar</button></a>
+                    {{else}}
                     {{#each pedido}}
                     <a href="/descobrir/pedido/{{cd_pedido}}/ajudar"><button class="btn blue">Ajudar</button></a>
                     {{/each}}
+                    {{/if}}
+
                 </div>
                 <footer class="footer-alimentos column">
                     <h2 class="sub titulo">
