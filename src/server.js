@@ -64,6 +64,9 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
         const part1 = tel.slice(2,7);
         const part2 = tel.slice(7,11);
         return `(${ddd}) ${part1}-${part2}` //(XX) YYYYY-YYYY
+    },
+    dateIntFormat: (date) => {
+        return format(new Date(date), 'yyyy-MM-dd')
     }
 }}));
 app.set('view engine', 'hbs');
