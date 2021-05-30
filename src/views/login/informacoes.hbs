@@ -6,16 +6,22 @@
 
 <body>
     <main class="lyt_painel pg_informacoes">
-        <form class="form-login column" action="" method="">
+        <form class="form-login column" action="/perfil" method="POST" enctype="multipart/form-data">
             <div class="profile-container columm">
                 <div class="user-container column">
                     <h1 class="titulo-user">Minhas informações</h1>
+                    {{#each erros}}
+                    <div class="form-error">
+                        <h2 class="sub titulo">{{text}}</h2>
+                    </div>
+                    {{/each}}
                     <div class="container-user column">
+                        {{#each perfil}}
                         <div class="user-wrapper row">
                             <!-- Imagem -->
                             <div class="imagePerfil column">
                                 <img
-                                    src="/assets/img/user_fabio.png"
+                                    src="/assets/profile/{{cd_foto_usuario}}"
                                     alt="Foto de perfil"
                                     class="imgUser"
                                 />
@@ -25,7 +31,6 @@
                                         type="file"
                                         accept="image/*"
                                         name="userImg"
-                                        multiple
                                     />
                                 </div>
                             </div>
@@ -40,8 +45,8 @@
                                             class="input-form"
                                             type="text"
                                             name="username"
-                                            placeholder="João de Oliveira"
-                                            value="André de Oliveira Paiva"
+                                            placeholder="Nome"
+                                            value="{{nm_usuario}}"
                                         />
                                     </div>
                                 </div>
@@ -54,33 +59,33 @@
                                             class="input-form"
                                             type="email"
                                             name="email"
-                                            value="andreopv@gmail.com"
-                                            placeholder="email@exemplo.com"
+                                            value="{{cd_email_usuario}}"
+                                            placeholder="email@email.com"
                                         />
                                     </div>
-                                    <div class="column">
+                                    <!--<div class="column">
                                         <label for="">CPF</label>
                                         <input
                                             class="input-form"
                                             type="text"
                                             name="cpf"
-                                            placeholder="000.000.000-0"
-                                            value="234.986.345-0"
+                                            placeholder="000.000.000-00"
+                                            value="{{cd_cpf_usuario}}"
                                         />
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <!-- Data Nascimento e Celular -->
                                 <div class="row">
-                                    <div class="column">
+                                    <!-- <div class="column">
                                         <label for="">Data de nascimento</label>
                                         <input
                                             class="input-form"
                                             type="date"
                                             name="dtuser"
-                                            value="2004-03-12"
+                                            value="{{dateIntFormat dt_nascimento_usuario}}"
                                         />
-                                    </div>
+                                    </div>   -->                                
                                     <div class="column">
                                         <label for="">Celular</label>
                                         <input
@@ -88,7 +93,7 @@
                                             type="tel"
                                             name="cel"
                                             placeholder="(00) 00000-0000"
-                                            value="(13) 99788-2135"
+                                            value="{{cd_celular_usuario}}"
                                         />
                                     </div>
                                 </div>
@@ -101,8 +106,8 @@
                                             name="estado"
                                             class="input-form"
                                         >
-                                            <option value="0">
-                                                Selecione o Estado
+                                            <option value="{{sg_estado_usuario}}">
+                                                {{sg_estado_usuario}}
                                             </option>
                                         </select>
                                     </div>
@@ -112,18 +117,17 @@
                                         <input type="hidden" name="state" />
                                         <select
                                             name="cidade"
-                                            disabled="disabled"
                                             class="input-form"
                                         >
-                                            <option value="0">
-                                                Seleciona a Cidade
+                                            <option value="{{nm_cidade_usuario}}">
+                                                {{nm_cidade_usuario}}
                                             </option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                        {{/each}}
                         <!-- Redefinir senha -->
                         <div class="informacoes column">
                             <div class="row">
