@@ -169,23 +169,55 @@ router.get('/descobrir/pedido/:id', async (req, res) => {
     const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
      cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
     
-    res.render('pedidos/pedido', {
-        pedido: pedido,
-        alimento: alimento
-    })
+    if(req.user){
 
+        const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
+        WHERE cd_pedido = ? AND cd_usuario_pedido = ?`,[idPed, req.user[0].cd_usuario]);
+    
+        if(count[0].count == 1){
+            let identify = {
+                exist: true
+            }
+            res.render('pedidos/pedido', {
+                pedido: pedido,
+                alimento: alimento,
+                identify
+            })
+        }
+        else{
+            res.render('pedidos/pedido', {
+                pedido: pedido,
+                alimento: alimento
+            })
+        }
+     }
+    else{
+        res.render('pedidos/pedido', {
+            pedido: pedido,
+            alimento: alimento
+        })
+    }
+    
     await conn.end();
 })
 
 router.get('/descobrir/pedido/:id/ajudar', isAuth, async (req, res) => {
     const conn = await db.connection();
     const idPed = req.params.id;
-    const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
-     cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
+    const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
+    WHERE cd_pedido = ? AND cd_usuario_pedido = ?`,[idPed, req.user[0].cd_usuario]);
+    if(count[0].count == 0){
+        const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
+        cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
+   
+       res.render('pedidos/contribuir', {
+           alimento: alimento
+       })
+    }
+    else{
+        res.redirect('/')
+    }
 
-    res.render('pedidos/contribuir', {
-        alimento: alimento
-    })
     await conn.end();
 })
 
