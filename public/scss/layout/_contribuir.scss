@@ -1,6 +1,7 @@
 .lyt_denuncia {
     min-height: calc(100vh - 8rem);
-    // justify-content: center;
+    justify-content: center;
+
     &.pg_denuncia {
         .input-form[name="motivos"] {
             height: 6rem;
@@ -14,6 +15,7 @@
     }
 
     .form-container {
+        transform: translateY(-4rem);
         width: 100%;
         max-width: 60rem;
         height: auto;
