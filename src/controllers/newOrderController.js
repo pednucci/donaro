@@ -18,15 +18,23 @@ exports.newOrder = async (req, res) => {
         if(desc == '' || estado == '0' || cidade == '0' || titulo == ''|| dtPed == ''){
             erros.push({text: 'Não deixe campos em branco!'})
         }
+        if(typeof req.body.alimentoInput == 'string' && (!req.body.quantidade || req.body.quantidade <= 0)){
+            erros.push({text: 'A quantidade mínima é 1'})
+        }
         if(typeof req.body.alimentoInput == 'object'){
             let alimentos = [];
             let quantidades = [];
+            var id = 0;
             for(i = 0; i<req.body.alimentoInput.length; i++){
                 quantidades[i] = req.body.quantidade[i];
                 alimentos[i] = req.body.alimentoInput[i];
+                if(!req.body.quantidade[i] || req.body.quantidade[i] <= 0) id = 1;
             }
             if(!(alimentos.length === new Set(alimentos).size)){
                 erros.push({text: 'Não repita alimentos!'})
+            }
+            if(id == 1){
+                erros.push({text: 'A quantidade mínima é 1!'})
             }
         }
         if(isPast(new Date(dtPed))){
