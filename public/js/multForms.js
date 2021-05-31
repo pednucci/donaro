@@ -69,7 +69,7 @@ if (radiosContainer) {
 
   //#endregion
 
-  // radiosContainer.appendChild(addRadios(motivosDenunciaNaoDoador))
+  radiosContainer.appendChild(addRadios(motivosDenunciaNaoDoador))
 
   //#region Change radios
   var radios = document.querySelectorAll('input[type=radio][name="relacao"]');
