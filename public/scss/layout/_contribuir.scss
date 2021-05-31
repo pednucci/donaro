@@ -4,6 +4,11 @@
     padding-bottom: 4rem;
 
     &.pg_denuncia {
+        .form-container {
+            width: 100%;
+            max-width: 80rem;
+        }
+
         .sub.titulo {
             margin-bottom: 1rem !important;
         }
