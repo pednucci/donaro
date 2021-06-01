@@ -2,11 +2,10 @@
     <title>Denúncias (Usuários)</title>
 </head>
 
-{{>navbar}}
+    {{>navbar}}
 
-<main class="lyt_painel lyt_notificacoes pg_dusuarios"> 
-   
-    {{!-- Painel --}}
+<main class="lyt_painel lyt_notificacoes pg_dusuarios">
+     {{!-- Painel --}} 
     <div class="container-painel">
         <div class="background-painel">
             <h1 class="painel-titulo">ADM</h1>
@@ -21,30 +20,22 @@
         <div class="menu-painel">
             <ul class="menu-painel-buttons row">
                 <a href="#">
-                    <li class="painel-text active">Denúncias</li>
+                    <li class="painel-text active">Usuários</li>
                 </a>
                 <a href="#">
-                    <li class="painel-text">Não entregues</li>
+                    <li class="painel-text">Campanhas</li>
                 </a>
             </ul>
         </div>
     </div>
 
-    {{!-- Cards --}}
+     {{!-- Cards --}} 
     <div class="cards-container">
-        {{!-- Menu tipo da denuncia --}}
-        <ul class="users row">
-            <a href="#">
-                <li class="titulo-categoria">Pedidos</li>
-            </a>
-            <a href="">
-                <li class="titulo-categoria underline">Usuários</li>
-            </a>
-        </ul>
+         {{!-- Menu tipo da denuncia --}} 
 
-        {{!-- Card --}}
+         {{!-- Card --}} 
         <div class="card row">
-            {{!-- Informações --}}
+             {{!-- Informações --}} 
             <div class="card-user row">
                 <div class="card-image">
                     <img
@@ -55,11 +46,14 @@
                 </div>
                 <div class="card-info column">
                     <h1 class="nome-card">Julio Vieira</h1>
-                    <h2 class="desc-card">ID da denúncia: 634</h2>
+                    <h2 class="desc-card">
+                        Motivo:
+                        <strong>Mensagens inapropriadas</strong>
+                    </h2>
                 </div>
             </div>
 
-            {{!-- Btn --}}
+             {{!-- Btn --}} 
             <div class="card-btn column">
                 <a href="#">
                     <button class="btn red-denounce">
@@ -67,10 +61,10 @@
                     </button>
                 </a>
                 <div class="date row">
-                    <img
+                    <!-- <img
                         src="/assets/img/icone_calendar.svg"
                         alt="Data"
-                    />
+                    /> -->
                     <span class="date-time">28/05/2021 - 21:44:08</span>
                 </div>
             </div>
