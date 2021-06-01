@@ -79,7 +79,7 @@
                             <div class="row radio">
                                 <input
                                     type="radio"
-                                    name="dn"
+                                    name="relacao"
                                     value="0"
                                     id="d0"
                                 />
@@ -89,7 +89,7 @@
                             <div class="row radio">
                                 <input
                                     type="radio"
-                                    name="dn"
+                                    name="relacao"
                                     value="1"
                                     id="d1"
                                 />
@@ -104,7 +104,7 @@
                             <div class="row radio">
                                 <input
                                     type="radio"
-                                    name="relacao"
+                                    name="denuncia"
                                     value="0"
                                     id="r0"
                                 />
@@ -117,7 +117,7 @@
                             <div class="row radio">
                                 <input
                                     type="radio"
-                                    name="relacao"
+                                    name="denuncia"
                                     value="1"
                                     id="r1"
                                 />
@@ -153,14 +153,20 @@
                         </div>
                     </fieldset>
 
-                    <!-- {{!-- Btn --}} -->
-                    <div class="row btnsForm">
-                        <button class="btn blue previous" type="button">
-                            &lt; Anterior
-                        </button>
-                        <button class="btn blue next" type="button">
-                            Próximo &gt;
-                        </button>
+                    <!-- {{!-- Footer do form --}} -->
+                    <div class="row formFooter">
+                        <!-- {{!-- Numeração de páginas --}} -->
+                        <h1 class="formTabs"></h1>
+
+                        <!-- {{!-- Btns --}} -->
+                        <div class="row btnsForm">
+                            <button class="btn blue previous" type="button">
+                                &lt; Anterior
+                            </button>
+                            <button class="btn blue next" type="button">
+                                Próximo &gt;
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>

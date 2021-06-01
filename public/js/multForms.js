@@ -2,12 +2,22 @@ const btnNext = document.querySelector('.btn.next');
 const btnPrevious = document.querySelector('.btn.previous');
 const tab = document.querySelectorAll('.tab');
 const form = document.querySelector('form');
+const formTabs = document.querySelector('.formTabs')
 var currentTab = 0;
 
 const radiosContainer = document.querySelector('.fieldRadio');
 
+var radioRelacao = document.querySelectorAll('input[type=radio][name="relacao"]');
+var radioDenuncia = document.querySelectorAll('input[type=radio][name="denuncia"]');
+var radioMotivo = document.querySelectorAll('input[type=radio][name="motivo"]');
+var textDescricao = document.querySelector('textarea[name=descricao]');
+var rw = document.querySelector('.radios.column')
+
+
+formTabs.innerText = `${currentTab + 1}/${tab.length}`
 
 if (radiosContainer) {
+  //#region Variáveis
   var radios;
 
   var motivosDenunciaDoador = {
@@ -28,6 +38,9 @@ if (radiosContainer) {
     7: 'Outro',
   }
 
+  //#endregion
+
+
   //#region Criação dos inputs
 
 
@@ -47,7 +60,7 @@ if (radiosContainer) {
 
         wrapperRadio[motivo].classList = "row radio"
         inputRadio[motivo].setAttribute("type", "radio")
-        inputRadio[motivo].setAttribute("name", "denuncia")
+        inputRadio[motivo].setAttribute("name", "motivo")
         inputRadio[motivo].setAttribute("value", motivo)
         inputRadio[motivo].setAttribute("id", motivo)
 
@@ -61,6 +74,7 @@ if (radiosContainer) {
         radiosWrapper.appendChild(wrapperRadio[motivo])
 
       }
+
       return radiosWrapper
     } else if (tipoMotivo == 0) {
       console.log("0")
@@ -69,11 +83,9 @@ if (radiosContainer) {
 
   //#endregion
 
-  radiosContainer.appendChild(addRadios(motivosDenunciaNaoDoador))
 
   //#region Change radios
-  var radios = document.querySelectorAll('input[type=radio][name="relacao"]');
-  var rw = document.querySelector('.radios.column')
+
 
   function changeHandler(event) {
     if (this.value === '0') {
@@ -88,21 +100,102 @@ if (radiosContainer) {
         radiosWrapper.removeChild(radiosWrapper.lastChild)
       }
       radiosContainer.appendChild(addRadios(motivosDenunciaNaoDoador))
+
     }
   };
 
-  Array.prototype.forEach.call(radios, function (radio) {
+  Array.prototype.forEach.call(radioDenuncia, function (radio) {
     radio.addEventListener('change', changeHandler);
   });
   //#endregion
+
+
+  //#region ValidateForm
+
+  function validateRelacao() {
+    if (radioRelacao) {
+      for (option in radioRelacao) {
+        if (radioRelacao[option].checked) {
+          return true;
+        }
+      }
+      return false;
+    }
+  }
+
+  function validateMotivo() {
+    var radioMotivo = document.querySelectorAll('input[type=radio][name="motivo"]');
+
+    if (radioMotivo) {
+      for (option in radioMotivo) {
+        if (radioMotivo[option].checked) {
+          return true;
+        }
+      }
+      return false;
+    }
+  }
+  //#endregion
+}
+
+function validateDescricao() {
+  var textDescricao = document.querySelector('textarea[name=descricao]');
+
+  if (textDescricao) {
+    if (textDescricao.value === "") {
+      return false;
+    }
+    return true;
+  }
+}
+
+function validateDenuncia() {
+  if (radioDenuncia) {
+    for (option in radioDenuncia) {
+      if (radioDenuncia[option].checked) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 
+// Botão Próximo
 btnNext.addEventListener('click', () => {
   if (currentTab !== (tab.length - 1)) {
-    currentTab++;
-    tab[currentTab].style.display = "initial";
-    tab[currentTab - 1].style.display = "none";
+    if (radiosContainer) {
+      if (currentTab === 0) {
+        if (validateDenuncia() && validateRelacao()) {
+          currentTab++;
+          tab[currentTab].style.display = "initial";
+          tab[currentTab - 1].style.display = "none";
+        } else {
+          console.log("Não vai passar")
+        }
+      } else if (currentTab === 1) {
+        if (validateMotivo()) {
+          currentTab++;
+          tab[currentTab].style.display = "initial";
+          tab[currentTab - 1].style.display = "none";
+
+        } else {
+          console.log("Não vai passar")
+        }
+      }
+
+
+    } else {
+      if (currentTab === 0 && validateDenuncia()) {
+        currentTab++;
+        tab[currentTab].style.display = "initial";
+        tab[currentTab - 1].style.display = "none";
+      } else {
+        console.log("Não vai passar")
+      }
+
+
+    }
 
     if (currentTab === (tab.length - 1)) {
       btnNext.innerHTML = "Enviar";
@@ -112,11 +205,22 @@ btnNext.addEventListener('click', () => {
       btnPrevious.classList.add('visible')
     }
 
+
+
+
+
   } else {
-    form.submit();
+    if (validateDescricao()) {
+      form.submit();
+    } else {
+      console.log("Não vai passar")
+    }
   }
+
+  formTabs.innerText = `${currentTab + 1}/${tab.length}`
 })
 
+// Botão Anterior
 btnPrevious.addEventListener('click', () => {
   if (currentTab > 0) {
     tab[currentTab].style.display = "none"
@@ -125,8 +229,14 @@ btnPrevious.addEventListener('click', () => {
     currentTab--;
 
     if (currentTab === 0) {
-      btnNext.innerHTML = "Próximo";
       btnPrevious.classList.remove('visible')
     }
+
+
+    if (currentTab !== (tab.length - 1)) {
+      btnNext.innerHTML = "Próximo";
+    }
   }
+
+  formTabs.innerText = `${currentTab + 1}/${tab.length}`
 })
