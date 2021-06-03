@@ -1,0 +1,242 @@
+.pg_relatorio {
+    .profile-container {
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 7rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .relatorio-container {
+            height: 60rem;
+            justify-content: flex-start;
+            gap: 4rem;
+
+            h1 {
+                margin-bottom: 0.5rem;
+                font-size: 1.9rem;
+            }
+
+            .alimento:not(:first-child)::before,
+            .doador:not(:first-child)::before {
+                content: "";
+                display: block;
+                position: relative;
+
+                width: 100%;
+                height: 0.05rem;
+                margin-bottom: 1rem;
+
+                background-color: var(--gray-border);
+            }
+
+            .wrapper {
+                padding: 2rem;
+                border-radius: 1rem;
+
+                border: var(--border-form);
+            }
+
+            .charts-relatorio {
+                gap: 4rem;
+                width: 25rem;
+
+                h1 {
+                    text-align: left;
+                }
+
+                .chart-container {
+                    margin-top: 2rem;
+                }
+
+                .chart {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 900;
+                }
+
+                .chart-total {
+                    width: 100%;
+                    height: 30rem;
+
+                    .chart-container.doughnut {
+                        // Values
+                        $canvas-size: 20rem;
+                        $animation-time: 1400ms; // Set the same as in JavaScript for chart animation
+
+                        // Fadin animation
+                        @keyframes fadein {
+                            0% {
+                                opacity: 0;
+                            }
+                            40% {
+                                opacity: 0;
+                            }
+                            80% {
+                                opacity: 1;
+                            }
+                            100% {
+                                opacity: 1;
+                            }
+                        }
+
+                        .chart {
+                            &__figure {
+                                display: flex;
+                                justify-content: space-between;
+                                height: $canvas-size;
+
+                                canvas {
+                                    width: $canvas-size;
+                                    height: $canvas-size;
+                                }
+                            }
+
+                            &__canvas {
+                                margin: auto;
+                            }
+
+                            &__value {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 1rem;
+
+                                animation: fadein $animation-time;
+                                position: absolute;
+
+                                p {
+                                    margin-top: 3rem;
+                                    font-size: 3.5rem;
+                                    color: var(--blue-link);
+                                    width: max-content;
+                                }
+
+                                .sub.titulo {
+                                    font-size: 2rem;
+                                    color: var(--black-logo);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .chart-relacao {
+                    width: 100%;
+                    height: 30rem;
+
+                    .chart-container.pizza {
+                    }
+                }
+            }
+
+            .alimentos-relatorio {
+                width: 32rem;
+                height: 64rem;
+
+                .alimentos {
+                    width: 100%;
+                    height: max-content;
+                    max-height: 50rem;
+
+                    margin-top: 1.5rem;
+                    padding-right: 1rem;
+
+                    justify-content: flex-start;
+                    gap: 2rem;
+
+                    overflow: hidden;
+                    overflow-y: scroll;
+
+                    .alimento {
+                        justify-content: flex-start;
+                        gap: 0.5rem;
+
+                        .sub.titulo {
+                            font-size: 1.8rem;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        .progresso-container {
+                            margin: 0;
+                            gap: 1rem;
+
+                            .arrecadado {
+                                * {
+                                    font-weight: bold;
+                                    color: var(--blue-logo);
+                                }
+                            }
+                        }
+
+                        .meta {
+                            p {
+                                font-size: 1.5rem;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .doacoes-relatorio {
+                gap: 4rem;
+                width: 35rem;
+
+                .total-doacoes {
+                    width: 100%;
+                    height: 10rem;
+                }
+
+                .lista-doacoes {
+                    width: 100%;
+                    height: 50rem;
+
+                    .doadores {
+                        max-height: 40rem;
+                        padding-right: 1rem;
+
+                        justify-content: flex-start;
+                        gap: 1rem;
+
+                        overflow: hidden;
+                        overflow-y: scroll;
+
+                        .doador {
+                            .row {
+                                justify-content: flex-start;
+                                gap: 1.5rem;
+
+                                margin: 0.5rem 0;
+                                padding-right: 1rem;
+
+                                .img-wrapper {
+                                    width: 6rem;
+                                    height: 6rem;
+
+                                    border-radius: 1rem;
+                                }
+
+                                .doador-info {
+                                    h1 {
+                                        font-size: 1.8rem;
+                                    }
+
+                                    p.row {
+                                        gap: 1rem;
+                                        font-weight: 500;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

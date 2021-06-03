@@ -1,124 +1,602 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- CSS Donaro -->
-    <link rel="stylesheet" href="/public/css/global.css">
-    <link rel="stylesheet" href="/public/css/pedidos-relatorio.css">
-    
-    <title>Meus pedidos (Relatório)</title>
-</head>
-<body>
-    <header>
-        <nav class="nav-bar">
-            <div class="nav-logo">
-                <img src="/public/assets/img/donaro_logo.svg" class="logo" alt="Logo Donaro">
-            </div>
-            <div class="nav-menu">
-                <ul class="row nav-list">
-                    <a href="" class="nav-link">
-                        <li>Descobrir</li>
-                    </a>
-                    <a href="" class="nav-link">
-                        <li>Criar</li>
-                    </a>
-                    <a href="" class="nav-link">
-                        <li>Painel</li>
-                    </a>
-                </ul>
-                <div class="row nav-profile">
-                    <div class="img-wrapper">
-                        <img src="/public/assets/img/nav-person.svg" class="img-profile" alt="Foto de perfil">
+    <head>
+        <!-- {{! General Config }} -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- {{! Google Fonts }} -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- {{! Style & Favicon }} -->
+        <link rel="stylesheet" href="/public/scss/dist/main.css" />
+        <link
+            rel="shortcut icon"
+            href="/public/assets/img/icon.png"
+            type="image/x-icon"
+        />
+
+        <title>Meus pedidos (Relatório)</title>
+    </head>
+
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <div class="nav-logo">
+                    <img
+                        src="/public/assets/img/Donaro_Logo.svg"
+                        class="logo"
+                        alt="Logo Donaro"
+                    />
+                </div>
+                <div class="nav-menu">
+                    <ul class="row nav-list">
+                        <a href="" class="nav-link">
+                            <li>Requisições</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Denúncias</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Não entregues</li>
+                        </a>
+                    </ul>
+                    <div class="row nav-profile">
+                        <div class="img-wrapper">
+                            <img
+                                src="/public/assets/img/user_nathan.png"
+                                class="img-profile"
+                                alt="Foto de perfil"
+                            />
+                        </div>
+                        <img
+                            src="/public/assets/img/arrow-down.svg"
+                            alt="Icone de seta"
+                        />
                     </div>
-                    <img src="/public/assets/img/arrow-down.svg" alt="Icone de seta">
+                </div>
+            </nav>
+        </header>
+
+        <main class="lyt_painel lyt_usuario-pedido pg_relatorio">
+            <!-- {{!-- Painel Topo --}} -->
+            <div class="usuario container-painel">
+                <div class="background-painel">
+                    <h1 class="painel-titulo">Sopão para moradores de rua</h1>
+                    <div class="img-wrapper">
+                        <img
+                            src="/public/assets/img/background_user.png"
+                            alt=""
+                        />
+                    </div>
+                </div>
+
+                <!-- Painel Menu-->
+                <div class="menu-painel">
+                    <ul class="menu-painel-buttons row">
+                        <a href="#">
+                            <li class="painel-text active">Relatório</li>
+                        </a>
+                        <a href="#">
+                            <li class="painel-text">Ajudas recebidas</li>
+                        </a>
+                    </ul>
                 </div>
             </div>
-        </nav>
-    </header>
 
-    <main>
-        <div class="container-painel">
-            <div class="background-painel">
-                <h1 class="painel-titulo">Almoço na creche Arco-Íris</h1>
-            </div>
+            <div class="usuario profile-container columm">
+                <h1>Relatório Geral da campanha:</h1>
+                <div class="relatorio-container row">
+                    <div class="charts-relatorio column">
+                        <div class="chart-total wrapper">
+                            <h1>Total arrecadado</h1>
+                            <div class="chart-container doughnut">
+                                <section class="chart" id="chartContainer">
+                                    <figure class="chart__figure">
+                                        <canvas
+                                            class="chart__canvas"
+                                            id="chartCanvas"
+                                            width="150"
+                                            height="150"
+                                            aria-label="Example doughnut chart showing data as a percentage"
+                                            role="img"
+                                        ></canvas>
+                                    </figure>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="chart-relacao wrapper">
+                            <h1>Relação dos alimentos</h1>
+                            <div class="chart-container pizza">
+                                <section class="chart">
+                                    <figure class="chart__figure">
+                                        <canvas
+                                            class="chart__canvas"
+                                            id="myChart"
+                                            width="150"
+                                            height="150"
+                                            aria-label="Example doughnut chart showing data as a percentage"
+                                            role="img"
+                                        ></canvas>
+                                    </figure>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alimentos-relatorio wrapper">
+                        <h1>Alimentos</h1>
+                        <h2>Total de alimentos arrecados</h2>
 
-            <div class="menu-painel">
-                <div class="menu-painel-buttons">
-                    <a href="#"><h2 class="painel-text"> Relatório </h2></a>
-                    <a href="#"><h2 class="painel-text"> Ajudas recebidas </h2></a>
+                        <div class="alimentos column">
+                            <div class="alimento column">
+                                <h2 class="sub titulo">Arroz</h2>
+                                <div class="progresso-container row">
+                                    <div class="arrecadado">
+                                        <p>
+                                            <span class="arrecadado-Arroz"
+                                                >10</span
+                                            >%
+                                        </p>
+                                    </div>
+                                    <div class="porcentagem">
+                                        <div class="progresso-barra">
+                                            <div
+                                                class="
+                                                    progresso-atual
+                                                    progresso-atual-Arroz
+                                                "
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="meta row">
+                                    <p>Arrecadado: 10 Kg</p>
+                                    <p>Meta: 5 Kg</p>
+                                </div>
+                            </div>
+                            <div class="alimento column">
+                                <h2 class="sub titulo">Arroz</h2>
+                                <div class="progresso-container row">
+                                    <div class="arrecadado">
+                                        <p>
+                                            <span class="arrecadado-Arroz"
+                                                >10</span
+                                            >%
+                                        </p>
+                                    </div>
+                                    <div class="porcentagem">
+                                        <div class="progresso-barra">
+                                            <div
+                                                class="
+                                                    progresso-atual
+                                                    progresso-atual-Arroz
+                                                "
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="meta row">
+                                    <p>Arrecadado: 10 Kg</p>
+                                    <p>Meta: 5 Kg</p>
+                                </div>
+                            </div>
+                            <div class="alimento column">
+                                <h2 class="sub titulo">Arroz</h2>
+                                <div class="progresso-container row">
+                                    <div class="arrecadado">
+                                        <p>
+                                            <span class="arrecadado-Arroz"
+                                                >10</span
+                                            >%
+                                        </p>
+                                    </div>
+                                    <div class="porcentagem">
+                                        <div class="progresso-barra">
+                                            <div
+                                                class="
+                                                    progresso-atual
+                                                    progresso-atual-Arroz
+                                                "
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="meta row">
+                                    <p>Arrecadado: 10 Kg</p>
+                                    <p>Meta: 5 Kg</p>
+                                </div>
+                            </div>
+                            <div class="alimento column">
+                                <h2 class="sub titulo">Arroz</h2>
+                                <div class="progresso-container row">
+                                    <div class="arrecadado">
+                                        <p>
+                                            <span class="arrecadado-Arroz"
+                                                >10</span
+                                            >%
+                                        </p>
+                                    </div>
+                                    <div class="porcentagem">
+                                        <div class="progresso-barra">
+                                            <div
+                                                class="
+                                                    progresso-atual
+                                                    progresso-atual-Arroz
+                                                "
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="meta row">
+                                    <p>Arrecadado: 10 Kg</p>
+                                    <p>Meta: 5 Kg</p>
+                                </div>
+                            </div>
+                            <div class="alimento column">
+                                <h2 class="sub titulo">Arroz</h2>
+                                <div class="progresso-container row">
+                                    <div class="arrecadado">
+                                        <p>
+                                            <span class="arrecadado-Arroz"
+                                                >10</span
+                                            >%
+                                        </p>
+                                    </div>
+                                    <div class="porcentagem">
+                                        <div class="progresso-barra">
+                                            <div
+                                                class="
+                                                    progresso-atual
+                                                    progresso-atual-Arroz
+                                                "
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="meta row">
+                                    <p>Arrecadado: 10 Kg</p>
+                                    <p>Meta: 5 Kg</p>
+                                </div>
+                            </div>
+                            <div class="alimento column">
+                                <h2 class="sub titulo">Arroz</h2>
+                                <div class="progresso-container row">
+                                    <div class="arrecadado">
+                                        <p>
+                                            <span class="arrecadado-Arroz"
+                                                >10</span
+                                            >%
+                                        </p>
+                                    </div>
+                                    <div class="porcentagem">
+                                        <div class="progresso-barra">
+                                            <div
+                                                class="
+                                                    progresso-atual
+                                                    progresso-atual-Arroz
+                                                "
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="meta row">
+                                    <p>Arrecadado: 10 Kg</p>
+                                    <p>Meta: 5 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doacoes-relatorio column">
+                        <div class="total-doacoes wrapper">
+                            <h1>143</h1>
+                            <h2>Total de doações recebidas</h2>
+                        </div>
+                        <div class="lista-doacoes wrapper">
+                            <h1>Doadores</h1>
+
+                            <div class="doadores column">
+                                <div class="doador column">
+                                    <div class="row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_joao.png"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div class="doador-info">
+                                            <h1>João Oliveira</h1>
+                                            <p class="row">
+                                                <img
+                                                    src="/public/assets/img/icone_mail.svg"
+                                                    alt=""
+                                                />
+                                                jpoliv21@gmail.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doador column">
+                                    <div class="row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_joao.png"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div class="doador-info">
+                                            <h1>João Oliveira</h1>
+                                            <p class="row">
+                                                <img
+                                                    src="/public/assets/img/icone_mail.svg"
+                                                    alt=""
+                                                />
+                                                jpoliv21@gmail.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doador column">
+                                    <div class="row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_joao.png"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div class="doador-info">
+                                            <h1>João Oliveira</h1>
+                                            <p class="row">
+                                                <img
+                                                    src="/public/assets/img/icone_mail.svg"
+                                                    alt=""
+                                                />
+                                                jpoliv21@gmail.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doador column">
+                                    <div class="row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_joao.png"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div class="doador-info">
+                                            <h1>João Oliveira</h1>
+                                            <p class="row">
+                                                <img
+                                                    src="/public/assets/img/icone_mail.svg"
+                                                    alt=""
+                                                />
+                                                jpoliv21@gmail.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doador column">
+                                    <div class="row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_joao.png"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div class="doador-info">
+                                            <h1>João Oliveira</h1>
+                                            <p class="row">
+                                                <img
+                                                    src="/public/assets/img/icone_mail.svg"
+                                                    alt=""
+                                                />
+                                                jpoliv21@gmail.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="doador column">
+                                    <div class="row">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/public/assets/img/user_joao.png"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div class="doador-info">
+                                            <h1>João Oliveira</h1>
+                                            <p class="row">
+                                                <img
+                                                    src="/public/assets/img/icone_mail.svg"
+                                                    alt=""
+                                                />
+                                                jpoliv21@gmail.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
 
-        <div class="container-relatorio">
-            <h1 class="titulo-depoimento"> Total arrecadado: </h1>
-            <h2 class="subtitulo"> 5Kg de Arroz </h2>
+        <footer class="footer-bar">
+            <img
+                class="logo-footer"
+                src="/public/assets/img/Donaro_Logo_White.svg"
+                alt="Logo Donaro"
+            />
+            <ul class="menu-footer">
+                <h2 class="sub titulo white">Ações sociais</h2>
+                <a href="#">
+                    <li class="list-item">Criar</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Fazer doação</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Descobrir</li>
+                </a>
+            </ul>
+            <ul class="menu-footer">
+                <h2 class="sub titulo white">Ajuda</h2>
+                <a href="#">
+                    <li class="list-item">Fale conosco</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Dúvidas frequentes</li>
+                </a>
+                <a href="#">
+                    <li class="list-item">Atualizações</li>
+                </a>
+            </ul>
+            <ul class="menu-footer">
+                <h2 class="sub titulo white">Acompanhe nossas redes sociais</h2>
+                <div class="redes-sociais">
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-facebook.svg"
+                            alt="icone Facebook"
+                        />
+                    </a>
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-instagram.svg"
+                            alt="icone Instagram"
+                        />
+                    </a>
+                    <a href="#">
+                        <img
+                            class="icone-midias"
+                            src="/public/assets/img/logo-twitter.svg"
+                            alt="icone Twitter"
+                        />
+                    </a>
+                </div>
+            </ul>
+        </footer>
+    </body>
 
-            <h1 class="titulo-depoimento"> Total de estabelecimentos: </h1>
-            <h2 class="subtitulo"> 5 </h2>
-        </div>
-    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
-    <footer class="footer-bar">
-      <img
-          class="logo-footer"
-          src="/public/assets/img/Donaro_Logo_White.svg"
-          alt="Logo Donaro"
-      />
-      <ul class="menu-footer">
-          <h2 class="sub titulo white">Ações sociais</h2>
-          <a href="#">
-              <li class="list-item">Criar</li>
-          </a>
-          <a href="#">
-              <li class="list-item">Fazer doação</li>
-          </a>
-          <a href="#">
-              <li class="list-item">Descobrir</li>
-          </a>
-      </ul>
-      <ul class="menu-footer">
-          <h2 class="sub titulo white">Ajuda</h2>
-          <a href="#">
-              <li class="list-item">Fale conosco</li>
-          </a>
-          <a href="#">
-              <li class="list-item">Dúvidas frequentes</li>
-          </a>
-          <a href="#">
-              <li class="list-item">Atualizações</li>
-          </a>
-      </ul>
-      <ul class="menu-footer">
-          <h2 class="sub titulo white">Acompanhe nossas redes sociais</h2>
-          <div class="redes-sociais">
-              <a href="#">
-                  <img
-                      class="icone-midias"
-                      src="/public/assets/img/logo-facebook.svg"
-                      alt="icone Facebook"
-                  />
-              </a>
-              <a href="#">
-                  <img
-                      class="icone-midias"
-                      src="/public/assets/img/logo-instagram.svg"
-                      alt="icone Instagram"
-                  />
-              </a>
-              <a href="#">
-                  <img
-                      class="icone-midias"
-                      src="/public/assets/img/logo-twitter.svg"
-                      alt="icone Twitter"
-                  />
-              </a>
-          </div>
-      </ul>
-    </footer>
-    
-</body>
+    <script>
+        var percent = 90;
+        const color = "#064789";
+        const canvas = "chartCanvas";
+        const container = "chartContainer";
+
+        const percentValue = percent; // Sets the single percentage value
+        const colorGreen = color, // Sets the chart color
+            animationTime = "1400"; // Sets speed/duration of the animation
+
+        const chartCanvas = document.getElementById(canvas), // Sets canvas element by ID
+            chartContainer = document.getElementById(container), // Sets container element ID
+            divElement = document.createElement("div"), // Create element to hold and show percentage value in the center on the chart
+            domString =
+                '<div class="chart__value"><p>' +
+                percentValue +
+                "%</p><span class='sub titulo'>da meta</span></div>"; // String holding markup for above created element
+
+        // Create a new Chart object
+        const doughnutChart = new Chart(chartCanvas, {
+            type: "doughnut", // Set the chart to be a doughnut chart type
+            data: {
+                datasets: [
+                    {
+                        data: [percentValue, 100 - percentValue], // Set the value shown in the chart as a percentage (out of 100)
+                        backgroundColor: [colorGreen], // The background color of the filled chart
+                        borderWidth: 0, // Width of border around the chart
+                    },
+                ],
+            },
+            options: {
+                cutoutPercentage: 75, // The percentage of the middle cut out of the chart
+                responsive: false, // Set the chart to not be responsive
+                tooltips: {
+                    enabled: false, // Hide tooltips
+                },
+            },
+        });
+
+        Chart.defaults.global.animation.duration = animationTime; // Set the animation duration
+
+        divElement.innerHTML = domString; // Parse the HTML set in the domString to the innerHTML of the divElement
+        chartContainer.appendChild(divElement.firstChild); // Append the divElement within the chartContainer as it's child
+    </script>
+
+    <script>
+        // Fake Data - Total 46946
+        var dataset = [
+            { label: "Mobile", count: 18778, color: "#72bbe1" },
+            { label: "Desktop", count: 28168, color: "#3ea6dd" },
+        ];
+
+        var dataTotal = dataset.reduce((acc, data) => (acc += data.count), 0);
+        var mobileCalculate = (dataset[0].count / dataTotal) * 100;
+        var desktopCalculate = (dataset[1].count / dataTotal) * 100;
+        var mobilePercentage = `${mobileCalculate.toFixed(1)}%`;
+        var desktopPercentage = `${desktopCalculate.toFixed(1)}%`;
+
+        // Chart JS Initialize
+        var ctx = document.getElementById("myChart").getContext("2d");
+
+        var myChart = new Chart(ctx, {
+            type: "pie",
+            data: {
+                labels: [
+                    dataset[0].label.toUpperCase(),
+                    dataset[1].label.toUpperCase(),
+                ],
+                datasets: [
+                    {
+                        data: [dataset[0].count, dataset[1].count],
+                        backgroundColor: [dataset[0].color, dataset[1].color],
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: {
+                tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            let allData =
+                                data.datasets[tooltipItem.datasetIndex].data;
+                            let sumData = allData.reduce(
+                                (memo, data) => (memo += data),
+                                0
+                            );
+
+                            let tooltipLabel = data.labels[tooltipItem.index];
+                            let tooltipData = allData[tooltipItem.index];
+                            let tooltipPercentageCalc =
+                                (tooltipData / sumData) * 100;
+                            let tooltipPercentage = `${tooltipPercentageCalc.toFixed(
+                                1
+                            )}%`;
+
+                            return `${tooltipLabel} : ${tooltipPercentage}`;
+                        },
+                    },
+                },
+                legend: {
+                    display: false,
+                },
+            },
+        });
+    </script>
 </html>
