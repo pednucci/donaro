@@ -67,6 +67,11 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
     },
     dateIntFormat: (date) => {
         return format(new Date(date), 'yyyy-MM-dd')
+    },
+    section: function(name, options){
+        if(!this._sections) this._sections = {};
+        this._sections[name] = options.fn(this);
+        return null;
     }
 }}));
 app.set('view engine', 'hbs');
