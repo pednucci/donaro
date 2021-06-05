@@ -5,25 +5,8 @@
 {{>navbar}}
 
 <main class="lyt_painel lyt_notificacoes pg_pdoações">
-    <div class="usuario container-painel">
-        <div class="background-painel">
-            <h1 class="painel-titulo">Painel</h1>
-            <div class="img-wrapper">
-                <img src="/assets/img/background_user.png" alt="" />
-            </div>
-        </div>
-
-        <div class="menu-painel">
-            <ul class="menu-painel-buttons row">
-                <a href="/painel/pedidos">
-                    <li class="painel-text">Meus pedidos</li>
-                </a>
-                <a href="/painel/doacoes">
-                    <li class="painel-text active">Minhas doações</li>
-                </a>
-            </ul>
-        </div>
-    </div>
+    {{!-- Painel --}} 
+    {{> painelAdm navMinhasDoacoes="true" usuario="true"}}
 
     <div class="cards-container">
         <h1 class="titulo">
@@ -57,29 +40,5 @@
         {{/each}}
     </div>
 
-    <div class="numeracao-paginas">
-        <ul class="paginas">
-            <a href="">
-                <li class="num cont-pagina">1</li>
-            </a>
-            <a href="">
-                <li class="num cont-pagina">2</li>
-            </a>
-            <a href="">
-                <li class="num cont-pagina">3</li>
-            </a>
-            <a href="">
-                <li class="num cont-pagina">4</li>
-            </a>
-            <a href="">
-                <li class="num cont-pagina">5</li>
-            </a>
-            <a href="">
-                <li class="num cont-pagina">6</li>
-            </a>
-        </ul>
-        <a href="">
-            <div class="cont-pagina">Seguinte &#62;</div>
-        </a>
-    </div>
+
 </main>
