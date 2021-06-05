@@ -139,7 +139,7 @@
                         padding: 0.5rem;
                         justify-content: flex-start;
 
-                        background-color: var(--gray-message);
+                        background-color: var(--gray-background);
                         border-radius: 0.8rem;
 
                         h1 {
@@ -364,6 +364,44 @@
                                 font-size: 3rem;
                                 font-weight: bold;
                                 color: var(--red-denounce);
+                            }
+                        }
+                    }
+
+                    .food-container {
+                        margin-top: 1rem;
+
+                        .alimento-container {
+                            min-width: max-content;
+                            width: 25rem;
+                            max-height: 12rem;
+
+                            overflow: hidden;
+                            overflow-y: scroll;
+
+                            text-align: left;
+
+                            padding-right: 1rem;
+
+                            .column {
+                                justify-content: flex-start;
+
+                                .alReq {
+                                    margin-bottom: 1rem;
+                                    padding: 0.5rem;
+                                    justify-content: flex-start;
+
+                                    background-color: var(--gray-background);
+                                    border-radius: 0.8rem;
+
+                                    h1 {
+                                        font-size: 1.8rem;
+
+                                        &:first-child {
+                                            width: 18rem;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
