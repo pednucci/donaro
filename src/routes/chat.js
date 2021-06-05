@@ -62,7 +62,8 @@ router.get('/:soli', async (req, res) => {
             const [userSoli] = await conn.query(`SELECT * FROM usuario
             INNER JOIN solicitacao ON cd_usuario = cd_usuario_solicitacao
             INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido WHERE cd_usuario = (SELECT
-            cd_userSoli_chat FROM chat WHERE cd_solicitacao_chat = ?)`,[idSoli]);
+            cd_userSoli_chat FROM chat WHERE cd_solicitacao_chat = ?) AND
+            cd_solicitacao = ?`,[idSoli, idSoli]);
             const [mensagem] = await conn.query(`SELECT * FROM mensagem WHERE cd_chat_mensagem
             = ?`, [idSoli]);
             const [chatCampanhas] = await conn.query(`SELECT * FROM chat 
