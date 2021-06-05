@@ -113,13 +113,13 @@
                     {{#each userPedido}}
                     <div class="img-wrapper">
                         <img
-                            src="/assets/profile/{{cd_foto_usuario}}"
+                            src="/assets/pedidos/{{cd_imagem_pedido}}"
                             alt="Imagem usuário"
                         />
                     </div>
                      <p class="titulo-black nome-conversa row">
-                        {{nm_usuario}} 
-                        <span class="nmPedido"> • {{nm_titulo_pedido}}</span>
+                        {{nm_titulo_pedido}}
+                        <span class="nmPedido"> • Dono: {{nm_usuario}}</span>
                     </p>
                     {{/each}}
                     {{/if}}
