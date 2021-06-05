@@ -5,20 +5,24 @@
         </a>
         <div class="nav-menu">
             <ul class="row nav-list">
-                <a href="/descobrir" class="nav-link">
+                {{#if admin}}
+                {{else}}
+                 <a href="/descobrir" class="nav-link">
                     <li>Descobrir</li>
-                </a>
+                </a>               
                 <a href="/criar" class="nav-link">
                     <li>Criar</li>
-                </a>
+                </a>                
+                {{/if}}
                 {{#if user}}
-                <a href="/painel/pedidos" class="nav-link">
-                    <li>Painel</li>
-                </a>
                 {{#if admin}}
                 <a href="/admin/pedidos" class="nav-link">
                     <li>Admin</li>
                 </a>
+                {{else}}
+                <a href="/painel/pedidos" class="nav-link">
+                    <li>Painel</li>
+                </a>                
                 {{/if}}
             </ul>
             <div class="row nav-profile">
@@ -31,6 +35,11 @@
             </div>
             <div class="toggle-menu header">
                 <ul>
+                    {{#if admin}}
+                    <li class="toggle-link">
+                        <a href="/perfil" class="sub titulo">Meus dados</a>
+                    </li>
+                    {{else}}
                     <li class="toggle-link">
                         <a href="/notificacoes" class="sub titulo">Notificações</a>
                     </li>
@@ -39,7 +48,8 @@
                     </li>
                     <li class="toggle-link">
                         <a href="/perfil" class="sub titulo">Meus dados</a>
-                    </li>
+                    </li>                                        
+                    {{/if}}
                     <li class="toggle-link logout">
                         <a href="/logout" class="sub titulo">
                             Logout
