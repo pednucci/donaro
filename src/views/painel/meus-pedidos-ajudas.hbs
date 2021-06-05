@@ -7,9 +7,7 @@
 <main class="lyt_painel lyt_notificacoes pg_pajudas">
     <div class="usuario container-painel">
         <div class="background-painel">
-            {{#each pedido}}
-            <h1 class="painel-titulo">{{nm_titulo_pedido}}</h1>
-            {{/each}}
+            <h1 class="painel-titulo">{{pedido.[0].nm_titulo_pedido}}</h1>
             <div class="img-wrapper">
                 <img src="/assets/img/background_user.png" alt="" />
             </div>
@@ -17,7 +15,7 @@
 
         <div class="menu-painel">
             <ul class="menu-painel-buttons row">
-                <a href="#">
+                <a href="/painel/relatorio/{{pedido.[0].cd_pedido}}">
                     <li class="painel-text">Relatório</li>
                 </a>
                 <a href="#">

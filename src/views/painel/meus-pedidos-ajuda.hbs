@@ -8,9 +8,7 @@
         {{!-- <!-- Painel Topo--> --}}
         <div class="usuario container-painel">
             <div class="background-painel">
-                {{#each solicitacao}}
-                <h1 class="painel-titulo">{{nm_titulo_pedido}}</h1>
-                {{/each}}
+                <h1 class="painel-titulo">{{solicitacao.[0].nm_titulo_pedido}}</h1>
                 <div class="img-wrapper">
                     <img src="/assets/img/background_user.png" alt="" />
                 </div>
@@ -19,7 +17,7 @@
             <!-- Painel Menu-->
             <div class="menu-painel">
                 <ul class="menu-painel-buttons row">
-                    <a href="#">
+                    <a href="/painel/relatorio/{{solicitacao.[0].cd_pedido}}">
                         <li class="painel-text">Relatório</li>
                     </a>
                     <a href="#">
