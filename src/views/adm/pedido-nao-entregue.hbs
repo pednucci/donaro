@@ -4,8 +4,9 @@
 
 {{>navbar}}
 
-<main class="lyt_painel lyt_usuario-pedido pg_ne">
-   {{!-- Painel --}} 
+<main class="lyt_painel lyt_usuario-pedido pg_ne denuncia">
+    
+    {{!-- Painel --}} 
     <div class="container-painel">
         <div class="background-painel">
             <h1 class="painel-titulo">ADM</h1>
@@ -18,10 +19,10 @@
         <div class="menu-painel">
             <ul class="menu-painel-buttons row">
                 <a href="#">
-                    <li class="painel-text">Campanhas</li>
+                    <li class="painel-text ">Campanhas</li>
                 </a>
                 <a href="#">
-                    <li class="painel-text">Usuários</li>
+                    <li class="painel-text ">Usuários</li>
                 </a>
                 <a href="#">
                     <li class="painel-text active">Não entregues</li>
@@ -30,138 +31,307 @@
         </div>
     </div>
 
-    {{!-- Informações da ajuda --}}
-    <div class="profile-container columm">
-        {{!-- Pedido --}}
-        <h1 class="titulo-user">Usuário denunciado</h1>
-        <div class="user-container column">
-            <div class="user-wrapper row">
-                <div class="row">
-                    {{!-- Imagem --}}
-                    <div class="imagePerfil column">
-                        <img
-                            src="/assets/img/user_julio.png"
-                            alt="Foto de perfil"
-                        />
-                    </div>
+    {{!-- Informações da denúncia --}} 
+    <div class="profile-container denuncia columm">
+       {{!-- Título e status --}}
+        <div class="titulo-denuncia row">
+            <h1>Informações da denúncia</h1>
+            <div class="status pendente row">
+                <div class="ball"></div>
+                <p>Pendente</p>
+            </div>
 
-                    {{!-- Informações --}}
-                    <div class="informacoes column">
-                        <h1 class="sub titulo-user user-name">
-                            Julio Vieira de Andrade
-                        </h1>
-                        <p class="user-info">
-                            juliovand@gmail.com | 1238391
-                        </p>
-                    </div>
-                </div>
+            <div class="toggle-arrow">
+                <img  src="/assets/img/icone_arrow.svg" alt="">
             </div>
         </div>
 
-        {{!-- Alimentos, descrição --}}
-        <div class="row fc-wrapper">
-            {{!-- Container dos alimentos --}}
-            <div class="food-container column">
-                <h1 class="sub titulo-user">Alimentos oferecidos</h1>
-                <div class="row descAlimentos">
-                    <h1>Alimentos</h1>
-                    <h1>Quantidade</h1>
+        <div class="infos-denuncia-container row invisible">
+            
+            {{!-- Imagem --}}
+            <div class="infos start row">
+                <div class="img-wrapper">
+                    <img src="/assets/img/user_andre.png" alt="">
                 </div>
-                <div class="alimento-container">
-                    <div class="column">
-                        {{!-- Alimentos --}}
-                        <div class="alReq row">
-                            <h1 class="reqAlimento">Arroz</h1>
-                            <h1 class="reqQuantidade">5Kg</h1>
+            </div>
+            
+            {{!-- Informações --}}
+            <div class="infos main row">
+                <div class="infos-denuncia column">
+                    {{!-- Nome e email --}}
+                    <div class="column container">
+                        <div class="row">
+                            {{!-- Nome --}}
+                            <div class="info column">
+                                <h1>Dono da denúncia</h1>
+                                <p>André Paiva</p>
+                            </div>
+
+                            {{!-- Email --}}
+                            <div class="info column">
+                                <h1>Email </h1>
+                                <p>andre@email.com</p>
+                            </div>
                         </div>
-                        <div class="alReq row">
-                            <h1 class="reqAlimento">Arroz</h1>
-                            <h1 class="reqQuantidade">5Kg</h1>
+                    </div>
+
+                    {{!-- Motivo e data --}}
+                    <div class="column container">
+                        <div class="row">
+                            {{!-- Motivo --}}
+                            <div class="info column">
+                                <h1>Motivo da denuncia</h1>
+                                <p>Alimento não entregue</p>
+                            </div>
+
+                            {{!-- Data --}}
+                            <div class="info column">
+                                <h1>Data da denúncia</h1>
+                                <p>29/03/2021</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            {{!-- Detalhes --}}
+            <div class="infos final row">
+               <div class="infos-denuncia">
+                    <div class="info column">
+                        <h1>Detalhes da denúncia</h1>
+
+                        <div class="detalhes">
+                            <p>
+                                Mussum Ipsum, cacilds vidis litro abertis. 
+                                Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. 
+                                Mussum Ipsum, cacilds vidis litro abertis. Mais vale um 
+                                Mussum Ipsum, cacilds vidis litro abertis. 
+                                Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. 
+                                Mussum Ipsum, cacilds vidis litro abertis. Mais vale um 
+                                Mussum Ipsum, cacilds vidis litro abertis. 
+                                Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. 
+                                Mussum Ipsum, cacilds vidis litro abertis. Mais vale um 
+                            </p>
+                        </div>
+                    </div>
+               </div>
+            </div>
         </div>
+        
     </div>
 
-    <div class="profile-container columm">
-        {{!-- Usuário --}}
-        <h1 class="titulo-user">Pedido</h1>
-        <div class="user-container column">
-            <div class="user-wrapper row">
-                <div class="row">
-                    {{!-- Imagem --}}
-                    <div class="imagePerfil column">
-                        <img
-                            src="/assets/img/pedido_almoco-creche.png"
-                            alt="Foto de perfil"
-                        />
-                    </div>
+    {{!-- Informações do usuário denunciado --}} 
+    <div class="profile-container denuncia columm">
+        <div class="titulo-denuncia row">
+            <h1>Usuário denunciado</h1>
 
-                    {{!-- Nome --}}
-                    <div class="informacoes column">
-                        <h1 class="sub titulo-user user-name">
-                            Almoço na creche Arco-Íris
-                        </h1>
-                        <p class="user-info">
-                            andreopv@gmail.com | 1238391
-                        </p>
-                    </div>
-                </div>
+            <div class="toggle-arrow">
+                <img  src="/assets/img/icone_arrow.svg" alt="">
             </div>
         </div>
 
-        {{!-- Alimentos, descrição --}}
-        <div class="row fc-wrapper">
-            {{!-- Container dos alimentos --}}
-            <div class="food-container column">
-                <h1 class="sub titulo-user">Alimentos da campanha</h1>
-                <div class="row descAlimentos">
-                    <h1>Alimentos</h1>
-                    <h1>Quantidade</h1>
+        <div class="infos-denuncia-container row">
+            {{!-- Imagem --}}
+            <div class="infos start row">
+                <div class="img-wrapper">
+                    <img src="/assets/img/user_julio.png" alt="">
                 </div>
-                <div class="alimento-container">
-                    <div class="column">
-                        {{!-- Alimentos --}}
-                        <div class="alReq row">
-                            <h1 class="reqAlimento">Arroz</h1>
-                            <h1 class="reqQuantidade">5Kg</h1>
-                        </div>
-                        <div class="alReq row">
-                            <h1 class="reqAlimento">Arroz</h1>
-                            <h1 class="reqQuantidade">5Kg</h1>
+            </div>
+            
+            {{!-- Informações --}}
+            <div class="infos main row">
+                <div class="infos-denuncia column">
+                    {{!-- Nome e email --}}
+                    <div class="column container">
+                        <div class="row">
+
+                            {{!-- Nome --}}
+                            <div class="info column">
+                                <h1>Nome do usuário</h1>
+                                <p>Julio Oliveira</p>
+                            </div>
+
+                            {{!-- Email --}}
+                            <div class="info column">
+                                <h1>Email </h1>
+                                <p>julio@email.com</p>
+                            </div>
                         </div>
                     </div>
+
+                    {{!-- ID e telefone --}}
+                    <div class="column container">
+                        <div class="row">
+
+                            {{!-- Telefone --}}
+                            <div class="info column">
+                                <h1>Telefone</h1>
+                                <p>(13) 99389-8989</p>
+                            </div>
+
+                            
+                            {{!-- ID --}}
+                            <div class="info column">
+                                <h1>ID</h1>
+                                <p>23232</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            {{!-- Descrição --}}
-            <div class="comentario-container column">
-                <h1 class="sub titulo-user">Feedback</h1>
-                <div class="comentario">
-                    <p>
-                        Mussum Ipsum, cacilds vidis litro abertis. Mais
-                        vale um bebadis conhecidiss, que um alcoolatra
-                        anonimis. Praesent vel viverra nisi. Mauris
-                        aliquet nunc non turpis scelerisque, eget.
-                        Mauris nec dolor in eros commodo tempor. Aenean
-                        aliquam molestie leo, vitae iaculis nisl.
-                        Praesent malesuada urna nisi, quis volutpat erat
-                        hendrerit non. Nam vulputate dapibus.
-                    </p>
-                </div>
+            {{!-- Número de advertências recebidas --}}
+            <div class="infos final row">
+               <div class="infos-denuncia">
+                    <div class="advertencias column">
+                        <h2>Esse usuário já recebeu</h2>
+                        <h1>2 advertência(s)</h1>
+                    </div>
+               </div>
             </div>
         </div>
+        
     </div>
 
-    {{!-- Botões --}}
+    {{!-- Informações da campanha --}} 
+    <div class="profile-container denuncia columm">
+        <div class="titulo-denuncia row">
+            <h1>Informações da campanha denunciada</h1>
 
+            <div class="toggle-arrow">
+                <img  src="/assets/img/icone_arrow.svg" alt="">
+            </div>
+        </div>
+
+        <div class="infos-denuncia-container row">
+            {{!-- Imagem --}}
+            <div class="infos start row">
+                <div class="img-wrapper">
+                    <img src="/assets/img/pedido_almoco-creche.png" alt="">
+                </div>
+            </div>
+            
+            {{!-- Informações --}}
+            <div class="infos main row">
+                <div class="infos-denuncia column">
+                    {{!-- Nome e ID (campanha) --}}
+                    <div class="column container">
+                        <div class="row">
+
+                            {{!-- Nome --}}
+                            <div class="info column">
+                                <h1>Nome da campanha</h1>
+                                <p>Almoço na creche </p>
+                            </div>
+
+                            {{!-- ID --}}
+                            <div class="info column">
+                                <h1>ID da campanha </h1>
+                                <p>2314</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{!-- Nome e email (dono da campanha) --}}
+                    <div class="column container">
+                        <div class="row">
+
+                            {{!-- ID --}}
+                            <div class="info column">
+                                <h1>Nome do criador</h1>
+                                <p>Andre Paiva</p>
+                            </div>
+
+                            {{!-- Telefone --}}
+                            <div class="info column">
+                                <h1>Email do criador </h1>
+                                <p>andre@email.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {{!-- Detalhes --}}
+            <div class="infos final row">
+               <div class="infos-denuncia">
+                    <div class="info column">
+                        <h1>Alimentos ofertados </h1>
+
+                        <div class="food-container column">
+                            <div class="alimento-container">
+                                <div class="column">
+                                    {{!-- Alimentos --}}
+                                    <div class="alReq row">
+                                        <h1 class="reqAlimento">Arroz</h1>
+                                        <h1 class="reqQuantidade">10 Kg</h1>
+                                    </div>
+                                    <div class="alReq row">
+                                        <h1 class="reqAlimento">Arroz</h1>
+                                        <h1 class="reqQuantidade">10 Kg</h1>
+                                    </div>
+                                    <div class="alReq row">
+                                        <h1 class="reqAlimento">Arroz</h1>
+                                        <h1 class="reqQuantidade">10 Kg</h1>
+                                    </div>
+                                    <div class="alReq row">
+                                        <h1 class="reqAlimento">Arroz</h1>
+                                        <h1 class="reqQuantidade">10 Kg</h1>
+                                    </div>
+                                    <div class="alReq row">
+                                        <h1 class="reqAlimento">Arroz</h1>
+                                        <h1 class="reqQuantidade">10 Kg</h1>
+                                    </div>
+                                    <div class="alReq row">
+                                        <h1 class="reqAlimento">Arroz</h1>
+                                        <h1 class="reqQuantidade">10 Kg</h1>
+                                    </div>
+                                    <div class="alReq row">
+                                        <h1 class="reqAlimento">Arroz</h1>
+                                        <h1 class="reqQuantidade">10 Kg</h1>
+                                    </div>
+                                    <div class="alReq row">
+                                        <h1 class="reqAlimento">Arroz</h1>
+                                        <h1 class="reqQuantidade">10 Kg</h1>
+                                    </div>
+                                    <div class="alReq row">
+                                        <h1 class="reqAlimento">Arroz</h1>
+                                        <h1 class="reqQuantidade">10 Kg</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    {{!--  Botões  --}}
     <div class="botoes-wrapper column">
         <div class="botoes row">
-            <a href="#" class="btn blue" type="button"> Ignorar </a>
-            <a href="#" class="btn ghost-red" type="button">
-                Punir usuário
-            </a>
+            <a href="#" class="btn blue" type="button"> Invalidar </a>
+
+            <div class="punicoes">
+               <div class="punir row">
+                    <a class="btn ghost-red punir" type="button">
+                        Punir usuário <img src="/assets/img/icone_arrow_red.svg" alt="">
+                    </a>
+               </div>
+
+                 <div class="toggle-menu punicoes column">
+                        <a href="#" class="btn ghost-red" type="button">Enviar advertência</a>
+                        <a href="#" class="btn red" type="button">Desativar conta</a>
+                </div>
+            </div>
         </div>
     </div>
 </main>
+
+<script src="/js/denuncias.js">
+</script>
+
