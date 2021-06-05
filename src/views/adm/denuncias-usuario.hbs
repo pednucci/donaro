@@ -31,6 +31,7 @@
         </div>
     </div>
 
+    {{!-- Informações da denúncia --}} 
     <div class="profile-container denuncia columm">
        {{!-- Título e status --}}
         <div class="titulo-denuncia row">
@@ -119,6 +120,7 @@
         
     </div>
 
+    {{!-- Informações do usuário denunciado --}} 
     <div class="profile-container denuncia columm">
         <div class="titulo-denuncia row">
             <h1>Usuário denunciado</h1>
@@ -214,36 +216,5 @@
     </div>
 </main>
 
-<script>
-    var toggleInfo = document.querySelectorAll('.toggle-arrow');
-    var infoContainer = document.querySelectorAll('.profile-container');
-    var btnPunir = document.querySelector('.btn.punir');
-    var togglePunicoes = document.querySelector('.toggle-menu.punicoes');
-
-
-    toggleInfo.forEach(function(value, index,){
-        toggleInfo[index].addEventListener('click', () => {
-            if (infoContainer[index].classList.contains('toggled')){
-                infoContainer[index].classList.remove('toggled')
-            } else{
-                infoContainer[index].classList.add('toggled')
-            }
-        })
-    });
-
-    btnPunir.addEventListener('click', () => {
-        if(togglePunicoes.classList.contains('visible')){
-            togglePunicoes.classList.remove('visible')
-        } else {
-            togglePunicoes.classList.add('visible')
-        }
-
-        window.scrollTo(
-        {
-            top: document.body.scrollHeight,
-            behavior: 'smooth',
-        });
-    })
-
-
+<script src="/js/denuncias.js">
 </script>
