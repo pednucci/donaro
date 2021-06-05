@@ -152,9 +152,12 @@ router.post('/ressoli', async (req, res) => {
             WHERE cd_pedido = (SELECT cd_pedido_solicitacao FROM solicitacao WHERE 
             cd_solicitacao = ?)`,
             [soli, soli])
+
+            const [idPed] = await conn.query(`SELECT cd_pedido_solicitacao FROM solicitacao
+            WHERE cd_solicitacao = ?`, [soli]);
     
             req.flash('successMsg', 'Pedido confirmado com sucesso!')
-            res.redirect('/')
+            res.redirect(`/painel/pedidos/${idPed[0].cd_pedido_solicitacao}`)
         }
         catch(err){
             console.log(err)
