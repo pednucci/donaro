@@ -1,4 +1,6 @@
 .lyt_usuario-pedido {
+    min-height: calc(100vh - 8rem);
+
     .titulo-user {
         font-size: 3rem;
         font-weight: 500;
@@ -175,6 +177,195 @@
     &.pg_pedido {
         .botoes-wrapper {
             margin-top: 0rem;
+        }
+    }
+
+    &.denuncia {
+        .profile-container {
+            padding: 3rem;
+
+            background-color: var(--white);
+            border-radius: 1rem;
+            border: var(--border-form);
+
+            max-width: 110rem;
+
+            .titulo-denuncia {
+                justify-content: flex-start;
+                align-items: baseline;
+                gap: 3rem;
+
+                h1 {
+                    font-size: 2.4rem;
+                    font-weight: 500;
+                }
+
+                p {
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                }
+
+                .status {
+                    gap: 0.8rem;
+
+                    div {
+                        width: 1.4rem;
+                        height: 1.4rem;
+
+                        border-radius: 50%;
+                        background-color: var(--black-logo);
+                    }
+                    p {
+                        font-size: 1.8rem;
+                        font-weight: 500;
+                    }
+
+                    &.resolvido {
+                        div {
+                            background-color: var(--green-concluded);
+                        }
+
+                        p {
+                            color: var(--green-concluded);
+                        }
+                    }
+                    &.pendente {
+                        div {
+                            background-color: var(--yellow-pending);
+                        }
+
+                        p {
+                            color: var(--yellow-pending);
+                        }
+                    }
+                }
+
+                .toggle-arrow {
+                    margin-left: auto;
+                    cursor: pointer;
+
+                    img {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                }
+            }
+
+            .infos-denuncia-container {
+                margin-top: 3rem;
+
+                justify-content: flex-start;
+                align-items: center;
+
+                h1 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                }
+
+                .infos {
+                    &:not(:first-child)::before {
+                        content: "";
+                        display: block;
+
+                        height: 15rem;
+                        width: 0.05rem;
+
+                        margin: 0 3rem;
+
+                        background-color: var(--gray-border);
+                    }
+
+                    .infos-denuncia {
+                        .column.container {
+                            &:not(:first-child)::before {
+                                content: "";
+                                display: block;
+
+                                width: 100%;
+                                height: 0.05rem;
+
+                                margin: 2rem 0;
+
+                                background-color: var(--gray-border);
+                            }
+                        }
+                        .row {
+                            gap: 3rem;
+                        }
+
+                        .info {
+                            min-width: 20rem;
+                        }
+                    }
+
+                    &.start {
+                        .img-wrapper {
+                            border-radius: 1rem;
+                            width: 18rem;
+                            height: 14rem;
+                        }
+                    }
+
+                    &.main {
+                    }
+
+                    &.final {
+                        .infos-denuncia {
+                            .detalhes {
+                                max-width: 30rem;
+                                max-height: 10rem;
+
+                                overflow: hidden;
+                                overflow-y: scroll;
+                            }
+                        }
+
+                        .advertencias {
+                            transform: translateY(-1rem);
+
+                            justify-content: center;
+                            align-items: center;
+                            gap: 2rem;
+
+                            h2 {
+                                font-size: 2rem;
+                                font-weight: bold;
+                            }
+
+                            h1 {
+                                font-size: 3rem;
+                                font-weight: bold;
+                                color: var(--red-denounce);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .botoes-wrapper {
+            margin-bottom: 18rem;
+
+            .btn.punir {
+                gap: 2rem;
+
+                img {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            .toggle-menu {
+                padding: 1rem;
+                gap: 1rem;
+
+                transform: translate(-1.5rem, 1rem);
+            }
         }
     }
 }
