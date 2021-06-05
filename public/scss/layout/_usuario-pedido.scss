@@ -190,6 +190,21 @@
 
             max-width: 110rem;
 
+            &.toggled {
+                .infos-denuncia-container {
+                    height: 0;
+                    display: none;
+                    visibility: hidden;
+
+                    transition: all 0.2s ease-in-out;
+                }
+
+                .toggle-arrow {
+                    transform: rotate(-90deg);
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+
             .titulo-denuncia {
                 justify-content: flex-start;
                 align-items: baseline;
@@ -244,6 +259,8 @@
                     margin-left: auto;
                     cursor: pointer;
 
+                    transition: all 0.2s ease-in-out;
+
                     img {
                         width: 1.5rem;
                         height: 1.5rem;
@@ -256,6 +273,12 @@
 
                 justify-content: flex-start;
                 align-items: center;
+
+                height: auto;
+                display: flex;
+                visibility: visible;
+
+                transition: all 0.2s ease-in-out;
 
                 h1 {
                     font-size: 2rem;

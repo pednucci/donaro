@@ -5,6 +5,7 @@
 {{>navbar}}
 
 <main class="lyt_painel lyt_usuario-pedido pg_dusuario denuncia">
+    
     {{!-- Painel --}} 
     <div class="container-painel">
         <div class="background-painel">
@@ -31,6 +32,7 @@
     </div>
 
     <div class="profile-container denuncia columm">
+       {{!-- Título e status --}}
         <div class="titulo-denuncia row">
             <h1>Informações da denúncia</h1>
             <div class="status pendente row">
@@ -43,33 +45,45 @@
             </div>
         </div>
 
-        <div class="infos-denuncia-container row">
+        <div class="infos-denuncia-container row invisible">
+            
+            {{!-- Imagem --}}
             <div class="infos start row">
                 <div class="img-wrapper">
                     <img src="/assets/img/user_andre.png" alt="">
                 </div>
             </div>
             
+            {{!-- Informações --}}
             <div class="infos main row">
                 <div class="infos-denuncia column">
+                    {{!-- Nome e email --}}
                     <div class="column container">
                         <div class="row">
+                            {{!-- Nome --}}
                             <div class="info column">
                                 <h1>Dono da denúncia</h1>
                                 <p>André Paiva</p>
                             </div>
+
+                            {{!-- Email --}}
                             <div class="info column">
                                 <h1>Email </h1>
                                 <p>andre@email.com</p>
                             </div>
                         </div>
                     </div>
+
+                    {{!-- Motivo e data --}}
                     <div class="column container">
                         <div class="row">
+                            {{!-- Motivo --}}
                             <div class="info column">
                                 <h1>Motivo da denuncia</h1>
                                 <p>Violação dos termos</p>
                             </div>
+
+                            {{!-- Data --}}
                             <div class="info column">
                                 <h1>Data da denúncia</h1>
                                 <p>29/03/2021</p>
@@ -79,6 +93,7 @@
                 </div>
             </div>
 
+            {{!-- Detalhes --}}
             <div class="infos final row">
                <div class="infos-denuncia">
                     <div class="info column">
@@ -114,41 +129,56 @@
         </div>
 
         <div class="infos-denuncia-container row">
+            {{!-- Imagem --}}
             <div class="infos start row">
                 <div class="img-wrapper">
                     <img src="/assets/img/user_julio.png" alt="">
                 </div>
             </div>
             
+            {{!-- Informações --}}
             <div class="infos main row">
                 <div class="infos-denuncia column">
+                    {{!-- Nome e email --}}
                     <div class="column container">
                         <div class="row">
+
+                            {{!-- Nome --}}
                             <div class="info column">
                                 <h1>Nome do usuário</h1>
                                 <p>Julio Oliveira</p>
                             </div>
+
+                            {{!-- Email --}}
                             <div class="info column">
                                 <h1>Email </h1>
                                 <p>julio@email.com</p>
                             </div>
                         </div>
                     </div>
+
+                    {{!-- ID e telefone --}}
                     <div class="column container">
                         <div class="row">
+
+                            {{!-- ID --}}
                             <div class="info column">
                                 <h1>ID</h1>
                                 <p>23232</p>
                             </div>
+
+                            {{!-- Telefone --}}
                             <div class="info column">
                                 <h1>Telefone</h1>
                                 <p>(13) 99389-8989</p>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
+            {{!-- Número de advertências recebidas --}}
             <div class="infos final row">
                <div class="infos-denuncia">
                     <div class="advertencias column">
@@ -185,8 +215,21 @@
 </main>
 
 <script>
+    var toggleInfo = document.querySelectorAll('.toggle-arrow');
+    var infoContainer = document.querySelectorAll('.profile-container');
     var btnPunir = document.querySelector('.btn.punir');
     var togglePunicoes = document.querySelector('.toggle-menu.punicoes');
+
+
+    toggleInfo.forEach(function(value, index,){
+        toggleInfo[index].addEventListener('click', () => {
+            if (infoContainer[index].classList.contains('toggled')){
+                infoContainer[index].classList.remove('toggled')
+            } else{
+                infoContainer[index].classList.add('toggled')
+            }
+        })
+    });
 
     btnPunir.addEventListener('click', () => {
         if(togglePunicoes.classList.contains('visible')){
@@ -201,4 +244,6 @@
             behavior: 'smooth',
         });
     })
+
+
 </script>
