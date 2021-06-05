@@ -6,29 +6,7 @@
 
 <main class="lyt_painel lyt_notificacoes pg_dusuarios">
     {{!-- Painel --}} 
-    <div class="container-painel">
-        <div class="background-painel">
-            <h1 class="painel-titulo">ADM</h1>
-            <div class="img-wrapper">
-                <img src="/assets/img/background_adm.png" alt="" />
-            </div>
-        </div>
-
-            {{!-- Painel Menu --}} 
-        <div class="menu-painel">
-            <ul class="menu-painel-buttons row">
-                <a href="#">
-                    <li class="painel-text">Campanhas</li>
-                </a>
-                <a href="#">
-                    <li class="painel-text active">Usuários</li>
-                </a>
-                <a href="#">
-                    <li class="painel-text">Não entregues</li>
-                </a>
-            </ul>
-        </div>
-    </div>
+    {{> painelAdm navUsuario="true" }}
 
      {{!-- Cards --}} 
     <div class="cards-container">
