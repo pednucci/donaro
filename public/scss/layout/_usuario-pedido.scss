@@ -155,7 +155,6 @@
         }
 
         .comentario-container {
-            // max-width: 30rem;
             gap: 2rem;
 
             .titulo-user:last-child {
@@ -170,6 +169,7 @@
 
                 font-size: 2rem;
                 text-align: justify;
+                white-space: pre-line;
             }
         }
     }

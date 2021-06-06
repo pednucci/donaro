@@ -41,7 +41,7 @@
                 width: 3rem;
                 transition: all 0.2s ease-in-out;
 
-                transform: rotate(0deg) !important;
+                transform: rotate(-180deg) !important;
             }
         }
 
@@ -62,7 +62,7 @@
 
             .seta {
                 width: 3rem;
-                transform: rotate(-90deg);
+                // transform: rotate(-90deg);
                 transition: all 0.2s ease-in-out;
             }
         }
