@@ -55,8 +55,10 @@
 
         p {
             font-size: 2rem;
+            display: inline-block;
 
             text-align: justify;
+            white-space: pre-line;
         }
 
         .btn {
