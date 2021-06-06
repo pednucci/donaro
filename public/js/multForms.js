@@ -7,7 +7,6 @@ var currentTab = 0;
 
 const radiosContainer = document.querySelector('.fieldRadio');
 
-var radioRelacao = document.querySelectorAll('input[type=radio][name="relacao"]');
 var radioDenuncia = document.querySelectorAll('input[type=radio][name="denuncia"]');
 var radioMotivo = document.querySelectorAll('input[type=radio][name="motivo"]');
 var textDescricao = document.querySelector('textarea[name=descricao]');
@@ -61,7 +60,7 @@ if (radiosContainer) {
         wrapperRadio[motivo].classList = "row radio"
         inputRadio[motivo].setAttribute("type", "radio")
         inputRadio[motivo].setAttribute("name", "motivo")
-        inputRadio[motivo].setAttribute("value", motivo)
+        inputRadio[motivo].setAttribute("value", tipoMotivo[motivo])
         inputRadio[motivo].setAttribute("id", motivo)
 
         lblRadio[motivo].setAttribute("for", motivo)
@@ -88,14 +87,14 @@ if (radiosContainer) {
 
 
   function changeHandler(event) {
-    if (this.value === '0') {
+    if (this.id === 'r0') {
       while (radiosWrapper.firstChild) {
         radiosWrapper.removeChild(radiosWrapper.lastChild)
       }
       radiosContainer.appendChild(addRadios(motivosDenunciaDoador))
 
 
-    } else if (this.value === '1') {
+    } else if (this.id === 'r1') {
       while (radiosWrapper.firstChild) {
         radiosWrapper.removeChild(radiosWrapper.lastChild)
       }
@@ -112,16 +111,6 @@ if (radiosContainer) {
 
   //#region ValidateForm
 
-  function validateRelacao() {
-    if (radioRelacao) {
-      for (option in radioRelacao) {
-        if (radioRelacao[option].checked) {
-          return true;
-        }
-      }
-      return false;
-    }
-  }
 
   function validateMotivo() {
     var radioMotivo = document.querySelectorAll('input[type=radio][name="motivo"]');
@@ -166,7 +155,7 @@ btnNext.addEventListener('click', () => {
   if (currentTab !== (tab.length - 1)) {
     if (radiosContainer) {
       if (currentTab === 0) {
-        if (validateDenuncia() && validateRelacao()) {
+        if (validateDenuncia()) {
           currentTab++;
           tab[currentTab].style.display = "initial";
           tab[currentTab - 1].style.display = "none";
