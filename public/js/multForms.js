@@ -7,6 +7,7 @@ var currentTab = 0;
 
 const radiosContainer = document.querySelector('.fieldRadio');
 
+
 var radioDenuncia = document.querySelectorAll('input[type=radio][name="denuncia"]');
 var radioMotivo = document.querySelectorAll('input[type=radio][name="motivo"]');
 var textDescricao = document.querySelector('textarea[name=descricao]');
@@ -14,6 +15,12 @@ var rw = document.querySelector('.radios.column')
 
 
 formTabs.innerText = `${currentTab + 1}/${tab.length}`
+
+//#region Denuncia do usuário
+
+
+
+//#endregion 
 
 if (radiosContainer) {
   //#region Variáveis
@@ -36,6 +43,8 @@ if (radiosContainer) {
     6: 'Duplicidade em imagem, título e/ou descrição aos de outra campanha',
     7: 'Outro',
   }
+
+
 
   //#endregion
 

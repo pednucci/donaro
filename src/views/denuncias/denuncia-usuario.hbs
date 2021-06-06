@@ -10,69 +10,11 @@
              {{!-- Form --}} 
             <form class="form-login column" action="" method="">
                 <fieldset class="tab">
-                    <div class="comentario column">
+                    <div class="comentario column denunciaUsuario">
                         <label for="">Qual é o motivo da denúncia?</label>
 
                          {{!-- Options --}} 
 
-                        <div class="row radio">
-                            <input
-                                type="radio"
-                                name="denuncia"
-                                value="0"
-                                id="0"
-                            />
-                            <label for="0">
-                                Simbolos ou discurso de ódio
-                            </label>
-                        </div>
-                        <div class="row radio">
-                            <input
-                                type="radio"
-                                name="denuncia"
-                                value="1"
-                                id="1"
-                            />
-                            <label for="1"> Mensagens inapropriadas </label>
-                        </div>
-                        <div class="row radio">
-                            <input
-                                type="radio"
-                                name="denuncia"
-                                value="2"
-                                id="2"
-                            />
-                            <label for="2">Bullying ou assédio</label>
-                        </div>
-                        <div class="row radio">
-                            <input
-                                type="radio"
-                                name="denuncia"
-                                value="3"
-                                id="3"
-                            />
-                            <label for="3">
-                                Tentativa de golpe ou fraude
-                            </label>
-                        </div>
-                        <div class="row radio">
-                            <input
-                                type="radio"
-                                name="denuncia"
-                                value="4"
-                                id="4"
-                            />
-                            <label for="4">Spam</label>
-                        </div>
-                        <div class="row radio">
-                            <input
-                                type="radio"
-                                name="denuncia"
-                                value="outro"
-                                id="outro"
-                            />
-                            <label for="outro">Outro</label>
-                        </div>
                     </div>
                 </fieldset>
 
@@ -105,3 +47,43 @@
     </main>
 
 <script src="/js/multForms.js"></script>
+
+<script>
+
+    var motivosDenunciaUsuario = {
+        0: 'Simbolos ou discurso de ódio',
+        1: 'Mensagens inapropriadas',
+        2: 'Bullying ou assédio',
+        3: 'Tentativa de golpe ou fraude',
+        4: 'Spam',
+        5: 'Outro',
+    }
+    const radiosUsuarioContainer = document.querySelector('.comentario.denunciaUsuario');
+    var tipoMotivo = motivosDenunciaUsuario;
+    console.log(tipoMotivo)
+    
+    var wrapperRadio = [];
+    var inputRadio = [];
+    var lblRadio = [];
+        
+    for (const motivo in tipoMotivo) {
+        wrapperRadio[motivo] = document.createElement('div');
+        inputRadio[motivo] = document.createElement('input');
+        lblRadio[motivo] = document.createElement('label');
+
+        wrapperRadio[motivo].classList = "row radio"
+        inputRadio[motivo].setAttribute("type", "radio")
+        inputRadio[motivo].setAttribute("name", "motivo")
+        inputRadio[motivo].setAttribute("value", tipoMotivo[motivo])
+        inputRadio[motivo].setAttribute("id", motivo)
+
+        lblRadio[motivo].setAttribute("for", motivo)
+        lblRadio[motivo].textContent = tipoMotivo[motivo];
+
+        wrapperRadio[motivo].appendChild(inputRadio[motivo])
+        wrapperRadio[motivo].appendChild(lblRadio[motivo])
+
+        radiosUsuarioContainer.appendChild(wrapperRadio[motivo])
+    }
+
+</script>
