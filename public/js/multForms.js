@@ -148,6 +148,8 @@ function validateDescricao() {
 }
 
 function validateDenuncia() {
+  var radioDenuncia = document.querySelectorAll('input[type=radio][name="denuncia"]');
+
   if (radioDenuncia) {
     for (option in radioDenuncia) {
       if (radioDenuncia[option].checked) {
