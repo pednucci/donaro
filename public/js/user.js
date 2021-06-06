@@ -1,12 +1,13 @@
+var navMenu = document.querySelector('.nav-menu');
 var navProfile = document.querySelector('.nav-profile');
 var toggleMenu = document.querySelector('.toggle-menu.header');
-
+var seta = document.querySelector('.seta')
 
 navProfile.addEventListener('click', () => {
-  if (toggleMenu.classList.contains('visible')) {
-    toggleMenu.classList.remove('visible');
+  if (navMenu.classList.contains('toggled')) {
+    navMenu.classList.remove('toggled');
   } else {
-    toggleMenu.classList.add('visible');
+    navMenu.classList.add('toggled');
   }
 
 })

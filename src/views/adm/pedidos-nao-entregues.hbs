@@ -5,30 +5,8 @@
 {{>navbar}}
 
 <main class="lyt_painel lyt_notificacoes pg_nes">
-     {{!-- Painel --}} 
-    <div class="container-painel">
-        <div class="background-painel">
-            <h1 class="painel-titulo">ADM</h1>
-            <div class="img-wrapper">
-                <img src="/assets/img/background_adm.png" alt="" />
-            </div>
-        </div>
-
-         {{!-- Painel Menu --}} 
-        <div class="menu-painel">
-            <ul class="menu-painel-buttons row">
-                <a href="#">
-                    <li class="painel-text">Campanhas</li>
-                </a>
-                <a href="#">
-                    <li class="painel-text">Usuários</li>
-                </a>
-                <a href="#">
-                    <li class="painel-text active">Não entregues</li>
-                </a>
-            </ul>
-        </div>
-    </div>
+    {{!-- Painel --}} 
+    {{> painelAdm navNaoEntregue="true" }}
 
      {{!-- Cards --}} 
     <div class="cards-container">
@@ -54,7 +32,7 @@
 
              {{!-- Btn --}} 
             <div class="card-btn column">
-                <a href="#">
+                <a href="/admin/denuncias/naoentregues/1">
                     <button class="btn red-denounce">Ver denúncia</button>
                 </a>
                 <div class="date row">

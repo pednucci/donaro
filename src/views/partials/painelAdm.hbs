@@ -1,0 +1,48 @@
+
+{{#unless usuario}}
+<div class="container-painel">
+    <div class="background-painel">
+        <h1 class="painel-titulo">ADM</h1>
+        <div class="img-wrapper">
+            <img src="/assets/img/background_adm.png" alt="" />
+        </div>
+    </div>
+
+        {{!-- Painel Menu --}} 
+    <div class="menu-painel">
+        <ul class="menu-painel-buttons row">
+            <a href="/admin/denuncias/campanhas">
+                <li class="painel-text {{#if navCampanha}}active{{/if}}">Campanhas</li>
+            </a>
+            <a href="/admin/denuncias/usuarios">
+                <li class="painel-text {{#if navUsuario}}active{{/if}}">Usuários</li>
+            </a>
+            <a href="/admin/denuncias/naoentregues">
+                <li class="painel-text {{#if navNaoEntregue}}active{{/if}}">Não entregues</li>
+            </a>
+        </ul>
+    </div>
+</div>
+{{/unless}}
+
+{{#if usuario}}
+<div class="usuario container-painel">
+        <div class="background-painel">
+            <h1 class="painel-titulo">Painel</h1>
+            <div class="img-wrapper">
+                <img src="/assets/img/background_user.png" alt="" />
+            </div>
+        </div>
+
+        <div class="menu-painel">
+            <ul class="menu-painel-buttons row">
+                <a href="/painel/pedidos">
+                    <li class="painel-text {{#if navMinhasCampanhas}}active{{/if}}">Meus pedidos</li>
+                </a>
+                <a href="/painel/doacoes">
+                    <li class="painel-text {{#if navMinhasDoacoes}}active{{/if}}">Minhas doações</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+{{/if}}

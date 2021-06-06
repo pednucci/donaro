@@ -7,29 +7,7 @@
 <main class="lyt_painel lyt_usuario-pedido pg_ne denuncia">
     
     {{!-- Painel --}} 
-    <div class="container-painel">
-        <div class="background-painel">
-            <h1 class="painel-titulo">ADM</h1>
-            <div class="img-wrapper">
-                <img src="/assets/img/background_adm.png" alt="" />
-            </div>
-        </div>
-
-            {{!-- Painel Menu --}} 
-        <div class="menu-painel">
-            <ul class="menu-painel-buttons row">
-                <a href="#">
-                    <li class="painel-text ">Campanhas</li>
-                </a>
-                <a href="#">
-                    <li class="painel-text ">Usuários</li>
-                </a>
-                <a href="#">
-                    <li class="painel-text active">Não entregues</li>
-                </a>
-            </ul>
-        </div>
-    </div>
+    {{> painelAdm navNaoEntregue="true" }}
 
     {{!-- Informações da denúncia --}} 
     <div class="profile-container denuncia columm">
@@ -123,7 +101,7 @@
     {{!-- Informações do usuário denunciado --}} 
     <div class="profile-container denuncia columm">
         <div class="titulo-denuncia row">
-            <h1>Usuário denunciado</h1>
+            <h1>Usuário que não entregou</h1>
 
             <div class="toggle-arrow">
                 <img  src="/assets/img/icone_arrow.svg" alt="">
@@ -197,7 +175,7 @@
     {{!-- Informações da campanha --}} 
     <div class="profile-container denuncia columm">
         <div class="titulo-denuncia row">
-            <h1>Informações da campanha denunciada</h1>
+            <h1>Informações da campanha</h1>
 
             <div class="toggle-arrow">
                 <img  src="/assets/img/icone_arrow.svg" alt="">
