@@ -126,73 +126,83 @@ router.get('/relatorio/:id', async (req, res) => {
 router.post('/ressoli', async (req, res) => {
     const conn = await db.connection();
     const soli = req.body.soli;
-    if(req.body.bt == 'true'){
-        try{
-            var cont = 0;
-            var itemsCount = 0;
-
-            const [idPed] = await conn.query(`SELECT cd_pedido_solicitacao FROM solicitacao
-            WHERE cd_solicitacao = ?`, [soli]);
-            
-            const [donations] = await conn.query(`SELECT * FROM donation WHERE cd_solicitacao_donation
-            = ?`, [soli])
-            
-            donations.forEach(async donation => {
-                const [alimento] = await conn.query(`SELECT * FROM alimento WHERE cd_pedido_alimento = ?
-                AND nm_alimento = ?`
-                , [idPed[0].cd_pedido_solicitacao, donation.nm_alimento_donation]);
-                if (alimento[0].qt_doada_alimento < alimento[0].qt_alimento) {
-                    if (donation.qt_contribuicao_donation >= alimento[0].qt_alimento) {
-                        cont += alimento[0].qt_alimento
+    const [validation] = await conn.query(`SELECT count(*) AS count 
+    FROM solicitacao WHERE cd_solicitacao = ?
+    AND cd_situacao_solicitacao = 'A CONFIRMAR'`,[soli])
+    if(validation[0].count == 1){
+        if(req.body.bt == 'true'){
+            try{
+                var cont = 0;
+                var itemsCount = 0;
+    
+                const [idPed] = await conn.query(`SELECT cd_pedido_solicitacao FROM solicitacao
+                WHERE cd_solicitacao = ?`, [soli]);
+                
+                const [donations] = await conn.query(`SELECT * FROM donation WHERE cd_solicitacao_donation
+                = ?`, [soli])
+                
+                donations.forEach(async donation => {
+                    const [alimento] = await conn.query(`SELECT * FROM alimento WHERE cd_pedido_alimento = ?
+                    AND nm_alimento = ?`
+                    , [idPed[0].cd_pedido_solicitacao, donation.nm_alimento_donation]);
+                    if (alimento[0].qt_doada_alimento < alimento[0].qt_alimento) {
+                        if (donation.qt_contribuicao_donation >= alimento[0].qt_alimento) {
+                            cont += alimento[0].qt_alimento
+                        }
+                        else {
+                            cont += donation.qt_contribuicao_donation;
+                        }
                     }
-                    else {
-                        cont += donation.qt_contribuicao_donation;
+                    itemsCount++;
+                    if(itemsCount == donations.length){
+                        await conn.query(`UPDATE pedido SET qt_doacoes_pedido = qt_doacoes_pedido +
+                        ${cont} WHERE cd_pedido = (SELECT cd_pedido_solicitacao FROM solicitacao WHERE 
+                        cd_solicitacao = ?)`, [soli])
                     }
-                }
-                itemsCount++;
-                if(itemsCount == donations.length){
-                    await conn.query(`UPDATE pedido SET qt_doacoes_pedido = qt_doacoes_pedido +
-                    ${cont} WHERE cd_pedido = (SELECT cd_pedido_solicitacao FROM solicitacao WHERE 
-                    cd_solicitacao = ?)`, [soli])
-                }
-            })
-
-            await conn.query(`UPDATE solicitacao SET cd_situacao_solicitacao = 'ENTREGUE',
-            dt_deliveredAt_solicitacao = CURDATE() WHERE
-            cd_solicitacao = ?`, [soli])
+                })
     
-            const [alimentosDonation] = await conn.query(`SELECT * FROM donation 
-            WHERE cd_solicitacao_donation = ?`,
-            [soli]);
-            
-            const [alimentosPedido] = await conn.query(`SELECT * FROM alimento WHERE cd_pedido_alimento
-            = (SELECT cd_pedido_solicitacao FROM solicitacao WHERE cd_solicitacao = ?)`, [soli])
-    
-            alimentosDonation.forEach(async alimento => {
-                await conn.query(`UPDATE alimento SET
-                qt_doada_alimento = qt_doada_alimento + ${alimento.qt_contribuicao_donation} 
-                WHERE nm_alimento = ?
-                AND cd_pedido_alimento = (SELECT cd_pedido_solicitacao
-                FROM solicitacao WHERE cd_solicitacao = ?)`, [alimento.nm_alimento_donation, soli])
-            })
-    
-            /*await conn.query(`UPDATE pedido SET qt_doacoes_pedido = qt_doacoes_pedido +
-            (SELECT SUM(qt_contribuicao_donation) FROM donation WHERE cd_solicitacao_donation = ?)
-            WHERE cd_pedido = (SELECT cd_pedido_solicitacao FROM solicitacao WHERE 
-            cd_solicitacao = ?)`,
-            [soli, soli])*/
-            
-            req.flash('successMsg', 'Pedido confirmado com sucesso!')
-            res.redirect(`/painel/pedidos/${idPed[0].cd_pedido_solicitacao}`)
-        }
-        catch(err){
-            console.log(err)
-            req.flash('errorMsg', 'Erro inesperado')
-            res.redirect('/')
-        }
+                await conn.query(`UPDATE solicitacao SET cd_situacao_solicitacao = 'ENTREGUE',
+                dt_deliveredAt_solicitacao = CURDATE() WHERE
+                cd_solicitacao = ?`, [soli])
         
-        await conn.end();
+                const [alimentosDonation] = await conn.query(`SELECT * FROM donation 
+                WHERE cd_solicitacao_donation = ?`,
+                [soli]);
+                
+                const [alimentosPedido] = await conn.query(`SELECT * FROM alimento WHERE cd_pedido_alimento
+                = (SELECT cd_pedido_solicitacao FROM solicitacao WHERE cd_solicitacao = ?)`, [soli])
+        
+                alimentosDonation.forEach(async alimento => {
+                    await conn.query(`UPDATE alimento SET
+                    qt_doada_alimento = qt_doada_alimento + ${alimento.qt_contribuicao_donation} 
+                    WHERE nm_alimento = ?
+                    AND cd_pedido_alimento = (SELECT cd_pedido_solicitacao
+                    FROM solicitacao WHERE cd_solicitacao = ?)`, [alimento.nm_alimento_donation, soli])
+                })
+        
+                /*await conn.query(`UPDATE pedido SET qt_doacoes_pedido = qt_doacoes_pedido +
+                (SELECT SUM(qt_contribuicao_donation) FROM donation WHERE cd_solicitacao_donation = ?)
+                WHERE cd_pedido = (SELECT cd_pedido_solicitacao FROM solicitacao WHERE 
+                cd_solicitacao = ?)`,
+                [soli, soli])*/
+                
+                req.flash('successMsg', 'Pedido confirmado com sucesso!')
+                res.redirect(`/painel/pedidos/${idPed[0].cd_pedido_solicitacao}`)
+            }
+            catch(err){
+                console.log(err)
+                req.flash('errorMsg', 'Erro inesperado')
+                res.redirect('/')
+            }
+            
+            await conn.end();
+        }
     }
+    else{
+        req.flash('errorMsg', 'Erro inesperado');
+        res.redirect('/')
+    }
+    
 })
 
 router.get('/doacoes', async (req, res) => {
