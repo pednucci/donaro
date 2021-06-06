@@ -8,6 +8,7 @@ const admin = require('./routes/admin');
 const notificacao = require('./routes/notificacao');
 const painel = require('./routes/painel');
 const chat = require('./routes/chat');
+const denuncia = require('./routes/denuncia');
 const { isAuth } = require('./helpers/isAuth');
 const { isAdmin } = require('./helpers/isAdmin');
 
@@ -22,6 +23,7 @@ router.get('/logout', (req, res) => {
 
 router.use(auth);
 router.use(pedido);
+router.use(denuncia);
 router.use('/admin', isAdmin, admin);
 router.use('/notificacoes', isAuth, notificacao);
 router.use('/painel', isAuth, painel);
