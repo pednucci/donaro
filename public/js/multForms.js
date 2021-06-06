@@ -7,7 +7,6 @@ var currentTab = 0;
 
 const radiosContainer = document.querySelector('.fieldRadio');
 
-var radioRelacao = document.querySelectorAll('input[type=radio][name="relacao"]');
 var radioDenuncia = document.querySelectorAll('input[type=radio][name="denuncia"]');
 var radioMotivo = document.querySelectorAll('input[type=radio][name="motivo"]');
 var textDescricao = document.querySelector('textarea[name=descricao]');
@@ -112,16 +111,6 @@ if (radiosContainer) {
 
   //#region ValidateForm
 
-  function validateRelacao() {
-    if (radioRelacao) {
-      for (option in radioRelacao) {
-        if (radioRelacao[option].checked) {
-          return true;
-        }
-      }
-      return false;
-    }
-  }
 
   function validateMotivo() {
     var radioMotivo = document.querySelectorAll('input[type=radio][name="motivo"]');
@@ -166,7 +155,7 @@ btnNext.addEventListener('click', () => {
   if (currentTab !== (tab.length - 1)) {
     if (radiosContainer) {
       if (currentTab === 0) {
-        if (validateDenuncia() && validateRelacao()) {
+        if (validateDenuncia()) {
           currentTab++;
           tab[currentTab].style.display = "initial";
           tab[currentTab - 1].style.display = "none";
