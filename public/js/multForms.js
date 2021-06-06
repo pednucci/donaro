@@ -60,7 +60,7 @@ if (radiosContainer) {
         wrapperRadio[motivo].classList = "row radio"
         inputRadio[motivo].setAttribute("type", "radio")
         inputRadio[motivo].setAttribute("name", "motivo")
-        inputRadio[motivo].setAttribute("value", motivo)
+        inputRadio[motivo].setAttribute("value", tipoMotivo[motivo])
         inputRadio[motivo].setAttribute("id", motivo)
 
         lblRadio[motivo].setAttribute("for", motivo)
@@ -87,14 +87,14 @@ if (radiosContainer) {
 
 
   function changeHandler(event) {
-    if (this.value === '0') {
+    if (this.id === 'r0') {
       while (radiosWrapper.firstChild) {
         radiosWrapper.removeChild(radiosWrapper.lastChild)
       }
       radiosContainer.appendChild(addRadios(motivosDenunciaDoador))
 
 
-    } else if (this.value === '1') {
+    } else if (this.id === 'r1') {
       while (radiosWrapper.firstChild) {
         radiosWrapper.removeChild(radiosWrapper.lastChild)
       }
