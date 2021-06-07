@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const db = require('../database/database');
+const {isAuth} = require('../helpers/isAuth');
 
-router.get('/', async (req, res) => {
+router.get('/', isAuth , async (req, res) => {
     const conn = await db.connection();
     const idUser = req.user[0].cd_usuario;
     const [chatCampanhas] = await conn.query(`SELECT * FROM chat 
@@ -20,7 +21,7 @@ router.get('/', async (req, res) => {
     })
 })
 
-router.get('/:soli', async (req, res) => {
+router.get('/:soli', isAuth , async (req, res) => {
     const conn = await db.connection();
     const idSoli = req.params.soli;
     const idUser = req.user[0].cd_usuario;
