@@ -29,7 +29,7 @@ router.get('/pedidos/:id', async (req, res) => {
         INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON
          cd_usuario_solicitacao = cd_usuario WHERE 
          cd_usuario_pedido = ? AND
-         cd_pedido_solicitacao = ?`, [idUser, idPedido])
+         cd_pedido_solicitacao = ? ORDER BY dt_createdAt_solicitacao DESC`, [idUser, idPedido])
            
         res.render('painel/meus-pedidos-ajudas', {
             notificacao,
@@ -68,7 +68,7 @@ router.get('/pedidos/:id/:solicitacao', async (req, res) => {
         const [situacao] = await conn.query(`SELECT cd_situacao_solicitacao FROM solicitacao
         WHERE cd_solicitacao = ?`,[soli])
     
-        if(situacao[0].cd_situacao_solicitacao == 'ENTREGUE'){
+        if(situacao[0].cd_situacao_solicitacao == 'ENTREGUE' || situacao[0].cd_situacao_solicitacao == 'NÃO ENTREGUE'){
             entregueOrNot = null;
         }
     
@@ -196,6 +196,11 @@ router.post('/ressoli', async (req, res) => {
             }
             
             await conn.end();
+        }
+        else if(req.body.bt == 'false'){
+            const [idPedido] = await conn.query(`SELECT cd_pedido_solicitacao AS pedido
+            FROM solicitacao WHERE cd_solicitacao = ?`, [soli])
+            res.redirect(`pedidos/${idPedido[0].pedido}/${soli}/naoentregue`)
         }
     }
     else{

@@ -121,6 +121,24 @@
                         {{nm_titulo_pedido}}
                         <span class="nmPedido"> • Dono: {{nm_usuario}}</span>
                     </p>
+                    <div class="menu">
+                        <div class="wrapper-menu row">
+                            <img src="/assets/img/icone_reticencias.svg" alt="Abrir Menu">
+                        </div>
+
+                        <div class="toggle-menu denuncia">
+                             <ul>
+                                 <li class="toggle-link">
+                                    <a href="usuario/{{cd_usuario}}/denuncia" class="sub titulo row">
+                                        <img src="/assets/img/icone_denounce.svg" alt="Logout" />
+                                        
+                                        Denunciar usuário 
+                                 
+                                    </a>
+                                 </li>
+                             </ul>
+                        </div>
+                    </div>
                     {{/each}}
                     {{/if}}
                     {{#if userSoli}}
@@ -135,9 +153,6 @@
                         {{nm_usuario}}  
                         <span class="nmPedido"> • {{nm_titulo_pedido}}</span>
                     </p>
-                    {{/each}}
-                    {{/if}}
-
                     <div class="menu">
                         <div class="wrapper-menu row">
                             <img src="/assets/img/icone_reticencias.svg" alt="Abrir Menu">
@@ -146,7 +161,7 @@
                         <div class="toggle-menu denuncia">
                              <ul>
                                  <li class="toggle-link">
-                                    <a href="" class="sub titulo row">
+                                    <a href="usuario/{{cd_usuario}}/denuncia" class="sub titulo row">
                                         <img src="/assets/img/icone_denounce.svg" alt="Logout" />
                                         
                                         Denunciar usuário 
@@ -156,6 +171,8 @@
                              </ul>
                         </div>
                     </div>
+                    {{/each}}
+                    {{/if}}
                 </div>
 
                 <div class="chat-content">
