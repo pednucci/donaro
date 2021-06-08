@@ -59,11 +59,11 @@
                             <h2 class="sub titulo">{{nm_alimento}}</h2>
                             <div class="progresso-container row">
                                 <div class="arrecadado">
-                                    <p><span class="arrecadado-{{nm_alimento}}"></span>%</p>
+                                    <p><span class="arrecadado-{{replaceSpace nm_alimento}}"></span>%</p>
                                 </div>
                                 <div class="porcentagem">
                                     <div class="progresso-barra">
-                                        <div class="progresso-atual progresso-atual-{{nm_alimento}}"></div>
+                                        <div class="progresso-atual progresso-atual-{{replaceSpace nm_alimento}}"></div>
                                     </div>
                                 </div>
                             </div>
@@ -107,11 +107,11 @@
     {{#each alimento}}
     math = ({{qt_doada_alimento}}*100)/{{qt_alimento}};
     if(math >= 100){
-        document.querySelector('.progresso-atual-{{nm_alimento}}').style.width = 100 + '%';
+        document.querySelector('.progresso-atual-{{replaceSpace nm_alimento}}').style.width = 100 + '%';
     }
     else{
-        document.querySelector('.progresso-atual-{{nm_alimento}}').style.width = math + '%';
+        document.querySelector('.progresso-atual-{{replaceSpace nm_alimento}}').style.width = math + '%';
     }
-    document.querySelectorAll('.arrecadado-{{nm_alimento}}')[0].innerText = Math.trunc(math);
+    document.querySelectorAll('.arrecadado-{{replaceSpace nm_alimento}}')[0].innerText = Math.trunc(math);
     {{/each}}
 </script>
