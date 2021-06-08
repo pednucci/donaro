@@ -18,7 +18,8 @@ router.get('/criar', isAuth, async (req, res) => {
 router.get('/descobrir', async (req, res) => {
     const conn = await db.connection();
     const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0 ORDER BY dt_createdAt_pedido DESC
+    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0 AND cd_deletado_pedido IS NULL
+    ORDER BY dt_createdAt_pedido DESC
     LIMIT 0,6`)
     const [count] = await conn.query(`SELECT count(*) AS count FROM pedido`);
     let pags = count[0].count/6;;
@@ -69,7 +70,8 @@ router.get('/descobrir/pag/:num', async (req, res) => {
     const num = req.params.num;
     const conn = await db.connection();
     const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0 ORDER BY dt_createdAt_pedido DESC
+    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0 AND cd_deletado_pedido IS NULL
+    ORDER BY dt_createdAt_pedido DESC
     LIMIT ${(num*6)-6},6`)
     const [count] = await conn.query(`SELECT count(*) AS count FROM pedido`);
     let pags = count[0].count/6;;
@@ -157,47 +159,51 @@ router.get('/descobrir/pedido/:id', async (req, res) => {
     const [pedido] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
     cd_usuario_pedido = cd_usuario WHERE cd_pedido = ?`,[idPed]);
 
-    const id = pedido[0].cd_pedido;
-    let datPedido = [];
-    const [data] = await conn.query(`SELECT dt_encerramento_pedido FROM pedido
-    WHERE cd_pedido = ?`,[id]);
-    data.forEach(data => {
-        datPedido.push(formatDistanceStrict(Date.now(), data.dt_encerramento_pedido, {locale: ptBR}));
-    })
-    pedido[0].dateRemaining = datPedido
-
-    const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
-     cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
+    if(pedido[0].cd_deletado_pedido == 1){
+        res.redirect('/')
+    }
+    else{
+        const id = pedido[0].cd_pedido;
+        let datPedido = [];
+        const [data] = await conn.query(`SELECT dt_encerramento_pedido FROM pedido
+        WHERE cd_pedido = ?`,[id]);
+        data.forEach(data => {
+            datPedido.push(formatDistanceStrict(Date.now(), data.dt_encerramento_pedido, {locale: ptBR}));
+        })
+        pedido[0].dateRemaining = datPedido
     
-    if(req.user){
-
-        const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
-        WHERE cd_pedido = ? AND cd_usuario_pedido = ?`,[idPed, req.user[0].cd_usuario]);
+        const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
+         cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
+        
+        if(req.user){
     
-        if(count[0].count == 1){
-            let identify = {
-                exist: true
+            const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
+            WHERE cd_pedido = ? AND cd_usuario_pedido = ?`,[idPed, req.user[0].cd_usuario]);
+        
+            if(count[0].count == 1){
+                let identify = {
+                    exist: true
+                }
+                res.render('pedidos/pedido', {
+                    pedido: pedido,
+                    alimento: alimento,
+                    identify
+                })
             }
-            res.render('pedidos/pedido', {
-                pedido: pedido,
-                alimento: alimento,
-                identify
-            })
-        }
+            else{
+                res.render('pedidos/pedido', {
+                    pedido: pedido,
+                    alimento: alimento
+                })
+            }
+         }
         else{
             res.render('pedidos/pedido', {
                 pedido: pedido,
                 alimento: alimento
             })
         }
-     }
-    else{
-        res.render('pedidos/pedido', {
-            pedido: pedido,
-            alimento: alimento
-        })
-    }
-    
+    }      
     await conn.end();
 })
 
@@ -206,7 +212,11 @@ router.get('/descobrir/pedido/:id/ajudar', isAuth, async (req, res) => {
     const idPed = req.params.id;
     const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
     WHERE cd_pedido = ? AND cd_usuario_pedido = ?`,[idPed, req.user[0].cd_usuario]);
-    if(count[0].count == 0){
+
+    const [pedido] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
+    cd_usuario_pedido = cd_usuario WHERE cd_pedido = ?`,[idPed]);
+
+    if(count[0].count == 0 && pedido.length > 0 && pedido[0].cd_deletado_pedido != 1){
         const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
         cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
    
