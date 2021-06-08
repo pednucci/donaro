@@ -44,12 +44,13 @@
                             </h1>
 
                             <div class="titulo-wrapper row">
-                                <h2 class="sub titulo row">
-                                    Alimentos:
-                                    {{#each this.comida}}
-                                    <span class="titulo-link row">{{this}} </span>
-                                    {{/each}}
-                                </h2>
+                                <h1 class="sub titulo row master">Alimentos:
+                                    <h2 class="sub titulo row titulo-link">
+                                        {{#each this.comida}}
+                                        {{this}} -
+                                        {{/each}}
+                                    </h2>
+                                </h1>
                             </div>
                         </div>
                         <div class="progresso-container column">

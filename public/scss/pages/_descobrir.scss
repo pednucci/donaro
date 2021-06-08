@@ -138,14 +138,26 @@
 
                             .sub.titulo {
                                 justify-content: flex-start;
-
+                                display: inline-block;
                                 font-size: 1.9rem;
-                                flex-wrap: wrap;
+                                // width: 100rem;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+
+                                &.master {
+                                    white-space: normal;
+                                    width: max-content;
+                                    overflow: visible;
+                                }
 
                                 &.before {
                                     width: max-content;
                                     margin: 0;
                                     margin-bottom: 1rem;
+                                }
+
+                                .titulo-link {
                                 }
                             }
 
