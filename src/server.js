@@ -72,6 +72,9 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
     resolvidoOrPendente: (text) => {
         if(text == 'Resolvida') return true
     },
+    replaceSpace: (text) => {
+        return text.replace(" ", "")
+    },
     section: function(name, options){
         if(!this._sections) this._sections = {};
         this._sections[name] = options.fn(this);
