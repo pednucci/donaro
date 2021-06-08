@@ -253,7 +253,6 @@ router.post('/descobrir/pedido/:id/ajudar', async (req, res) => {
             if(count == req.body.qtd.length){
                 erros.push({text: 'Pelo menos um alimento preciso ser preenchido'})
             }
-            console.log(qtd)
         }
         if(typeof req.body.qtd == 'string' && !req.body.qtd[0]){
             erros.push({text: 'Pelo menos um alimento preciso ser preenchido'})
