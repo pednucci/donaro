@@ -281,13 +281,27 @@ router.post('/descobrir/pedido/:id/ajudar', async (req, res) => {
                 qtd.forEach(q => {
                     if(q) count++
                 })
-                for(c = 0; c<count; c++) {
-                    await conn.query(`INSERT INTO donation
-                    (nm_alimento_donation, qt_contribuicao_donation, cd_solicitacao_donation,
-                    cd_pedido_donation)
-                    VALUES(?,?,?,?)`
-                    , [req.body.nmAlimento[c], req.body.qtd[c], idSoli,
-                    idPedido])
+                if(count != qtd.length){
+                    for(c = 0; c<qtd.length; c++) {
+                        if(qtd[c]){
+                            await conn.query(`INSERT INTO donation
+                            (nm_alimento_donation, qt_contribuicao_donation, cd_solicitacao_donation,
+                            cd_pedido_donation)
+                            VALUES(?,?,?,?)`
+                            , [req.body.nmAlimento[c], req.body.qtd[c], idSoli,
+                            idPedido])
+                        }
+                    }
+                }
+                else{
+                    for(c = 0; c<count; c++) {
+                        await conn.query(`INSERT INTO donation
+                        (nm_alimento_donation, qt_contribuicao_donation, cd_solicitacao_donation,
+                        cd_pedido_donation)
+                        VALUES(?,?,?,?)`
+                        , [req.body.nmAlimento[c], req.body.qtd[c], idSoli,
+                        idPedido])
+                    }
                 }
             }
             if(typeof req.body.qtd == 'string'){
@@ -304,7 +318,7 @@ router.post('/descobrir/pedido/:id/ajudar', async (req, res) => {
             await conn.query(`INSERT INTO chat(cd_pedido_chat, cd_solicitacao_chat, cd_userPedido_chat,
             cd_userSoli_chat) VALUES(?,?,?,?)`,[idPedido, idSoli, userPedido[0].cd_usuario_pedido,
             idUser]);
-            req.flash('successMsg', 'Solicitação enviada com sucesso, espere a resposta do donatário!');
+            req.flash('successMsg', 'Solicitação de ajuda enviada! Converse com o donatário pelo chat');
             res.redirect('/')
         }
     }
