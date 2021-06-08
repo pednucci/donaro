@@ -7,32 +7,34 @@
 <main class="lyt_painel lyt_notificacoes pg_nes">
     {{!-- Painel --}} 
     {{> painelAdm navNaoEntregue="true" }}
+    {{>msg}}
 
      {{!-- Cards --}} 
     <div class="cards-container">
          {{!-- Card --}} 
+        {{#each denuncias}}
         <div class="card row">
              {{!-- Informações --}} 
             <div class="card-user row">
                 <div class="card-image">
                     <img
                         class="image-card"
-                        src="/assets/profile/user_julio.png"
+                        src="/assets/profile/{{cd_foto_usuario}}"
                         alt=""
                     />
                 </div>
                 <div class="card-info column">
-                    <h1 class="nome-card">Julio Vieira</h1>
+                    <h1 class="nome-card">{{nm_usuario}}</h1>
                     <h2 class="desc-card">
                         Campanha:
-                        <strong> Café da manhã na creche Arco-Íris</strong>
+                        <strong>{{nm_titulo_pedido}}</strong>
                     </h2>
                 </div>
             </div>
 
              {{!-- Btn --}} 
             <div class="card-btn column">
-                <a href="/admin/denuncias/naoentregues/1">
+                <a href="/admin/denuncias/naoentregues/{{cd_denuncia}}">
                     <button class="btn red-denounce">Ver denúncia</button>
                 </a>
                 <div class="date row">
@@ -40,10 +42,11 @@
                         src="/assets/img/icone_calendar.svg"
                         alt="Data"
                     /> 
-                    <span class="date-time">28/05/2021 - 21:44</span>
+                    <span class="date-time">{{formatDate dt_createdAt_denuncia}}</span>
                 </div>
             </div>
         </div>
+        {{/each}}
     </div>
 </main>
 

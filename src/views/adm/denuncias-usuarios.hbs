@@ -7,32 +7,33 @@
 <main class="lyt_painel lyt_notificacoes pg_dusuarios">
     {{!-- Painel --}} 
     {{> painelAdm navUsuario="true" }}
-
+    {{>msg}}
      {{!-- Cards --}} 
     <div class="cards-container">
          {{!-- Card --}} 
+        {{#each denuncias}}
         <div class="card row">
              {{!-- Informações --}} 
             <div class="card-user row">
                 <div class="card-image">
                     <img
                         class="image-card"
-                        src="/assets/profile/user_julio.png"
+                        src="/assets/profile/{{cd_foto_usuario}}"
                         alt=""
                     />
                 </div>
                 <div class="card-info column">
-                    <h1 class="nome-card">Julio Vieira</h1>
+                    <h1 class="nome-card">{{nm_usuario}}</h1>
                     <h2 class="desc-card">
                         Motivo:
-                        <strong>Mensagens inapropriadas</strong>
+                        <strong>{{nm_motivo_denuncia}}</strong>
                     </h2>
                 </div>
             </div>
 
              {{!-- Btn --}} 
             <div class="card-btn column">
-                <a href="/admin/denuncias/usuarios/1">
+                <a href="/admin/denuncias/usuarios/{{cd_denuncia}}">
                     <button class="btn red-denounce">
                         Ver denúncia
                     </button>
@@ -42,9 +43,10 @@
                         src="/assets/img/icone_calendar.svg"
                         alt="Data"
                     /> 
-                    <span class="date-time">28/05/2021 - 21:44</span>
+                    <span class="date-time">{{formatDate dt_createdAt_denuncia}}</span>
                 </div>
             </div>
         </div>
+        {{/each}}
     </div>
 </main>

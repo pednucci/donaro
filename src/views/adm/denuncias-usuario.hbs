@@ -14,9 +14,10 @@
        {{!-- Título e status --}}
         <div class="titulo-denuncia row">
             <h1>Informações da denúncia</h1>
-            <div class="status pendente row">
+            <div class="status {{#if (resolvidoOrPendente denuncia.[0].nm_situacao_denuncia)}}
+            resolvido{{else}}pendente{{/if}} row">
                 <div class="ball"></div>
-                <p>Pendente</p>
+                <p>{{denuncia.[0].nm_situacao_denuncia}}</p>
             </div>
 
             <div class="toggle-arrow">
@@ -42,13 +43,13 @@
                             {{!-- Nome --}}
                             <div class="info column">
                                 <h1>Dono da denúncia</h1>
-                                <p>André Paiva</p>
+                                <p>{{donoDenuncia.[0].nm_usuario}}</p>
                             </div>
 
                             {{!-- Email --}}
                             <div class="info column">
                                 <h1>Email </h1>
-                                <p>andre@email.com</p>
+                                <p>{{donoDenuncia.[0].cd_email_usuario}}</p>
                             </div>
                         </div>
                     </div>
@@ -59,13 +60,13 @@
                             {{!-- Motivo --}}
                             <div class="info column">
                                 <h1>Motivo da denuncia</h1>
-                                <p>Mensagens inapropriadas</p>
+                                <p>{{denuncia.[0].nm_motivo_denuncia}}</p>
                             </div>
 
                             {{!-- Data --}}
                             <div class="info column">
                                 <h1>Data da denúncia</h1>
-                                <p>29/03/2021</p>
+                                <p>{{formatDate denuncia.[0].dt_createdAt_denuncia}}</p>
                             </div>
                         </div>
                     </div>
@@ -80,15 +81,7 @@
 
                         <div class="detalhes">
                             <p>
-                                Mussum Ipsum, cacilds vidis litro abertis. 
-                                Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. 
-                                Mussum Ipsum, cacilds vidis litro abertis. Mais vale um 
-                                Mussum Ipsum, cacilds vidis litro abertis. 
-                                Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. 
-                                Mussum Ipsum, cacilds vidis litro abertis. Mais vale um 
-                                Mussum Ipsum, cacilds vidis litro abertis. 
-                                Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. 
-                                Mussum Ipsum, cacilds vidis litro abertis. Mais vale um 
+                                {{denuncia.[0].ds_descricao_denuncia}}
                             </p>
                         </div>
                     </div>
@@ -112,7 +105,7 @@
             {{!-- Imagem --}}
             <div class="infos start row">
                 <div class="img-wrapper">
-                    <img src="/assets/img/user_julio.png" alt="">
+                    <img src="/assets/profile/{{denuncia.[0].cd_foto_usuario}}" alt="">
                 </div>
             </div>
             
@@ -126,13 +119,13 @@
                             {{!-- Nome --}}
                             <div class="info column">
                                 <h1>Nome do usuário</h1>
-                                <p>Julio Oliveira</p>
+                                <p>{{denuncia.[0].nm_usuario}}</p>
                             </div>
 
                             {{!-- Email --}}
                             <div class="info column">
                                 <h1>Email </h1>
-                                <p>julio@email.com</p>
+                                <p>{{denuncia.[0].cd_email_usuario}}</p>
                             </div>
                         </div>
                     </div>
@@ -144,13 +137,13 @@
                             {{!-- ID --}}
                             <div class="info column">
                                 <h1>ID</h1>
-                                <p>23232</p>
+                                <p>{{denuncia.[0].cd_usuario}}</p>
                             </div>
 
                             {{!-- Telefone --}}
                             <div class="info column">
                                 <h1>Telefone</h1>
-                                <p>(13) 99389-8989</p>
+                                <p>{{telNumber denuncia.[0].cd_celular_usuario}}</p>
                             </div>
                         </div>
                     </div>
@@ -163,7 +156,7 @@
                <div class="infos-denuncia">
                     <div class="advertencias column">
                         <h2>Esse usuário já recebeu</h2>
-                        <h1>2 advertência(s)</h1>
+                        <h1>{{denuncia.[0].qt_advertencias_usuario}} advertência(s)</h1>
                     </div>
                </div>
             </div>
@@ -173,24 +166,29 @@
 
 
     {{!--  Botões  --}}
+    {{#unless (resolvidoOrPendente denuncia.[0].nm_situacao_denuncia)}}
     <div class="botoes-wrapper column">
-        <div class="botoes row">
-            <a href="#" class="btn blue" type="button"> Invalidar </a>
-
-            <div class="punicoes">
-               <div class="punir row">
-                    <a class="btn ghost-red punir" type="button">
-                        Punir usuário <img src="/assets/img/icone_arrow_red.svg" alt="">
-                    </a>
-               </div>
-
-                 <div class="toggle-menu punicoes column">
-                        <a href="#" class="btn ghost-red" type="button">Enviar advertência</a>
-                        <a href="#" class="btn red" type="button">Desativar conta</a>
+        <form method="POST">
+            <div class="botoes row">
+                <button class="btn blue" type="submit" name="resp" value="invalidar"> Invalidar </button>
+    
+                <div class="punicoes">
+                    <div class="punir row">
+                        <a class="btn ghost-red punir" type="button">
+                            Punir usuário <img src="/assets/img/icone_arrow_red.svg" alt="">
+                        </a>
+                    </div>
+    
+                    <div class="toggle-menu punicoes column">
+                        <button class="btn ghost-red" type="submit" name="resp" value="adv">Enviar advertência</button>
+                        <button class="btn red" type="submit" name="resp" value="account">Desativar conta</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
+    {{else}}
+    {{/unless}}
 </main>
 
 <script src="/js/denuncias.js">
