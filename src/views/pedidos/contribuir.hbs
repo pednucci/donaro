@@ -6,8 +6,14 @@
 
 <main class="lyt_denuncia pg_contribuir">
     <div class="form-container pedido column">
+        {{#if erros}}
+        <div class="form-error">
+            <h2 class="sub titulo">{{erros.[0].text}}</h2>
+        </div>
+        {{else}}
+        {{/if}}
         <p class="sub titulo">Informe a quantidade da doação:</p>
-        <form class="form-login column" action="/ajudar" method="POST">
+        <form class="form-login column" method="POST">
             <div class="alimento column">
                    <div class="desc row">
                         <label>Alimento</label>
@@ -35,9 +41,6 @@
                     Adicione um comentário (opcional)
                 </label>
                 <textarea class="input-form" name="descricao"></textarea>
-                {{#each alimento}}
-                <input type="hidden" name="idPedido" value="{{cd_pedido}}">
-                {{/each}}
             </div>
             <input class="btn blue" type="submit" value="Enviar" />
         </form>

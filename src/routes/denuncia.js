@@ -5,8 +5,8 @@ const { isAuth } = require('../helpers/isAuth');
 
 router.get('/descobrir/pedido/:id/denuncia', isAuth, async (req, res) => {
     const conn = await db.connection();
-    const [ifExist] = await conn.query(`SELECT count(*) AS count FROM solicitacao WHERE
-    cd_solicitacao = ?`,[req.params.id])
+    const [ifExist] = await conn.query(`SELECT count(*) AS count FROM pedido WHERE
+    cd_pedido = ?`,[req.params.id])
     if(ifExist[0].count == 1){
         res.render('denuncias/denuncia-pedido')
     }
@@ -17,8 +17,8 @@ router.get('/descobrir/pedido/:id/denuncia', isAuth, async (req, res) => {
 
 router.post('/descobrir/pedido/:id/denuncia', async (req, res) => {
     const conn = await db.connection();
-    const [ifExist] = await conn.query(`SELECT count(*) AS count FROM solicitacao WHERE
-    cd_solicitacao = ?`,[req.params.id])
+    const [ifExist] = await conn.query(`SELECT count(*) AS count FROM pedido WHERE
+    cd_pedido = ?`,[req.params.id])
     if(ifExist[0].count == 1){
         const motivo = req.body.motivo;
         const descricao = req.body.descricao;

@@ -221,7 +221,7 @@ router.get('/descobrir/pedido/:id/ajudar', isAuth, async (req, res) => {
         cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
    
        res.render('pedidos/contribuir', {
-           alimento: alimento
+           alimento
        })
     }
     else{
@@ -231,48 +231,82 @@ router.get('/descobrir/pedido/:id/ajudar', isAuth, async (req, res) => {
     await conn.end();
 })
 
-router.post('/ajudar', async (req, res) => {
+router.post('/descobrir/pedido/:id/ajudar', async (req, res) => {
     const conn = await db.connection();
-    const idPedido = req.body.idPedido;
-
+    const idPedido = req.params.id;
 
     const comentario = req.body.descricao;
 
     try{
         const idUser = req.user[0].cd_usuario;
-
-        const solicitacao = await conn.query(`INSERT INTO solicitacao(cd_pedido_solicitacao,
-        ds_comentario_solicitacao, cd_usuario_solicitacao) VALUES(?,?,?)`,[idPedido[0], comentario, idUser]);
-
-        const idSoli = solicitacao[0].insertId;
+        var erros = []
 
         if(typeof req.body.qtd == 'object'){
+            let qtd = [];
+            let count = 0;
             for(let i = 0; i<req.body.qtd.length; i++) {
-                if(req.body.nmAlimento[i] == '' || req.body.qtd[i] == '') continue;
-                await conn.query(`INSERT INTO donation
-                (nm_alimento_donation, qt_contribuicao_donation, cd_solicitacao_donation,
-                cd_pedido_donation)
-                VALUES(?,?,?,?)`
-                , [req.body.nmAlimento[i], req.body.qtd[i], idSoli,
-                idPedido[0]])
+                qtd[i] = req.body.qtd[i];
+            }
+            qtd.forEach(q => {
+                if(!q) count++;
+            })
+            if(count == req.body.qtd.length){
+                erros.push({text: 'Pelo menos um alimento preciso ser preenchido'})
             }
         }
-        if(typeof req.body.qtd == 'string'){
-            await conn.query(`INSERT INTO donation
-                (nm_alimento_donation, qt_contribuicao_donation, cd_solicitacao_donation,
-                cd_pedido_donation)
-                VALUES(?,?,?,?)`
-                , [req.body.nmAlimento, req.body.qtd, idSoli,
-                idPedido[0]])
+        if(typeof req.body.qtd == 'string' && !req.body.qtd[0]){
+            erros.push({text: 'Pelo menos um alimento preciso ser preenchido'})
         }
-        const [userPedido] = await conn.query(`SELECT cd_usuario_pedido FROM pedido WHERE
-        cd_pedido = ?`, [idPedido[0]])
 
-        await conn.query(`INSERT INTO chat(cd_pedido_chat, cd_solicitacao_chat, cd_userPedido_chat,
-        cd_userSoli_chat) VALUES(?,?,?,?)`,[idPedido[0], idSoli, userPedido[0].cd_usuario_pedido,
-        idUser]);
-        req.flash('successMsg', 'Solicitação enviada com sucesso, espere a resposta do donatário!');
-        res.redirect('/')
+        if(erros.length > 0){
+            const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
+            cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPedido]);
+            
+            res.render('pedidos/contribuir', {
+                alimento,
+                erros
+            })
+        }
+        else{
+            const solicitacao = await conn.query(`INSERT INTO solicitacao(cd_pedido_solicitacao,
+            ds_comentario_solicitacao, cd_usuario_solicitacao) VALUES(?,?,?)`,[idPedido, comentario, idUser]);
+            const idSoli = solicitacao[0].insertId;
+            
+            if(typeof req.body.qtd == 'object'){
+                let qtd = []
+                let count = 0;
+                for(d = 0; d<req.body.qtd.length; d++) {
+                    qtd[d] = req.body.qtd[d];
+                }
+                qtd.forEach(q => {
+                    if(q) count++
+                })
+                for(c = 0; c<count; c++) {
+                    await conn.query(`INSERT INTO donation
+                    (nm_alimento_donation, qt_contribuicao_donation, cd_solicitacao_donation,
+                    cd_pedido_donation)
+                    VALUES(?,?,?,?)`
+                    , [req.body.nmAlimento[c], req.body.qtd[c], idSoli,
+                    idPedido])
+                }
+            }
+            if(typeof req.body.qtd == 'string'){
+                await conn.query(`INSERT INTO donation
+                    (nm_alimento_donation, qt_contribuicao_donation, cd_solicitacao_donation,
+                    cd_pedido_donation)
+                    VALUES(?,?,?,?)`
+                    , [req.body.nmAlimento, req.body.qtd, idSoli,
+                    idPedido])
+            }
+            const [userPedido] = await conn.query(`SELECT cd_usuario_pedido FROM pedido WHERE
+            cd_pedido = ?`, [idPedido])
+    
+            await conn.query(`INSERT INTO chat(cd_pedido_chat, cd_solicitacao_chat, cd_userPedido_chat,
+            cd_userSoli_chat) VALUES(?,?,?,?)`,[idPedido, idSoli, userPedido[0].cd_usuario_pedido,
+            idUser]);
+            req.flash('successMsg', 'Solicitação enviada com sucesso, espere a resposta do donatário!');
+            res.redirect('/')
+        }
     }
     catch(err){
         console.log(err)
