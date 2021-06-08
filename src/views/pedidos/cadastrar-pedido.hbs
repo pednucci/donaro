@@ -54,7 +54,7 @@
                                 <option value="solido">Sólido</option>
                                 <option value="liquido">Líquido</option>
                             </select> --}}
-                            <select name="tpf" class="input-form tpf">
+                            <select class="input-form tpf" name="tpf">
                                 <option value="0" disabled="false" >Selecione um tipo</option> 
                             </select>
                         </div>
@@ -110,21 +110,21 @@
 <script type="text/javascript">
  
     //#region addFoodRows 
-    const foodWrapper = document.querySelector('.alimentos-wrapper');
+    var foodWrapper = document.querySelector('.alimentos-wrapper');
     var idCount = 1;
 
     const btnAddFood = document.querySelector(".btn.adicionar");
 
-    var food = document.querySelectorAll(".alimento.row");
-    var tipfisico = document.querySelectorAll(".tpf");
-    var medidaAl = document.querySelectorAll(".alMedida");
+    var foodRowWrapper = document.querySelectorAll(".alimento.row");
 
     //#region  Botões Adicionar/Remover alimentos
 
     btnAddFood.addEventListener('click', () => {
         foodWrapper.append(addFood())
-
+        selectTipoAlimento = document.querySelectorAll('.input-form.tpf')
+        addSelectFoods()
     });
+        
 
 
     function addFood() {
@@ -241,15 +241,15 @@
     //#endregion
 
     //#region add selectFoods
-    var alimentos = {
+   var alimentos = {
     'Mais doados': [
         {
             'alimento': 'Arroz',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Feijão',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Leite',
@@ -257,19 +257,19 @@
         },
         {
             'alimento': 'Leite em pó',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Macarrão',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Café',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Açúcar',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Óleo',
@@ -277,7 +277,7 @@
         },
         {
             'alimento': 'Ovos',
-            'medida': 'Dúzia(s)'
+            'medida': 'DZ'
         },
         {
             'alimento': 'Azeite',
@@ -285,249 +285,244 @@
         },
         {
             'alimento': 'Sal',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Farinha de trigo',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Fubá',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
     ],
     'Carnes': [
         {
-            'alimento': 'Carne de Primeira',
-            'medida': 'Kg',
-        },
-        {
-            'alimento': 'Carne de Segunda',
-            'medida': 'Kg'
+            'alimento': 'Carne Bovina',
+            'medida': 'KG',
         },
         {
             'alimento': 'Linguiça',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Carne de Porco',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Bisteca',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Mortadela',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Carne de Frango',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Carne de Peixe',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
 
     ],
     'Verduras e Legumes': [
         {
             'alimento': 'Alface',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Tomate',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Alho',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Cebola',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Batata',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Cenoura',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Pimentão',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Abóbora',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Aveia',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Batata-doce',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Beterraba',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Brócolis',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Cebolinha',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Couve',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Ervilha',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Espinafre',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Lentilha',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Mandioca',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Milho',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Pepino',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Rúcula',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Repolho',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Salsa',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
     ],
     'Frutas': [
         {
             'alimento': 'Laranja',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Mamão',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Maçã',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Melancia',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Limão',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Tangerina',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Manga',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Abacaxi',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Pêra',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Melão',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Banana',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Uva',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Maracujá',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Abacate',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Coco',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Caqui',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Ameixa',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Mexerica',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Pêssego',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
     ],
     'Derivados do leite': [
         {
             'alimento': 'Queijo',
-            'medida': 'Kg',
+            'medida': 'KG',
         },
         {
             'alimento': 'Margarina',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Leite sem lactose',
-            'medida': 'Kg'
+            'medida': 'L'
         },
         {
             'alimento': 'Manteiga',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
-
         {
             'alimento': 'Creme de leite',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Requeijão',
-            'medida': 'Kg'
+            'medida': 'KG'
         },
         {
             'alimento': 'Iogurte',
@@ -540,71 +535,88 @@
     ],
 }
 
-    var selectTipoAlimento = document.querySelector('.input-form.tpf')
+    var selectTipoAlimento = document.querySelectorAll('.input-form.tpf')
     var selectAlimentos = document.querySelector('.input-form.alimentoInput')
     var medidaAlimento = document.querySelector('.sub.titulo.medidaAlimento')
+    const optionTipoAlimento = document.createElement('option')
+    selectTipoAlimento[0].selectedIndex = 0;
+    addSelectFoods()
 
-    food.forEach(function (value, index) {
-        console.log(index)
+    var a = [];
+    // [index]
+    
+    function addSelectFoods (){
+        var foodRowWrapper = document.querySelectorAll(".alimento.row");
+        var selectTipoAlimento = document.querySelectorAll('.input-form.tpf')
+        var selectAlimentos = document.querySelectorAll('.input-form.alimentoInput')
+        var medidaAlimento = document.querySelectorAll('.sub.titulo.medidaAlimento')
+    
+        foodRowWrapper.forEach(function (value, index) {
+        var wrapperOptions = [];
+        var selectTypes = [];
+
+
+        addSelectTypes(alimentos)
+        console.log(selectTipoAlimento[index])
+        console.log(selectTipoAlimento.length-1)
+
+        if(selectTipoAlimento[index]===(selectTipoAlimento.length-1)){
+            selectTipoAlimento[index].selectedIndex = 0;
+        } 
+
+        function addSelectTypes(foodObj) {
+            for (type in foodObj) {
+                selectTypes[type] = document.createElement('option');
+                selectTypes[type].setAttribute('value', type);
+                selectTypes[type].innerText = type
+
+                selectTipoAlimento[index].appendChild(selectTypes[type])
+            }
+        }
+
+        function addSelectFoods(foodArray) {
+            selectTipoAlimento[index] = document.querySelector('.input-form.tpf')
+            foodType = selectTipoAlimento[index].value;
+
+            while (selectAlimentos[index].firstChild) {
+                selectAlimentos[index].removeChild(selectAlimentos[index].lastChild)
+            }
+
+            for (let food of foodArray) {
+                wrapperOptions[food] = document.createElement('option')
+                wrapperOptions[food].setAttribute('value', food.alimento)
+                wrapperOptions[food].innerText = food.alimento;
+
+                selectAlimentos[index].appendChild(wrapperOptions[food]);
+            };
+        }
+
+        function changeMedida() {
+            var type = selectTipoAlimento[index].value;
+            var indexMedida = selectAlimentos[index].selectedIndex;
+
+            var medida = alimentos[type][indexMedida]['medida']
+
+            medidaAlimento[index].innerText = medida;
+        }
+
+
+        selectTipoAlimento[index].addEventListener('change', () => {
+            var selectTipoAlimento = document.querySelectorAll('.input-form.tpf')
+            var foodType = selectTipoAlimento[index].value;
+
+            addSelectFoods(alimentos[foodType])
+            changeMedida()
+
+        })
+
+        selectAlimentos[index].addEventListener('change', () => {
+            changeMedida()
+        })
+
     });
 
-    const optionTipoAlimento = document.createElement('option')
-    var wrapperOptions = [];
-    var selectTypes = [];
-
-
-    addSelectTypes(alimentos)
-    selectTipoAlimento.selectedIndex = 0;
-
-    function addSelectTypes(foodObj) {
-        for (type in foodObj) {
-            selectTypes[type] = document.createElement('option');
-            selectTypes[type].setAttribute('value', type);
-            selectTypes[type].innerText = type
-
-            selectTipoAlimento.appendChild(selectTypes[type])
-        }
     }
-
-    function addSelectFoods(foodArray) {
-        var selectTipoAlimento = document.querySelector('.input-form.tpf')
-        var foodType = selectTipoAlimento.value;
-
-        while (selectAlimentos.firstChild) {
-            selectAlimentos.removeChild(selectAlimentos.lastChild)
-        }
-
-        for (let food of foodArray) {
-            wrapperOptions[food] = document.createElement('option')
-            wrapperOptions[food].setAttribute('value', food.alimento)
-            wrapperOptions[food].innerText = food.alimento;
-
-            selectAlimentos.appendChild(wrapperOptions[food]);
-        };
-    }
-
-    function changeMedida() {
-        var type = selectTipoAlimento.value;
-        var index = selectAlimentos.selectedIndex;
-
-        var medida = alimentos[type][index]['medida']
-
-        medidaAlimento.innerText = medida;
-    }
-
-
-    selectTipoAlimento.addEventListener('change', () => {
-        var selectTipoAlimento = document.querySelector('.input-form.tpf')
-        var foodType = selectTipoAlimento.value;
-
-        addSelectFoods(alimentos[foodType])
-        changeMedida()
-
-    })
-
-    selectAlimentos.addEventListener('change', () => {
-        changeMedida()
-    })
 
     //#endregion 
 
