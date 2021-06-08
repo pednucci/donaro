@@ -200,6 +200,10 @@
                                 border-top: 0.1rem solid var(--gray-border);
                             }
 
+                            & > .row {
+                                width: 95%;
+                            }
+
                             div {
                                 display: flex;
 
@@ -208,6 +212,13 @@
 
                             p {
                                 font-size: 1.4rem;
+
+                                &.cidadeEstado {
+                                    max-width: 10rem;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
                             }
 
                             .usuario {
