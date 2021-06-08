@@ -73,7 +73,7 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
         if(text == 'Resolvida') return true
     },
     replaceSpace: (text) => {
-        return text.replace(" ", "")
+        return text.split(" ").join("")
     },
     section: function(name, options){
         if(!this._sections) this._sections = {};
