@@ -11,6 +11,7 @@ const fileUpload = require('express-fileupload');
 const { format } = require('date-fns');
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
+const { isBanned } = require("./helpers/isBanned");
 module.exports = {io};
 require('./config/auth')(passport);
 require('./Websocket');
@@ -68,6 +69,9 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
     dateIntFormat: (date) => {
         return format(new Date(date), 'yyyy-MM-dd')
     },
+    resolvidoOrPendente: (text) => {
+        if(text == 'Resolvida') return true
+    },
     section: function(name, options){
         if(!this._sections) this._sections = {};
         this._sections[name] = options.fn(this);
@@ -76,7 +80,7 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
 }}));
 app.set('view engine', 'hbs');
 
-app.use(router);
+app.use(isBanned, router);
 
 server.listen(PORT, () => {
     console.log(`Server is running in port ${PORT}`)
