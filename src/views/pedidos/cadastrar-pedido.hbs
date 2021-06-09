@@ -543,6 +543,8 @@
     addSelectFoods()
 
     var a = [];
+    var hasOptions = [];
+    var hasSelectedIndex = [];
     // [index]
     
     function addSelectFoods (){
@@ -551,20 +553,24 @@
         var selectAlimentos = document.querySelectorAll('.input-form.alimentoInput')
         var medidaAlimento = document.querySelectorAll('.sub.titulo.medidaAlimento')
     
+        var hasOptions = [];
+        var hasSelectedIndex = [];
+        
         foodRowWrapper.forEach(function (value, index) {
+        
         var wrapperOptions = [];
         var selectTypes = [];
 
-
+        
         addSelectTypes(alimentos)
-        console.log(selectTipoAlimento[index])
-        console.log(selectTipoAlimento.length-1)
 
-        if(selectTipoAlimento[index]===(selectTipoAlimento.length-1)){
+        if(index == (foodRowWrapper.length - 1)){
             selectTipoAlimento[index].selectedIndex = 0;
-        } 
+            console.log(selectTipoAlimento[index])
+        }
 
         function addSelectTypes(foodObj) {
+            
             for (type in foodObj) {
                 selectTypes[type] = document.createElement('option');
                 selectTypes[type].setAttribute('value', type);

@@ -95,6 +95,15 @@ button {
     align-items: center;
 }
 
+select {
+    appearance: none;
+    background-image: url("/assets/img/icone_arrow.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 98%;
+    background-size: 1.2rem;
+}
+
 /* #region Progresso */
 .progresso-container {
     margin-bottom: 1rem;
