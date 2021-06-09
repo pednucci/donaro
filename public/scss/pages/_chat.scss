@@ -123,6 +123,14 @@
                         width: 70%;
                         margin-left: 2rem;
 
+                        .titulo,
+                        p {
+                            max-width: 100%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
                         .row1 {
                             .titulo {
                                 font-size: 1.8rem;
@@ -133,8 +141,11 @@
                             }
                         }
 
-                        // .row2 {
-                        // }
+                        .row2 {
+                            p {
+                                font-size: 1.7rem;
+                            }
+                        }
                     }
                 }
 
