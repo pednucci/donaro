@@ -55,7 +55,6 @@
                                             <p class="titulo black nome-conversa">
                                                 {{nm_usuario}}
                                             </p>
-                                        <!-- <p class="titulo-gray horario">18:25</p> -->
                                         </div>
                         
                                         <!-- Última mensagem e número de notificações -->
@@ -233,12 +232,10 @@
     const denunciaMenu = document.querySelector(".toggle-menu.denuncia");
     var containerMaster = document.querySelectorAll(".containerMsgs");
     var toggleTitulos = document.querySelectorAll(".toggleTitulo");
-    var msgContainers = document.querySelectorAll(".msgsContainer");
 
     
     toggleTitulos.forEach(function(value, index){
         toggleTitulos[index].addEventListener('click', () => {
-            console.log(index)
             if(containerMaster[index].classList.contains('toggled')){
                 containerMaster[index].classList.remove('toggled')
             } else{

@@ -27,82 +27,97 @@
 
                 <!-- Coluna de conversas -->
                 <div class="conversas column">
-                    <h1 class="titulo-conversas camp">Conversas - Minhas campanhas</h1>
-                    {{#if chatCampanhas}}
-                    {{#each chatCampanhas}}
-                    <a href="/chat/{{cd_solicitacao_chat}}" class="chat-{{cd_chat}}">
-                        <div class="row conversa">
-                            <!-- Imagem -->
-                            <div class="conversa-img">
-                                <div class="img-wrapper">
-                                    <img
-                                        src="/assets/profile/{{cd_foto_usuario}}"
-                                        alt="Imagem usuário"
-                                    />
-                                </div>
-                            </div>
-
-                            <!-- Infos da conversa -->
-                            <div class="conversa-info">
-                                <!-- Nome e horário -->
-                                <div class="row row1">
-                                    <p class="titulo black nome-conversa">
-                                        {{nm_usuario}}
-                                    </p>
-                                   <!-- <p class="titulo-gray horario">18:25</p> -->
-                                </div>
-
-                                <!-- Última mensagem e número de notificações -->
-                                <div class="row row2 read-{{cd_chat}}">
-                                    <p class="ultimas-msg">
-                                        Campanha: {{nm_titulo_pedido}}
-                                    </p>
-                                </div>
-                            </div>
+                    <div class="containerMsgs mC">
+                        <div class="tituloContainer camp row">
+                            <h1 class="titulo-conversas camp">Conversas - Minhas campanhas </h1>
+                            <img class="toggleTitulo" src="/assets/img/icone_arrow.svg" alt="">
                         </div>
-                    </a>
-                    {{/each}}
-                    {{else}}
-                    <h1>Não há nada por aqui</h1>
-                    {{/if}}
-                    <h1 class="titulo-conversas soli">Conversas - Minhas solicitações</h1>
-                    {{#if chatSolicitacoes}}
-                    {{#each chatSolicitacoes}}
-                    <a href="/chat/{{cd_solicitacao}}" class="chat-{{cd_chat}}">
-                        <div class="row conversa">
-                            <!-- Imagem -->
-                            <div class="conversa-img">
-                                <div class="img-wrapper">
-                                    <img
-                                        src="/assets/pedidos/{{cd_imagem_pedido}}"
-                                        alt="Imagem usuário"
-                                    />
+                        
+                        <div class="msgsContainer">
+                            {{#if chatCampanhas}}
+                            {{#each chatCampanhas}}
+                            <a href="/chat/{{cd_solicitacao_chat}}" class="chat-{{cd_chat}}">
+                                <div class="row conversa">
+                                    <!-- Imagem -->
+                                    <div class="conversa-img">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/assets/profile/{{cd_foto_usuario}}"
+                                                alt="Imagem usuário"
+                                            />
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Infos da conversa -->
+                                    <div class="conversa-info">
+                                        <!-- Nome e horário -->
+                                        <div class="row row1">
+                                            <p class="titulo black nome-conversa">
+                                                {{nm_usuario}}
+                                            </p>
+                                        </div>
+                        
+                                        <!-- Última mensagem e número de notificações -->
+                                        <div class="row row2 read-{{cd_chat}}">
+                                            <p class="ultimas-msg">
+                                                Campanha: {{nm_titulo_pedido}}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <!-- Infos da conversa -->
-                            <div class="conversa-info">
-                                <!-- Nome e horário -->
-                                <div class="row row1">
-                                    <p class="titulo black nome-conversa">
-                                        {{nm_titulo_pedido}}
-                                    </p>
-                                   <!-- <p class="titulo-gray horario">18:25</p> -->
-                                </div>
-
-                                <!-- Última mensagem e número de notificações -->
-                                <div class="row row2 read-{{cd_chat}}">
-                                    <p class="ultimas-msg">
-                                        Dono: {{nm_usuario}}
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
+                            {{/each}}
+                            {{else}}
+                            <h1>Não há nada por aqui</h1>
+                            {{/if}}
                         </div>
-                    </a>
-                    {{/each}}
-                    {{else}}
-                    <h1>Não há nada por aqui</h1>
-                    {{/if}}
+                    </div>
+
+                    <div class="containerMsgs sL">
+                        <div class="tituloContainer soli row">
+                            <h1 class="titulo-conversas soli">Conversas - Minhas solicitações</h1>
+                            <img class="toggleTitulo soli" src="/assets/img/icone_arrow.svg" alt="">
+                        </div>
+                        <div class="msgsContainer">
+                            {{#if chatSolicitacoes}}
+                            {{#each chatSolicitacoes}}
+                            <a href="/chat/{{cd_solicitacao}}" class="chat-{{cd_chat}}">
+                                <div class="row conversa">
+                                    <!-- Imagem -->
+                                    <div class="conversa-img">
+                                        <div class="img-wrapper">
+                                            <img
+                                                src="/assets/pedidos/{{cd_imagem_pedido}}"
+                                                alt="Imagem pedido"
+                                            />
+                                        </div>
+                                    </div>
+                        
+                                    <!-- Infos da conversa -->
+                                    <div class="conversa-info">
+                                        <!-- Nome e horário -->
+                                        <div class="row row1">
+                                            <p class="titulo black nome-conversa">
+                                                {{nm_titulo_pedido}}
+                                            </p>
+                                        <!-- <p class="titulo-gray horario">18:25</p> -->
+                                        </div>
+                        
+                                        <!-- Última mensagem e número de notificações -->
+                                        <div class="row row2 read-{{cd_chat}}">
+                                            <p class="ultimas-msg">
+                                                Dono: {{nm_usuario}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            {{/each}}
+                            {{else}}
+                            <h1>Não há nada por aqui</h1>
+                            {{/if}}
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -120,3 +135,19 @@
         </div>
     </main>
 </body>
+
+<script>
+    var containerMaster = document.querySelectorAll(".containerMsgs");
+    var toggleTitulos = document.querySelectorAll(".toggleTitulo");
+
+    toggleTitulos.forEach(function(value, index){
+        toggleTitulos[index].addEventListener('click', () => {
+            if(containerMaster[index].classList.contains('toggled')){
+                containerMaster[index].classList.remove('toggled')
+            } else{
+                containerMaster[index].classList.add('toggled')
+            }
+        })
+    })
+
+</script>
