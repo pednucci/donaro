@@ -106,6 +106,13 @@
 
     /* Header */
 
+    p.cidadeEstado {
+        max-width: 11.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     .usuario .img-wrapper {
         height: 5rem;
         width: 5rem;
@@ -124,7 +131,7 @@
     .header-pedido div {
         display: flex;
 
-        justify-content: flex-end;
+        justify-content: flex-start;
 
         color: var(--gray-minor-font);
     }

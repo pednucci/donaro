@@ -71,6 +71,10 @@
                         font-size: 1.6rem;
                         font-weight: 500;
                         margin-top: 0rem;
+                        width: 35rem;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
 
                         color: var(--gray-dark);
                     }
