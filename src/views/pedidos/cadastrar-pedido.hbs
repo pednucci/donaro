@@ -570,13 +570,15 @@
         }
 
         function addSelectTypes(foodObj) {
-            
-            for (type in foodObj) {
-                selectTypes[type] = document.createElement('option');
-                selectTypes[type].setAttribute('value', type);
-                selectTypes[type].innerText = type
 
-                selectTipoAlimento[index].appendChild(selectTypes[type])
+            if(index == (foodRowWrapper.length - 1)){
+                for (type in foodObj) {
+                    selectTypes[type] = document.createElement('option');
+                    selectTypes[type].setAttribute('value', type);
+                    selectTypes[type].innerText = type
+
+                    selectTipoAlimento[index].appendChild(selectTypes[type])
+                }
             }
         }
 
