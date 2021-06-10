@@ -121,6 +121,7 @@ router.get('/relatorio/:id', async (req, res) => {
     else{
         res.redirect('/')
     }
+    await conn.end();
 })
 
 router.post('/ressoli', async (req, res) => {
