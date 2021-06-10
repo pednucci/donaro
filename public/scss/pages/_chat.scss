@@ -310,7 +310,7 @@
 
                     .mensagem {
                         max-width: 60%;
-                        height: 5rem;
+                        min-height: 5rem;
 
                         padding: 1rem;
                         border-radius: 1rem;
@@ -327,7 +327,7 @@
                             font-size: 1.2rem;
                             height: 100%;
                             align-items: flex-end;
-                            margin-left: 5rem;
+                            margin: auto 0 0 5rem;
                         }
                     }
 
