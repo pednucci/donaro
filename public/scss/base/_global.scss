@@ -104,6 +104,10 @@ select {
     background-size: 1.2rem;
 }
 
+input[type="file"] {
+    cursor: pointer;
+}
+
 /* #region Progresso */
 .progresso-container {
     margin-bottom: 1rem;

@@ -67,6 +67,13 @@
             .pedido-link {
                 margin: 0 4rem 4rem 0;
 
+                // &:hover {
+                //     .pedido {
+                //         transform: translateY(-1rem);
+                //         transition: all 0.1s ease-in-out;
+                //     }
+                // }
+
                 .pedido {
                     width: 35rem;
                     height: max-content;
@@ -77,6 +84,7 @@
                     box-shadow: var(--border-shadow);
 
                     overflow: hidden;
+                    transition: all 0.1s ease-in-out;
 
                     &.falta-pouco::before {
                         content: "Falta Pouco";
