@@ -6,6 +6,7 @@
 
 <body>
     <main class="pg_chat">
+        {{>msg}}
         <div class="chat-container">
             <!-- Container de conversas -->
             <div class="conversas-container">
@@ -75,7 +76,7 @@
 
                     <div class="containerMsgs sL">
                         <div class="tituloContainer soli row">
-                            <h1 class="titulo-conversas soli">Conversas - Minhas solicitações</h1>
+                            <h1 class="titulo-conversas soli">Conversas - Minhas ajudas</h1>
                             <img class="toggleTitulo soli" src="/assets/img/icone_arrow.svg" alt="">
                         </div>
                         <div class="msgsContainer">
@@ -123,7 +124,6 @@
 
             <!-- Container do Chat  -->
             <div class="chat">
-                {{>msg}}
                 <div class="svg-mensagem column">
                     <img
                         src="/assets/img/illustrate_new-message.svg"

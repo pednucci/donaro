@@ -334,9 +334,6 @@
                         }
                     }
 
-                    &.main {
-                    }
-
                     &.final {
                         .infos-denuncia {
                             .detalhes {
@@ -410,7 +407,8 @@
         }
 
         .botoes-wrapper {
-            margin-bottom: 18rem;
+            margin-bottom: 15rem;
+            margin-top: 3rem;
 
             .btn.punir {
                 gap: 2rem;

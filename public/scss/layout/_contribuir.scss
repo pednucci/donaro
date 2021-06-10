@@ -126,6 +126,10 @@
 
             .desc {
                 padding-right: 11rem;
+
+                label {
+                    color: var(--gray-minor-font);
+                }
             }
 
             label:first-child {
@@ -134,7 +138,7 @@
 
             .qtdAlimentos {
                 width: 100%;
-                max-height: 20rem;
+                max-height: 25rem;
 
                 overflow: hidden;
                 overflow-y: scroll;
@@ -161,7 +165,7 @@
                         flex-direction: row;
                         align-items: center;
 
-                        font-size: 2.5rem;
+                        font-size: 2.2rem;
                         font-weight: 500;
 
                         border: none;
@@ -173,8 +177,9 @@
                 }
                 .alimento-quantidade {
                     .qtdAl {
+                        min-width: 18rem;
                         width: max-content;
-                        height: 5rem;
+                        height: 4rem;
                         padding: 0 1.5rem;
                         margin-top: 2rem;
 
@@ -214,10 +219,11 @@
             }
             textarea {
                 font-family: "Red Hat Display", sans-serif;
-                font-size: 2rem;
+                font-size: 1.8rem;
                 font-weight: 500;
 
-                min-height: 15rem;
+                min-height: 14rem;
+                resize: none;
             }
         }
     }

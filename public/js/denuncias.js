@@ -14,16 +14,20 @@ toggleInfo.forEach(function (value, index,) {
     })
 });
 
-btnPunir.addEventListener('click', () => {
-    if (togglePunicoes.classList.contains('visible')) {
-        togglePunicoes.classList.remove('visible')
-    } else {
-        togglePunicoes.classList.add('visible')
-    }
+if (btnPunir != null) {
 
-    window.scrollTo(
-        {
-            top: document.body.scrollHeight,
-            behavior: 'smooth',
-        });
-})
+    btnPunir.addEventListener('click', () => {
+        if (togglePunicoes.classList.contains('visible')) {
+            togglePunicoes.classList.remove('visible')
+        } else {
+            togglePunicoes.classList.add('visible')
+        }
+
+        window.scrollTo(
+            {
+                top: document.body.scrollHeight,
+                behavior: 'smooth',
+            });
+    })
+
+}

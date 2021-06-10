@@ -166,7 +166,7 @@ select {
 
         transition: all 0.3s ease-in-out;
         transform: translateX(calc(101% + 4rem));
-        animation: flash 5s 2 alternate forwards;
+        animation: flash ease-in-out 4s 2 alternate forwards;
 
         @keyframes flash {
             0% {

@@ -1,5 +1,5 @@
 {{#section 'head'}}
-    <title>Cadastrar pedido</title>
+    <title>Cadastrar campanha</title>
 {{/section}}
 
 {{>navbar}}
@@ -11,7 +11,7 @@
             <h2 class="sub titulo">{{text}}</h2>
         </div>
         {{/each}}
-        <h1 class="titulo">Cadastrar pedido</h1>
+        <h1 class="titulo">Cadastrar campanha</h1>
         <form class="form-login column" id="formPedido" method="POST" action="/criar" enctype="multipart/form-data">
 
             <h2 class="sub titulo">Dados iniciais</h2>
@@ -91,14 +91,14 @@
                 <div class="column">
                     <label for="">Adicionar descrição da sua ação social</label>
                     <textarea id="descPed" class="input-form" name="descPed" id="" cols="30" rows="10"
-                        placeholder="Insira a relevância por trás do seu pedido, descrevendo sua camapanha de combate à fome."></textarea>
+                        placeholder="Insira a relevância por trás da sua campanha, descrevendo-a com detalhes."></textarea>
                 </div>
 
                 <label for="">Adicionar imagem de capa</label>
                 <input class="input-form imagePed" type="file" accept="image/*" name="picPed"/>
                 
 
-                <input class="btn blue" type="submit" value="Cadastrar pedido" />
+                <input class="btn blue" type="submit" value="Cadastrar campanha" />
                 
             </div>
         </form>

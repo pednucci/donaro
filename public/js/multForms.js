@@ -39,10 +39,12 @@ if (radiosContainer) {
     2: 'Conteúdo violento ou repulsivo',
     3: 'Conteúdo ilegal, fortemente regulamentado ou potencialmente perigoso',
     4: 'Uso indevido da imagem ou dados de uma pessoa ou entidade pública',
-    5: 'Informações caluniosas ou incorretas',
     6: 'Duplicidade em imagem, título e/ou descrição aos de outra campanha',
-    7: 'Outro',
+    5: 'Informações caluniosas ou incorretas',
+    7: 'Utilização não autorizada da minha imagem ou meus dados.',
+    8: 'Outro',
   }
+
 
 
 
@@ -95,26 +97,6 @@ if (radiosContainer) {
   //#region Change radios
 
 
-  function changeHandler(event) {
-    if (this.id === 'r0') {
-      while (radiosWrapper.firstChild) {
-        radiosWrapper.removeChild(radiosWrapper.lastChild)
-      }
-      radiosContainer.appendChild(addRadios(motivosDenunciaDoador))
-
-
-    } else if (this.id === 'r1') {
-      while (radiosWrapper.firstChild) {
-        radiosWrapper.removeChild(radiosWrapper.lastChild)
-      }
-      radiosContainer.appendChild(addRadios(motivosDenunciaNaoDoador))
-
-    }
-  };
-
-  Array.prototype.forEach.call(radioDenuncia, function (radio) {
-    radio.addEventListener('change', changeHandler);
-  });
   //#endregion
 
 
@@ -134,6 +116,8 @@ if (radiosContainer) {
     }
   }
   //#endregion
+
+  radiosContainer.appendChild(addRadios(motivosDenunciaNaoDoador))
 }
 
 function validateDescricao() {
@@ -166,7 +150,7 @@ btnNext.addEventListener('click', () => {
   if (currentTab !== (tab.length - 1)) {
     if (radiosContainer) {
       if (currentTab === 0) {
-        if (validateDenuncia()) {
+        if (validateDenuncia() || validateMotivo()) {
           currentTab++;
           tab[currentTab].style.display = "initial";
           tab[currentTab - 1].style.display = "none";
