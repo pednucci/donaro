@@ -132,6 +132,10 @@
             }
         }
 
+        .depoContainer {
+            gap: 4rem;
+        }
+
         &.depoimentos {
             background-color: var (--gray-background);
 
@@ -153,26 +157,23 @@
             .depoimento {
                 width: 70%;
                 margin-right: 2rem;
-                display: grid;
-                grid-template-columns: 1fr 2fr;
-                gap: 5rem;
+                gap: 3rem;
+                align-items: flex-start;
 
                 img {
-                    grid-area: 1 / 1 / 2 / 2;
                     height: 15rem;
                     width: 15rem;
-                    border-radius: 4rem;
-                }
-
-                .texto-depoimento {
-                    grid-area: 1 / 2 / 3 / 3;
+                    border-radius: 1rem;
                 }
 
                 .texto-depoimento {
                     font-size: 1.8rem;
                     font-weight: 400;
 
+                    width: 25rem;
+
                     line-height: 150%;
+                    text-align: justify;
 
                     h4 {
                         font-weight: 600;
