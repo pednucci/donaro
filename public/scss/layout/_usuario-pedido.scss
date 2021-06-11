@@ -125,7 +125,7 @@
                 max-height: 20rem;
 
                 overflow: hidden;
-                overflow-y: scroll;
+                overflow-y: auto;
 
                 text-align: left;
 
@@ -162,7 +162,7 @@
             }
             .comentario {
                 max-height: 16rem;
-                overflow-y: scroll;
+                overflow-y: auto;
             }
             p {
                 margin-bottom: 2rem;
@@ -341,7 +341,7 @@
                                 max-height: 10rem;
 
                                 overflow: hidden;
-                                overflow-y: scroll;
+                                overflow-y: auto;
                             }
                         }
 
@@ -374,7 +374,7 @@
                             max-height: 12rem;
 
                             overflow: hidden;
-                            overflow-y: scroll;
+                            overflow-y: auto;
 
                             text-align: left;
 
