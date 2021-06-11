@@ -159,7 +159,7 @@ router.get('/descobrir/pedido/:id', async (req, res) => {
     const [pedido] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
     cd_usuario_pedido = cd_usuario WHERE cd_pedido = ?`,[idPed]);
 
-    if(pedido[0].cd_deletado_pedido == 1){
+    if(pedido[0].cd_deletado_pedido == 1 || pedido[0].cd_expirado_pedido == 1){
         res.redirect('/')
     }
     else{
