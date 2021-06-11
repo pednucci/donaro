@@ -100,7 +100,8 @@ router.get('/relatorio/:id', async (req, res) => {
             const [grafico] = await conn.query(`SELECT * FROM alimento INNER JOIN 
             pedido ON cd_pedido_alimento = cd_pedido WHERE cd_pedido = ?`,[id]);
             const [doadores] = await conn.query(`SELECT * FROM usuario INNER JOIN 
-            solicitacao ON cd_usuario = cd_usuario_solicitacao WHERE cd_pedido_solicitacao = ?`,[id])
+            solicitacao ON cd_usuario = cd_usuario_solicitacao WHERE cd_pedido_solicitacao = ? AND
+            cd_situacao_solicitacao = 'ENTREGUE'`,[id])
     
             res.render('painel/meus-pedidos-relatorio',{
                 alimentos,

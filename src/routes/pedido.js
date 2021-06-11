@@ -159,49 +159,54 @@ router.get('/descobrir/pedido/:id', async (req, res) => {
     const [pedido] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
     cd_usuario_pedido = cd_usuario WHERE cd_pedido = ?`,[idPed]);
 
-    if(pedido[0].cd_deletado_pedido == 1){
+    if(pedido.length == 0){
         res.redirect('/')
     }
     else{
-        const id = pedido[0].cd_pedido;
-        let datPedido = [];
-        const [data] = await conn.query(`SELECT dt_encerramento_pedido FROM pedido
-        WHERE cd_pedido = ?`,[id]);
-        data.forEach(data => {
-            datPedido.push(formatDistanceStrict(Date.now(), data.dt_encerramento_pedido, {locale: ptBR}));
-        })
-        pedido[0].dateRemaining = datPedido
-    
-        const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
-         cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
+        if(pedido[0].cd_deletado_pedido == 1 || pedido[0].cd_expirado_pedido == 1){
+            res.redirect('/')
+        }
+        else{
+            const id = pedido[0].cd_pedido;
+            let datPedido = [];
+            const [data] = await conn.query(`SELECT dt_encerramento_pedido FROM pedido
+            WHERE cd_pedido = ?`,[id]);
+            data.forEach(data => {
+                datPedido.push(formatDistanceStrict(Date.now(), data.dt_encerramento_pedido, {locale: ptBR}));
+            })
+            pedido[0].dateRemaining = datPedido
         
-        if(req.user){
-    
-            const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
-            WHERE cd_pedido = ? AND cd_usuario_pedido = ?`,[idPed, req.user[0].cd_usuario]);
+            const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
+             cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
+            
+            if(req.user){
         
-            if(count[0].count == 1){
-                let identify = {
-                    exist: true
+                const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
+                WHERE cd_pedido = ? AND cd_usuario_pedido = ?`,[idPed, req.user[0].cd_usuario]);
+            
+                if(count[0].count == 1){
+                    let identify = {
+                        exist: true
+                    }
+                    res.render('pedidos/pedido', {
+                        pedido: pedido,
+                        alimento: alimento,
+                        identify
+                    })
                 }
-                res.render('pedidos/pedido', {
-                    pedido: pedido,
-                    alimento: alimento,
-                    identify
-                })
-            }
+                else{
+                    res.render('pedidos/pedido', {
+                        pedido: pedido,
+                        alimento: alimento
+                    })
+                }
+             }
             else{
                 res.render('pedidos/pedido', {
                     pedido: pedido,
                     alimento: alimento
                 })
             }
-         }
-        else{
-            res.render('pedidos/pedido', {
-                pedido: pedido,
-                alimento: alimento
-            })
         }
     }      
     await conn.end();
@@ -215,17 +220,22 @@ router.get('/descobrir/pedido/:id/ajudar', isAuth, async (req, res) => {
 
     const [pedido] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
     cd_usuario_pedido = cd_usuario WHERE cd_pedido = ?`,[idPed]);
-
-    if(count[0].count == 0 && pedido.length > 0 && pedido[0].cd_deletado_pedido != 1){
-        const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
-        cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
-   
-       res.render('pedidos/contribuir', {
-           alimento
-       })
+    
+    if(count[0].count == 1 || pedido.length == 0){
+        res.redirect('/')   
     }
     else{
-        res.redirect('/')
+        if(pedido[0].cd_deletado_pedido == 1 || pedido[0].cd_expirado_pedido == 1){
+            res.redirect('/')
+        }
+        else{
+            const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
+            cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
+       
+           res.render('pedidos/contribuir', {
+               alimento
+           })
+        }
     }
 
     await conn.end();
