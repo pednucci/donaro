@@ -1,4 +1,13 @@
 .lyt_forms {
+    &.pg_cadastro {
+        select[name="estado"] {
+            width: 20rem;
+        }
+
+        select[name="cidade"] {
+            width: 27rem;
+        }
+    }
     .form-container {
         width: 100%;
         max-width: 60rem;
