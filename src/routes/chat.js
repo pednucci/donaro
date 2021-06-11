@@ -45,8 +45,9 @@ router.get('/:soli', isAuth , async (req, res) => {
                 res.redirect('/chat')
             }
             else{
+                const [idChat] = await conn.query(`SELECT * FROM chat WHERE cd_solicitacao_chat = ?`,[idSoli]);
                 const [mensagem] = await conn.query(`SELECT * FROM mensagem WHERE cd_chat_mensagem
-                = ?`, [idSoli]);
+                = ?`, [idChat[0].cd_chat]);
                 const [chatCampanhas] = await conn.query(`SELECT * FROM chat 
                 INNER JOIN pedido ON cd_pedido_chat = cd_pedido INNER JOIN usuario
                 ON cd_userSoli_chat = cd_usuario
@@ -76,8 +77,9 @@ router.get('/:soli', isAuth , async (req, res) => {
                 res.redirect('/chat')
             }
             else{
+                const [idChat] = await conn.query(`SELECT * FROM chat WHERE cd_solicitacao_chat = ?`,[idSoli]);
                 const [mensagem] = await conn.query(`SELECT * FROM mensagem WHERE cd_chat_mensagem
-                = ?`, [idSoli]);
+                = ?`, [idChat[0].cd_chat]);
                 const [chatCampanhas] = await conn.query(`SELECT * FROM chat 
                 INNER JOIN pedido ON cd_pedido_chat = cd_pedido INNER JOIN usuario
                 ON cd_userSoli_chat = cd_usuario
