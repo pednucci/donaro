@@ -20,8 +20,9 @@ io.on('connection', async socket => {
             room
         }
         io.to(room).emit('sendMessage', messageObject);
+        const [idChat] = await conn.query(`SELECT * FROM chat WHERE cd_solicitacao_chat = ?`,[room]);
         await conn.query(`INSERT INTO mensagem(ds_conteudo_mensagem, cd_chat_mensagem,
-        cd_usuario_mensagem) VALUES(?,?,?)`,[msg.message, room, idUser])
+        cd_usuario_mensagem) VALUES(?,?,?)`,[msg.message, idChat[0].cd_chat, idUser])
         await conn.end();
     })
 })
