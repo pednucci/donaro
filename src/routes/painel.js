@@ -91,12 +91,12 @@ router.get('/relatorio/:id', async (req, res) => {
     const [auth] = await conn.query(`SELECT count(*) AS count FROM pedido WHERE cd_pedido = ? AND
     cd_usuario_pedido = ?`, [id, req.user[0].cd_usuario]);
     const [expirado] = await conn.query(`SELECT count(*) AS count FROM pedido WHERE 
-    cd_pedido = ? AND cd_expirado_pedido = 1`,[id])
+    cd_pedido = ? AND cd_expirado_pedido = 1`,[id]);
+    const [campanha] = await conn.query(`SELECT * FROM pedido WHERE cd_pedido = ?`,[id]);
     if(auth[0].count == 1){
         if(expirado[0].count == 1){
             const [alimentos] = await conn.query(`SELECT * FROM alimento WHERE cd_pedido_alimento = ?`
             ,[id]);
-            const [campanha] = await conn.query(`SELECT * FROM pedido WHERE cd_pedido = ?`,[id]);
             const [grafico] = await conn.query(`SELECT * FROM alimento INNER JOIN 
             pedido ON cd_pedido_alimento = cd_pedido WHERE cd_pedido = ?`,[id]);
             const [doadores] = await conn.query(`SELECT * FROM usuario INNER JOIN 
@@ -114,7 +114,8 @@ router.get('/relatorio/:id', async (req, res) => {
                 notexpirado: true
             }
             res.render('painel/meus-pedidos-relatorio',{
-                notexpirado
+                notexpirado,
+                campanha
             })
         }
     }
