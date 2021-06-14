@@ -88,7 +88,7 @@ document.getElementById("chatForm").addEventListener("submit", event => {
     event.preventDefault();
 
     let message = document.getElementById("txt-mensagem").value;
-    if(message.length){
+    if(message.length && message.trim()){
         let messageObject = {
             message,
             read: false
