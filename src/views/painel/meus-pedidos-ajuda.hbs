@@ -30,14 +30,13 @@
         {{!-- <!-- Informações da ajuda --> --}}
         <div class="usuario profile-container columm">
             <!-- Usuário -->
-            {{#each solicitacao}}
             <div class="user-container column">
                 <div class="user-wrapper row">
                     <div class="row">
                         {{!-- <!-- Imagem --> --}}
                         <div class="imagePerfil column">
                             <img
-                                src="/assets/profile/{{cd_foto_usuario}}"
+                                src="/assets/profile/{{solicitacao.[0].cd_foto_usuario}}"
                                 alt="Foto de perfil"
                             />
                         </div>
@@ -45,21 +44,20 @@
                         {{!-- <!-- Nome --> --}}
                         <div class="informacoes column">
                             <h1 class="sub titulo-user user-name">
-                                {{nm_usuario}}
+                                {{solicitacao.[0].nm_usuario}}
                             </h1>
                             <p class="user-info">
-                                {{telNumber cd_celular_usuario}} | {{cd_email_usuario}}
+                                {{telNumber solicitacao.[0].cd_celular_usuario}} | {{solicitacao.[0].cd_email_usuario}}
                             </p>
                         </div>
                     </div>
 
                     {{!-- <!-- Botão --> --}}
-                    <a href="/chat/{{cd_solicitacao}}" class="btn blue" type="button">
+                    <a href="/chat/{{chat.[0].cd_solicitacao_chat}}" class="btn blue" type="button">
                         Entrar no chat
                     </a>
                 </div>
             </div>
-            {{/each}}
 
             {{!-- <!-- Alimentos, comentário e situação --> --}}
             <div class="row fc-wrapper">
@@ -87,19 +85,15 @@
                 <div class="comentario-container column">
                     {{!-- <!-- Comentário --> --}}
                     <h1 class="sub titulo-user">Comentário</h1>
-                    {{#each solicitacao}}
                     <div class="comentario">
                         <p>
-                            {{ds_comentario_solicitacao}}
+                            {{solicitacao.[0].ds_comentario_solicitacao}}
                         </p>
                     </div>
-                    {{/each}}
 
                     {{!-- <!-- Situação --> --}}
                     <h1 class="sub titulo-user">Situação da entrega</h1>
-                    {{#each solicitacao}}
-                    <p class="situacaoReq">{{cd_situacao_solicitacao}}</p>
-                    {{/each}}
+                    <p class="situacaoReq">{{solicitacao.[0].cd_situacao_solicitacao}}</p>
                 </div>
             </div>
         </div>
