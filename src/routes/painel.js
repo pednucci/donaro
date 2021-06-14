@@ -64,6 +64,11 @@ router.get('/pedidos/:id/:solicitacao', async (req, res) => {
         nm_alimento_donation = nm_produto INNER JOIN pedido ON cd_pedido_donation = cd_pedido
         WHERE cd_solicitacao_donation = ? AND cd_usuario_pedido = ?`
         ,[soli, idUser])
+
+        const [chat] = await conn.query(`SELECT * FROM chat WHERE 
+        cd_userSoli_chat = ? AND cd_userPedido_chat = ? AND
+        cd_pedido_chat = ?`,[solicitacao[0].cd_usuario,
+        req.user[0].cd_usuario, solicitacao[0].cd_pedido_solicitacao]);
     
         const [situacao] = await conn.query(`SELECT cd_situacao_solicitacao FROM solicitacao
         WHERE cd_solicitacao = ?`,[soli])
@@ -73,9 +78,10 @@ router.get('/pedidos/:id/:solicitacao', async (req, res) => {
         }
     
         res.render('painel/meus-pedidos-ajuda', {
-            solicitacao,
+            solicitacao,    
             alimento,
-            entregueOrNot
+            entregueOrNot,
+            chat
         })
     }
     else{

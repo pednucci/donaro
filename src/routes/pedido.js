@@ -324,11 +324,18 @@ router.post('/descobrir/pedido/:id/ajudar', async (req, res) => {
             }
             const [userPedido] = await conn.query(`SELECT cd_usuario_pedido FROM pedido WHERE
             cd_pedido = ?`, [idPedido])
-    
-            await conn.query(`INSERT INTO chat(cd_pedido_chat, cd_solicitacao_chat, cd_userPedido_chat,
-            cd_userSoli_chat) VALUES(?,?,?,?)`,[idPedido, idSoli, userPedido[0].cd_usuario_pedido,
-            idUser]);
-            req.flash('successMsg', 'Solicitação de ajuda enviada! Converse com o donatário pelo chat');
+
+            const [chatValidation] = await conn.query(`SELECT count(*) AS count FROM chat 
+            WHERE cd_userSoli_chat = ? AND cd_userPedido_chat = ? AND
+            cd_pedido_chat = ?`,[req.user[0].cd_usuario, userPedido[0].cd_usuario_pedido, idPedido])
+
+            if(chatValidation[0].count < 1){
+                await conn.query(`INSERT INTO chat(cd_pedido_chat, cd_solicitacao_chat, cd_userPedido_chat,
+                cd_userSoli_chat) VALUES(?,?,?,?)`,[idPedido, idSoli, userPedido[0].cd_usuario_pedido,
+                idUser]);
+            }
+            
+            req.flash('successMsg', 'Doação registrada com sucesso! Converse com o donatário pelo chat');
             res.redirect('/')
         }
     }
