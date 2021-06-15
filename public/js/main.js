@@ -2,15 +2,14 @@ var navbar = document.querySelector('.nav-bar');
 var currentScrollY = window.scrollY;
 var lastScrollY = 0;
 
+var flashMsg = document.querySelectorAll('.flash-msg');
+var closeMsg = document.querySelectorAll('.close-flash');
 
-// window.addEventListener("scroll", () => {
-//   var currentScrollY = window.scrollY;
+if (closeMsg != null) {
+    flashMsg.forEach(function (value, index) {
+        closeMsg[index].addEventListener('click', () => {
+            flashMsg[index].classList.add('hidden')
+        })
+    })
 
-//   if (currentScrollY > lastScrollY) {
-//     navbar.classList = "nav-bar hidden"
-//   } else {
-//     navbar.classList = "nav-bar"
-//   }
-//   lastScrollY = currentScrollY;
-
-// })
+}

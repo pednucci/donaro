@@ -9,6 +9,10 @@
 
         align-items: center;
         justify-content: flex-start;
+
+        & > h1 {
+            font-size: 4rem;
+        }
     }
 
     .subcontainer-pedido {
@@ -193,7 +197,7 @@
 
     .alimento-container {
         height: auto;
-        max-height: 30rem;
+        max-height: 60rem;
         padding-right: 1rem;
 
         justify-content: flex-start;
@@ -203,32 +207,41 @@
         gap: 2rem;
     }
 
-    .alimento::after {
-        content: "";
-        display: block;
+    .alimento {
+        gap: 0.5rem;
 
-        margin-top: 1rem;
-        width: 100%;
+        &::after {
+            content: "";
+            display: block;
 
-        border: var(--border-form);
-        border-color: var(--gray-message);
+            width: 100%;
+
+            border: var(--border-form);
+            border-color: var(--gray-message);
+        }
     }
 
-    .alimento.concluido {
-        opacity: 0.4;
-    }
+    .progresso-container {
+        margin: 0;
 
-    .alimento.concluido p {
-        color: var(--blue-logo);
+        p {
+            font-size: 1.3rem;
+        }
+
+        .porcentagem {
+            * {
+                height: 1.3rem;
+            }
+        }
     }
 
     .alimento .sub.titulo {
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
+        font-size: 1.8rem;
     }
 
     .meta p {
         font-weight: 500;
+        font-size: 1.4rem;
     }
 
     .main-alimentos .btn {

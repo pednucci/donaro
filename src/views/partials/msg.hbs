@@ -1,12 +1,14 @@
 <div class="msg-container column">
     {{#if successMsg}}
-        <div class="flash-msg sucess">
+        <div class="flash-msg sucess row">
             <h2 class="sub titulo">{{successMsg}}</h2>
+            <img class="close-flash" src="/assets/img/icone_times_green.svg" alt="">
         </div>
     {{/if}}
     {{#if errorMsg}}
-        <div class="flash-msg error">
+        <div class="flash-msg error row">
             <h2 class="sub titulo">{{errorMsg}}</h2>
+            <img class="close-flash" src="/assets/img/icone_times_red.svg" alt="">
         </div>
     {{/if}}
 

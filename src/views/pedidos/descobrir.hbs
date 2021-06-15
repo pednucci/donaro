@@ -5,8 +5,9 @@
 {{>navbar}}
 
 <main class="pg_descobrir">
+    {{>msg}}
+    
     <div class="background">
-        {{>msg}}
         <form class="filtro-pedidos column" action="/descobrir/filter" method="GET">
             <h1 class="titulo white">Insira o estado e a cidade</h1>
             <h2 class="sub titulo white">

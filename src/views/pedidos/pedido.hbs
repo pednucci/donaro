@@ -55,7 +55,7 @@
                     <h2 class="titulo black">Alimentos:</h2>
                     <div class="alimento-container column">
                         {{#each alimento}}
-                        <div class="alimento">
+                        <div class="alimento column">
                             <h2 class="sub titulo">{{nm_alimento}}</h2>
                             <div class="progresso-container row">
                                 <div class="arrecadado">
@@ -78,7 +78,7 @@
                     <a href="#"><button class="btn blue">Editar</button></a>
                     {{else}}
                     {{#each pedido}}
-                    <a href="/descobrir/pedido/{{cd_pedido}}/ajudar"><button class="btn blue">Ajudar</button></a>
+                    <a href="/descobrir/pedido/{{cd_pedido}}/ajudar"><button class="btn blue">Doar</button></a>
                     {{/each}}
                     {{/if}}
 
