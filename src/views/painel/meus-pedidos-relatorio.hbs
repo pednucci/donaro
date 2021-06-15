@@ -21,11 +21,12 @@
             {{!-- Painel Menu --}}
         <div class="menu-painel">
             <ul class="menu-painel-buttons row">
-                <a href="#">
-                    <li class="painel-text active">Relatório</li>
-                </a>
                 <a href="/painel/pedidos/{{campanha.[0].cd_pedido}}">
                     <li class="painel-text">Ajudas recebidas</li>
+                </a>
+
+                <a href="#">
+                    <li class="painel-text active">Relatório</li>
                 </a>
             </ul>
         </div>
@@ -36,7 +37,7 @@
         {{#if notexpirado}}
         <h1>Você só consegue visualizar o relatório após a campanha expirar!</h1>
         {{else}}
-<h1>Relatório Geral da campanha:</h1>
+        <h1>Relatório Geral da campanha:</h1>
         <div class="relatorio-container row">
 
             {{!-- Container dos Gráficos --}} 
