@@ -1,4 +1,6 @@
 .lyt_forms {
+    min-height: calc(100vh - 8rem);
+    justify-content: center;
     &.pg_cadastro {
         select[name="estado"] {
             width: 20rem;
@@ -12,10 +14,11 @@
         width: 100%;
         max-width: 60rem;
         height: auto;
-        margin: auto;
+        margin: 0 auto;
         padding: 4rem;
         border-radius: 2rem;
         border: var(--border-form);
+        margin-bottom: 8rem;
     }
 
     .form-container .sub.titulo {
