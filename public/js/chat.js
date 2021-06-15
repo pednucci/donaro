@@ -87,7 +87,7 @@ socket.on('connected', user => {
 document.getElementById("chatForm").addEventListener("submit", event => {
     event.preventDefault();
 
-    let message = document.getElementById("txt-mensagem").value;
+    let message = document.getElementById("txt-mensagem").value.trim();
     if(message.length && message.trim()){
         let messageObject = {
             message,

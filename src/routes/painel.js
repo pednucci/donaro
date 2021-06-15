@@ -96,11 +96,10 @@ router.get('/relatorio/:id', async (req, res) => {
     const id = req.params.id;
     const [auth] = await conn.query(`SELECT count(*) AS count FROM pedido WHERE cd_pedido = ? AND
     cd_usuario_pedido = ?`, [id, req.user[0].cd_usuario]);
-    const [expirado] = await conn.query(`SELECT count(*) AS count FROM pedido WHERE 
-    cd_pedido = ? AND cd_expirado_pedido = 1`,[id]);
-    const [campanha] = await conn.query(`SELECT * FROM pedido WHERE cd_pedido = ?`,[id]);
+    const [campanha] = await conn.query(`SELECT *, count(*) AS count FROM pedido WHERE cd_pedido = ?
+    AND dt_encerramento_pedido < CURRENT_TIMESTAMP()`,[id]);
     if(auth[0].count == 1){
-        if(expirado[0].count == 1){
+        if(campanha[0].count == 1){
             const [alimentos] = await conn.query(`SELECT * FROM alimento WHERE cd_pedido_alimento = ?`
             ,[id]);
             const [grafico] = await conn.query(`SELECT * FROM alimento INNER JOIN 
