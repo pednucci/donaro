@@ -18,7 +18,8 @@ router.get('/criar', isAuth, async (req, res) => {
 router.get('/descobrir', async (req, res) => {
     const conn = await db.connection();
     const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0 AND cd_deletado_pedido IS NULL
+    cd_usuario_pedido = cd_usuario WHERE dt_encerramento_pedido > CURRENT_TIMESTAMP() 
+    AND cd_deletado_pedido IS NULL
     ORDER BY dt_createdAt_pedido DESC
     LIMIT 0,6`)
     const [count] = await conn.query(`SELECT count(*) AS count FROM pedido`);
@@ -32,13 +33,6 @@ router.get('/descobrir', async (req, res) => {
     for(c = 1; c<=pags; c++){
         pagsEach[c-1] = c;
     }
-    
-    await pedidos.forEach(async pedido => {
-        if (isPast(pedido.dt_encerramento_pedido)) {
-            await conn.query('UPDATE pedido SET cd_expirado_pedido = 1 WHERE cd_pedido = ?'
-                , [pedido.cd_pedido]);
-        }
-    })
 
     for(let i = 0; i<pedidos.length; i++){
         const id = pedidos[i].cd_pedido;
@@ -70,7 +64,8 @@ router.get('/descobrir/pag/:num', async (req, res) => {
     const num = req.params.num;
     const conn = await db.connection();
     const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0 AND cd_deletado_pedido IS NULL
+    cd_usuario_pedido = cd_usuario WHERE dt_encerramento_pedido > CURRENT_TIMESTAMP()
+    AND cd_deletado_pedido IS NULL
     ORDER BY dt_createdAt_pedido DESC
     LIMIT ${(num*6)-6},6`)
     const [count] = await conn.query(`SELECT count(*) AS count FROM pedido`);
@@ -84,13 +79,6 @@ router.get('/descobrir/pag/:num', async (req, res) => {
     for(c = 1; c<=pags; c++){
         pagsEach[c-1] = c;
     }
-    
-    await pedidos.forEach(async pedido => {
-        if (isPast(pedido.dt_encerramento_pedido)) {
-            await conn.query('UPDATE pedido SET cd_expirado_pedido = 1 WHERE cd_pedido = ?'
-                , [pedido.cd_pedido]);
-        }
-    })
 
     for(let i = 0; i<pedidos.length; i++){
         const id = pedidos[i].cd_pedido;
@@ -121,7 +109,7 @@ router.get('/descobrir/pag/:num', async (req, res) => {
 router.get('/descobrir/filter', async (req, res) => {
     const conn = await db.connection();
     const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_expirado_pedido = 0 AND sg_estado_pedido = ? AND
+    cd_usuario_pedido = cd_usuario WHERE dt_encerramento_pedido > CURRENT_TIMESTAMP() AND sg_estado_pedido = ? AND
     nm_cidade_pedido = ?`, [req.query.estado, req.query.cidade]);
 
     for(let i = 0; i<pedidos.length; i++){
@@ -156,14 +144,15 @@ router.get('/descobrir/pedido/:id', async (req, res) => {
     const conn = await db.connection();
     const idPed = req.params.id;
 
-    const [pedido] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_pedido = ?`,[idPed]);
+    const [pedido] = await conn.query(`SELECT *, count(*) AS count FROM pedido INNER JOIN usuario ON
+    cd_usuario_pedido = cd_usuario WHERE cd_pedido = ? 
+    AND dt_encerramento_pedido > CURRENT_TIMESTAMP()`,[idPed]);
 
     if(pedido.length == 0){
         res.redirect('/')
     }
     else{
-        if(pedido[0].cd_deletado_pedido == 1 || pedido[0].cd_expirado_pedido == 1){
+        if(pedido[0].cd_deletado_pedido == 1 || pedido[0].count == 0){
             res.redirect('/')
         }
         else{
@@ -218,14 +207,15 @@ router.get('/descobrir/pedido/:id/ajudar', isAuth, async (req, res) => {
     const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
     WHERE cd_pedido = ? AND cd_usuario_pedido = ?`,[idPed, req.user[0].cd_usuario]);
 
-    const [pedido] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_pedido = ?`,[idPed]);
+    const [pedido] = await conn.query(`SELECT *, count(*) AS count FROM pedido INNER JOIN usuario ON
+    cd_usuario_pedido = cd_usuario WHERE cd_pedido = ? AND 
+    dt_encerramento_pedido > CURRENT_TIMESTAMP()`,[idPed]);
     
     if(count[0].count == 1 || pedido.length == 0){
         res.redirect('/')   
     }
     else{
-        if(pedido[0].cd_deletado_pedido == 1 || pedido[0].cd_expirado_pedido == 1){
+        if(pedido[0].cd_deletado_pedido == 1 || pedido[0].count == 0){
             res.redirect('/')
         }
         else{
