@@ -15,7 +15,8 @@ exports.newOrder = async (req, res) => {
     let uploadPath;
 
     try {
-        if(desc == '' || estado == '0' || cidade == '0' || titulo == ''|| dtPed == ''){
+        if(desc == '' || estado == '0' || cidade == '0' || titulo == ''|| dtPed == ''
+        || typeof req.body.alimentoInput == 'undefined'){
             erros.push({text: 'Não deixe campos em branco!'})
         }
         if(typeof req.body.alimentoInput == 'string' && (!req.body.quantidade || req.body.quantidade <= 0)){
