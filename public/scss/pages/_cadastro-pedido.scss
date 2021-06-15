@@ -7,7 +7,7 @@
         flex-direction: row !important;
         align-items: center;
 
-        background-color: var(--gray-background);
+        background-color: var(--white);
         border: var(--border-form);
         border-radius: 1rem;
 
@@ -49,9 +49,9 @@
         // border: none;
 
         .titulo {
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: 500;
-            // margin-bottom: 3rem;
+            text-align: center;
         }
 
         .sub.titulo {
@@ -135,9 +135,9 @@
             }
 
             .btn.adicionar {
-                min-height: 4rem;
-                width: 100%;
-                margin-top: 2rem;
+                min-height: 5rem;
+                width: max-content;
+                margin: 2rem auto 0 0;
             }
         }
 
