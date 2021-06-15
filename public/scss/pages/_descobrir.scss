@@ -49,11 +49,12 @@
     }
 
     .pedidos-container {
-        width: 70%;
+        max-width: 140rem;
         margin: auto;
 
         .titulo {
             margin: 5rem 0;
+            margin-left: 4rem;
             font-size: 4rem;
         }
 
