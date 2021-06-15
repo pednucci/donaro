@@ -45,7 +45,8 @@
     .menu-painel-buttons {
         height: 8rem;
         width: 100%;
-        max-width: 72rem;
+        max-width: 120rem;
+        margin-left: 10rem;
 
         justify-content: flex-start;
     }
@@ -153,7 +154,7 @@
     /* #region Painel */
 
     .pedidos.painel {
-        width: 72rem;
+        max-width: 120rem;
 
         flex-wrap: wrap;
 
@@ -191,7 +192,12 @@
     }
 
     .painel .titulo {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
         margin: 0;
         margin-bottom: 2rem;
