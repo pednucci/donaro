@@ -14,9 +14,16 @@
 
     &.pg_login {
         .form-container {
+            transform: translateY(-4rem);
             justify-self: center;
             align-self: center;
             margin: auto;
+        }
+
+        .chkbx-container {
+            * {
+                cursor: pointer;
+            }
         }
     }
 
