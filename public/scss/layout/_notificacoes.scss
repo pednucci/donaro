@@ -1,5 +1,115 @@
 .lyt_notificacoes {
     justify-content: flex-start;
+
+    &.pg_pajudas {
+        .radio {
+            margin: 0 auto 4rem 0;
+            gap: 3rem;
+
+            .row {
+                * {
+                    cursor: pointer;
+                }
+
+                &.filtroPendente {
+                    input[type="radio"] {
+                        &:checked + label {
+                            background: var(--gray-minor-font);
+                        }
+                    }
+                }
+
+                &.filtroEntregue {
+                    input[type="radio"] {
+                        &:checked + label {
+                            background: var(--green-accept);
+                        }
+                    }
+                }
+
+                &.filtroNaoEntregue {
+                    input[type="radio"] {
+                        &:checked + label {
+                            background: var(--red-logo);
+                        }
+                    }
+                }
+
+                input[type="radio"] {
+                    height: 0;
+                    width: 0;
+
+                    display: none;
+                    visibility: hidden;
+
+                    &:checked + label {
+                        color: var(--white);
+                        border-color: transparent;
+                    }
+
+                    -webkit-tap-highlight-color: transparent;
+                    -ms-touch-action: manipulation;
+                    touch-action: manipulation;
+                }
+
+                label {
+                    width: max-content;
+                    padding: 0.8rem 1.3rem;
+
+                    text-align: center;
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    color: var(--black-logo);
+
+                    background: var(--gray-message);
+
+                    display: block;
+
+                    border: 0.2rem solid var(--gray-border);
+                    border-radius: 2rem;
+
+                    -webkit-tap-highlight-color: transparent;
+                    -ms-touch-action: manipulation;
+                    touch-action: manipulation;
+                }
+            }
+        }
+
+        .card {
+            display: flex;
+            visibility: visible;
+
+            &.entregue {
+                .desc-card {
+                    strong {
+                        color: var(--green-accept);
+                    }
+                }
+            }
+
+            &.pendente {
+                .desc-card {
+                    strong {
+                        color: var(--black-logo);
+                    }
+                }
+            }
+
+            &.nao-entregue {
+                .desc-card {
+                    strong {
+                        color: var(--red-logo);
+                    }
+                }
+            }
+
+            &.hidden {
+                display: none;
+                visibility: hidden;
+            }
+        }
+    }
+
     .cards-container {
         width: 72rem;
 

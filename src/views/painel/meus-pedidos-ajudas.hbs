@@ -30,6 +30,23 @@
     </div>
 
     <div class="cards-container">
+        <form class="radio row" action="" method="">
+            <div class="filtroPendente row">
+                <input type="radio" name="situacao" value="A confirmar" id="pendentes" checked="true">
+                <label for="pendentes">A Confirmar</label>
+            </div>
+
+            <div class="filtroEntregue row">
+                <input type="radio" name="situacao" value="Entregues" id="entregues">
+                <label for="entregues">Entregues</label>
+            </div>
+
+            <div class="filtroNaoEntregue row">
+                <input type="radio" name="situacao" value="Não entregues" id="nEntregues">
+                <label for="nEntregues">Não entregues</label>
+            </div>
+        </form>
+
         {{#each notificacao}}
         <div class="card row">
             <div class="card-user row">
@@ -54,3 +71,15 @@
     </div>
 
 </main>
+
+<script>
+    var radios = document.querySelectorAll('input[type="radio"][name="situacao"]')
+    var form = document.querySelector('.radio.row');
+
+    
+    radios.forEach(function(radio, index){
+        radio.addEventListener('click', () => {
+            form.submit();
+        })
+    })
+</script>
