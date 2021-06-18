@@ -45,8 +45,7 @@
     .menu-painel-buttons {
         height: 8rem;
         width: 100%;
-        max-width: 96rem;
-        // margin-left: 10rem;
+        max-width: 80rem;
 
         justify-content: flex-start;
     }
@@ -83,7 +82,7 @@
 
     /* #region Users */
     .users {
-        width: 96rem;
+        width: 72rem;
         margin-bottom: 3rem;
 
         justify-content: flex-start;
@@ -154,7 +153,7 @@
     /* #region Painel */
 
     .pedidos.painel {
-        max-width: 120rem;
+        max-width: 96rem;
 
         flex-wrap: wrap;
 

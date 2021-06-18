@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="cards-container">
+    <div class="cards-container column">
         <form class="radio row" action="" method="">
             <div class="filtroPendente row">
                 <input type="radio" name="situacao" value="A confirmar" id="aconfirmar" checked="true">
@@ -47,84 +47,123 @@
             </div>
         </form>
 
-        {{#each entregue}}
-        <div class="card row">
-            <div class="card-user row">
-                <div class="card-image">
-                    <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
-                </div>
-                <div class="card-info column">
-                    <h1 class="nome-card">{{nm_usuario}}</h1>
-                    <h2 class="desc-card">
-                        Confirmação de recebimento:
-                        <strong class="strongSit"> {{cd_situacao_solicitacao}}</strong>
-                    </h2>
-                </div>
-            </div>
-            <div class="card-btn row column">
-                <a href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
-                    <button class="btn blue">Ver detalhes</button>
+        <div class="tab confirmar column">
+            {{#each confirmar}}
+                <a class="card-link"href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
+                    <div class="card row">
+                        <div class="card-user row">
+                            <div class="card-image">
+                                <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
+                            </div>
+                            <div class="card-info column">
+                                <h1 class="nome-card">{{nm_usuario}}</h1>
+                                <h2 class="desc-card">
+                                    Confirmação de recebimento:
+                                    <strong class="strongSit"> {{cd_situacao_solicitacao}}</strong>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="card-btn row column">
+                            <div class="date row">
+                                Enviado em: 
+                                <span class="date-time">{{dateNoHour dt_createdAt_solicitacao}}</span>
+                            </div>
+                        </div>
+                    </div>
                 </a>
-                <div class="date row">
-                        <span class="date-time">16/06/2021 - 14:58:17</span>
-                </div>
-            </div>
+            {{/each}}
         </div>
-        {{/each}}
-        {{#each confirmar}}
-        <div class="card row">
-            <div class="card-user row">
-                <div class="card-image">
-                    <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
-                </div>
-                <div class="card-info column">
-                    <h1 class="nome-card">{{nm_usuario}}</h1>
-                    <h2 class="desc-card">
-                        Confirmação de recebimento:
-                        <strong class="strongSit"> {{cd_situacao_solicitacao}}</strong>
-                    </h2>
-                </div>
-            </div>
-            <div class="card-btn row column">
-                <a href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
-                    <button class="btn blue">Ver detalhes</button>
+
+        <div class="tab entregue column">
+            {{#each entregue}}
+                <a class="card-link"href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
+                    <div class="card row">
+                        <div class="card-user row">
+                            <div class="card-image">
+                                <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
+                            </div>
+                            <div class="card-info column">
+                                <h1 class="nome-card">{{nm_usuario}}</h1>
+                                <h2 class="desc-card">
+                                    Confirmação de recebimento:
+                                    <strong class="strongSit"> {{cd_situacao_solicitacao}}</strong>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="card-btn row column">
+                            <div class="date row">
+                                Entregue em:
+                                <span class="date-time">{{dateNoHour dt_deliveredAt_solicitacao}}</span>
+                            </div>
+                        </div>
+                    </div>
                 </a>
-                <div class="date row">
-                        <span class="date-time">16/06/2021 - 14:58:17</span>
-                </div>
-            </div>
+            {{/each}}
         </div>
-        {{/each}}
-        {{#each naoentregue}}
-        <div class="card row">
-            <div class="card-user row">
-                <div class="card-image">
-                    <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
-                </div>
-                <div class="card-info column">
-                    <h1 class="nome-card">{{nm_usuario}}</h1>
-                    <h2 class="desc-card">
-                        Confirmação de recebimento:
-                        <strong class="strongSit"> {{cd_situacao_solicitacao}}</strong>
-                    </h2>
-                </div>
-            </div>
-            <div class="card-btn row column">
-                <a href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
-                    <button class="btn blue">Ver detalhes</button>
+
+        <div class="tab naoentregue column">
+            {{#each naoentregue}}
+                <a class="card-link"href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
+                    <div class="card row">
+                        <div class="card-user row">
+                            <div class="card-image">
+                                <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
+                            </div>
+                            <div class="card-info column">
+                                <h1 class="nome-card">{{nm_usuario}}</h1>
+                                <h2 class="desc-card">
+                                    Confirmação de recebimento:
+                                    <strong class="strongSit"> {{cd_situacao_solicitacao}}</strong>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="card-btn row column">
+                            <div class="date row">
+                                Recebido em:
+                                <span class="date-time">{{dateNoHour dt_createdAt_solicitacao}}</span>
+                            </div>
+                        </div>
+                    </div>
                 </a>
-                <div class="date row">
-                        <span class="date-time">16/06/2021 - 14:58:17</span>
-                </div>
-            </div>
+            {{/each}}
         </div>
-        {{/each}}
     </div>
 
 </main>
 
 <script>
-    
+    var radios = document.querySelectorAll('input[type="radio"][name="situacao"]')
+    var card = document.querySelectorAll('.card.row') 
+    var tabConfirmar = document.querySelector('.tab.confirmar')
+    var tabEntregue = document.querySelector('.tab.entregue')
+    var tabNaoEntregue = document.querySelector('.tab.naoentregue')
+    var radioConfirmar = document.querySelector('#aconfirmar')
+    var radioEntregue = document.querySelector('#entregues')
+    var radioNaoEntregue = document.querySelector('#nEntregues')
+
+    tabConfirmar.classList.add('visible')
+    tabEntregue.classList.remove('visible')
+    tabNaoEntregue.classList.remove('visible')
+
+    if(card != null){
+        radios.forEach(function(radio, index){
+            radio.addEventListener('click', () => {
+                if(radio.id=="aconfirmar"){
+                    tabConfirmar.classList.add('visible')
+                    tabEntregue.classList.remove('visible')
+                    tabNaoEntregue.classList.remove('visible')
+                } else if(radio.id=="entregues"){
+                    tabConfirmar.classList.remove('visible')
+                    tabEntregue.classList.add('visible')
+                    tabNaoEntregue.classList.remove('visible')
+                } else if(radio.id=="nEntregues"){
+                    tabConfirmar.classList.remove('visible')
+                    tabEntregue.classList.remove('visible')
+                    tabNaoEntregue.classList.add('visible')
+                } 
+            })
+        })      
+    }
 
 
 </script>

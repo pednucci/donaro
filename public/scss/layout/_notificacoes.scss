@@ -112,10 +112,8 @@
 
     .cards-container {
         width: 100%;
-        max-width: 96rem;
+        max-width: 80rem;
 
-        display: flex;
-        flex-direction: column;
 
         justify-content: top;
         align-items: center;
@@ -123,10 +121,22 @@
         margin: 0 auto;
         margin-bottom: 10rem;
 
+        background-color: var(--white);
+        
+
         .titulo {
             margin-bottom: 5rem;
             font-size: 3.5rem;
             font-weight: 500;
+        }
+
+        .card-link{
+            width: 100%;
+            height: max-content;
+        }
+
+        .tab{ 
+            width: 100%;
         }
 
         .card {
@@ -141,12 +151,12 @@
             border: 0.05rem solid var(--gray-border);
             border-radius: 0.8rem;
 
-            $white: var(--white);
-            background-color: $white;
+            transition: all 0.1s ease-in-out;
             
-            // &:hover{
-            //     // background-color: darken($white 0.8);
-            // }
+            &:hover{
+                background-color: darken(#fff, 3%);
+                transition: all 0.1s ease-in-out;
+            }
 
             div {
                 height: 100%;
@@ -157,7 +167,6 @@
 
                 .card-image {
                     width: 8rem;
-                    // height: 100%;
                     display: flex;
                     flex-direction: row;
 
@@ -223,15 +232,16 @@
                     gap: 0.5rem;
                     height: auto;
                     justify-content: flex-start;
-
+                    
                     img {
                         width: 1.5rem;
                         height: 1.5rem;
                     }
-
+                    
+                    margin: auto 0 0.5rem 0;
                     .date-time {
                         font-size: 1.4rem;
-                        font-weight: 500;
+                        font-weight: 600;
                         color: var(--gray-dark);
                     }
                 }
