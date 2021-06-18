@@ -180,6 +180,7 @@
 {{>footer}}
 
 
+{{#unless notexpirado}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
 {{!-- Doughnut Chart Script --}}
@@ -351,3 +352,4 @@
     document.querySelectorAll('.percent-{{replaceSpace nm_alimento}}')[0].innerText = Math.trunc(math);
     {{/each}}
 </script>
+{{/unless}}
