@@ -25,14 +25,31 @@ router.get('/pedidos/:id', async (req, res) => {
         const [pedido] = await conn.query(`SELECT * FROM pedido WHERE cd_usuario_pedido = ? AND
         cd_pedido = ?`, [idUser, idPedido])
     
-        const [notificacao] = await conn.query(`SELECT * FROM solicitacao
+        const [entregue] = await conn.query(`SELECT * FROM solicitacao
         INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON
          cd_usuario_solicitacao = cd_usuario WHERE 
          cd_usuario_pedido = ? AND
-         cd_pedido_solicitacao = ? ORDER BY dt_createdAt_solicitacao DESC`, [idUser, idPedido])
+         cd_pedido_solicitacao = ? AND cd_situacao_solicitacao = 'ENTREGUE'
+        ORDER BY dt_createdAt_solicitacao DESC`, [idUser, idPedido]);
+
+        const [confirmar] = await conn.query(`SELECT * FROM solicitacao
+        INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON
+         cd_usuario_solicitacao = cd_usuario WHERE 
+         cd_usuario_pedido = ? AND
+         cd_pedido_solicitacao = ? AND cd_situacao_solicitacao = 'A CONFIRMAR'
+        ORDER BY dt_createdAt_solicitacao DESC`, [idUser, idPedido]);
+
+        const [naoentregue] = await conn.query(`SELECT * FROM solicitacao
+        INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN usuario ON
+         cd_usuario_solicitacao = cd_usuario WHERE 
+         cd_usuario_pedido = ? AND
+         cd_pedido_solicitacao = ? AND cd_situacao_solicitacao = 'NÃO ENTREGUE'
+        ORDER BY dt_createdAt_solicitacao DESC`, [idUser, idPedido]);
            
         res.render('painel/meus-pedidos-ajudas', {
-            notificacao,
+            entregue,
+            confirmar,
+            naoentregue,
             pedido
         })
     }
