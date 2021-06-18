@@ -47,7 +47,55 @@
             </div>
         </form>
 
-        {{#each notificacao}}
+        {{#each entregue}}
+        <div class="card row">
+            <div class="card-user row">
+                <div class="card-image">
+                    <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
+                </div>
+                <div class="card-info column">
+                    <h1 class="nome-card">{{nm_usuario}}</h1>
+                    <h2 class="desc-card">
+                        Confirmação de recebimento:
+                        <strong class="strongSit"> {{cd_situacao_solicitacao}}</strong>
+                    </h2>
+                </div>
+            </div>
+            <div class="card-btn row column">
+                <a href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
+                    <button class="btn blue">Ver detalhes</button>
+                </a>
+                <div class="date row">
+                        <span class="date-time">16/06/2021 - 14:58:17</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{#each confirmar}}
+        <div class="card row">
+            <div class="card-user row">
+                <div class="card-image">
+                    <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
+                </div>
+                <div class="card-info column">
+                    <h1 class="nome-card">{{nm_usuario}}</h1>
+                    <h2 class="desc-card">
+                        Confirmação de recebimento:
+                        <strong class="strongSit"> {{cd_situacao_solicitacao}}</strong>
+                    </h2>
+                </div>
+            </div>
+            <div class="card-btn row column">
+                <a href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
+                    <button class="btn blue">Ver detalhes</button>
+                </a>
+                <div class="date row">
+                        <span class="date-time">16/06/2021 - 14:58:17</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{#each naoentregue}}
         <div class="card row">
             <div class="card-user row">
                 <div class="card-image">
