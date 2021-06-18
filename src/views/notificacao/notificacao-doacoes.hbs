@@ -15,29 +15,29 @@
             </a>
         </ul>
         {{#each notificacao}}
-        <div class="card row">
-            <div class="card-user row">
-                <div class="card-image">
-                    <img class="image-card" src="/assets/pedidos/{{cd_imagem_pedido}}" alt="" />
+        <a href="/chat/{{cd_solicitacao}}">
+            <div class="card row">
+                <div class="card-user row">
+                    <div class="card-image">
+                        <img class="image-card" src="/assets/pedidos/{{cd_imagem_pedido}}" alt="" />
+                    </div>
+                    <div class="card-info column">
+                        <h1 class="nome-card">{{nm_titulo_pedido}}</h1>
+                        <h2 class="desc-card">
+                            Dono:
+                            {{nm_usuario}}
+                        </h2>
+                    </div>
                 </div>
-                <div class="card-info column">
-                    <h1 class="nome-card">{{nm_titulo_pedido}}</h1>
-                    <h2 class="desc-card">
-                        Dono:
-                        {{nm_usuario}}
-                    </h2>
+                
+                <div class="card-btn column">
+                    <div class="date row">
+                        Enviado em:
+                        <span class="date-time">{{formatDate dt_createdAt_solicitacao}}</span>
+                    </div>
                 </div>
             </div>
-            
-            <div class="card-btn column">
-                <a href="/chat/{{cd_solicitacao}}">
-                    <button class="btn blue">Entrar no chat</button>
-                </a>
-                 <div class="date row">
-                    <span class="date-time">{{formatDate dt_createdAt_solicitacao}}</span>
-                </div>
-            </div>
-        </div>
+        </a>
         {{/each}}
     </div>
 
