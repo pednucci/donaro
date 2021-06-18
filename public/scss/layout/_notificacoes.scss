@@ -14,7 +14,7 @@
                 &.filtroPendente {
                     input[type="radio"] {
                         &:checked + label {
-                            background: var(--gray-minor-font);
+                            background: var(--yellow-pending);
                         }
                     }
                 }
@@ -133,7 +133,7 @@
             height: 7rem;
             width: 100%;
 
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
 
             align-items: center;
             justify-content: space-between;
@@ -141,7 +141,12 @@
             border: 0.05rem solid var(--gray-border);
             border-radius: 0.8rem;
 
-            background-color: var(--white);
+            $white: var(--white);
+            background-color: $white;
+            
+            // &:hover{
+            //     // background-color: darken($white 0.8);
+            // }
 
             div {
                 height: 100%;
@@ -151,7 +156,7 @@
                 gap: 2rem;
 
                 .card-image {
-                    width: 10rem;
+                    width: 8rem;
                     // height: 100%;
                     display: flex;
                     flex-direction: row;

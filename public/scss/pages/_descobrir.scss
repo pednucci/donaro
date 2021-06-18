@@ -5,8 +5,8 @@
         width: 100%;
         height: 20rem;
         background-color: var(--blue-logo-semi-transparent);
-        // position: fixed;
-        // z-index: 999;
+        position: fixed;
+        z-index: 99;
 
         .filtro-pedidos {
             max-width: 120rem;
@@ -56,7 +56,7 @@
     .pedidos-container {
         max-width: 120rem;
         margin: auto;
-        // margin-top: 20rem;
+        margin-top: 20rem;
         margin-bottom: 5rem;
 
         .titulo {
@@ -74,13 +74,14 @@
             gap: 4rem;
 
             .pedido-link {
+                // margin: 0 4rem 4rem 0;
 
-                &:hover {
-                    .pedido {
-                        transform: translateY(-1rem);
-                        transition: all 0.1s ease-in-out;
-                    }
-                }
+                // &:hover {
+                //     .pedido {
+                //         transform: translateY(-1rem);
+                //         transition: all 0.1s ease-in-out;
+                //     }
+                // }
 
                 .pedido {
                     width: 37rem;

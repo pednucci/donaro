@@ -9,40 +9,39 @@
         <ul class="users row">
             <a href="/notificacoes">
                 <li class="titulo-categoria underline">
-                    Solicitações de ajuda
+                    Minhas campanhas 
                 </li>
             </a>
             <a href="/notificacoes/doacoes">
-                <li class="titulo-categoria">Doações realizadas</li>
+                <li class="titulo-categoria">Minhas doações</li>
             </a>
         </ul>
         
         {{#each notificacao}}
-        <div class="card row">
-            <div class="card-user row">
-                <div class="card-image">
-                    <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
+            <div class="card row">
+                <div class="card-user row">
+                    <div class="card-image">
+                        <img class="image-card" src="/assets/profile/{{cd_foto_usuario}}" alt="" />
+                    </div>
+                    <div class="card-info column">
+                        <h1 class="nome-card">{{nm_usuario}}</h1>
+                        <h2 class="desc-card">
+                            Campanha:
+                            <strong>
+                                {{nm_titulo_pedido}}</strong>
+                        </h2>
+            
+                    </div>
                 </div>
-                <div class="card-info column">
-                    <h1 class="nome-card">{{nm_usuario}}</h1>
-                    <h2 class="desc-card">
-                        Campanha:
-                        <strong>
-                            {{nm_titulo_pedido}}</strong>
-                    </h2>
-
+                <div class="card-btn column">
+                    <a href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
+                        <button class="btn blue">Detalhes</button>
+                    </a>
+                    <div class="date row">
+                        <span class="date-time">{{formatDate dt_createdAt_solicitacao}}</span>
+                    </div>
                 </div>
             </div>
-            <div class="card-btn column">
-                <a href="/painel/pedidos/{{cd_pedido}}/{{cd_solicitacao}}">
-                    <button class="btn blue">Detalhes</button>
-                </a>
-                <div class="date row">
-                    <img src="/assets/img/icone_calendar.svg" alt="Data">
-                    <span class="date-time">{{formatDate dt_createdAt_solicitacao}}</span>
-                </div>
-            </div>
-        </div>
         {{/each}}
     </div>
 

@@ -8,10 +8,10 @@
     <div class="usuario cards-container">
         <ul class="users row">
             <a href="/notificacoes">
-                <li class="titulo-categoria">Solicitações de ajuda</li>
+                <li class="titulo-categoria">Minhas campanhas </li>
             </a>
             <a href="/notificacoes/doacoes">
-                <li class="titulo-categoria underline">Doações realizadas</li>
+                <li class="titulo-categoria underline">Minhas Doações</li>
             </a>
         </ul>
         {{#each notificacao}}
@@ -21,18 +21,21 @@
                     <img class="image-card" src="/assets/pedidos/{{cd_imagem_pedido}}" alt="" />
                 </div>
                 <div class="card-info column">
-                    <h1 class="nome-card">{{nm_usuario}}</h1>
+                    <h1 class="nome-card">{{nm_titulo_pedido}}</h1>
                     <h2 class="desc-card">
-                        Campanha:
-                        <strong>{{nm_titulo_pedido}}</strong>
+                        Dono:
+                        {{nm_usuario}}
                     </h2>
                 </div>
             </div>
             
-            <div class="card-btn row">
-                <a href="#">
+            <div class="card-btn column">
+                <a href="/chat/{{cd_solicitacao}}">
                     <button class="btn blue">Entrar no chat</button>
                 </a>
+                 <div class="date row">
+                    <span class="date-time">{{formatDate dt_createdAt_solicitacao}}</span>
+                </div>
             </div>
         </div>
         {{/each}}
