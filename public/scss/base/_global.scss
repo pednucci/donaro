@@ -179,9 +179,9 @@ input[type="file"] {
         position: absolute;
         width: 30rem;
         height: 30rem;
-        display: none;
+        opacity: 0;
+        transition: all 0.09s ease-out;
         visibility: hidden;
-
 
         input {
             position: absolute;
@@ -193,9 +193,9 @@ input[type="file"] {
 
     &:hover {
         .changeImg {
-            display: block;
+            opacity: 1;
             visibility: visible;
-
+            transition: all 0.09s ease-out;
         }
     }
 }
