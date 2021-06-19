@@ -4,6 +4,171 @@
 
 {{>navbar}}
 
+<main class="lyt_denuncia pg_contribuir pedido">
+    <div class="form-container pedido column">
+        <div class="closeWrapper">
+            <img class="closeModal" src="/assets/img/icone_times_black.svg" alt="">
+        </div>
+        {{!-- {{#if erros}}
+        <div class="form-error">
+            <h2 class="sub titulo">{{erros.[0].text}}</h2>
+        </div>
+        {{else}}
+        {{/if}} --}}
+        <p class="sub titulo">Informe a quantidade da doação:</p>
+        <form class="form-login column" method="POST">
+            <div class="alimento column">
+                   <div class="desc row">
+                        <label>Alimento</label>
+                        <label>Quantidade</label>
+                   </div>
+                <div class="qtdAlimentos">
+                    {{!-- {{#each alimento}} --}}
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            {{!-- <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly> --}}
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="Arroz" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="number" name="qtd" min="0"/>
+                                {{!-- <h1 class="sub titulo">{{nm_medida_alimento}}</h1> --}}
+                                <h1 class="sub titulo">Kg</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            {{!-- <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly> --}}
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="Arroz" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="number" name="qtd" min="0"/>
+                                {{!-- <h1 class="sub titulo">{{nm_medida_alimento}}</h1> --}}
+                                <h1 class="sub titulo">Kg</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            {{!-- <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly> --}}
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="Arroz" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="number" name="qtd" min="0"/>
+                                {{!-- <h1 class="sub titulo">{{nm_medida_alimento}}</h1> --}}
+                                <h1 class="sub titulo">Kg</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            {{!-- <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly> --}}
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="Arroz" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="number" name="qtd" min="0"/>
+                                {{!-- <h1 class="sub titulo">{{nm_medida_alimento}}</h1> --}}
+                                <h1 class="sub titulo">Kg</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            {{!-- <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly> --}}
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="Arroz" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="number" name="qtd" min="0"/>
+                                {{!-- <h1 class="sub titulo">{{nm_medida_alimento}}</h1> --}}
+                                <h1 class="sub titulo">Kg</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            {{!-- <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly> --}}
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="Arroz" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="number" name="qtd" min="0"/>
+                                {{!-- <h1 class="sub titulo">{{nm_medida_alimento}}</h1> --}}
+                                <h1 class="sub titulo">Kg</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            {{!-- <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly> --}}
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="Arroz" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="number" name="qtd" min="0"/>
+                                {{!-- <h1 class="sub titulo">{{nm_medida_alimento}}</h1> --}}
+                                <h1 class="sub titulo">Kg</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            {{!-- <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly> --}}
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="Arroz" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="number" name="qtd" min="0"/>
+                                {{!-- <h1 class="sub titulo">{{nm_medida_alimento}}</h1> --}}
+                                <h1 class="sub titulo">Kg</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            {{!-- <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly> --}}
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="Arroz" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="number" name="qtd" min="0"/>
+                                {{!-- <h1 class="sub titulo">{{nm_medida_alimento}}</h1> --}}
+                                <h1 class="sub titulo">Kg</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alimento-pedido">
+                            {{!-- <input class="input-form nmAl" type="text" name="nmAlimento" value="{{nm_alimento}}" readonly> --}}
+                            <input class="input-form nmAl" type="text" name="nmAlimento" value="Arroz" readonly>
+                        </div>
+                        <div class="alimento-quantidade">
+                            <div class="qtdAl">
+                                <input class="input-form" type="number" name="qtd" min="0"/>
+                                {{!-- <h1 class="sub titulo">{{nm_medida_alimento}}</h1> --}}
+                                <h1 class="sub titulo">Kg</h1>
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- {{/each}} --}}
+                </div>
+            </div>
+
+            <div class="comentario column">
+                <label >
+                    Adicione um comentário (opcional)
+                </label>
+                <textarea class="input-form" name="descricao"></textarea>
+            </div>
+            <input class="btn blue" type="button" value="Enviar" />
+        </form>
+    </div>
+</main>
+
 <main class="pg_pedido">
     <div class="container-pedido column">
         {{#each pedido}}
@@ -78,7 +243,8 @@
                     <a href="#"><button class="btn blue">Editar</button></a>
                     {{else}}
                     {{#each pedido}}
-                    <a href="/descobrir/pedido/{{cd_pedido}}/ajudar"><button class="btn blue">Doar</button></a>
+                    {{!-- <a href="/descobrir/pedido/{{cd_pedido}}/ajudar"><button class="btn blue">Doar</button></a> --}}
+                    <button class="btn blue openModal">Doar</button>
                     {{/each}}
                     {{/if}}
 
@@ -114,4 +280,17 @@
     }
     document.querySelectorAll('.arrecadado-{{replaceSpace nm_alimento}}')[0].innerText = Math.trunc(math);
     {{/each}}
+
+    const closeModal = document.querySelector(".closeModal")
+    const openModal = document.querySelector(".openModal")
+    const modalContribuir = document.querySelector(".lyt_denuncia.pg_contribuir.pedido")
+
+    closeModal.addEventListener('click', () => {
+        modalContribuir.classList.remove('visible')
+    })
+
+    openModal.addEventListener('click', () => {
+        modalContribuir.classList.add('visible')
+    })
+
 </script>

@@ -277,3 +277,24 @@
 
     /* #endregion */
 }
+
+.lyt_denuncia.pedido {
+    position: fixed;
+    z-index: 20;
+    margin: auto;
+    width: 100vw;
+    background-color: var(--black-logo-transparent);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.1s ease-in-out !important;
+
+    padding-bottom: 0;
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+
+        transition: all 0.1s ease-in-out;
+    }
+}
