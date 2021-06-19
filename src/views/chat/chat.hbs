@@ -7,121 +7,105 @@
 <body>
     <main class="pg_chat">
         <div class="chat-container">
-            <!-- Container de conversas -->
+            {{!--  Container de conversas  --}}
             <div class="conversas-container">
-                <!-- Barra de pesquisa -->
-                <form class="pesquisa">
-                    <button type="submit">
-                        <img
-                            src="/assets/img/icone_lupa.svg"
-                            alt="Icone lupa"
-                        />
-                    </button>
-                    <input
-                        class="input-form"
-                        type="text"
-                        name="txtPesquisa"
-                        placeholder="Procurar mensagens"
-                    />
-                </form>
+            
+            {{!--  Menu de conversas  --}}
+                <div class="menu-conversas row">
+                    <div class="m-campanhas row">
+                        <input type="radio" name="conversas" id="camp" value="mCampanhas" checked="true">
+                        <label for="camp">Minhas campanhas</label>
+                    </div>
+                    <div class="m-doacoes row">
+                        <input type="radio" name="conversas" id="doa" value="mDoacoes">
+                        <label for="doa">Minhas doações</label>
+                    </div>
+                </div>
 
-                <!-- Coluna de conversas -->
+                {{!--  Coluna de conversas  --}}
                 <div class="conversas column">
-                    <div class="containerMsgs mC">
-                        <div class="tituloContainer camp row">
-                            <h1 class="titulo-conversas camp">Conversas - Minhas campanhas </h1>
-                            <img class="toggleTitulo" src="/assets/img/icone_arrow.svg" alt="">
-                        </div>
-                        
-                        <div class="msgsContainer">
-                            {{#if chatCampanhas}}
-                            {{#each chatCampanhas}}
-                            <a href="/chat/{{cd_solicitacao_chat}}" class="chat-{{cd_chat}}">
-                                <div class="row conversa">
-                                    <!-- Imagem -->
-                                    <div class="conversa-img">
-                                        <div class="img-wrapper">
-                                            <img
-                                                src="/assets/profile/{{cd_foto_usuario}}"
-                                                alt="Imagem usuário"
-                                            />
-                                        </div>
-                                    </div>
-                        
-                                    <!-- Infos da conversa -->
-                                    <div class="conversa-info">
-                                        <!-- Nome e horário -->
-                                        <div class="row row1">
-                                            <p class="titulo black nome-conversa">
-                                                {{nm_usuario}}
-                                            </p>
-                                        </div>
-                        
-                                        <!-- Última mensagem e número de notificações -->
-                                        <div class="row row2 read-{{cd_chat}}">
-                                            <p class="ultimas-msg">
-                                                Campanha: {{nm_titulo_pedido}}
-                                            </p>
-                                        </div>
+                    <div class="msgsContainer camp">
+                        {{#if chatCampanhas}}
+                        {{#each chatCampanhas}}
+                        <a href="/chat/{{cd_solicitacao_chat}}" class="chat-{{cd_chat}}">
+                            <div class="row conversa">
+                                {{!--  Imagem  --}}
+                                <div class="conversa-img">
+                                    <div class="img-wrapper">
+                                        <img
+                                            src="/assets/profile/{{cd_foto_usuario}}"
+                                            alt="Imagem usuário"
+                                        />
                                     </div>
                                 </div>
-                            </a>
-                            {{/each}}
-                            {{else}}
-                            <h1>Não há nada por aqui</h1>
-                            {{/if}}
-                        </div>
+                    
+                                {{!--  Infos da conversa  --}}
+                                <div class="conversa-info">
+                                    {{!--  Nome e horário  --}}
+                                    <div class="row row1">
+                                        <p class="titulo black nome-conversa">
+                                            {{nm_usuario}}
+                                        </p>
+                                    </div>
+                    
+                                    {{!--  Última mensagem e número de notificações  --}}
+                                    <div class="row row2 read-{{cd_chat}}">
+                                        <p class="ultimas-msg">
+                                            Campanha: {{nm_titulo_pedido}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        {{/each}}
+                        {{else}}
+                        <h1>Não há nada por aqui</h1>
+                        {{/if}}
                     </div>
 
-                    <div class="containerMsgs sL">
-                        <div class="tituloContainer soli row">
-                            <h1 class="titulo-conversas soli">Conversas - Minhas doações</h1>
-                            <img class="toggleTitulo soli" src="/assets/img/icone_arrow.svg" alt="">
-                        </div>
-                        <div class="msgsContainer">
-                            {{#if chatSolicitacoes}}
-                            {{#each chatSolicitacoes}}
-                            <a href="/chat/{{cd_solicitacao}}" class="chat-{{cd_chat}}">
-                                <div class="row conversa">
-                                    <!-- Imagem -->
-                                    <div class="conversa-img">
-                                        <div class="img-wrapper">
-                                            <img
-                                                src="/assets/pedidos/{{cd_imagem_pedido}}"
-                                                alt="Imagem pedido"
-                                            />
-                                        </div>
-                                    </div>
-                        
-                                    <!-- Infos da conversa -->
-                                    <div class="conversa-info">
-                                        <!-- Nome e horário -->
-                                        <div class="row row1">
-                                            <p class="titulo black nome-conversa">
-                                                {{nm_titulo_pedido}}
-                                            </p>
-                                        <!-- <p class="titulo-gray horario">18:25</p> -->
-                                        </div>
-                        
-                                        <!-- Última mensagem e número de notificações -->
-                                        <div class="row row2 read-{{cd_chat}}">
-                                            <p class="ultimas-msg">
-                                                Dono: {{nm_usuario}}
-                                            </p>
-                                        </div>
+                    <div class="msgsContainer doa">
+                        {{#if chatSolicitacoes}}
+                        {{#each chatSolicitacoes}}
+                        <a href="/chat/{{cd_solicitacao}}" class="chat-{{cd_chat}}">
+                            <div class="row conversa">
+                                {{!--  Imagem  --}}
+                                <div class="conversa-img">
+                                    <div class="img-wrapper">
+                                        <img
+                                            src="/assets/pedidos/{{cd_imagem_pedido}}"
+                                            alt="Imagem pedido"
+                                        />
                                     </div>
                                 </div>
-                            </a>
-                            {{/each}}
-                            {{else}}
-                            <h1>Não há nada por aqui</h1>
-                            {{/if}}
-                        </div>
+                    
+                                {{!--  Infos da conversa  --}}
+                                <div class="conversa-info">
+                                    {{!--  Nome e horário  --}}
+                                    <div class="row row1">
+                                        <p class="titulo black nome-conversa">
+                                            {{nm_titulo_pedido}}
+                                        </p>
+                                    {{!--  <p class="titulo-gray horario">18:25</p>  --}}
+                                    </div>
+                    
+                                    {{!--  Última mensagem e número de notificações  --}}
+                                    <div class="row row2 read-{{cd_chat}}">
+                                        <p class="ultimas-msg">
+                                            Dono: {{nm_usuario}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        {{/each}}
+                        {{else}}
+                        <h1>Não há nada por aqui</h1>
+                        {{/if}}
                     </div>
                 </div>
             </div>
 
-            <!-- Container do Chat  -->
+            {{!--  Container do Chat   --}}
             <div class="chat">
                 <div class="chat-header row">
                     {{#if userPedido}}
@@ -191,7 +175,7 @@
                 </div>
 
                 <div class="chat-content">
-                    <!-- Mensagem enviada -->
+                    {{!--  Mensagem enviada  --}}
                     {{#each mensagem}}
                     <div class="message-row {{cd_usuario_mensagem}} row">
                         <div class="mensagem row">
@@ -218,7 +202,7 @@
                             placeholder="Digite sua mensagem"
                             autocomplete="off"
                         />
-                        <input class="btn red" type="submit" value="Enviar" />
+                        <input class="btn blue" type="submit" value="Enviar" />
                     </form>
                 </div>
             </div>
@@ -230,25 +214,34 @@
 <script>
     const openMenu = document.querySelector(".wrapper-menu");
     const denunciaMenu = document.querySelector(".toggle-menu.denuncia");
-    var containerMaster = document.querySelectorAll(".containerMsgs");
-    var toggleTitulos = document.querySelectorAll(".toggleTitulo");
+    const containerConversasCamp = document.querySelector(".msgsContainer.camp");
+    const containerConversasDoa = document.querySelector(".msgsContainer.doa");
+    var radios = document.querySelectorAll("input[type='radio'][name='conversas']")
 
-    
-    toggleTitulos.forEach(function(value, index){
-        toggleTitulos[index].addEventListener('click', () => {
-            if(containerMaster[index].classList.contains('toggled')){
-                containerMaster[index].classList.remove('toggled')
-            } else{
-                containerMaster[index].classList.add('toggled')
-            }
+    containerConversasCamp.classList.add("visible")
+    containerConversasDoa.classList.remove("visible")
+
+
+    radios.forEach(function(radio, index){
+        radio.addEventListener('click', () => {
+            if (radio.id == "camp"){
+                containerConversasCamp.classList.add("visible")
+                containerConversasDoa.classList.remove("visible")
+            } else if (radio.id == "doa"){
+                containerConversasDoa.classList.add("visible")
+                containerConversasCamp.classList.remove("visible")
+            } 
         })
     })
 
-    openMenu.addEventListener('click', () => {
+     openMenu.addEventListener('click', () => {
         if (denunciaMenu.classList.contains('visible')) {
             denunciaMenu.classList.remove('visible')
         } else {
             denunciaMenu.classList.add('visible')
         }
     })
+
+
+
 </script>

@@ -43,97 +43,116 @@
 
     .msgsContainer {
         width: 100%;
-        transition: all 0.2s ease-in-out;
+
+        display: none;
+        visibility: hidden;
+
+        &.visible {
+            display: block;
+            visibility: visible;
+        }
     }
 
     .chat-container {
         width: 100%;
         height: calc(100vh - 8rem);
-        max-width: 150rem;
+        max-width: 1440px;
 
         margin: 0 auto;
-        padding-bottom: 2rem;
 
         display: flex;
 
         .conversas-container {
-            width: 30%;
+            width: 25%;
             min-width: 35rem;
             height: 100%;
 
             display: flex;
             flex-direction: column;
 
-            a {
-                width: 100%;
-            }
+            border: 0.1rem solid var(--blue-logo);
+            border-radius: 0.8rem 0 0 0.8rem;
+            padding: 2rem 2rem 0 2rem;
 
-            .pesquisa {
-                width: 95%;
-                height: 5rem;
+            .menu-conversas {
+                justify-content: space-between;
+                gap: 2rem;
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                margin-bottom: 2rem;
 
-                background-color: var(--white);
-
-                border-radius: 1rem;
-
-                button {
-                    width: 4rem;
-                    height: 4rem;
-
-                    background-color: transparent;
-
-                    position: relative;
-                    left: 2rem;
-
+                * {
                     cursor: pointer;
+                }
 
-                    img {
-                        width: 2rem;
-                        height: 2rem;
+                .row {
+                    input[type="radio"] {
+                        height: 0;
+                        width: 0;
+
+                        display: none;
+                        visibility: hidden;
+
+                        &:checked + label {
+                            border-color: var(--blue-logo);
+                            font-weight: 500;
+                        }
+
+                        -webkit-tap-highlight-color: transparent;
+                        -ms-touch-action: manipulation;
+                        touch-action: manipulation;
+                    }
+
+                    label {
+                        width: max-content;
+                        padding-bottom: 1rem;
+
+                        text-align: center;
+                        font-size: 2rem;
+                        font-weight: 400;
+                        color: var(--blue-logo);
+
+                        display: block;
+
+                        border-bottom: 0.25rem solid transparent;
+
+                        -webkit-tap-highlight-color: transparent;
+                        -ms-touch-action: manipulation;
+                        touch-action: manipulation;
                     }
                 }
+            }
 
-                .input-form {
-                    border: none;
-                    width: 100%;
-                    padding: 0 3rem;
-                }
+            a {
+                width: 100%;
             }
 
             .conversas {
                 width: 100%;
                 height: 100%;
-                padding: 2rem 1rem;
 
                 align-items: flex-start;
                 justify-content: flex-start;
 
-                overflow-y: scroll;
+                overflow-y: auto;
 
                 .conversa {
-                    $white: #ffffff;
                     width: 100%;
-                    height: 9rem;
-                    padding: 1rem 2rem;
+                    height: 8rem;
+                    padding: 1rem 2rem 1rem 0;
 
                     margin: 0.2rem 0;
 
                     justify-content: flex-start;
 
                     border-radius: 1rem;
-                    border: var(--border-form);
 
-                    background-color: $white;
-                    transition: all 0.2s ease-in-out;
+                    background-color: var(--white);
+                    transition: all 0.1s ease-in-out;
 
                     &:hover {
-                        background-color: darken($white, 8%);
+                        background-color: darken(#fff, 3%);
 
-                        transition: all 0.2s ease-in-out;
+                        transition: all 0.1s ease-in-out;
                     }
 
                     .img-wrapper {
@@ -142,7 +161,7 @@
                     }
 
                     .conversa-info {
-                        width: 70%;
+                        width: 80%;
                         margin-left: 2rem;
 
                         .titulo,
@@ -165,7 +184,7 @@
 
                         .row2 {
                             p {
-                                font-size: 1.7rem;
+                                font-size: 1.6rem;
                             }
                         }
                     }
@@ -191,7 +210,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 70%;
+            width: 75%;
             height: 100%;
 
             .svg-mensagem {
@@ -214,23 +233,21 @@
 
             .chat-header {
                 width: 100%;
-                height: 8rem;
+                height: 7rem;
                 padding: 2rem;
                 justify-content: flex-start;
                 background-color: var(--white);
-                /* border-radius: 1rem; */
-                border: var(--border-form);
-                /* box-shadow: var(--border-shadow); */
+                border: 0.1rem solid var(--blue-logo);
+                border-left: 0;
 
                 .img-wrapper {
-                    width: 6rem;
-                    height: 6rem;
+                    width: 5rem;
+                    height: 5rem;
                     margin-right: 2rem;
-                    min-width: 6rem;
                 }
 
                 .nome-conversa.row {
-                    font-size: 2em;
+                    font-size: 2.5rem;
 
                     align-items: baseline;
 
@@ -241,7 +258,7 @@
                     }
 
                     .nmPedido {
-                        font-size: 2.5rem;
+                        font-size: 2rem;
                         color: var(--gray-minor-font);
                         margin-left: 1rem;
                     }
@@ -302,7 +319,8 @@
             .chat-content {
                 width: 100%;
                 height: 100%;
-                overflow-y: scroll;
+                overflow-y: auto;
+                border-right: 0.1rem solid var(--blue-logo);
 
                 .message-row {
                     width: 90%;
@@ -356,7 +374,7 @@
 
             .chat-footer {
                 width: 100%;
-                height: 8rem;
+                height: 10rem;
                 padding: 1rem;
                 background-color: var(--white);
                 border: var(--border-form);
@@ -370,13 +388,13 @@
 
                 .input-form {
                     width: 90%;
-                    height: 4rem;
+                    height: 5rem;
                     margin-right: 1rem;
                     background-color: var(--gray-background);
                 }
 
                 .btn {
-                    min-height: 4rem;
+                    min-height: 5rem;
                     min-width: 14rem;
                     width: 1rem;
                     border-radius: 1rem;
