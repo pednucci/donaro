@@ -17,6 +17,11 @@ router.get('/login', (req, res) => {
     res.render('login/login')
 })
 
+router.post('/isLogged', (req, res) => {
+    if(req.user) res.status(200).send("true");
+    else res.status(404).send("false");
+})
+
 router.post('/login', passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/login",
