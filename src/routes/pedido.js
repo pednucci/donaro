@@ -201,37 +201,7 @@ router.get('/descobrir/pedido/:id', async (req, res) => {
     await conn.end();
 })
 
-router.get('/descobrir/pedido/:id/ajudar', isAuth, async (req, res) => {
-    const conn = await db.connection();
-    const idPed = req.params.id;
-    const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
-    WHERE cd_pedido = ? AND cd_usuario_pedido = ?`,[idPed, req.user[0].cd_usuario]);
-
-    const [pedido] = await conn.query(`SELECT *, count(*) AS count FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE cd_pedido = ? AND 
-    dt_encerramento_pedido > CURRENT_TIMESTAMP()`,[idPed]);
-    
-    if(count[0].count == 1 || pedido.length == 0){
-        res.redirect('/')   
-    }
-    else{
-        if(pedido[0].cd_deletado_pedido == 1 || pedido[0].count == 0){
-            res.redirect('/')
-        }
-        else{
-            const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
-            cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPed]);
-       
-           res.render('pedidos/contribuir', {
-               alimento
-           })
-        }
-    }
-
-    await conn.end();
-})
-
-router.post('/descobrir/pedido/:id/ajudar', async (req, res) => {
+router.post('/descobrir/pedido/:id', async (req, res) => {
     const conn = await db.connection();
     const idPedido = req.params.id;
 
