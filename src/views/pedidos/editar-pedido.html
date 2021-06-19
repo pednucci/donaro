@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- {{! General Config }} -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- {{! Google Fonts }} -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- {{! Style & Favicon }} -->
+        <link rel="stylesheet" href="/public/scss/dist/main.css" />
+        <link
+            rel="shortcut icon"
+            href="/public/assets/img/icon.png"
+            type="image/x-icon"
+        />
+        <title>Editar campanha</title>
+    </head>
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <div class="nav-logo">
+                    <img
+                        src="/public/assets/img/Donaro_Logo.svg"
+                        class="logo"
+                        alt="Logo Donaro"
+                    />
+                </div>
+                <div class="nav-menu">
+                    <ul class="row nav-list">
+                        <a href="" class="nav-link">
+                            <li>Descobrir</li>
+                        </a>
+                        <a href="" class="nav-link">
+                            <li>Painel</li>
+                        </a>
+                    </ul>
+                    <div class="row nav-profile">
+                        <div class="img-wrapper">
+                            <img
+                                src="/public/assets/img/user_nathan.png"
+                                class="img-profile"
+                                alt="Foto de perfil"
+                            />
+                        </div>
+                        <img
+                            src="/public/assets/img/arrow-down.svg"
+                            alt="Icone de seta"
+                        />
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="lyt_forms pg_cadastro-pedido editar">
+            <div class="form-container column">
+                <!-- {{#each erros}}
+                <div class="form-error">
+                    <h2 class="sub titulo">{{text}}</h2>
+                </div>
+                {{/each}} -->
+                <h1 class="titulo">Editar informações da campanha</h1>
+                <form
+                    class="form-login column"
+                    id="formPedido"
+                    method=""
+                    action=""
+                    enctype="multipart/form-data"
+                >
+                    <div class="dados-iniciais row">
+                        <div>
+                            <label for="">Título</label>
+                            <input
+                                class="input-form"
+                                type="text"
+                                name="titulo"
+                                id="titId"
+                                maxlength="30"
+                                value="Almoço na creche Arco-íris"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="texts column">
+                        <div class="column">
+                            <label for="">Descrição</label>
+                            <textarea
+                                id="descPed"
+                                class="input-form editDesc"
+                                name="descPed"
+                                cols="30"
+                                rows="10"
+                                placeholder="Insira a relevância por trás da sua campanha, descrevendo-a com detalhes."
+                            >
+Olá, eu pretendo realizar no dia 17/08/21 um sopão para moradores de rua em frente a igreja embaré, será montado uma barraca com os equipamentos necessários e será servido a essas pessoas em situação vulnerável, uma sopa nutritiva, e para isso eu estou realizando essa campanha de arrecadação para conseguir ajudar essas pessoas!
+
+Olá, eu pretendo realizar no dia 17/08/21 um sopão para moradores de rua em frente a igreja embaré, será montado uma barraca com os equipamentos necessários e será servido a essas pessoas em situação vulnerável, uma sopa nutritiva, e para isso eu estou realizando essa campanha de arrecadação para conseguir ajudar essas pessoas!</textarea
+                            >
+                        </div>
+
+                        <label for="">Imagem de capa</label>
+
+                        <div class="imagePerfil column">
+                            <img
+                                src="/public/assets/pedidos/4pfd.jpg"
+                                alt="Foto da campanha"
+                                class="imgUser"
+                            />
+                            <div class="column changeImg">
+                                <input
+                                    class="input-form editImg"
+                                    type="file"
+                                    accept="image/*"
+                                    name="campImg"
+                                />
+                            </div>
+                        </div>
+
+                        <input
+                            class="btn blue"
+                            type="submit"
+                            value="Salvar alterações"
+                        />
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+
+</html>

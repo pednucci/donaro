@@ -50,7 +50,7 @@
         // border: none;
 
         .titulo {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 500;
             text-align: center;
         }
@@ -169,6 +169,71 @@
                 align-self: flex-start;
                 width: max-content;
             }
+        }
+    }
+
+    &.editar {
+        .form-container {
+            margin: auto;
+
+            .titulo {
+                margin-bottom: 1rem;
+            }
+
+            .input-form{
+                margin: 1rem 0 2rem 0;
+            }
+
+            .dados-iniciais {
+                div:last-child {
+                    width: 100%;
+                }
+            }
+
+            .texts {
+                .editDesc {
+                    min-height: 15rem;
+                    height: 15rem;
+                }
+
+                .imagePerfil {
+                    width: 100%;
+                    height: 20rem;
+
+                    background-color: var(--black-logo-transparent);
+                    background-image: url("/public/assets/pedidos/4pfd.jpg");
+                    background-position: center center;
+                    background-size: cover;
+                    background-blend-mode: overlay;
+                    
+                    margin-top: 1rem;
+
+
+                    img {
+                        object-fit: contain;
+                        object-position: center center;
+                    }
+    
+                    .changeImg {
+                        width: 100%;
+                        max-width: 64rem;
+    
+                        height: 20rem;
+                        margin-bottom: 1rem;
+
+
+                        .editImg{
+                            height:100%;
+                        }
+                    }
+                }
+            }
+
+            .form-login .btn {
+                margin-top: 3rem;
+                min-height: 4rem;
+            }
+            
         }
     }
 }

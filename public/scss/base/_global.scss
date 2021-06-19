@@ -87,6 +87,8 @@ textarea.input-form {
 
     min-width: 100%;
     max-width: 100%;
+
+    resize: none;
 }
 
 button {
@@ -148,13 +150,53 @@ input[type="file"] {
     align-items: center;
 }
 
-.tab{
+.tab {
     display: none;
     visibility: hidden;
-    
-    &.visible{
+
+    &.visible {
         visibility: visible;
         display: flex;
+    }
+}
+
+.imagePerfil {
+    width: 30rem;
+    height: 30rem;
+
+    border-radius: 0.8rem;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .changeImg {
+        position: absolute;
+        width: 30rem;
+        height: 30rem;
+        display: none;
+        visibility: hidden;
+
+
+        input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+        }
+    }
+
+    &:hover {
+        .changeImg {
+            display: block;
+            visibility: visible;
+
+        }
     }
 }
 
