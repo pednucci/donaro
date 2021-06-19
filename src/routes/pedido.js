@@ -231,9 +231,13 @@ router.post('/descobrir/pedido/:id', async (req, res) => {
         if(erros.length > 0){
             const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
             cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPedido]);
+            const [pedido] = await conn.query(`SELECT *, count(*) AS count FROM 
+            pedido INNER JOIN usuario ON cd_usuario_pedido = cd_usuario WHERE cd_pedido = ? 
+            AND dt_encerramento_pedido > CURRENT_TIMESTAMP()`,[idPedido]); 
             
-            res.render('pedidos/contribuir', {
+            res.render('pedidos/pedido', {
                 alimento,
+                pedido,
                 erros
             })
         }
