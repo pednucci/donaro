@@ -75,6 +75,10 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
     replaceSpace: (text) => {
         return text.split(" ").join("")
     },
+    notificationType: (text) => {
+        let string = text.split(" ");
+        if(string[string.length - 1] == 'chat') return true;
+    },
     section: function(name, options){
         if(!this._sections) this._sections = {};
         this._sections[name] = options.fn(this);
