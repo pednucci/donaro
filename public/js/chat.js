@@ -89,11 +89,7 @@ document.getElementById("chatForm").addEventListener("submit", event => {
 
     let message = document.getElementById("txt-mensagem").value.trim();
     if(message.length && message.trim()){
-        let messageObject = {
-            message,
-            read: false
-        }
-        socket.emit('sendMessage', messageObject)
+        socket.emit('sendMessage', message)
     }
     document.getElementById("txt-mensagem").value = '';
 })
