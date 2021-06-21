@@ -1,10 +1,34 @@
 .pg_index {
     .section {
-        height: 100vh;
+        height: 90vh;
 
         display: flex;
         justify-content: center;
         align-items: center;
+
+        // &::after{
+        //     content: url("/assets/img/icone_dbl_down_blk.svg");
+        //     display:block;
+        //     position: absolute;
+
+        //     top: 90vh;
+        //     transform: translateY(-50%);
+        //     opacity: 0;
+
+        //     animation: index 2s ease-in-out infinite alternate;
+
+        //     @keyframes index{
+        //         0%{
+        //             opacity: 0;
+        //             transform: translateY(-50%)
+        //         }
+                
+        //         to{
+        //             opacity: 1;
+        //             transform: translateY(50%)
+        //         }
+        //     }
+        // }
 
         .wrapper {
             width: min-content;
@@ -17,7 +41,7 @@
         }
 
         &.arrecade {
-            height: calc(100vh - 8rem);
+            height: calc(90vh - 8rem);
             background-color: var(--white);
             padding-bottom: 8rem;
 
@@ -61,7 +85,6 @@
                 gap: 5rem;
 
                 .wrapper-image {
-                    /* height: 100%; */
                     display: flex;
 
                     img {
