@@ -51,6 +51,7 @@
 </main>
 
 <main class="pg_pedido">
+    {{>msg}}
     <div class="container-pedido column">
         {{#each pedido}}
         <h1 class="titulo black">{{nm_titulo_pedido}}</h1>
@@ -121,7 +122,7 @@
                         {{/each}}
                     </div>
                     {{#if identify}}
-                    <a href="#"><button class="btn blue">Editar</button></a>
+                    <a href="/edit/{{pedido.[0].cd_pedido}}"><button class="btn blue">Editar</button></a>
                     {{else}}
                     {{#each pedido}}
                     {{!-- <a href="/descobrir/pedido/{{cd_pedido}}/ajudar"><button class="btn blue">Doar</button></a> --}}

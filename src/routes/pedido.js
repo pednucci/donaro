@@ -5,6 +5,7 @@ const { isAuth } = require('../helpers/isAuth');
 const db = require('../database/database');
 const { isPast, formatDistanceStrict, format } = require('date-fns');
 const { ptBR } = require('date-fns/locale');
+const path = require('path');
 
 router.get('/criar', isAuth, async (req, res) => {
     const conn = await db.connection();
@@ -325,6 +326,63 @@ router.post('/descobrir/pedido/:id', async (req, res) => {
 })
 
 router.post('/criar', newOrderController.newOrder);
+
+router.get('/edit/:id', isAuth, async (req, res) => {
+    const conn = await db.connection();
+    const idPedido = req.params.id;
+    const [pedido] = await conn.query(`SELECT * FROM pedido WHERE cd_pedido = ? AND 
+    cd_usuario_pedido = ? AND cd_deletado_pedido IS NULL AND
+    dt_encerramento_pedido > CURRENT_TIMESTAMP()`,[idPedido, req.user[0].cd_usuario]);
+    if(pedido.length){
+        res.render('pedidos/editar-pedido', {pedido})
+    }
+    else res.redirect('/')
+    await conn.end();
+})
+
+router.post('/edit/:id', async (req, res) => {
+    try{
+        const conn = await db.connection();
+        const idPedido = req.params.id;
+        const [pedido] = await conn.query(`SELECT * FROM pedido WHERE cd_pedido = ? AND 
+        cd_usuario_pedido = ?`,[idPedido, req.user[0].cd_usuario]);
+        var erros = [];
+        if(!req.body.titulo && !req.files && !req.body.descPed){
+            erros.push({text: 'Pelo menos um campo precisa ser preenchido!'})
+        }
+        if(erros.length == 0){
+            if(req.files){
+                fileUpload = req.files.campImg;
+                uploadPath = path.join(__dirname, '..', '..', '/public/assets/pedidos/' + fileUpload.name)  ;
+                fileUpload.mv(uploadPath, async (err) => {
+                    if(err){
+                        req.flash("errorMsg", "Erro inesperado!")
+                        console.log(err)
+                        res.redirect('/')
+                    }
+                    else{
+                        await conn.query(`UPDATE pedido SET cd_imagem_pedido = ? WHERE
+                        cd_pedido = ?`, [fileUpload.name, idPedido])
+                    }        
+                })
+            }
+            if(req.body.titulo) await conn.query(`UPDATE pedido SET nm_titulo_pedido = ? WHERE
+            cd_pedido = ?`,[req.body.titulo, idPedido]);
+            if(req.body.descPed) await conn.query(`UPDATE pedido SET ds_acao_pedido = ? WHERE
+            cd_pedido = ?`,[req.body.descPed, idPedido]);
+            req.flash("successMsg", "Pedido editado com sucesso!");
+            res.redirect(`/descobrir/pedido/${idPedido}`);
+        }
+        else{
+            res.render('pedidos/editar-pedido', {pedido, erros})
+        }
+    }
+    catch(err){
+        console.log(err);
+        req.flash("errorMsg", "Erro inesperado!");
+        res.redirect('/')
+    }
+})
 
 module.exports = router
 
