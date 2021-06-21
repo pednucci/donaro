@@ -54,7 +54,6 @@
                                     id="chartCanvas"
                                     width="150"
                                     height="150"
-                                    aria-label="Example doughnut chart showing data as a percentage"
                                     role="img"
                                 ></canvas>
                             </figure>
@@ -74,7 +73,6 @@
                                     id="myChart"
                                     width="150"
                                     height="150"
-                                    aria-label="Example doughnut chart showing data as a percentage"
                                     role="img"
                                 ></canvas>
                             </figure>
@@ -132,7 +130,7 @@
                 {{!-- Total de doações --}} 
                 <div class="total-doacoes wrapper">
                     <h1>{{campanha.[0].qt_doacoes_pedido}}</h1>
-                    <h2>Total de doações recebidas</h2>
+                    <h2>Total de doadores da campanha</h2>
                 </div>
 
                 {{!-- Doadores --}} 
@@ -183,7 +181,7 @@
 {{#unless notexpirado}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
-{{!-- Doughnut Chart Script --}}
+
 <script>
     var percent = Math.trunc((100*{{campanha.[0].qt_doacoes_pedido}})/{{campanha.[0].qt_total_pedido}}); //Percentual arrecadado
 
@@ -235,7 +233,6 @@
     chartContainer.appendChild(divElement.firstChild); // Append the divElement within the chartContainer as it's child
 </script>
 
-{{!-- Pizza Chart Script --}}
 <script>
     //Alimentos
     var dataset = [
@@ -251,47 +248,29 @@
     var allLabels = [];
     var allCount = [];
     var allBackgroundColor = [];
+    var hslaColors = [];
 
 
-    // Função que gera cor hexadecimal aleatória
-    function selectColor() {
-        // var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-        // return `#${randomColor}`;
 
-        var letters = "0123456789ABCDEF";
-        var color = "#";
-        for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
+    function generateHslaColors (saturation, lightness, alpha, amount) {
+        var colors = []
+        var huedelta = Math.trunc(360 / amount)
+
+        for (let i = 0; i < amount; i++) {
+            let hue = i * huedelta
+            colors.push(`hsla(${hue},${saturation}%,${lightness}%,${alpha})`)
         }
 
-        if (!validateColor) {
-            var letters = "0123456789ABCDEF";
-            var color = "#";
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-        }
-
-        return `${color}`;
+        return colors
     }
 
-    //Função que valida se a cor já foi selecionada
-    function validateColor(selectedColor) {
-        var isValid;
-        for (color in allBackgroundColor) {
-            if (selectedColor === color) {
-                isValid = false;
-            }
-        }
-        isValid = true;
-
-        return isValid;
-    }
+    var hslaColors = generateHslaColors(60, 70, 1.0, dataset.length);
+    console.log(hslaColors)  
 
     for (alimentoData in dataset) {
         allLabels[alimentoData] = dataset[alimentoData].label.toUpperCase();
         allCount[alimentoData] = dataset[alimentoData].count;
-        allBackgroundColor[alimentoData] = selectColor();
+        allBackgroundColor[alimentoData] = hslaColors[alimentoData];
     }
 
     // Chart JS Initialize
