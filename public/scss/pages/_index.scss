@@ -1,38 +1,16 @@
 .pg_index {
     .section {
-        height: 90vh;
+        height: calc(100vh - 13rem);
 
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
 
-        // &::after{
-        //     content: url("/assets/img/icone_dbl_down_blk.svg");
-        //     display:block;
-        //     position: absolute;
-
-        //     top: 90vh;
-        //     transform: translateY(-50%);
-        //     opacity: 0;
-
-        //     animation: index 2s ease-in-out infinite alternate;
-
-        //     @keyframes index{
-        //         0%{
-        //             opacity: 0;
-        //             transform: translateY(-50%)
-        //         }
-                
-        //         to{
-        //             opacity: 1;
-        //             transform: translateY(50%)
-        //         }
-        //     }
-        // }
 
         .wrapper {
             width: min-content;
-            max-width: 96rem;
+            max-width: 120rem;
             height: max-content;
 
             display: flex;
@@ -41,7 +19,7 @@
         }
 
         &.arrecade {
-            height: calc(90vh - 8rem);
+            height: calc(95vh - 8rem);
             background-color: var(--white);
             padding-bottom: 8rem;
 
@@ -76,6 +54,33 @@
                     width: 50rem;
                 }
             }
+
+            
+        
+            &::after{
+                content: url("/assets/img/icone_dbl_down_blue.svg");
+                display:block;
+                position: absolute;
+
+                top: 90vh;
+                transform: translateY(-3rem);
+                opacity: 1;
+
+                animation: index ease-in-out 1s infinite alternate;
+
+                @keyframes index{
+                    from{
+                        opacity: 1;
+                        transform: translateY(-3rem);
+                    }
+                    
+                    to{
+                        transform: translateY(0rem);
+                        opacity: 0;
+                    }
+                }
+            }
+
         }
 
         &.pratique {
@@ -109,6 +114,30 @@
 
             &.acoes {
                 background-color: var(--red-logo);
+                
+                &::after{
+                    content: url("/assets/img/icone_dbl_down.svg");
+                    display:block;
+                    position: relative;
+    
+                    top: 22%;
+                    transform: translateY(-3rem);
+                    opacity: 1;
+    
+                    animation: index ease-in-out 1s infinite alternate;
+    
+                    @keyframes index{
+                        from{
+                            opacity: 1;
+                            transform: translateY(-3rem);
+                        }
+                        
+                        to{
+                            transform: translateY(0rem);
+                            opacity: 0;
+                        }
+                    }
+                }
             }
 
             &.doadores {
