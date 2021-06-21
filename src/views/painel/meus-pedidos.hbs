@@ -30,7 +30,10 @@
         {{#each pedido}}
         <div class="pedido column">
             <div class="imagem-pedido">
-                <img src="/assets/pedidos/{{cd_imagem_pedido}}" alt="">
+                <img class="img-pedido" src="/assets/pedidos/{{cd_imagem_pedido}}" alt="Imagem da campanha">
+                <a href="/edit/{{cd_pedido}}">
+                    <img class="svg-editar" src="/assets/img/icone_edit.svg" alt="Editar informações da campanha" />
+                </a>
             </div>
             <div class="informacoes-pedido column">
                 <div class="descricao-pedido">
