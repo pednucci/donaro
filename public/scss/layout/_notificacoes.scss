@@ -120,11 +120,16 @@
         }
     }
 
+    &.pg_n-ajudas{
+        .usuario.cards-container{
+            max-width: 90rem;
+        }
+    }
+
     .cards-container {
         width: 100%;
         max-width: 80rem;
 
-        justify-content: top;
         align-items: center;
 
         margin: 0 auto;
@@ -201,13 +206,11 @@
                     .desc-card {
                         font-size: 1.6rem;
                         font-weight: 500;
+                        color: var(--black-logo);
                         margin-top: 0rem;
-                        width: 35rem;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+                        max-width: 55rem;
+                        white-space: normal;
 
-                        color: var(--gray-dark);
                     }
 
                     .desc-card.min {
