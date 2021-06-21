@@ -80,7 +80,6 @@
 
                 margin-bottom: 2rem;
 
-
                 * {
                     cursor: pointer;
                 }
@@ -269,6 +268,20 @@
                     margin-left: auto;
                     margin-right: 1rem;
 
+                    .toggle-link {
+                        img {
+                            width: 1.3rem;
+                        }
+
+                        .sub.titulo {
+                            font-size: 1.8rem;
+                            font-weight: 400;
+                            margin: 0;
+                            gap: 1rem;
+                            color: var(--black-logo);
+                        }
+                    }
+
                     .wrapper-menu {
                         justify-content: center;
                         cursor: pointer;
@@ -288,7 +301,7 @@
 
                         padding: 2rem;
 
-                        transform: translate(-21rem, 1rem);
+                        transform: translate(-18rem, 1rem);
 
                         border: var(--border-form);
                         border-radius: 0.8rem;
@@ -303,15 +316,31 @@
                             opacity: 1;
                             visibility: visible;
                         }
+                    }
 
-                        .toggle-link {
-                            .sub.titulo {
-                                font-size: 2rem;
-                                margin: 0;
-                                margin-left: 1.5rem;
-                                gap: 1rem;
-                                color: var(--red-denounce);
-                            }
+                    .v-menu {
+                        display: block;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    .i-menu {
+                        display: none;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    @media screen and (max-width: 1000px) {
+                        .i-menu {
+                            display: block;
+                            visibility: visible;
+                            opacity: 1;
+                        }
+
+                        .v-menu {
+                            display: none;
+                            visibility: hidden;
+                            opacity: 0;
                         }
                     }
                 }
