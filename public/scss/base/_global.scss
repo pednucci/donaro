@@ -150,15 +150,6 @@ input[type="file"] {
     align-items: center;
 }
 
-.tab {
-    display: none;
-    visibility: hidden;
-
-    &.visible {
-        visibility: visible;
-        display: flex;
-    }
-}
 
 .imagePerfil {
     width: 30rem;
