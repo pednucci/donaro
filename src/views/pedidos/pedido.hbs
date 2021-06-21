@@ -9,12 +9,12 @@
         <div class="closeWrapper">
             <img class="closeModal" src="/assets/img/icone_times_black.svg" alt="">
         </div>
-        {{!-- {{#if erros}}
+        {{#if erros}}
         <div class="form-error">
             <h2 class="sub titulo">{{erros.[0].text}}</h2>
         </div>
         {{else}}
-        {{/if}} --}}
+        {{/if}}
         <p class="sub titulo">Informe a quantidade da doação:</p>
         <form class="form-login column" method="POST">
             <div class="alimento column">
@@ -165,6 +165,10 @@
     const closeModal = document.querySelector(".closeModal")
     const openModal = document.querySelector(".openModal")
     const modalContribuir = document.querySelector(".lyt_denuncia.pg_contribuir.pedido")
+
+    {{#if erros}}
+        modalContribuir.classList.add('visible');
+    {{/if}}
 
     closeModal.addEventListener('click', () => {
         modalContribuir.classList.remove('visible')

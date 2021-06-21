@@ -231,9 +231,13 @@ router.post('/descobrir/pedido/:id', async (req, res) => {
         if(erros.length > 0){
             const [alimento] = await conn.query(`SELECT * FROM alimento INNER JOIN pedido ON
             cd_pedido_alimento = cd_pedido WHERE cd_pedido_alimento = ?`, [idPedido]);
+            const [pedido] = await conn.query(`SELECT *, count(*) AS count FROM 
+            pedido INNER JOIN usuario ON cd_usuario_pedido = cd_usuario WHERE cd_pedido = ? 
+            AND dt_encerramento_pedido > CURRENT_TIMESTAMP()`,[idPedido]); 
             
-            res.render('pedidos/contribuir', {
+            res.render('pedidos/pedido', {
                 alimento,
+                pedido,
                 erros
             })
         }
@@ -294,6 +298,19 @@ router.post('/descobrir/pedido/:id', async (req, res) => {
                 cd_userSoli_chat) VALUES(?,?,?,?)`,[idPedido, idSoli, userPedido[0].cd_usuario_pedido,
                 idUser]);
             }
+            const [pedido] = await conn.query(`SELECT * FROM 
+            pedido INNER JOIN usuario ON cd_usuario_pedido = cd_usuario WHERE cd_pedido = ? 
+            AND dt_encerramento_pedido > CURRENT_TIMESTAMP()`,[idPedido]); 
+
+            await conn.query(`INSERT INTO notificacao(cd_usuario_notificacao, ds_notificacao,
+            cd_solicitacao_notificacao) VALUES(?,'Você registrou uma doação para a campanha
+            "${pedido[0].nm_titulo_pedido}", clique para entrar no chat',?)`,[req.user[0].cd_usuario
+            ,idSoli]);
+
+            await conn.query(`INSERT INTO notificacao(cd_usuario_notificacao, ds_notificacao,
+            cd_solicitacao_notificacao) VALUES(?,'${req.user[0].nm_usuario} quer doar para a sua campanha 
+            "${pedido[0].nm_titulo_pedido}" clique para ver os detalhes',?)`,
+            [pedido[0].cd_usuario_pedido ,idSoli]);
             
             req.flash('successMsg', 'Doação registrada com sucesso! Converse com o donatário pelo chat');
             res.redirect('/')
