@@ -120,24 +120,34 @@
                         {{nm_titulo_pedido}}
                         <span class="nmPedido"> • Dono: {{nm_usuario}}</span>
                     </p>
+
                     <div class="menu">
-                        <div class="wrapper-menu row">
-                            <img src="/assets/img/icone_reticencias.svg" alt="Abrir Menu">
+                        <div class="v-menu">
+                            <ul>
+                                <li class="toggle-link">
+                                    <a href="usuario/{{cd_usuario}}/denuncia" class="sub titulo row">
+                                        Denunciar usuário 
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
 
-                        <div class="toggle-menu denuncia">
-                             <ul>
-                                 <li class="toggle-link">
-                                    <a href="usuario/{{cd_usuario}}/denuncia" class="sub titulo row">
-                                        <img src="/assets/img/icone_denounce.svg" alt="Logout" />
-                                        
-                                        Denunciar usuário 
-                                 
-                                    </a>
-                                 </li>
-                             </ul>
+                        <div class="i-menu">
+                            <div class="wrapper-menu row">
+                                <img src="/assets/img/icone_reticencias.svg" alt="Abrir Menu">
+                            </div>
+                            <div class="toggle-menu denuncia">
+                                 <ul>
+                                     <li class="toggle-link">
+                                        <a href="usuario/{{cd_usuario}}/denuncia" class="sub titulo row">
+                                            Denunciar usuário 
+                                        </a>
+                                     </li>
+                                 </ul>
+                            </div>
                         </div>
                     </div>
+
                     {{/each}}
                     {{/if}}
                     {{#if userSoli}}
@@ -152,22 +162,30 @@
                         {{nm_usuario}}  
                         <span class="nmPedido"> • {{nm_titulo_pedido}}</span>
                     </p>
-                    <div class="menu">
-                        <div class="wrapper-menu row">
-                            <img src="/assets/img/icone_reticencias.svg" alt="Abrir Menu">
+                      <div class="menu">
+                        <div class="v-menu">
+                            <ul>
+                                <li class="toggle-link">
+                                    <a href="usuario/{{cd_usuario}}/denuncia" class="sub titulo row">
+                                        Denunciar usuário 
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
 
-                        <div class="toggle-menu denuncia">
-                             <ul>
-                                 <li class="toggle-link">
-                                    <a href="usuario/{{cd_usuario}}/denuncia" class="sub titulo row">
-                                        <img src="/assets/img/icone_denounce.svg" alt="Logout" />
-                                        
-                                        Denunciar usuário 
-                                 
-                                    </a>
-                                 </li>
-                             </ul>
+                        <div class="i-menu">
+                            <div class="wrapper-menu row">
+                                <img src="/assets/img/icone_reticencias.svg" alt="Abrir Menu">
+                            </div>
+                            <div class="toggle-menu denuncia">
+                                 <ul>
+                                     <li class="toggle-link">
+                                        <a href="usuario/{{cd_usuario}}/denuncia" class="sub titulo row">
+                                            Denunciar usuário 
+                                        </a>
+                                     </li>
+                                 </ul>
+                            </div>
                         </div>
                     </div>
                     {{/each}}

@@ -175,12 +175,16 @@
     &.editar {
         .form-container {
             margin: auto;
-
+            
+            label {
+                margin: 0;
+            }
+            
             .titulo {
                 margin-bottom: 1rem;
             }
 
-            .input-form{
+            .input-form {
                 margin: 1rem 0 2rem 0;
             }
 
@@ -204,25 +208,24 @@
                     background-position: center center;
                     background-size: cover;
                     background-blend-mode: overlay;
-                    
-                    margin-top: 1rem;
 
+                    margin-top: 1rem;
 
                     img {
                         object-fit: contain;
                         object-position: center center;
                     }
-    
+
                     .changeImg {
                         width: 100%;
                         max-width: 64rem;
-    
+
                         height: 20rem;
                         margin-bottom: 1rem;
 
-
-                        .editImg{
-                            height:100%;
+                        .editImg {
+                            height: 100%;
+                            transform: translateY(1rem);
                         }
                     }
                 }
@@ -232,7 +235,6 @@
                 margin-top: 3rem;
                 min-height: 4rem;
             }
-            
         }
     }
 }

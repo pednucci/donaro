@@ -75,6 +75,16 @@
             }
         }
 
+        .tab {
+            display: none;
+            visibility: hidden;
+
+            &.visible {
+                visibility: visible;
+                display: flex;
+            }
+        }
+
         .card {
             display: flex;
             visibility: visible;
@@ -110,19 +120,22 @@
         }
     }
 
+    &.pg_n-ajudas{
+        .usuario.cards-container{
+            max-width: 90rem;
+        }
+    }
+
     .cards-container {
         width: 100%;
         max-width: 80rem;
 
-
-        justify-content: top;
         align-items: center;
 
         margin: 0 auto;
         margin-bottom: 10rem;
 
         background-color: var(--white);
-        
 
         .titulo {
             margin-bottom: 5rem;
@@ -130,12 +143,12 @@
             font-weight: 500;
         }
 
-        .card-link{
+        .card-link {
             width: 100%;
             height: max-content;
         }
 
-        .tab{ 
+        .tab {
             width: 100%;
         }
 
@@ -152,8 +165,8 @@
             border-radius: 0.8rem;
 
             transition: all 0.1s ease-in-out;
-            
-            &:hover{
+
+            &:hover {
                 background-color: darken(#fff, 3%);
                 transition: all 0.1s ease-in-out;
             }
@@ -193,13 +206,11 @@
                     .desc-card {
                         font-size: 1.6rem;
                         font-weight: 500;
+                        color: var(--black-logo);
                         margin-top: 0rem;
-                        width: 35rem;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+                        max-width: 55rem;
+                        white-space: normal;
 
-                        color: var(--gray-dark);
                     }
 
                     .desc-card.min {
@@ -232,12 +243,12 @@
                     gap: 0.5rem;
                     height: auto;
                     justify-content: flex-start;
-                    
+
                     img {
                         width: 1.5rem;
                         height: 1.5rem;
                     }
-                    
+
                     margin: auto 0 0.5rem 0;
                     .date-time {
                         font-size: 1.4rem;

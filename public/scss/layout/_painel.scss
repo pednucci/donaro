@@ -164,30 +164,37 @@
         justify-content: center;
     }
 
-    .painel .pedido {
-        width: 28rem;
-        height: 30rem;
+    .painel {
+        .pedido {
+            width: 28rem;
+            height: 30rem;
 
-        margin: 2rem 3rem;
-        justify-content: space-between;
+            margin: 2rem 3rem;
+            justify-content: space-between;
 
-        border: var(--border-form);
-        border-radius: 1rem;
-        overflow: hidden;
-        gap: 1rem;
-    }
+            border: var(--border-form);
+            border-radius: 1rem;
+            overflow: hidden;
+            gap: 1rem;
+        }
 
-    .painel .imagem-pedido {
-        width: 100%;
-        height: 12rem;
-    }
+        .imagem-pedido {
+            width: 100%;
+            height: 12rem;
 
-    .painel .imagem-pedido img {
-        width: 100%;
-        height: 100%;
+            .img-pedido {
+                width: 100%;
+                height: 100%;
 
-        object-fit: cover;
-        object-position: 50% 50%;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+
+            .svg-editar {
+                position: absolute;
+                transform: translate(calc(-100% - 1rem), 1rem);
+            }
+        }
     }
 
     .painel .titulo {

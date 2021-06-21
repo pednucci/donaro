@@ -1,5 +1,4 @@
 .pg_descobrir {
-    /* #region - Topo */
 
     .background {
         width: 100%;
@@ -268,5 +267,19 @@
         }
     }
 
-    /* #endregion */
+    
+    @media screen and (max-width: 900px){
+        .filtro-pedidos, .pedidos-container, .pedidos{
+            max-width: 80rem !important;
+        }
+    }
+    @media screen and (max-width: 630px){
+        .filtro-pedidos, .pedidos-container, .pedidos{
+            max-width: 50rem !important;
+        }
+
+        .pedido{
+            width: 100% !important;
+        }
+    }
 }
