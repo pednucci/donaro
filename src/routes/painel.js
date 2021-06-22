@@ -124,13 +124,17 @@ router.get('/relatorio/:id', async (req, res) => {
             pedido ON cd_pedido_alimento = cd_pedido WHERE cd_pedido = ?`,[id]);
             const [doadores] = await conn.query(`SELECT * FROM usuario INNER JOIN 
             solicitacao ON cd_usuario = cd_usuario_solicitacao WHERE cd_pedido_solicitacao = ? AND
-            cd_situacao_solicitacao = 'ENTREGUE'`,[id])
+            cd_situacao_solicitacao = 'ENTREGUE' GROUP BY cd_usuario`,[id]);
+            const[quantDoadores] = await conn.query(`SELECT FOUND_ROWS() AS count 
+            FROM solicitacao WHERE cd_situacao_solicitacao = 'ENTREGUE' AND 
+            cd_pedido_solicitacao = ? GROUP BY cd_usuario_solicitacao`,[id])
     
             res.render('painel/meus-pedidos-relatorio',{
                 alimentos,
                 campanha,
                 grafico,
                 doadores,
+                quantDoadores,
                 infoCamp
             })
         }

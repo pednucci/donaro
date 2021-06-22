@@ -314,7 +314,7 @@ router.post('/descobrir/pedido/:id', async (req, res) => {
             [pedido[0].cd_usuario_pedido ,idSoli]);
             
             req.flash('successMsg', 'Doação registrada com sucesso! Converse com o donatário pelo chat');
-            res.redirect('/')
+            res.redirect('/descobrir')
         }
     }
     catch(err){
