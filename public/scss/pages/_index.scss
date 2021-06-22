@@ -57,29 +57,29 @@
 
             
         
-            &::after{
-                content: url("/assets/img/icone_dbl_down_blue.svg");
-                display:block;
-                position: absolute;
+            // &::after{
+            //     content: url("/assets/img/icone_dbl_down_blue.svg");
+            //     display:block;
+            //     position: absolute;
 
-                top: 90vh;
-                transform: translateY(-3rem);
-                opacity: 1;
+            //     top: 90vh;
+            //     transform: translateY(-3rem);
+            //     opacity: 1;
 
-                animation: index ease-in-out 1s infinite alternate;
+            //     animation: index ease-in-out 1s infinite alternate;
 
-                @keyframes index{
-                    from{
-                        opacity: 1;
-                        transform: translateY(-3rem);
-                    }
+            //     @keyframes index{
+            //         from{
+            //             opacity: 1;
+            //             transform: translateY(-3rem);
+            //         }
                     
-                    to{
-                        transform: translateY(0rem);
-                        opacity: 0;
-                    }
-                }
-            }
+            //         to{
+            //             transform: translateY(0rem);
+            //             opacity: 0;
+            //         }
+            //     }
+            // }
 
         }
 
@@ -115,29 +115,29 @@
             &.acoes {
                 background-color: var(--red-logo);
                 
-                &::after{
-                    content: url("/assets/img/icone_dbl_down.svg");
-                    display:block;
-                    position: relative;
+                // &::after{
+                //     content: url("/assets/img/icone_dbl_down.svg");
+                //     display:block;
+                //     position: relative;
     
-                    top: 22%;
-                    transform: translateY(-3rem);
-                    opacity: 1;
+                //     top: 22%;
+                //     transform: translateY(-3rem);
+                //     opacity: 1;
     
-                    animation: index ease-in-out 1s infinite alternate;
+                //     animation: index ease-in-out 1s infinite alternate;
     
-                    @keyframes index{
-                        from{
-                            opacity: 1;
-                            transform: translateY(-3rem);
-                        }
+                //     @keyframes index{
+                //         from{
+                //             opacity: 1;
+                //             transform: translateY(-3rem);
+                //         }
                         
-                        to{
-                            transform: translateY(0rem);
-                            opacity: 0;
-                        }
-                    }
-                }
+                //         to{
+                //             transform: translateY(0rem);
+                //             opacity: 0;
+                //         }
+                //     }
+                // }
             }
 
             &.doadores {
