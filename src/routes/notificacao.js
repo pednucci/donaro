@@ -11,10 +11,15 @@ router.get('/', async (req, res) => {
     INNER JOIN pedido ON cd_pedido_solicitacao = cd_pedido INNER JOIN
     usuario ON cd_usuario_solicitacao = cd_usuario INNER JOIN
     chat ON cd_usuario = cd_userSoli_chat WHERE 
-    cd_usuario_notificacao = ?`, [idUser])
+    cd_usuario_notificacao = ? ORDER BY dt_createdAt_notificacao DESC`, [idUser]);
+
+    const [avisos] = await conn.query(`SELECT * FROM notificacao 
+    WHERE cd_usuario_notificacao = ? AND cd_solicitacao_notificacao IS NULL
+    ORDER BY dt_createdAt_notificacao DESC`,[idUser]);
 
     res.render('notificacao/notificacao', {
-        notificacao
+        notificacao,
+        avisos
     })
 
     await conn.end();

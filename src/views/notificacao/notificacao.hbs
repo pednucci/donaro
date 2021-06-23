@@ -6,7 +6,27 @@
 
 <main class="lyt_notificacoes lyt_painel pg_n-ajudas">
     <div class="usuario cards-container notif">
-            
+        
+        {{#each avisos}}
+        <div class="card row">
+            <div class="card-user row">
+                <div class="card-image">
+                    <img class="image-card" src="/assets/alert.png" alt="" />
+                </div>
+                <div class="card-info column">
+                    <h2 class="desc-card">
+                        {{ds_notificacao}}
+                    </h2>
+                </div>
+            </div>
+            <div class="card-btn column">
+                <div class="date row">
+                    Enviado em:
+                    <span class="date-time">{{formatDate dt_createdAt_notificacao}}</span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
         {{#each notificacao}}
             {{#if (notificationType ds_notificacao)}}
                 <a href="/chat/{{cd_solicitacao_chat}}">

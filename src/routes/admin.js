@@ -29,13 +29,18 @@ router.post('/denuncias/campanhas/:id', async (req, res) => {
     const conn = await db.connection();
     try{
         if(req.body.resp == 'adv'){
-            const [adv] = await conn.query(`SELECT qt_advertencias_usuario AS adv FROM usuario WHERE
+            const [usuario] = await conn.query(`SELECT * FROM usuario WHERE
             cd_usuario = (SELECT cd_usuario_pedido FROM pedido WHERE cd_pedido = (SELECT 
             cd_pedido_denunciado FROM denuncia WHERE cd_denuncia = ?))`,[req.params.id])
             await conn.query(`UPDATE usuario SET qt_advertencias_usuario = qt_advertencias_usuario + 1
             WHERE cd_usuario = (SELECT cd_usuario_pedido FROM pedido WHERE cd_pedido = (SELECT 
-            cd_pedido_denunciado FROM denuncia WHERE cd_denuncia = ?))`,[req.params.id]);
-            if(adv[0].adv == 2){
+            cd_pedido_denunciado FROM denuncia WHERE cd_denuncia = ?))`,[req.params.id])
+            .then(async () => {
+                await conn.query(`INSERT INTO notificacao(cd_usuario_notificacao, ds_notificacao)
+                VALUES(?,'Você recebeu um aviso! (${usuario[0].qt_advertencias_usuario + 1}/10) respeite 
+                os termos e políticas e se atente às boas normas!')`,[usuario[0].cd_usuario]);                
+            });
+            if(usuario[0].qt_advertencias_usuario == 9){
                 await conn.query(`UPDATE usuario SET cd_deletado_usuario =  1
                 WHERE cd_usuario = (SELECT cd_usuario_pedido FROM pedido WHERE cd_pedido = (SELECT 
                 cd_pedido_denunciado FROM denuncia WHERE cd_denuncia = ?))`,[req.params.id]);
@@ -106,13 +111,16 @@ router.post('/denuncias/naoentregues/:id', async (req, res) => {
     const conn = await db.connection();
     try{
         if(req.body.resp == 'adv'){
-            const [adv] = await conn.query(`SELECT qt_advertencias_usuario AS adv FROM usuario WHERE
+            const [usuario] = await conn.query(`SELECT * FROM usuario WHERE
             cd_usuario = (SELECT cd_usuario_denunciado FROM 
             denuncia WHERE cd_denuncia = ?)`,[req.params.id])
             await conn.query(`UPDATE usuario SET qt_advertencias_usuario = qt_advertencias_usuario + 1
             WHERE cd_usuario = (SELECT cd_usuario_denunciado FROM 
             denuncia WHERE cd_denuncia = ?)`,[req.params.id]);
-            if(adv[0].adv == 2){
+            await conn.query(`INSERT INTO notificacao(cd_usuario_notificacao, ds_notificacao)
+            VALUES(?,'Você recebeu um aviso! (${usuario[0].qt_advertencias_usuario + 1}/10) respeite 
+            os termos e políticas e se atente às boas normas!')`,[usuario[0].cd_usuario]);
+            if(usuario[0].qt_advertencias_usuario == 9){
                 await conn.query(`UPDATE usuario SET cd_deletado_usuario =  1
                 WHERE cd_usuario = (SELECT cd_usuario_denunciado FROM 
                 denuncia WHERE cd_denuncia = ?)`,[req.params.id]);
@@ -169,19 +177,22 @@ router.post('/denuncias/usuarios/:id', async (req, res) => {
     const conn = await db.connection();
     try{
         if(req.body.resp == 'adv'){
-            const [adv] = await conn.query(`SELECT qt_advertencias_usuario AS adv FROM usuario WHERE
+            const [usuario] = await conn.query(`SELECT * FROM usuario WHERE
             cd_usuario = (SELECT cd_usuario_denunciado FROM 
             denuncia WHERE cd_denuncia = ?)`,[req.params.id])
             await conn.query(`UPDATE usuario SET qt_advertencias_usuario = qt_advertencias_usuario + 1
             WHERE cd_usuario = (SELECT cd_usuario_denunciado FROM 
             denuncia WHERE cd_denuncia = ?)`,[req.params.id]);
-            if(adv[0].adv == 2){
+            await conn.query(`INSERT INTO notificacao(cd_usuario_notificacao, ds_notificacao)
+            VALUES(?,'Você recebeu um aviso! (${usuario[0].qt_advertencias_usuario + 1}/10) respeite 
+            os termos e políticas e se atente às boas normas!')`,[usuario[0].cd_usuario]);
+            if(usuario[0].qt_advertencias_usuario == 9){
                 await conn.query(`UPDATE usuario SET cd_deletado_usuario =  1
                 WHERE cd_usuario = (SELECT cd_usuario_denunciado FROM 
                 denuncia WHERE cd_denuncia = ?)`,[req.params.id]);
             }
             await conn.query(`UPDATE denuncia SET nm_situacao_denuncia = 'Resolvida' WHERE
-            cd_denuncia = ?`,[req.params.id])
+            cd_denuncia = ?`,[req.params.id]);
         }
         else if(req.body.resp == 'account'){
             await conn.query(`UPDATE usuario SET cd_deletado_usuario =  1
