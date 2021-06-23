@@ -305,12 +305,12 @@ router.post('/descobrir/pedido/:id', async (req, res) => {
 
             await conn.query(`INSERT INTO notificacao(cd_usuario_notificacao, ds_notificacao,
             cd_solicitacao_notificacao) VALUES(?,'Você registrou uma doação para a campanha
-            "${pedido[0].nm_titulo_pedido}", clique para entrar no chat',?)`,[req.user[0].cd_usuario
+            "${pedido[0].nm_titulo_pedido}", clique para entrar no chat.',?)`,[req.user[0].cd_usuario
             ,idSoli]);
 
             await conn.query(`INSERT INTO notificacao(cd_usuario_notificacao, ds_notificacao,
             cd_solicitacao_notificacao) VALUES(?,'${req.user[0].nm_usuario} quer doar para a sua campanha 
-            "${pedido[0].nm_titulo_pedido}" clique para ver os detalhes',?)`,
+            "${pedido[0].nm_titulo_pedido}", clique para ver os detalhes.',?)`,
             [pedido[0].cd_usuario_pedido ,idSoli]);
             
             req.flash('successMsg', 'Doação registrada com sucesso! Converse com o donatário pelo chat');

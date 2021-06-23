@@ -77,7 +77,7 @@ app.engine('hbs', hbs({defaultLayout: 'main', extname: '.hbs', helpers: {
     },
     notificationType: (text) => {
         let string = text.split(" ");
-        if(string[string.length - 1] == 'chat') return true;
+        if(string[string.length - 1] == 'chat.') return true;
     },
     section: function(name, options){
         if(!this._sections) this._sections = {};
