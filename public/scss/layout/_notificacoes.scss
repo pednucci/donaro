@@ -120,9 +120,25 @@
         }
     }
 
-    &.pg_n-ajudas{
-        .usuario.cards-container{
+    &.pg_n-ajudas {
+        .usuario.cards-container {
             max-width: 90rem;
+        }
+
+        .cards-container .card {
+            .card-user .card-info .desc-card {
+                font-size: 1.6rem;
+                font-weight: 500;
+                color: var(--black-logo);
+                margin-top: 0rem;
+                max-width: 50rem;
+                white-space: normal;
+            }
+
+            .card-btn .date{
+                height: 100%;
+                margin:0;
+            }
         }
     }
 
@@ -198,19 +214,24 @@
                 .card-info {
                     .nome-card {
                         font-size: 2.3rem;
-                        // max-width: 53rem;
+                        line-height: 2.5rem;
+                        max-width: 42rem;
                         font-weight: 500;
                         margin-bottom: 1rem;
+
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     .desc-card {
                         font-size: 1.6rem;
                         font-weight: 500;
-                        color: var(--black-logo);
                         margin-top: 0rem;
-                        max-width: 55rem;
-                        white-space: normal;
-
+                        max-width: 37rem;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     .desc-card.min {

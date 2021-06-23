@@ -13,39 +13,35 @@
     <div class="cards-container">
          {{!-- Card --}} 
         {{#each denuncias}}
-        <div class="card row">
-             {{!-- Informações --}} 
-            <div class="card-user row">
-                <div class="card-image">
-                    <img
-                        class="image-card"
-                        src="/assets/profile/{{cd_foto_usuario}}"
-                        alt=""
-                    />
-                </div>
-                <div class="card-info column">
-                    <h1 class="nome-card">{{nm_usuario}}</h1>
-                    <h2 class="desc-card">
-                        Campanha:
-                        <strong>{{nm_titulo_pedido}}</strong>
-                    </h2>
-                </div>
-            </div>
+            <a href="/admin/denuncias/naoentregues/{{cd_denuncia}}">
+                <div class="card row">
+                    {{!-- Informações --}} 
+                    <div class="card-user row">
+                        <div class="card-image">
+                            <img
+                                class="image-card"
+                                src="/assets/profile/{{cd_foto_usuario}}"
+                                alt=""
+                            />
+                        </div>
+                        <div class="card-info column">
+                            <h1 class="nome-card">{{nm_usuario}}</h1>
+                            <h2 class="desc-card">
+                                Campanha:
+                                <strong>{{nm_titulo_pedido}}</strong>
+                            </h2>
+                        </div>
+                    </div>
 
-             {{!-- Btn --}} 
-            <div class="card-btn column">
-                <a href="/admin/denuncias/naoentregues/{{cd_denuncia}}">
-                    <button class="btn red-denounce">Ver denúncia</button>
-                </a>
-                <div class="date row">
-                    <img
-                        src="/assets/img/icone_calendar.svg"
-                        alt="Data"
-                    /> 
-                    <span class="date-time">{{formatDate dt_createdAt_denuncia}}</span>
+                    {{!-- Btn --}} 
+                    <div class="card-btn column">
+                        <div class="date row">
+                            Enviado em: 
+                            <span class="date-time">{{formatDate dt_createdAt_denuncia}}</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </a>
         {{/each}}
     </div>
 </main>
