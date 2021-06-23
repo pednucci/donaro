@@ -110,10 +110,22 @@
         </a>
     </div>
     {{else}}
+    {{#if pagsFilter}}
+    <div class="numeracao-paginas">
+        <ul class="paginas">
+        {{#each pagsFilter}}
+            <a href="/descobrir/filter/{{pag}}?estado={{estado}}&state={{state}}&cidade={{cidade}}">
+                <li class="num cont-pagina">{{pag}}</li>
+            </a>
+        {{/each}}
+        </ul>
+        <a href="">
+            <div class="cont-pagina">Seguinte &#62;</div>
+        </a>
+    </div>
+    {{/if}}
     {{/if}}
 </main>
-
-{{>footer}}
 
 <script src="/js/estado-cidade.js"></script>
 
