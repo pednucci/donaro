@@ -23,7 +23,8 @@ router.get('/descobrir', async (req, res) => {
     AND cd_deletado_pedido IS NULL
     ORDER BY dt_createdAt_pedido DESC
     LIMIT 0,6`)
-    const [count] = await conn.query(`SELECT count(*) AS count FROM pedido`);
+    const [count] = await conn.query(`SELECT count(*) AS count FROM pedido 
+    WHERE dt_encerramento_pedido > CURRENT_TIMESTAMP() AND cd_deletado_pedido IS NULL`);
     let pags = count[0].count/6;;
     
     if(pags%1 != 0){
@@ -69,8 +70,9 @@ router.get('/descobrir/pag/:num', async (req, res) => {
     AND cd_deletado_pedido IS NULL
     ORDER BY dt_createdAt_pedido DESC
     LIMIT ${(num*6)-6},6`)
-    const [count] = await conn.query(`SELECT count(*) AS count FROM pedido`);
-    let pags = count[0].count/6;;
+    const [count] = await conn.query(`SELECT count(*) AS count FROM pedido 
+    WHERE dt_encerramento_pedido > CURRENT_TIMESTAMP() AND cd_deletado_pedido IS NULL`);
+    let pags = count[0].count/6;
     
     if(pags%1 != 0){
         split = (pags.toString()).split('.');
@@ -110,8 +112,26 @@ router.get('/descobrir/pag/:num', async (req, res) => {
 router.get('/descobrir/filter', async (req, res) => {
     const conn = await db.connection();
     const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
-    cd_usuario_pedido = cd_usuario WHERE dt_encerramento_pedido > CURRENT_TIMESTAMP() AND sg_estado_pedido = ? AND
-    nm_cidade_pedido = ?`, [req.query.estado, req.query.cidade]);
+    cd_usuario_pedido = cd_usuario WHERE dt_encerramento_pedido > CURRENT_TIMESTAMP() 
+    AND sg_estado_pedido = ? AND nm_cidade_pedido = ? LIMIT 0,6`, [req.query.estado, req.query.cidade]);
+    const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
+    WHERE dt_encerramento_pedido > CURRENT_TIMESTAMP() AND cd_deletado_pedido IS NULL
+    AND sg_estado_pedido = ? AND nm_cidade_pedido = ?`, [req.query.estado, req.query.cidade]);
+    let pags = count[0].count/6;
+    
+    if(pags%1 != 0){
+        split = (pags.toString()).split('.');
+        pags = parseInt(split[0]) + 1;
+    }
+    const pagsFilter = [];
+    for(c = 1; c<=pags; c++){
+        pagsFilter[c-1] = {
+            pag: c,
+            estado: req.query.estado,
+            cidade: req.query.cidade,
+            state: req.query.state
+        } 
+    }
 
     for(let i = 0; i<pedidos.length; i++){
         const id = pedidos[i].cd_pedido;
@@ -135,8 +155,66 @@ router.get('/descobrir/filter', async (req, res) => {
 
     res.render('pedidos/descobrir', {
         pedido: pedidos,
-        titulo
+        titulo,
+        pagsFilter
     })
+
+    await conn.end();
+})
+
+router.get('/descobrir/filter/:num', async (req, res) => {
+    const num = req.params.num;
+    const conn = await db.connection();
+    const [pedidos] = await conn.query(`SELECT * FROM pedido INNER JOIN usuario ON
+    cd_usuario_pedido = cd_usuario WHERE dt_encerramento_pedido > CURRENT_TIMESTAMP() 
+    AND sg_estado_pedido = ? AND nm_cidade_pedido = ? ORDER BY dt_createdAt_pedido DESC
+    LIMIT ${(num*6)-6},6`, [req.query.estado, req.query.cidade]);
+    const [count] = await conn.query(`SELECT count(*) AS count FROM pedido
+    WHERE dt_encerramento_pedido > CURRENT_TIMESTAMP() AND sg_estado_pedido = ? 
+    AND nm_cidade_pedido = ?`, [req.query.estado, req.query.cidade]);
+    let pags = count[0].count/6;
+
+    if(pags%1 != 0){
+        split = (pags.toString()).split('.');
+        pags = parseInt(split[0]) + 1;
+    }
+    const pagsFilter = [];
+    for(c = 1; c<=pags; c++){
+        pagsFilter[c-1] = {
+            pag: c,
+            estado: req.query.estado,
+            cidade: req.query.cidade,
+            state: req.query.state
+        } 
+    }
+
+    for(let i = 0; i<pedidos.length; i++){
+        const id = pedidos[i].cd_pedido;
+        let datPedido = [];
+        const [data] = await conn.query(`SELECT dt_encerramento_pedido FROM pedido
+        WHERE cd_pedido = ?`,[id]);
+        data.forEach(data => {
+            datPedido.push(formatDistanceStrict(Date.now(), data.dt_encerramento_pedido, {locale: ptBR}));
+        })
+        let alPedido = [];
+        const [alimentos] = await conn.query(`SELECT nm_alimento FROM alimento
+        WHERE cd_pedido_alimento = ?`, [id]);
+        alimentos.forEach(alimento => {
+            alPedido.push(alimento.nm_alimento);
+        })
+        pedidos[i].comida = alPedido;
+        pedidos[i].dateRemaining = datPedido
+    }
+
+    const titulo = `${req.query.estado} - ${req.query.cidade}`
+
+    res.render('pedidos/descobrir', {
+        pedido: pedidos,
+        titulo,
+        pagsFilter
+    })
+
+    console.log(pagsFilter[0])
 
     await conn.end();
 })
