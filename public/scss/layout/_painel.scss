@@ -1,5 +1,22 @@
 .lyt_painel {
     justify-content: flex-start;
+
+    &.pg_pajuda{
+        .botoes-wrapper {
+            margin-top: 0;
+
+            .botoes{
+
+            }
+        }
+
+        .usuario .comentario-container{
+            padding: 2rem;
+            border: var(--border-form);
+            border-radius: 2rem;
+        }
+    }
+
     .container-painel {
         width: 100%;
         display: flex;
