@@ -72,7 +72,7 @@
 
             border: 0.1rem solid var(--blue-logo);
             border-radius: 0.8rem 0 0 0.8rem;
-            padding: 2rem 2rem 0 2rem;
+            padding: 2rem ;
 
             .menu-conversas {
                 justify-content: space-between;
@@ -150,11 +150,11 @@
                     transition: all 0.1s ease-in-out;
 
                     &.selected{
-                        background-color: darken(#fff, 3%);
+                        background-color: darken(#fff, 10%);
                     }
 
                     &:hover {
-                        background-color: darken(#fff, 3%);
+                        background-color: darken(#fff, 5%);
 
                         transition: all 0.1s ease-in-out;
                     }
@@ -181,6 +181,7 @@
                                 font-size: 1.8rem;
                                 margin: 0;
                                 margin-bottom: 0.5rem;
+                                line-height: 2rem;
 
                                 font-weight: bold;
                             }
