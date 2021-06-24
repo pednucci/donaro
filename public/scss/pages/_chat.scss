@@ -149,6 +149,10 @@
                     background-color: var(--white);
                     transition: all 0.1s ease-in-out;
 
+                    &.selected{
+                        background-color: darken(#fff, 3%);
+                    }
+
                     &:hover {
                         background-color: darken(#fff, 3%);
 
