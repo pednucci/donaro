@@ -214,8 +214,6 @@ router.get('/descobrir/filter/:num', async (req, res) => {
         pagsFilter
     })
 
-    console.log(pagsFilter[0])
-
     await conn.end();
 })
 
