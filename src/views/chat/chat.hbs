@@ -27,8 +27,8 @@
                     <div class="msgsContainer camp">
                         {{#if chatCampanhas}}
                         {{#each chatCampanhas}}
-                        <a href="/chat/{{cd_solicitacao_chat}}" class="chat-{{cd_chat}}">
-                            <div class="row conversa">
+                        <a href="/chat/{{cd_solicitacao_chat}}">
+                            <div class="row conversa chat-{{cd_solicitacao_chat}}">
                                 {{!--  Imagem  --}}
                                 <div class="conversa-img">
                                     <div class="img-wrapper">
@@ -66,8 +66,8 @@
                     <div class="msgsContainer doa">
                         {{#if chatSolicitacoes}}
                         {{#each chatSolicitacoes}}
-                        <a href="/chat/{{cd_solicitacao}}" class="chat-{{cd_chat}}">
-                            <div class="row conversa">
+                        <a href="/chat/{{cd_solicitacao}}">
+                            <div class="row conversa chat-{{cd_solicitacao_chat}}">
                                 {{!--  Imagem  --}}
                                 <div class="conversa-img">
                                     <div class="img-wrapper">
@@ -246,6 +246,8 @@
     containerConversasDoa.classList.remove("visible")
     {{/if}}
 
+    let idChat = location.href.split('/')[4];
+    document.querySelector(`.chat-${idChat}`).classList.add("selected");
 
     radios.forEach(function(radio, index){
         radio.addEventListener('click', () => {
