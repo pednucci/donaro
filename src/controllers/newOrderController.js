@@ -105,7 +105,7 @@ exports.newOrder = async (req, res) => {
             (select sum(qt_alimento) from alimento where cd_pedido_alimento = ?) WHERE cd_pedido = ?
             `, [idPedido, idPedido])
     
-            req.flash('successMsg', 'Pedido cadastrado com sucesso!')
+            req.flash('successMsg', 'Campanha cadastrada com sucesso!')
             res.redirect('/painel/pedidos')
         }
     }
