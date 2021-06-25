@@ -63,11 +63,13 @@
 
             text-align: justify;
             white-space: pre-line;
+            width:100%;
+            overflow: hidden;
         }
 
         .btn {
             transform: translateY(10rem);
-            // margin-top: 6rem;
+
         }
 
         .denunciar {
