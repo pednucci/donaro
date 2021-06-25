@@ -446,7 +446,7 @@ router.post('/edit/:id', async (req, res) => {
             cd_pedido = ?`,[req.body.titulo, idPedido]);
             if(req.body.descPed) await conn.query(`UPDATE pedido SET ds_acao_pedido = ? WHERE
             cd_pedido = ?`,[req.body.descPed, idPedido]);
-            req.flash("successMsg", "Pedido editado com sucesso!");
+            req.flash("successMsg", "Campanha editada com sucesso!");
             res.redirect(`/descobrir/pedido/${idPedido}`);
         }
         else{
