@@ -219,7 +219,7 @@ router.post('/ressoli', async (req, res) => {
                 cd_solicitacao = ?)`,
                 [soli, soli])*/
                 
-                req.flash('successMsg', 'Pedido confirmado com sucesso!')
+                req.flash('successMsg', 'Entrega confirmada com sucesso!')
                 res.redirect(`/painel/pedidos/${idPed[0].cd_pedido_solicitacao}`)
             }
             catch(err){
