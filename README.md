@@ -1,2 +1,2 @@
 # Donaro
-A charity platform for social actions
+Boosting hunger-fighting campaigns
